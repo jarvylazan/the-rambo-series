@@ -43,22 +43,22 @@ func update_facing_direction(direction):
 		# Horizontal movement is dominant
 		if direction.x > 0:
 			facing_direction = "right"
-			%RamboAnimatedSprite2D.play("walkleft")
+			%RamboAnimatedSprite2D.play("runsideways")
 			%RamboAnimatedSprite2D.scale = Vector2(-0.30, 0.30)
 		else:
 			facing_direction = "left"
-			%RamboAnimatedSprite2D.play("walkleft")
+			%RamboAnimatedSprite2D.play("runsideways")
 			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
 	else:
 		# Vertical movement is dominant
 		if direction.y > 0:
 			facing_direction = "down"
-			# Play appropriate animation for down movement
-			# You may need to add your own animations here
+			%RamboAnimatedSprite2D.play("rundown")
+			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
 		else:
 			facing_direction = "up"
-			# Play appropriate animation for up movement
-			# You may need to add your own animations here
+			%RamboAnimatedSprite2D.play("runup")
+			%RamboAnimatedSprite2D.scale = Vector2(0.27, 0.27)
 
 func play_idle_animation():
 	# Switch to idle animation and apply proper scaling

@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://deur1k635kbrq"]
+[gd_scene load_steps=32 format=3 uid="uid://deur1k635kbrq"]
 
-[ext_resource type="Texture2D" uid="uid://oor46qtcnlp8" path="res://assets/idle_transparent.png" id="1_5i8mc"]
+[ext_resource type="Texture2D" uid="uid://oor46qtcnlp8" path="res://assets/characters/rambo-animation/idle_transparent.png" id="1_5i8mc"]
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/rambo.gd" id="1_ij0mf"]
-[ext_resource type="Texture2D" uid="uid://bqasyqwdyxeqk" path="res://assets/run-left.png" id="3_kav23"]
+[ext_resource type="Texture2D" uid="uid://bqasyqwdyxeqk" path="res://assets/characters/rambo-animation/run_sideways.png" id="3_kav23"]
+[ext_resource type="Texture2D" uid="uid://byon4tmb4x185" path="res://assets/characters/rambo-animation/run_down.png" id="3_pqdxo"]
+[ext_resource type="Texture2D" uid="uid://ckmqqrq1wvai2" path="res://assets/characters/rambo-animation/run_up.png" id="5_pyj65"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tampr"]
 atlas = ExtResource("1_5i8mc")
@@ -40,6 +42,30 @@ region = Rect2(1544, 0, 249, 400)
 atlas = ExtResource("1_5i8mc")
 region = Rect2(1793, 0, 249, 400)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxmnw"]
+atlas = ExtResource("3_pqdxo")
+region = Rect2(0, 0, 798, 1166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x002e"]
+atlas = ExtResource("3_pqdxo")
+region = Rect2(798, 0, 798, 1166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bkhl"]
+atlas = ExtResource("3_pqdxo")
+region = Rect2(1596, 0, 798, 1166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aipbf"]
+atlas = ExtResource("3_pqdxo")
+region = Rect2(2394, 0, 798, 1166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbdq"]
+atlas = ExtResource("3_pqdxo")
+region = Rect2(3192, 0, 798, 1166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvc8l"]
+atlas = ExtResource("3_pqdxo")
+region = Rect2(3990, 0, 798, 1166)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_abj65"]
 atlas = ExtResource("3_kav23")
 region = Rect2(0, 0, 974, 1051)
@@ -55,6 +81,26 @@ region = Rect2(1948, 0, 974, 1051)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0seb"]
 atlas = ExtResource("3_kav23")
 region = Rect2(2922, 0, 974, 1051)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp5ql"]
+atlas = ExtResource("5_pyj65")
+region = Rect2(0, 0, 828, 1407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n4wy"]
+atlas = ExtResource("5_pyj65")
+region = Rect2(828, 0, 828, 1407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xvuv"]
+atlas = ExtResource("5_pyj65")
+region = Rect2(1656, 0, 828, 1407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dn5o"]
+atlas = ExtResource("5_pyj65")
+region = Rect2(2484, 0, 828, 1407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yir5t"]
+atlas = ExtResource("5_pyj65")
+region = Rect2(3312, 0, 828, 1407)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_abj65"]
 animations = [{
@@ -97,6 +143,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hxmnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x002e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bkhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aipbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvc8l")
+}],
+"loop": true,
+"name": &"rundown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_abj65")
 }, {
 "duration": 1.0,
@@ -109,7 +178,27 @@ animations = [{
 "texture": SubResource("AtlasTexture_h0seb")
 }],
 "loop": true,
-"name": &"walkleft",
+"name": &"runsideways",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp5ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n4wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xvuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dn5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yir5t")
+}],
+"loop": true,
+"name": &"runup",
 "speed": 5.0
 }]
 
@@ -123,8 +212,9 @@ script = ExtResource("1_ij0mf")
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"idle"
+animation = &"runup"
 autoplay = "idle"
+frame_progress = 0.679491
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
