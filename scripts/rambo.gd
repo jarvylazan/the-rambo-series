@@ -39,7 +39,26 @@ func _physics_process(delta):
 	move_and_slide()
 
 func update_facing_direction(direction):
-	if abs(direction.x) > abs(direction.y):
+	# Check for diagonal movement first
+	if abs(direction.x) > 0.3 and abs(direction.y) > 0.3:
+		# Handle diagonal directions
+		if direction.x > 0 and direction.y < 0:
+			facing_direction = "top_right"
+			%RamboAnimatedSprite2D.play("runtopleft")
+			%RamboAnimatedSprite2D.scale = Vector2(-0.30, 0.30)
+		elif direction.x < 0 and direction.y < 0:
+			facing_direction = "top_left"
+			%RamboAnimatedSprite2D.play("runtopleft")
+			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
+		elif direction.x > 0 and direction.y > 0:
+			facing_direction = "bottom_right"
+			%RamboAnimatedSprite2D.play("rundownleft")
+			%RamboAnimatedSprite2D.scale = Vector2(-0.30, 0.30)
+		elif direction.x < 0 and direction.y > 0:
+			facing_direction = "bottom_left"
+			%RamboAnimatedSprite2D.play("rundownleft")
+			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
+	elif abs(direction.x) > abs(direction.y):
 		# Horizontal movement is dominant
 		if direction.x > 0:
 			facing_direction = "right"
@@ -66,9 +85,9 @@ func play_idle_animation():
 	
 	# Keep the correct facing direction with proper scaling
 	match facing_direction:
-		"right":
+		"right", "top_right", "bottom_right":
 			%RamboAnimatedSprite2D.scale = Vector2(-1.0, 1.0)  # Flipped horizontally
-		"left":
+		"left", "top_left", "bottom_left":
 			%RamboAnimatedSprite2D.scale = Vector2(1.0, 1.0)   # Normal orientation
 		"down", "up":
 			# Add specific handling for up/down idle if needed
