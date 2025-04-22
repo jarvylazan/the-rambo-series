@@ -18,3 +18,13 @@ func _on_en_button_pressed() -> void:
 
 func _on_fr_button_pressed() -> void:
 	TranslationServer.set_locale("fr")
+
+
+func _on_settings_button_pressed() -> void:
+	%ButtonsMenu.visible = false
+	%SettingsMenu.visible = true
+
+
+func _on_label_pressed() -> void:
+	%ButtonsMenu.visible = true
+	%SettingsMenu.visible = false
