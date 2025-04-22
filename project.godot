@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGamedev - Master.en.translation", "res://assets/UI_Localization/PolyglotGamedev - Master.fr.translation")
+
 [rendering]
 
 renderer/rendering_method="mobile"

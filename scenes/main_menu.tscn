@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=9 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Texture2D" uid="uid://n27u1npfywh5" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 22, 2025, 02_44_15 PM.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://hbt0jsakdfjw" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 19, 2025, 03_37_35 PM.png" id="1_l6cm7"]
@@ -10,6 +10,11 @@ default_font = ExtResource("3_bqqt6")
 Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 
 [sub_resource type="Theme" id="Theme_bqqt6"]
+default_font = ExtResource("3_bqqt6")
+default_font_size = 50
+Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
+
+[sub_resource type="Theme" id="Theme_rtw2f"]
 default_font = ExtResource("3_bqqt6")
 default_font_size = 50
 Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
@@ -56,7 +61,7 @@ texture = ExtResource("1_l6cm7")
 
 [node name="Titles&Buttons" type="Node" parent="CanvasLayer"]
 
-[node name="Title" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+[node name="TitleContainer" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 anchors_preset = -1
 anchor_left = 0.728
 anchor_top = 0.122
@@ -70,10 +75,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wu84c")
 
-[node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/Title"]
+[node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/TitleContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 150
-text = "THE RAMBO"
+text = "TITLE_LABEL"
 
 [node name="Buttons" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 anchors_preset = -1
@@ -97,34 +102,60 @@ theme_override_constants/separation = 11
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer"]
 layout_mode = 2
-text = "PLAY"
+text = "MENU_LABEL_PLAY"
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer"]
 layout_mode = 2
-text = "SETTINGS"
+text = "MENU_OPTIONS"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer"]
 layout_mode = 2
-text = "EXIT"
+text = "MENU_LABEL_QUIT"
 
-[node name="Trilogy" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+[node name="TransaltionButtons" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+anchors_preset = -1
+anchor_left = 0.651
+anchor_top = 0.615
+anchor_right = 0.651
+anchor_bottom = 0.615
+offset_left = -50.952
+offset_top = 46.48
+offset_right = 69.048
+offset_bottom = 83.48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Titles&Buttons/TransaltionButtons"]
+layout_mode = 2
+theme = SubResource("Theme_rtw2f")
+theme_override_constants/separation = 10
+
+[node name="EnButton" type="Button" parent="CanvasLayer/Titles&Buttons/TransaltionButtons/HBoxContainer"]
+layout_mode = 2
+text = "EN"
+
+[node name="FrButton" type="Button" parent="CanvasLayer/Titles&Buttons/TransaltionButtons/HBoxContainer"]
+layout_mode = 2
+text = "FR"
+
+[node name="TrilogyContianer" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 anchors_preset = -1
 anchor_left = 0.773
 anchor_top = 0.914
 anchor_right = 0.773
 anchor_bottom = 0.914
-offset_left = -246.496
-offset_top = -43.272
-offset_right = 245.504
-offset_bottom = 42.728
+offset_left = -333.496
+offset_top = -46.272
+offset_right = 649.504
+offset_bottom = 39.728
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/Titles&Buttons/Trilogy"]
+[node name="Label2" type="Label" parent="CanvasLayer/Titles&Buttons/TrilogyContianer"]
 layout_mode = 2
 theme = SubResource("Theme_8ln24")
 theme_override_font_sizes/font_size = 150
-text = "TRILOGY"
+text = "TRIOLOGY_LABEL"
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Titles&Buttons/TransaltionButtons/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Titles&Buttons/TransaltionButtons/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
