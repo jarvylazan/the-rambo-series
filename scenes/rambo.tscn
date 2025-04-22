@@ -280,7 +280,7 @@ script = ExtResource("1_ij0mf")
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"rundownleft"
+animation = &"idles"
 autoplay = "idle"
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
