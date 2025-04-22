@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="The Rambo Series"
+run/main_scene="uid://c2737dsntwjmv"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGamedev - Master.en.translation", "res://assets/UI_Localization/PolyglotGamedev - Master.fr.translation")
 
 [rendering]
 
