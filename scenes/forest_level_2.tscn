@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bedhm5phhbtm3"]
+[gd_scene load_steps=50 format=3 uid="uid://txfw7qblt4im"]
 
 [ext_resource type="Texture2D" uid="uid://bb6d6u2skk6du" path="res://assets/image/tilemap_block/level 1/grass darker.png" id="1_po1ef"]
 [ext_resource type="Texture2D" uid="uid://cxffnxha2seb6" path="res://assets/image/tilemap_block/level 1/main grass.png" id="2_gohk1"]
@@ -742,6 +742,7 @@ format = 2
 
 [node name="Node2D" parent="." instance=ExtResource("11_5n1c5")]
 position = Vector2(490, 400)
+scale = Vector2(0.18, 0.18)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(140, -180)

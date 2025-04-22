@@ -1,10 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://deur1k635kbrq"]
+[gd_scene load_steps=42 format=3 uid="uid://deur1k635kbrq"]
 
 [ext_resource type="Texture2D" uid="uid://oor46qtcnlp8" path="res://assets/characters/rambo-animation/idle_transparent.png" id="1_5i8mc"]
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/rambo.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://bqasyqwdyxeqk" path="res://assets/characters/rambo-animation/run_sideways.png" id="3_kav23"]
 [ext_resource type="Texture2D" uid="uid://byon4tmb4x185" path="res://assets/characters/rambo-animation/run_down.png" id="3_pqdxo"]
+[ext_resource type="Texture2D" uid="uid://bmg4ndco08xul" path="res://assets/characters/rambo-animation/run_down_left.png" id="4_wr3j0"]
 [ext_resource type="Texture2D" uid="uid://ckmqqrq1wvai2" path="res://assets/characters/rambo-animation/run_up.png" id="5_pyj65"]
+[ext_resource type="Texture2D" uid="uid://crxouqujhbo0w" path="res://assets/characters/rambo-animation/run_top_right.png" id="5_wx35l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tampr"]
 atlas = ExtResource("1_5i8mc")
@@ -66,6 +68,22 @@ region = Rect2(3192, 0, 798, 1166)
 atlas = ExtResource("3_pqdxo")
 region = Rect2(3990, 0, 798, 1166)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuyhb"]
+atlas = ExtResource("4_wr3j0")
+region = Rect2(0, 0, 732, 1075)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrm10"]
+atlas = ExtResource("4_wr3j0")
+region = Rect2(732, 0, 732, 1075)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77r2u"]
+atlas = ExtResource("4_wr3j0")
+region = Rect2(1464, 0, 732, 1075)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx57j"]
+atlas = ExtResource("4_wr3j0")
+region = Rect2(2196, 0, 732, 1075)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_abj65"]
 atlas = ExtResource("3_kav23")
 region = Rect2(0, 0, 974, 1051)
@@ -81,6 +99,22 @@ region = Rect2(1948, 0, 974, 1051)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0seb"]
 atlas = ExtResource("3_kav23")
 region = Rect2(2922, 0, 974, 1051)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uat5"]
+atlas = ExtResource("5_wx35l")
+region = Rect2(721, 0, 721, 1111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrxaa"]
+atlas = ExtResource("5_wx35l")
+region = Rect2(0, 0, 721, 1111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y5ek"]
+atlas = ExtResource("5_wx35l")
+region = Rect2(1442, 0, 721, 1111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j1bk"]
+atlas = ExtResource("5_wx35l")
+region = Rect2(2163, 0, 721, 1111)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pp5ql"]
 atlas = ExtResource("5_pyj65")
@@ -166,6 +200,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_nuyhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrm10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77r2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx57j")
+}],
+"loop": true,
+"name": &"rundownleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_abj65")
 }, {
 "duration": 1.0,
@@ -180,6 +231,23 @@ animations = [{
 "loop": true,
 "name": &"runsideways",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uat5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrxaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y5ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j1bk")
+}],
+"loop": true,
+"name": &"runtopleft",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -207,15 +275,13 @@ radius = 35.0
 height = 306.0
 
 [node name="Node2D" type="CharacterBody2D"]
-scale = Vector2(0.18, 0.18)
 script = ExtResource("1_ij0mf")
 
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"runup"
+animation = &"idles"
 autoplay = "idle"
-frame_progress = 0.679491
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
