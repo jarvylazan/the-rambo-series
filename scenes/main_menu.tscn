@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=7 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Texture2D" uid="uid://n27u1npfywh5" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 22, 2025, 02_44_15 PM.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://hbt0jsakdfjw" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 19, 2025, 03_37_35 PM.png" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_bqqt6"]
+
+[sub_resource type="Theme" id="Theme_wu84c"]
+default_font = ExtResource("3_bqqt6")
+Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
+
+[sub_resource type="Theme" id="Theme_bqqt6"]
+default_font = ExtResource("3_bqqt6")
+default_font_size = 50
+Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8ln24"]
+default_font = ExtResource("3_bqqt6")
+Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,16 +29,18 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="BG" type="Node" parent="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.0
-offset_bottom = 7.0
+offset_right = 4.0
+offset_bottom = -1.0
 texture = ExtResource("1_ekxnf")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BG"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.567
@@ -32,6 +48,78 @@ offset_right = -128.0
 offset_bottom = 8.58398
 scale = Vector2(0.494124, 0.634749)
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/BG/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("1_l6cm7")
+
+[node name="Titles&Buttons" type="Node" parent="CanvasLayer"]
+
+[node name="Title" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+anchors_preset = -1
+anchor_left = 0.728
+anchor_top = 0.122
+anchor_right = 0.728
+anchor_bottom = 0.122
+offset_left = -307.656
+offset_top = -67.056
+offset_right = 308.344
+offset_bottom = 24.944
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wu84c")
+
+[node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "THE RAMBO"
+
+[node name="Buttons" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.465
+anchor_right = 0.679
+anchor_bottom = 0.465
+offset_left = -117.208
+offset_top = -69.32
+offset_right = 77.792
+offset_bottom = 63.68
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Titles&Buttons/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 2.21
+theme = SubResource("Theme_bqqt6")
+theme_override_constants/separation = 11
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Titles&Buttons/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="Trilogy" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+anchors_preset = -1
+anchor_left = 0.773
+anchor_top = 0.914
+anchor_right = 0.773
+anchor_bottom = 0.914
+offset_left = -246.496
+offset_top = -43.272
+offset_right = 245.504
+offset_bottom = 42.728
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Titles&Buttons/Trilogy"]
+layout_mode = 2
+theme = SubResource("Theme_8ln24")
+theme_override_font_sizes/font_size = 150
+text = "TRILOGY"
