@@ -1,5 +1,37 @@
-[gd_scene format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=3 format=3 uid="uid://c2737dsntwjmv"]
+
+[ext_resource type="Texture2D" uid="uid://n27u1npfywh5" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 22, 2025, 02_44_15 PM.png" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://hbt0jsakdfjw" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 19, 2025, 03_37_35 PM.png" id="1_l6cm7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 7.0
+texture = ExtResource("1_ekxnf")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.567
+offset_right = -128.0
+offset_bottom = 8.58398
+scale = Vector2(0.494124, 0.634749)
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_l6cm7")
