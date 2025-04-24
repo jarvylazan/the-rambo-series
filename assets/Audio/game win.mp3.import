@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7ddvokdvr88y"
+path="res://.godot/imported/game win.mp3-b08ad37bed30c6b403aea9b541fb665c.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/game win.mp3"
+dest_files=["res://.godot/imported/game win.mp3-b08ad37bed30c6b403aea9b541fb665c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
