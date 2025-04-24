@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=8 format=3 uid="uid://c2737dsntwjmv"]
 
-[ext_resource type="Texture2D" uid="uid://n27u1npfywh5" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 22, 2025, 02_44_15 PM.png" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://hbt0jsakdfjw" path="res://assets/image/RamboCharacter/ChatGPT Image Apr 19, 2025, 03_37_35 PM.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://c1aajhdbbdlq7" path="res://assets/image/RamboCharacter/BackGround .png" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_bqqt6"]
 
 [sub_resource type="Theme" id="Theme_wu84c"]
 default_font = ExtResource("3_bqqt6")
+default_font_size = 200
 Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 
 [sub_resource type="Theme" id="Theme_bqqt6"]
@@ -23,10 +23,6 @@ Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 default_font = ExtResource("3_bqqt6")
 default_font_size = 50
 Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
-
-[sub_resource type="Theme" id="Theme_8ln24"]
-default_font = ExtResource("3_bqqt6")
-Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -49,53 +45,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 4.0
 offset_bottom = -1.0
-texture = ExtResource("1_ekxnf")
+texture = ExtResource("2_bqqt6")
 expand_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BG"]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.567
-offset_right = -128.0
-offset_bottom = 8.58398
-scale = Vector2(0.494124, 0.634749)
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/BG/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("1_l6cm7")
 
 [node name="Titles&Buttons" type="Node" parent="CanvasLayer"]
 
 [node name="TitleContainer" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 anchors_preset = -1
-anchor_left = 0.728
-anchor_top = 0.122
-anchor_right = 0.728
-anchor_bottom = 0.122
-offset_left = -116.656
-offset_top = -64.056
-offset_right = 499.344
-offset_bottom = 27.944
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 28.0
+offset_right = -137.0
+offset_bottom = -322.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wu84c")
 
 [node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/TitleContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 150
-text = "Rambo"
+text = "ADVENTURE
+       TIME"
 
 [node name="ButtonsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
 anchors_preset = -1
-anchor_left = 0.679
-anchor_top = 0.465
-anchor_right = 0.679
-anchor_bottom = 0.465
-offset_left = -117.208
-offset_top = -69.32
-offset_right = 77.792
-offset_bottom = 63.68
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = 390.0
+offset_right = -379.0
+offset_bottom = -125.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -121,15 +101,13 @@ text = "MENU_LABEL_QUIT"
 [node name="SettingsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = -1
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 123.0
-offset_top = -256.0
-offset_right = 243.0
-offset_bottom = -151.0
+offset_left = 520.0
+offset_top = 472.0
+offset_right = -512.0
+offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -153,25 +131,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = SubResource("Theme_oa1go")
 text = "Save"
-
-[node name="TrilogyContianer" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
-anchors_preset = -1
-anchor_left = 0.773
-anchor_top = 0.914
-anchor_right = 0.773
-anchor_bottom = 0.914
-offset_left = -333.496
-offset_top = -46.272
-offset_right = 649.504
-offset_bottom = 39.728
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/Titles&Buttons/TrilogyContianer"]
-layout_mode = 2
-theme = SubResource("Theme_8ln24")
-theme_override_font_sizes/font_size = 150
-text = "TRIOLOGY_LABEL"
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
