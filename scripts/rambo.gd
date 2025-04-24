@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var speed = 300.0  # Movement speed in pixels per second
-@export var acceleration = 2000.0  # How fast the character accelerates
-@export var friction = 2000.0  # How fast the character slows down
+@export var acceleration = 1500.0  # How fast the character accelerates
+@export var friction = 1500.0  # How fast the character slows down
 var facing_direction = "down"
 var is_moving = false
 func _physics_process(delta):
@@ -42,39 +42,39 @@ func update_facing_direction(direction):
 		if direction.x > 0 and direction.y < 0:
 			facing_direction = "top_right"
 			%RamboAnimatedSprite2D.play("runtopleft")
-			%RamboAnimatedSprite2D.scale = Vector2(-0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(-15, 15)
 		elif direction.x < 0 and direction.y < 0:
 			facing_direction = "top_left"
 			%RamboAnimatedSprite2D.play("runtopleft")
-			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		elif direction.x > 0 and direction.y > 0:
 			facing_direction = "bottom_right"
 			%RamboAnimatedSprite2D.play("rundownleft")
-			%RamboAnimatedSprite2D.scale = Vector2(-0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(-15, 15)
 		elif direction.x < 0 and direction.y > 0:
 			facing_direction = "bottom_left"
 			%RamboAnimatedSprite2D.play("rundownleft")
-			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 	elif abs(direction.x) > abs(direction.y):
 		# Horizontal movement is dominant
 		if direction.x > 0:
 			facing_direction = "right"
 			%RamboAnimatedSprite2D.play("runsideways")
-			%RamboAnimatedSprite2D.scale = Vector2(-0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(-15, 15)
 		else:
 			facing_direction = "left"
 			%RamboAnimatedSprite2D.play("runsideways")
-			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 	else:
 		# Vertical movement is dominant
 		if direction.y > 0:
 			facing_direction = "down"
 			%RamboAnimatedSprite2D.play("rundown")
-			%RamboAnimatedSprite2D.scale = Vector2(0.30, 0.30)
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		else:
 			facing_direction = "up"
 			%RamboAnimatedSprite2D.play("runup")
-			%RamboAnimatedSprite2D.scale = Vector2(0.27, 0.27)
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 			
 func play_idle_animation():
 	# Stop any currently playing animation
@@ -88,18 +88,26 @@ func play_idle_animation():
 	# Select the correct frame based on facing direction
 	match facing_direction:
 		"right":
-			%RamboAnimatedSprite2D.frame = 3
+			%RamboAnimatedSprite2D.play("idleright")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"left":
-			%RamboAnimatedSprite2D.frame = 2
+			%RamboAnimatedSprite2D.play("idleleft")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"down":
-			%RamboAnimatedSprite2D.frame = 0
+			%RamboAnimatedSprite2D.play("idledown")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"up":
-			%RamboAnimatedSprite2D.frame = 1
+			%RamboAnimatedSprite2D.play("idleup")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"top_right":
-			%RamboAnimatedSprite2D.frame = 5
+			%RamboAnimatedSprite2D.play("idleupright")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"top_left":
-			%RamboAnimatedSprite2D.frame = 4
+			%RamboAnimatedSprite2D.play("idleupleft")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"bottom_right":
-			%RamboAnimatedSprite2D.frame = 7
+			%RamboAnimatedSprite2D.play("idleright")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"bottom_left":
-			%RamboAnimatedSprite2D.frame = 6
+			%RamboAnimatedSprite2D.play("idleleft")
+			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
