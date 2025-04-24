@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccl5ngq8fw4o3"
-path="res://.godot/imported/run_down_left.png-c7e26f8ad794352fc8f404e2f122f9c3.ctex"
+uid="uid://vgvqtn8hjkxj"
+path="res://.godot/imported/run_top_left.png-719d73a341e397883fe0e6dd8dee4b7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/rambo-animation/run_down_left.png"
-dest_files=["res://.godot/imported/run_down_left.png-c7e26f8ad794352fc8f404e2f122f9c3.ctex"]
+source_file="res://assets/characters/rambo-animation/run_top_left.png"
+dest_files=["res://.godot/imported/run_top_left.png-719d73a341e397883fe0e6dd8dee4b7c.ctex"]
 
 [params]
 
