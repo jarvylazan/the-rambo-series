@@ -4,7 +4,18 @@ extends CharacterBody2D
 @export var friction = 1500.0  # How fast the character slows down
 var facing_direction = "down"
 var is_moving = false
+var is_attacking = false
+
 func _physics_process(delta):
+	# Handle attack input first
+	if Input.is_action_just_pressed("Melee") and not is_attacking:
+		is_attacking = true
+		play_attack_animation()
+		# You may want to add a timer to reset is_attacking after animation finishes
+		await get_tree().create_timer(0.5).timeout
+		is_attacking = false
+		return # Skip movement during attack animation
+		
 	# Get input direction
 	var input_direction = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
@@ -36,6 +47,10 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func update_facing_direction(direction):
+	# Skip animation updates if attacking
+	if is_attacking:
+		return
+		
 	# Check for diagonal movement first
 	if abs(direction.x) > 0.3 and abs(direction.y) > 0.3:
 		# Handle diagonal directions
@@ -77,37 +92,51 @@ func update_facing_direction(direction):
 			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 			
 func play_idle_animation():
-	# Stop any currently playing animation
-	%RamboAnimatedSprite2D.stop()
-	
-	# Set the animation to "idles"
-	%RamboAnimatedSprite2D.animation = "idles"
-	%RamboAnimatedSprite2D.scale = Vector2(1, 1)
-
-	
-	# Select the correct frame based on facing direction
+	# Skip animation updates if attacking
+	if is_attacking:
+		return
+		
+	# Match the correct animation based on facing direction
 	match facing_direction:
 		"right":
 			%RamboAnimatedSprite2D.play("idleright")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"left":
 			%RamboAnimatedSprite2D.play("idleleft")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"down":
 			%RamboAnimatedSprite2D.play("idledown")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"up":
 			%RamboAnimatedSprite2D.play("idleup")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"top_right":
 			%RamboAnimatedSprite2D.play("idleupright")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"top_left":
 			%RamboAnimatedSprite2D.play("idleupleft")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"bottom_right":
 			%RamboAnimatedSprite2D.play("idleright")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 		"bottom_left":
 			%RamboAnimatedSprite2D.play("idleleft")
-			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
+	
+	# Make sure scale is consistent
+	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
+
+func play_attack_animation():
+	# Play attack animation based on current facing direction
+	match facing_direction:
+		"right":
+			%RamboAnimatedSprite2D.play("spearright")
+		"left":
+			%RamboAnimatedSprite2D.play("spearleft")
+		"down":
+			%RamboAnimatedSprite2D.play("speardown")
+		"up":
+			%RamboAnimatedSprite2D.play("spearup")
+		"top_right":
+			%RamboAnimatedSprite2D.play("spearupright")
+		"top_left":
+			%RamboAnimatedSprite2D.play("spearupleft")
+		"bottom_right":
+			%RamboAnimatedSprite2D.play("spearright")
+		"bottom_left":
+			%RamboAnimatedSprite2D.play("spearleft")
+			
+	# Make sure scale is consistent
+	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
