@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/rambo.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://bqasyqwdyxeqk" path="res://assets/characters/rambo-animation/run_sideways.png" id="3_kav23"]
 [ext_resource type="Texture2D" uid="uid://byon4tmb4x185" path="res://assets/characters/rambo-animation/run_down.png" id="3_pqdxo"]
-[ext_resource type="Texture2D" uid="uid://bmg4ndco08xul" path="res://assets/characters/rambo-animation/run_down_left.png" id="4_wr3j0"]
+[ext_resource type="Texture2D" uid="uid://ccl5ngq8fw4o3" path="res://assets/characters/rambo-animation/run_down_left.png" id="4_wr3j0"]
 [ext_resource type="Texture2D" uid="uid://ckmqqrq1wvai2" path="res://assets/characters/rambo-animation/run_up.png" id="5_pyj65"]
 [ext_resource type="Texture2D" uid="uid://crxouqujhbo0w" path="res://assets/characters/rambo-animation/run_top_right.png" id="5_wx35l"]
 
@@ -271,22 +271,26 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i8mc"]
-radius = 66.0
-height = 148.0
+radius = 89.0
+height = 178.0
 
 [node name="Node2D" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(4, -244)
 script = ExtResource("1_ij0mf")
 
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, 117)
 sprite_frames = SubResource("SpriteFrames_abj65")
 animation = &"idles"
 autoplay = "idle"
+offset = Vector2(0, -15)
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
 root_node = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 102)
+position = Vector2(-8, 204)
 shape = SubResource("CapsuleShape2D_5i8mc")
