@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://c1aajhdbbdlq7" path="res://assets/image/RamboCharacter/BackGround .png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c1aajhdbbdlq7" path="res://assets/image/main_menu/BackGround .png" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_bqqt6"]
 
 [sub_resource type="Theme" id="Theme_wu84c"]
