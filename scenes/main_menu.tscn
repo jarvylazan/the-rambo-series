@@ -60,14 +60,14 @@ expand_mode = 1
 [node name="TitleContainer" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 160.0
-offset_top = 28.0
-offset_right = -137.0
-offset_bottom = -322.0
+anchor_left = 0.582
+anchor_right = 0.695
+anchor_bottom = 0.137
+offset_left = -515.464
+offset_top = 31.0
+offset_right = 384.36
+offset_bottom = 57.224
 grow_horizontal = 2
-grow_vertical = 2
 theme = SubResource("Theme_wu84c")
 
 [node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/TitleContainer"]
@@ -77,14 +77,16 @@ text = "TITLE_LABEL"
 [node name="ButtonsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 411.0
-offset_top = 390.0
-offset_right = -379.0
-offset_bottom = -125.0
-grow_horizontal = 0
-grow_vertical = 0
+anchor_left = 0.454
+anchor_top = 0.9
+anchor_right = 0.616
+anchor_bottom = 0.935
+offset_left = -112.008
+offset_top = -193.2
+offset_right = 63.3679
+offset_bottom = -82.8801
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Titles&Buttons/ButtonsMenu"]
 layout_mode = 2
@@ -108,7 +110,7 @@ text = "MENU_LABEL_QUIT"
 [node name="SettingsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 25.0
@@ -145,7 +147,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_oa1go")
-text = "Save"
+text = "MENU_IO_SAVE"
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
