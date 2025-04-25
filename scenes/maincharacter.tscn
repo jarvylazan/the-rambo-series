@@ -621,7 +621,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleleft",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -650,7 +650,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleright",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -679,7 +679,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleup",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -708,7 +708,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleupleft",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -737,7 +737,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleupright",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -766,7 +766,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"rundown",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -795,7 +795,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"rundownleft",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -824,7 +824,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runsideways",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -853,7 +853,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runtopleft",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -882,7 +882,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runup",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -911,7 +911,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"speardown",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -940,7 +940,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spearleft",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -969,7 +969,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spearright",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -998,7 +998,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spearup",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1071,9 +1071,9 @@ script = ExtResource("1_ij0mf")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"spearright"
+animation = &"rundown"
 autoplay = "idledown"
-frame_progress = 0.518249
+frame_progress = 0.176033
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
