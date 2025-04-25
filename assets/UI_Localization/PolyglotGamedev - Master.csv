@@ -655,4 +655,6 @@ EXIT_GAME,,EXIT GAME,QUITTER LE JOUE,,,,,,,,,,,,,,,,,,,,,,,,,,
 GAME_RESTART,,RESTART,RECOMMENCER,,,,,,,,,,,,,,,,,,,,,,,,,,
 MAIN_MENU,,MAIN MENU,MENUE PRINCIPAL,,,,,,,,,,,,,,,,,,,,,,,,,,
 TRIOLOGY_LABEL,,TRILOGY,TRILOGIE,,,,,,,,,,,,,,,,,,,,,,,,,,
-TITLE_LABEL,,THE RAMBO,RAMBO,,,,,,,,,,,,,,,,,,,,,,,,,,
+TITLE_LABEL,,"ADVENTURE
+       TIME","AVENTURE
+    HEURE",,,,,,,,,,,,,,,,,,,,,,,,,,

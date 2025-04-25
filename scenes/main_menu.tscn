@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=9 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://c1aajhdbbdlq7" path="res://assets/image/RamboCharacter/BackGround .png" id="2_bqqt6"]
@@ -13,6 +13,11 @@ Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 default_font = ExtResource("3_bqqt6")
 default_font_size = 50
 Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8ln24"]
+default_font = ExtResource("3_bqqt6")
+default_font_size = 140
+Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
 
 [sub_resource type="Theme" id="Theme_rtw2f"]
 default_font = ExtResource("3_bqqt6")
@@ -45,12 +50,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 4.0
 offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_bqqt6")
 expand_mode = 1
 
 [node name="Titles&Buttons" type="Node" parent="CanvasLayer"]
 
 [node name="TitleContainer" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,8 +72,7 @@ theme = SubResource("Theme_wu84c")
 
 [node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/TitleContainer"]
 layout_mode = 2
-text = "ADVENTURE
-       TIME"
+text = "TITLE_LABEL"
 
 [node name="ButtonsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
@@ -104,16 +111,23 @@ visible = false
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 520.0
-offset_top = 472.0
-offset_right = -512.0
-offset_bottom = -71.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_top = 25.0
+offset_right = 3.0
+offset_bottom = 6.0
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_8ln24")
+text = "OPTIONS
+"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = SubResource("Theme_rtw2f")
 theme_override_constants/separation = 10
 
@@ -125,10 +139,11 @@ text = "EN"
 layout_mode = 2
 text = "FR"
 
-[node name="Label" type="Button" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
+[node name="SaveButton" type="Button" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_oa1go")
 text = "Save"
 
@@ -137,4 +152,4 @@ text = "Save"
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/Label" to="." method="_on_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/SaveButton" to="." method="_on_save_button_pressed"]
