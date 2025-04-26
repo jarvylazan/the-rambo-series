@@ -1071,9 +1071,8 @@ script = ExtResource("1_ij0mf")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"rundown"
+animation = &"rundownleft"
 autoplay = "idledown"
-frame_progress = 0.176033
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true

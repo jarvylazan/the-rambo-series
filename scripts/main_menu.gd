@@ -6,7 +6,7 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.change_scene("res://scenes/forest_level_2.tscn", {
+	SceneManager.change_scene("res://scenes/tutorial_level_1.tscn", {
 		"speed": 5,
 		"pattern": "scribbles",
 	})
