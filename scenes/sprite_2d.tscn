@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=4 uid="uid://c5ghsc58j3i82"]
+
+[ext_resource type="Texture2D" uid="uid://41heapi3oas8" path="res://assets/image/main_menu/Screenshot 2025-04-26 181911.png" id="1_0daxb"]
+[ext_resource type="PackedScene" uid="uid://deur1k635kbrq" path="res://scenes/maincharacter.tscn" id="2_h2p1k"]
+[ext_resource type="Texture2D" uid="uid://2ws6d52x2g88" path="res://assets/image/tilemap_block/level 1/tile big treev2.png" id="2_k8p51"]
+[ext_resource type="Texture2D" uid="uid://64656wmki336" path="res://assets/image/tilemap_block/level 1/tile tall tree.png" id="3_mysbt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0sl0a"]
+texture = ExtResource("2_k8p51")
+texture_region_size = Vector2i(64, 64)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xec8w"]
+texture = ExtResource("3_mysbt")
+texture_region_size = Vector2i(64, 128)
+0:0/0 = 0
+0:0/0/y_sort_origin = 35
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.77369, 34.9974, 4.51579, 33.8684, 5.08027, 43.4645, -5.64474, 44.029)
+
+[sub_resource type="TileSet" id="TileSet_tmeuv"]
+tile_size = Vector2i(64, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0sl0a")
+sources/1 = SubResource("TileSetAtlasSource_xec8w")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8p51"]
+size = Vector2(1512, 139.75)
+
+[node name="Sprite2D" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(619, 314)
+texture = ExtResource("1_0daxb")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8/wAAAQAAAAAAAAD4////AQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAAAAP//AQAAAAAAAAAGAP//AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_tmeuv")
+
+[node name="Node2D" parent="." instance=ExtResource("2_h2p1k")]
+scale = Vector2(0.2, 0.2)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(62, -150.875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-37, 140.875)
+shape = SubResource("RectangleShape2D_k8p51")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 380.875)
+shape = SubResource("RectangleShape2D_k8p51")
