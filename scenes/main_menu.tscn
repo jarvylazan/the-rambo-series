@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=15 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dauqelcp2hrm4" path="res://assets/image/main_menu/parallax_layers/sky.png" id="2_bqqt6"]
@@ -7,31 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://co0hlg3ossiy8" path="res://assets/image/main_menu/parallax_layers/far-mountains.png" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://dogvwyv7iv5x0" path="res://assets/image/main_menu/parallax_layers/canyon.png" id="5_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://bsdqdfc7p5dha" path="res://assets/image/main_menu/parallax_layers/front.png" id="6_5dd4i"]
+[ext_resource type="Theme" uid="uid://cjhr8kmmfs2no" path="res://assets/fonts/label_theme.tres" id="6_jk1qb"]
+[ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="8_tbmy8"]
 
-[sub_resource type="Theme" id="Theme_wu84c"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.643137, 0.419608, 0.556863, 1)
+border_color = Color(0.364706, 0.168627, 0.278431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_5dd4i"]
 default_font = ExtResource("3_bqqt6")
-default_font_size = 200
-Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
+default_font_size = 150
 
-[sub_resource type="Theme" id="Theme_bqqt6"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 50
-Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
-
-[sub_resource type="Theme" id="Theme_8ln24"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 140
-Label/colors/font_color = Color(0.94902, 0.662745, 0, 1)
-
-[sub_resource type="Theme" id="Theme_rtw2f"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 50
-Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
-
-[sub_resource type="Theme" id="Theme_oa1go"]
+[sub_resource type="Theme" id="Theme_jk1qb"]
 default_font = ExtResource("3_bqqt6")
 default_font_size = 50
-Button/colors/font_color = Color(0.94902, 0.662745, 0, 1)
+Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+
+[sub_resource type="Theme" id="Theme_flqon"]
+default_font = ExtResource("3_bqqt6")
+default_font_size = 45
+Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+
+[sub_resource type="Theme" id="Theme_lgwnu"]
+default_font = ExtResource("3_bqqt6")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -83,7 +85,8 @@ texture = ExtResource("5_jk1qb")
 
 [node name="TitleContainer" type="MarginContainer" parent="ParallaxBackground"]
 unique_name_in_owner = true
-anchors_preset = -1
+visible = false
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 135.0
@@ -91,7 +94,7 @@ offset_top = 80.0
 offset_right = 143.176
 offset_bottom = -364.224
 grow_horizontal = 2
-theme = SubResource("Theme_wu84c")
+theme = ExtResource("6_jk1qb")
 
 [node name="Label" type="Label" parent="ParallaxBackground/TitleContainer"]
 layout_mode = 2
@@ -112,6 +115,7 @@ texture = ExtResource("6_5dd4i")
 
 [node name="ButtonsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = -1
 anchor_left = 0.454
 anchor_top = 0.9
@@ -128,7 +132,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_stretch_ratio = 2.21
-theme = SubResource("Theme_bqqt6")
+theme = ExtResource("8_tbmy8")
 theme_override_constants/separation = 11
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer"]
@@ -143,51 +147,60 @@ text = "MENU_OPTIONS"
 layout_mode = 2
 text = "MENU_LABEL_QUIT"
 
-[node name="SettingsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 25.0
-offset_right = 3.0
-offset_bottom = 6.0
-size_flags_vertical = 8
+[node name="OptionsPane" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 32.0
+offset_right = 834.0
+offset_bottom = 563.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
 
-[node name="Label" type="Label" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
+[node name="Label" type="Label" parent="OptionsPane"]
 layout_mode = 2
+offset_left = 31.0
+offset_top = 20.0
+offset_right = 687.0
+offset_bottom = 253.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = SubResource("Theme_8ln24")
+theme = SubResource("Theme_5dd4i")
+theme_override_colors/font_color = Color(1, 0.85098, 0.239216, 1)
 text = "OPTIONS
 "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
+[node name="FrButton" type="Button" parent="OptionsPane"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_rtw2f")
-theme_override_constants/separation = 10
-
-[node name="EnButton" type="Button" parent="CanvasLayer/Titles&Buttons/SettingsMenu/HBoxContainer"]
-layout_mode = 2
-text = "EN"
-
-[node name="FrButton" type="Button" parent="CanvasLayer/Titles&Buttons/SettingsMenu/HBoxContainer"]
-layout_mode = 2
+offset_left = 287.0
+offset_top = 138.0
+offset_right = 334.0
+offset_bottom = 172.0
+theme = SubResource("Theme_jk1qb")
 text = "FR"
 
-[node name="SaveButton" type="Button" parent="CanvasLayer/Titles&Buttons/SettingsMenu"]
+[node name="EnButton" type="Button" parent="OptionsPane"]
 layout_mode = 2
+offset_left = 219.0
+offset_top = 137.0
+offset_right = 269.0
+offset_bottom = 173.0
+theme = SubResource("Theme_flqon")
+text = "EN"
+
+[node name="SaveButton" type="Button" parent="OptionsPane"]
+layout_mode = 2
+offset_left = 116.0
+offset_top = 465.0
+offset_right = 401.0
+offset_bottom = 512.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 size_flags_stretch_ratio = 0.0
-theme = SubResource("Theme_oa1go")
+theme = SubResource("Theme_lgwnu")
 text = "MENU_IO_SAVE"
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Titles&Buttons/SettingsMenu/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="OptionsPane/FrButton" to="." method="_on_fr_button_pressed"]
+[connection signal="pressed" from="OptionsPane/EnButton" to="." method="_on_en_button_pressed"]
+[connection signal="pressed" from="OptionsPane/SaveButton" to="." method="_on_save_button_pressed"]

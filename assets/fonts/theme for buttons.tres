@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://phtncaa76ox1"]
+
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_el5k4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewovd"]
+bg_color = Color(0.960784, 0.870588, 0.701961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.85098, 0.239216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gugbo"]
+bg_color = Color(0.294118, 0.180392, 0.180392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inuuy"]
+bg_color = Color(0.164706, 0.0705882, 0.0705882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.270588, 0, 1)
+
+[resource]
+default_font = ExtResource("1_el5k4")
+default_font_size = 50
+Button/colors/font_color = Color(1, 0.85098, 0.239216, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.882353, 0.764706, 0.364706, 1)
+Button/fonts/font = ExtResource("1_el5k4")
+Button/styles/hover = SubResource("StyleBoxFlat_ewovd")
+Button/styles/normal = SubResource("StyleBoxFlat_gugbo")
+Button/styles/pressed = SubResource("StyleBoxFlat_inuuy")
