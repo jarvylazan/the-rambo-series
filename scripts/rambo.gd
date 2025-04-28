@@ -5,16 +5,30 @@ extends CharacterBody2D
 var facing_direction = "down"
 var is_moving = false
 var is_attacking = false
+var attack_animation_priority = true  # This gives attack animations priority
+
+func get_animation_duration(animation_name: String) -> float:
+	# Get the frame count
+	var frame_count = %RamboAnimatedSprite2D.sprite_frames.get_frame_count(animation_name)
+	
+	# Get the frame rate (frames per second)
+	var fps = %RamboAnimatedSprite2D.sprite_frames.get_animation_speed(animation_name)
+	
+	# Calculate duration in seconds
+	var duration = frame_count / float(fps)
+	
+	return duration
 
 func _physics_process(delta):
 	# Handle attack input first
 	if Input.is_action_just_pressed("Melee") and not is_attacking:
 		is_attacking = true
-		play_attack_animation()
-		# You may want to add a timer to reset is_attacking after animation finishes
-		await get_tree().create_timer(0.5).timeout
+		var anim_name = play_attack_animation()
+		
+		# Use the duration of the animation for the timer
+		var duration = get_animation_duration(anim_name)
+		await get_tree().create_timer(duration).timeout
 		is_attacking = false
-		return # Skip movement during attack animation
 		
 	# Get input direction
 	var input_direction = Vector2(
@@ -32,23 +46,26 @@ func _physics_process(delta):
 	# Handle acceleration and deceleration
 	if is_moving:
 		# Accelerate when there's input
-		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
+		var current_speed = speed * (0.35 if is_attacking else 1.0)  # 10% speed when attacking
+		velocity = velocity.move_toward(input_direction * current_speed, acceleration * delta)
 		
-		# Update facing direction and animation
-		update_facing_direction(input_direction)
+		# Update facing direction and animations only if not attacking
+		if not is_attacking or not attack_animation_priority:
+			update_facing_direction(input_direction)
 	else:
 		# Apply friction when there's no input
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 		
-		# Switch to idle animation when not moving
-		play_idle_animation()
+		# Switch to idle animation when not moving and not attacking
+		if not is_attacking or not attack_animation_priority:
+			play_idle_animation()
 	
 	# Move the character
 	move_and_slide()
 	
 func update_facing_direction(direction):
-	# Skip animation updates if attacking
-	if is_attacking:
+	# Skip animation updates if attacking with priority
+	if is_attacking and attack_animation_priority:
 		return
 		
 	# Check for diagonal movement first
@@ -92,8 +109,8 @@ func update_facing_direction(direction):
 			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 			
 func play_idle_animation():
-	# Skip animation updates if attacking
-	if is_attacking:
+	# Skip animation updates if attacking with priority
+	if is_attacking and attack_animation_priority:
 		return
 		
 	# Match the correct animation based on facing direction
@@ -118,25 +135,34 @@ func play_idle_animation():
 	# Make sure scale is consistent
 	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 
-func play_attack_animation():
-	# Play attack animation based on current facing direction
+func play_attack_animation() -> String:
+	# Variable to store animation name
+	var anim_name = ""
+	
+	# Determine attack animation based on current facing direction
 	match facing_direction:
 		"right":
-			%RamboAnimatedSprite2D.play("spearright")
+			anim_name = "spearright"
 		"left":
-			%RamboAnimatedSprite2D.play("spearleft")
+			anim_name = "spearleft"
 		"down":
-			%RamboAnimatedSprite2D.play("speardown")
+			anim_name = "speardown"
 		"up":
-			%RamboAnimatedSprite2D.play("spearup")
+			anim_name = "spearup"
 		"top_right":
-			%RamboAnimatedSprite2D.play("spearupright")
+			anim_name = "spearupright"
 		"top_left":
-			%RamboAnimatedSprite2D.play("spearupleft")
+			anim_name = "spearupleft"
 		"bottom_right":
-			%RamboAnimatedSprite2D.play("spearright")
+			anim_name = "speardownright"
 		"bottom_left":
-			%RamboAnimatedSprite2D.play("spearleft")
+			anim_name = "speardownleft"
 			
+	# Play the animation
+	%RamboAnimatedSprite2D.play(anim_name)
+	
 	# Make sure scale is consistent
 	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
+	
+	# Return the animation name so we can get its duration
+	return anim_name
