@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 Melee={

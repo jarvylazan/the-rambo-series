@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brkqw3bgromfq"
-path="res://.godot/imported/Tropical Forest first layer.png-3316121aa6a1a3562349093f96460381.ctex"
+uid="uid://dogvwyv7iv5x0"
+path="res://.godot/imported/canyon.png-a3cd32799bb8ee8761ab7717b1e65f1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/image/main_menu/parallax/Tropical Forest first layer.png"
-dest_files=["res://.godot/imported/Tropical Forest first layer.png-3316121aa6a1a3562349093f96460381.ctex"]
+source_file="res://assets/image/main_menu/parallax_layers/canyon.png"
+dest_files=["res://.godot/imported/canyon.png-a3cd32799bb8ee8761ab7717b1e65f1d.ctex"]
 
 [params]
 
