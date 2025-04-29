@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=14 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dauqelcp2hrm4" path="res://assets/image/main_menu/parallax_layers/sky.png" id="2_bqqt6"]
@@ -18,22 +18,20 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="Theme" id="Theme_5dd4i"]
+[sub_resource type="Theme" id="Theme_flqon"]
 default_font = ExtResource("3_bqqt6")
-default_font_size = 150
+default_font_size = 45
+Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
 
 [sub_resource type="Theme" id="Theme_jk1qb"]
 default_font = ExtResource("3_bqqt6")
 default_font_size = 50
 Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
 
-[sub_resource type="Theme" id="Theme_flqon"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 45
-Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
-
 [sub_resource type="Theme" id="Theme_lgwnu"]
 default_font = ExtResource("3_bqqt6")
+default_font_size = 40
+Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -47,6 +45,7 @@ grow_vertical = 2
 script = ExtResource("1_wu84c")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
 repeat_size = Vector2(1152, 0)
@@ -85,7 +84,6 @@ texture = ExtResource("5_jk1qb")
 
 [node name="TitleContainer" type="MarginContainer" parent="ParallaxBackground"]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -149,51 +147,115 @@ text = "MENU_LABEL_QUIT"
 
 [node name="OptionsPane" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 285.0
-offset_top = 32.0
-offset_right = 834.0
-offset_bottom = 563.0
+offset_left = 282.0
+offset_top = 31.0
+offset_right = 831.0
+offset_bottom = 562.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
 
-[node name="Label" type="Label" parent="OptionsPane"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPane"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsPane/VBoxContainer"]
 layout_mode = 2
-offset_left = 31.0
-offset_top = 20.0
-offset_right = 687.0
-offset_bottom = 253.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
-theme = SubResource("Theme_5dd4i")
-theme_override_colors/font_color = Color(1, 0.85098, 0.239216, 1)
+theme = ExtResource("6_jk1qb")
+theme_override_constants/line_spacing = -70
+theme_override_font_sizes/font_size = 150
 text = "OPTIONS
 "
 
-[node name="FrButton" type="Button" parent="OptionsPane"]
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsPane/VBoxContainer"]
 layout_mode = 2
-offset_left = 287.0
-offset_top = 138.0
-offset_right = 334.0
-offset_bottom = 172.0
-theme = SubResource("Theme_jk1qb")
-text = "FR"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 24
 
-[node name="EnButton" type="Button" parent="OptionsPane"]
+[node name="EnButton" type="Button" parent="OptionsPane/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 219.0
-offset_top = 137.0
-offset_right = 269.0
-offset_bottom = 173.0
 theme = SubResource("Theme_flqon")
 text = "EN"
 
+[node name="FrButton" type="Button" parent="OptionsPane/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_jk1qb")
+text = "FR"
+
+[node name="MasterSetting" type="HBoxContainer" parent="OptionsPane"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 181.0
+offset_right = 485.0
+offset_bottom = 221.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsPane/MasterSetting"]
+layout_mode = 2
+theme = ExtResource("6_jk1qb")
+theme_override_font_sizes/font_size = 50
+text = "MASTER"
+
+[node name="HSlider" type="HSlider" parent="OptionsPane/MasterSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
+[node name="MusicSetting" type="HBoxContainer" parent="OptionsPane"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 247.0
+offset_right = 484.0
+offset_bottom = 270.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsPane/MusicSetting"]
+layout_mode = 2
+theme = ExtResource("6_jk1qb")
+theme_override_font_sizes/font_size = 50
+text = "MUSIC"
+
+[node name="HSlider" type="HSlider" parent="OptionsPane/MusicSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
+[node name="SFXSetting" type="HBoxContainer" parent="OptionsPane"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 285.0
+offset_right = 482.0
+offset_bottom = 325.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="OptionsPane/SFXSetting"]
+layout_mode = 2
+theme = ExtResource("6_jk1qb")
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="OptionsPane/SFXSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
 [node name="SaveButton" type="Button" parent="OptionsPane"]
 layout_mode = 2
-offset_left = 116.0
-offset_top = 465.0
-offset_right = 401.0
-offset_bottom = 512.0
+offset_left = 158.0
+offset_top = 485.0
+offset_right = 391.0
+offset_bottom = 517.0
 size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_lgwnu")
 text = "MENU_IO_SAVE"
@@ -201,6 +263,6 @@ text = "MENU_IO_SAVE"
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="OptionsPane/FrButton" to="." method="_on_fr_button_pressed"]
-[connection signal="pressed" from="OptionsPane/EnButton" to="." method="_on_en_button_pressed"]
+[connection signal="pressed" from="OptionsPane/VBoxContainer/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
+[connection signal="pressed" from="OptionsPane/VBoxContainer/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
 [connection signal="pressed" from="OptionsPane/SaveButton" to="." method="_on_save_button_pressed"]
