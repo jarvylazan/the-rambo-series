@@ -5,6 +5,7 @@ extends CharacterBody2D
 var facing_direction = "down"
 var is_moving = false
 var is_attacking = false
+var is_shooting = false
 var attack_animation_priority = true  # This gives attack animations priority
 
 func get_animation_duration(animation_name: String) -> float:
@@ -20,8 +21,16 @@ func get_animation_duration(animation_name: String) -> float:
 	return duration
 
 func _physics_process(delta):
-	# Handle attack input first
-	if Input.is_action_just_pressed("Melee") and not is_attacking:
+	# Handle attack inputs first, prioritizing shooting over melee if both pressed simultaneously
+	if Input.is_action_just_pressed("Shoot") and not is_attacking and not is_shooting:
+		is_shooting = true
+		var anim_name = play_shoot_animation()
+		
+		# Use the duration of the animation for the timer
+		var duration = get_animation_duration(anim_name)
+		await get_tree().create_timer(duration).timeout
+		is_shooting = false
+	elif Input.is_action_just_pressed("Melee") and not is_attacking and not is_shooting:
 		is_attacking = true
 		var anim_name = play_attack_animation()
 		
@@ -46,26 +55,26 @@ func _physics_process(delta):
 	# Handle acceleration and deceleration
 	if is_moving:
 		# Accelerate when there's input
-		var current_speed = speed * (0.35 if is_attacking else 1.0)  # 10% speed when attacking
+		var current_speed = speed * (0.35 if (is_attacking or is_shooting) else 1.0)  # Reduced speed during actions
 		velocity = velocity.move_toward(input_direction * current_speed, acceleration * delta)
 		
-		# Update facing direction and animations only if not attacking
-		if not is_attacking or not attack_animation_priority:
+		# Update facing direction and animations only if not in an action
+		if not (is_attacking or is_shooting) or not attack_animation_priority:
 			update_facing_direction(input_direction)
 	else:
 		# Apply friction when there's no input
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 		
-		# Switch to idle animation when not moving and not attacking
-		if not is_attacking or not attack_animation_priority:
+		# Switch to idle animation when not moving and not in an action
+		if not (is_attacking or is_shooting) or not attack_animation_priority:
 			play_idle_animation()
 	
 	# Move the character
 	move_and_slide()
 	
 func update_facing_direction(direction):
-	# Skip animation updates if attacking with priority
-	if is_attacking and attack_animation_priority:
+	# Skip animation updates if in an action with priority
+	if (is_attacking or is_shooting) and attack_animation_priority:
 		return
 		
 	# Check for diagonal movement first
@@ -109,8 +118,8 @@ func update_facing_direction(direction):
 			%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 			
 func play_idle_animation():
-	# Skip animation updates if attacking with priority
-	if is_attacking and attack_animation_priority:
+	# Skip animation updates if in an action with priority
+	if (is_attacking or is_shooting) and attack_animation_priority:
 		return
 		
 	# Match the correct animation based on facing direction
@@ -157,6 +166,38 @@ func play_attack_animation() -> String:
 			anim_name = "speardownright"
 		"bottom_left":
 			anim_name = "speardownleft"
+			
+	# Play the animation
+	%RamboAnimatedSprite2D.play(anim_name)
+	
+	# Make sure scale is consistent
+	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
+	
+	# Return the animation name so we can get its duration
+	return anim_name
+
+func play_shoot_animation() -> String:
+	# Variable to store animation name
+	var anim_name = ""
+	
+	# Determine shoot animation based on current facing direction
+	match facing_direction:
+		"right":
+			anim_name = "gunright"
+		"left":
+			anim_name = "gunleft"
+		"down":
+			anim_name = "gundown"
+		"up":
+			anim_name = "gunup"
+		"top_right":
+			anim_name = "gunupright"
+		"top_left":
+			anim_name = "gunupleft"
+		"bottom_right":
+			anim_name = "gundownright"
+		"bottom_left":
+			anim_name = "gundownleft"
 			
 	# Play the animation
 	%RamboAnimatedSprite2D.play(anim_name)
