@@ -1,4 +1,4 @@
-[gd_scene load_steps=247 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=249 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/rambo.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -895,6 +895,46 @@ region = Rect2(336, 0, 48, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_abj65"]
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"agunrundown",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"agunrundownleft",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"agunrundownright",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"agunrunleft",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"agunrunright",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"agunrunup",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"agunrunupleft",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"agunrunupright",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_emgyr")
@@ -920,9 +960,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gqsh7")
 }],
-"loop": true,
+"loop": false,
 "name": &"gundown",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -949,9 +989,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r3cij")
 }],
-"loop": true,
+"loop": false,
 "name": &"gundownleft",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -978,9 +1018,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5i2oj")
 }],
-"loop": true,
+"loop": false,
 "name": &"gundownright",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1007,9 +1047,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wnhbr")
 }],
-"loop": true,
+"loop": false,
 "name": &"gunleft",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1038,7 +1078,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"gunright",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1065,9 +1105,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t6kxl")
 }],
-"loop": true,
+"loop": false,
 "name": &"gunup",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1094,9 +1134,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0u0h5")
 }],
-"loop": true,
+"loop": false,
 "name": &"gunupleft",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1123,9 +1163,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_snm0b")
 }],
-"loop": true,
+"loop": false,
 "name": &"gunupright",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1679,6 +1719,14 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_ciayf"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oukho"]
+_data = {
+&"new_animation": SubResource("Animation_ciayf")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i8mc"]
 radius = 72.0
 height = 178.0
@@ -1691,12 +1739,15 @@ script = ExtResource("1_ij0mf")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"spearupright"
+animation = &"idledown"
 autoplay = "idledown"
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
 root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_oukho")
+}
 
 [node name="EnvironmentCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 92)
