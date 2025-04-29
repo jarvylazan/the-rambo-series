@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://djt6vupnhse1o"]
+
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="1_ejwvi"]
+[ext_resource type="Texture2D" uid="uid://bx1rs6rdg3ap5" path="res://assets/Items/2D health & ammor/32px/ammo-pistol-alt 32px.png" id="2_vbeb6"]
+
+[resource]
+script = ExtResource("1_ejwvi")
+name = "ammo"
+texture = ExtResource("2_vbeb6")
+metadata/_custom_type_script = "uid://cho0oo0tgufqt"
