@@ -1,0 +1,24 @@
+forest :
+https://elthen.itch.io/2d-pixel-art-swampling-sprites
+https://elthen.itch.io/leafy-le
+https://elthen.itch.io/2d-pixel-art-twig-blight
+https://elthen.itch.io/pixel-art-dwarf-sprites
+https://elthen.itch.io/2d-pixel-art-goblin-king-sprites (boss)
+
+desert :
+https://elthen.itch.io/intellect-devourer
+https://elthen.itch.io/2d-pixel-art-akaname
+https://elthen.itch.io/2d-pixel-art-kobold-priest-sprites
+https://elthen.itch.io/2d-pixel-art-cobra-sprites
+https://elthen.itch.io/2d-pixel-art-minotaur-sprites (boss)
+
+dungeon :
+https://elthen.itch.io/2d-pixel-art-shardsoul-slayer-sprites
+https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites
+https://elthen.itch.io/2d-pixel-art-ratfolk-mage-sprites
+https://elthen.itch.io/2d-pixel-art-ratfolk-axe-sprites
+https://elthen.itch.io/2d-pixel-art-ghoul-sprites
+https://elthen.itch.io/2d-pixel-art-cyclops-sprites (boss)
+
+adventurer :
+https://elthen.itch.io/2d-pixel-art-archaeologist
