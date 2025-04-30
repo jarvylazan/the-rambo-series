@@ -17,8 +17,17 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_level_two_button_pressed() -> void:
-	pass # Replace with function body.
+	SceneManager.change_scene("res://scenes/forest_level_2.tscn",{
+		"speed": 5,
+		"pattern": "scribbles",
+	})
 
 
 func _on_level_three_button_pressed() -> void:
+	SceneManager.change_scene("res://scenes/Labyrinth_Level3.tscn",{
+		"speed": 5,
+		"pattern": "scribbles",
+	})
+
+func _on_level_four_button_pressed() -> void:
 	pass # Replace with function body.
