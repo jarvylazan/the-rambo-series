@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=3 uid="uid://lxxnjhghv4o4"]
+
+[ext_resource type="Texture2D" uid="uid://djh17x2a14doi" path="res://assets/image/selection_levels_Layers/sky.png" id="1_k8hw1"]
+[ext_resource type="Texture2D" uid="uid://c1lwa4tv6twef" path="res://assets/image/selection_levels_Layers/far-clouds.png" id="2_wlnfj"]
+[ext_resource type="Texture2D" uid="uid://rwmv7oayn420" path="res://assets/image/selection_levels_Layers/near-clouds.png" id="3_t1aej"]
+[ext_resource type="Texture2D" uid="uid://b3pi7uaeim2eq" path="res://assets/image/selection_levels_Layers/mountains.png" id="4_t1aej"]
+[ext_resource type="Texture2D" uid="uid://dde56xvch6cv7" path="res://assets/image/selection_levels_Layers/trees.png" id="5_mrc68"]
+[ext_resource type="Texture2D" uid="uid://do181tkcvrljo" path="res://assets/image/main_menu/Merlin sage mage.png" id="6_call8"]
+[ext_resource type="Texture2D" uid="uid://e3bchdfdk8b4" path="res://assets/image/screenshotsForLevels/Screenshot 1.png" id="7_ckkj5"]
+[ext_resource type="Script" uid="uid://cfy1su0vw8cuy" path="res://scripts/levels.gd" id="7_gow0a"]
+[ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="8_jh25w"]
+[ext_resource type="Texture2D" uid="uid://c8njs8pmur8vk" path="res://assets/image/screenshotsForLevels/Screenshot 2.png" id="9_4g5kd"]
+[ext_resource type="Texture2D" uid="uid://cifoug06d5jdy" path="res://assets/image/screenshotsForLevels/Screenshot 3.png" id="10_gow0a"]
+[ext_resource type="Texture2D" uid="uid://c8ilrrf7447wi" path="res://assets/image/screenshotsForLevels/Screenshot 4.png" id="11_jw4xm"]
+
+[node name="Levels" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+position = Vector2(576, 322)
+scale = Vector2(3.6, 2.69167)
+texture = ExtResource("1_k8hw1")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(-100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
+position = Vector2(576, 329.5)
+scale = Vector2(9, 2.65417)
+texture = ExtResource("2_wlnfj")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(-150, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
+position = Vector2(576, 340.5)
+scale = Vector2(8, 2.30417)
+texture = ExtResource("3_t1aej")
+
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
+position = Vector2(576, 391)
+scale = Vector2(3.6, 2.15833)
+texture = ExtResource("4_t1aej")
+
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
+position = Vector2(575.5, 391)
+scale = Vector2(4.79583, 2.15833)
+texture = ExtResource("5_mrc68")
+
+[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D6"]
+position = Vector2(1024.97, 482.25)
+scale = Vector2(0.247984, 0.324707)
+texture = ExtResource("6_call8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.002
+anchor_bottom = 1.008
+offset_right = -0.304077
+offset_bottom = -0.184021
+script = ExtResource("7_gow0a")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.231
+anchor_bottom = 0.738
+offset_left = 478.0
+offset_top = -124.5
+offset_right = 441.426
+offset_bottom = -120.914
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("7_ckkj5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LevelOneButton" type="Button" parent="CanvasLayer/Control/MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -61.0
+offset_right = 102.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_jh25w")
+theme_override_font_sizes/font_size = 30
+text = "LEVEL_1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.231
+anchor_bottom = 0.738
+offset_left = 62.0
+offset_top = 53.5
+offset_right = 25.426
+offset_bottom = 57.086
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("9_4g5kd")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LevelTwoButton" type="Button" parent="CanvasLayer/Control/MarginContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -54.5
+offset_right = 73.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_jh25w")
+theme_override_font_sizes/font_size = 30
+text = "LEVEL_2"
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.231
+anchor_bottom = 0.738
+offset_left = 348.0
+offset_top = 55.5
+offset_right = 311.426
+offset_bottom = 59.086
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer3"]
+layout_mode = 2
+texture = ExtResource("10_gow0a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LevelThreeButton" type="Button" parent="CanvasLayer/Control/MarginContainer3/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -51.5
+offset_right = 84.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_jh25w")
+theme_override_font_sizes/font_size = 30
+text = "LEVEL_3"
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.231
+anchor_bottom = 0.738
+offset_left = 679.0
+offset_top = 56.5
+offset_right = 642.426
+offset_bottom = 60.086
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer4"]
+layout_mode = 2
+texture = ExtResource("11_jw4xm")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LevelFourButton" type="Button" parent="CanvasLayer/Control/MarginContainer4/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -51.5
+offset_right = 79.0
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_jh25w")
+theme_override_font_sizes/font_size = 30
+text = "LEVEL_4"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.9999
+offset_top = -67.0
+offset_right = 52.0001
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_jh25w")
+text = "MAIN_MENU"
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TextureRect/LevelOneButton" to="CanvasLayer/Control" method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer2/TextureRect/LevelTwoButton" to="CanvasLayer/Control" method="_on_level_two_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer3/TextureRect/LevelThreeButton" to="CanvasLayer/Control" method="_on_level_three_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer4/TextureRect/LevelFourButton" to="CanvasLayer/Control" method="_on_level_four_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/BackButton" to="CanvasLayer/Control" method="_on_back_button_pressed"]
