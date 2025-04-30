@@ -24,7 +24,6 @@ func change_volume(audio_bus: AUDIO_BUSES, value: float):
 	apply_volumes()
 
 func apply_volumes():
-	# Convert linear 0-1 scale to dB when applying
 	AudioServer.set_bus_volume_db(AUDIO_BUSES.Master, linear_to_db(volumes['master']))
 	AudioServer.set_bus_volume_db(AUDIO_BUSES.SFX, linear_to_db(volumes['sfx']))
 	AudioServer.set_bus_volume_db(AUDIO_BUSES.Music, linear_to_db(volumes['music']))

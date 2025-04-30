@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://lxxnjhghv4o4"]
+[gd_scene load_steps=14 format=3 uid="uid://lxxnjhghv4o4"]
 
 [ext_resource type="Texture2D" uid="uid://djh17x2a14doi" path="res://assets/image/selection_levels_Layers/sky.png" id="1_k8hw1"]
 [ext_resource type="Texture2D" uid="uid://c1lwa4tv6twef" path="res://assets/image/selection_levels_Layers/far-clouds.png" id="2_wlnfj"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b3pi7uaeim2eq" path="res://assets/image/selection_levels_Layers/mountains.png" id="4_t1aej"]
 [ext_resource type="Texture2D" uid="uid://dde56xvch6cv7" path="res://assets/image/selection_levels_Layers/trees.png" id="5_mrc68"]
 [ext_resource type="Texture2D" uid="uid://do181tkcvrljo" path="res://assets/image/main_menu/Merlin sage mage.png" id="6_call8"]
-[ext_resource type="Texture2D" uid="uid://e3bchdfdk8b4" path="res://assets/image/screenshotsForLevels/Screenshot 1.png" id="7_ckkj5"]
 [ext_resource type="Script" uid="uid://cfy1su0vw8cuy" path="res://scripts/levels.gd" id="7_gow0a"]
+[ext_resource type="Texture2D" uid="uid://cm7a54ossn18i" path="res://assets/image/levels/desertlevel.png" id="8_gow0a"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="8_jh25w"]
-[ext_resource type="Texture2D" uid="uid://c8njs8pmur8vk" path="res://assets/image/screenshotsForLevels/Screenshot 2.png" id="9_4g5kd"]
-[ext_resource type="Texture2D" uid="uid://cifoug06d5jdy" path="res://assets/image/screenshotsForLevels/Screenshot 3.png" id="10_gow0a"]
-[ext_resource type="Texture2D" uid="uid://c8ilrrf7447wi" path="res://assets/image/screenshotsForLevels/Screenshot 4.png" id="11_jw4xm"]
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="9_jw4xm"]
+[ext_resource type="Texture2D" uid="uid://cn7ffqshqev1y" path="res://assets/image/levels/forest.png" id="10_jw4xm"]
+[ext_resource type="Texture2D" uid="uid://dc6nro5kbinvd" path="res://assets/image/levels/Lybrinth.png" id="11_7i8s5"]
+[ext_resource type="Texture2D" uid="uid://dd7p6i12mwqq1" path="res://assets/image/levels/dungeon.png" id="12_5rx24"]
 
 [node name="Levels" type="Node2D"]
 
@@ -71,8 +72,10 @@ texture = ExtResource("6_call8")
 layout_mode = 3
 anchor_right = 1.002
 anchor_bottom = 1.008
-offset_right = -0.304077
-offset_bottom = -0.184021
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 2.69592
+offset_bottom = -2.18402
 script = ExtResource("7_gow0a")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
@@ -81,34 +84,38 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.231
 anchor_bottom = 0.738
-offset_left = 478.0
-offset_top = -124.5
-offset_right = 441.426
-offset_bottom = -120.914
+offset_left = 12.0
+offset_top = -13.5
+offset_right = -54.574
+offset_bottom = 42.086
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("7_ckkj5")
-expand_mode = 1
+texture = ExtResource("8_gow0a")
+expand_mode = 5
 stretch_mode = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 187.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_fonts/font = ExtResource("9_jw4xm")
+theme_override_font_sizes/font_size = 50
+text = "LEVEL_1"
 
 [node name="LevelOneButton" type="Button" parent="CanvasLayer/Control/MarginContainer/TextureRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = -61.0
-offset_right = 102.0
-offset_bottom = 56.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = "LEVEL_1"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -116,34 +123,38 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.231
 anchor_bottom = 0.738
-offset_left = 62.0
-offset_top = 53.5
-offset_right = 25.426
-offset_bottom = 57.086
+offset_left = 252.0
+offset_top = -10.5
+offset_right = 185.426
+offset_bottom = 45.086
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("9_4g5kd")
-expand_mode = 1
+texture = ExtResource("10_jw4xm")
+expand_mode = 5
 stretch_mode = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer2/TextureRect"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 214.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_fonts/font = ExtResource("9_jw4xm")
+theme_override_font_sizes/font_size = 50
+text = "LEVEL_2"
 
 [node name="LevelTwoButton" type="Button" parent="CanvasLayer/Control/MarginContainer2/TextureRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.5
-offset_top = -54.5
-offset_right = 73.5
-offset_bottom = 47.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = "LEVEL_2"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -151,34 +162,38 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.231
 anchor_bottom = 0.738
-offset_left = 348.0
-offset_top = 55.5
-offset_right = 311.426
-offset_bottom = 59.086
+offset_left = 479.0
+offset_top = -7.5
+offset_right = 412.426
+offset_bottom = 48.086
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer3"]
 layout_mode = 2
-texture = ExtResource("10_gow0a")
-expand_mode = 1
+texture = ExtResource("11_7i8s5")
+expand_mode = 5
 stretch_mode = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer3/TextureRect"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 220.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_fonts/font = ExtResource("9_jw4xm")
+theme_override_font_sizes/font_size = 50
+text = "LEVEL_3"
 
 [node name="LevelThreeButton" type="Button" parent="CanvasLayer/Control/MarginContainer3/TextureRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -51.5
-offset_right = 84.0
-offset_bottom = 45.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = "LEVEL_3"
 
 [node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -186,34 +201,39 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.231
 anchor_bottom = 0.738
-offset_left = 679.0
-offset_top = 56.5
-offset_right = 642.426
-offset_bottom = 60.086
+offset_left = 729.0
+offset_top = -6.5
+offset_right = 662.426
+offset_bottom = 49.086
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer4"]
 layout_mode = 2
-texture = ExtResource("11_jw4xm")
-expand_mode = 1
+texture = ExtResource("12_5rx24")
+expand_mode = 5
 stretch_mode = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer4/TextureRect"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 213.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_fonts/font = ExtResource("9_jw4xm")
+theme_override_font_sizes/font_size = 50
+text = "LEVEL_4"
 
 [node name="LevelFourButton" type="Button" parent="CanvasLayer/Control/MarginContainer4/TextureRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -51.5
-offset_right = 79.0
-offset_bottom = 54.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.512131
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = "LEVEL_4"
 
 [node name="BackButton" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
