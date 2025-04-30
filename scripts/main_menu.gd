@@ -5,6 +5,8 @@ func _ready() -> void:
 	$OptionsPane/MasterSetting/HSlider.value = AudioManager.volumes['master']
 	$OptionsPane/MusicSetting/HSlider.value = AudioManager.volumes['sfx']
 	$OptionsPane/SFXSetting/HSlider.value = AudioManager.volumes['music']
+	MusicManager.play_music()
+
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

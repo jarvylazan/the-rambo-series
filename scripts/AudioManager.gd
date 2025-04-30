@@ -28,3 +28,6 @@ func apply_volumes():
 	AudioServer.set_bus_volume_db(AUDIO_BUSES.Master, linear_to_db(volumes['master']))
 	AudioServer.set_bus_volume_db(AUDIO_BUSES.SFX, linear_to_db(volumes['sfx']))
 	AudioServer.set_bus_volume_db(AUDIO_BUSES.Music, linear_to_db(volumes['music']))
+	
+	if MusicManager:
+		MusicManager.set_volume(volumes['music'])

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://iptftiwxpjg0"]
+
+[ext_resource type="Script" uid="uid://b2jkarfit6a5p" path="res://scripts/MusicManager.gd" id="1_mvbrv"]
+[ext_resource type="AudioStream" uid="uid://bogmpv1xkplml" path="res://assets/Audio/GameMusic.mp3" id="2_ppk7c"]
+[ext_resource type="AudioStream" uid="uid://bova1ljc6ycm1" path="res://assets/Audio/click.mp3" id="3_ppk7c"]
+
+[node name="MusicManager" type="Node2D"]
+script = ExtResource("1_mvbrv")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ppk7c")
+autoplay = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ppk7c")
