@@ -21,25 +21,25 @@ func _on_play_button_pressed() -> void:
 
 func _on_en_button_pressed() -> void:
 	TranslationServer.set_locale("en")
-	%SFX.play()
+	MusicManager.play_sfx()
 
 
 func _on_fr_button_pressed() -> void:
 	TranslationServer.set_locale("fr")
-	%SFX.play()
+	MusicManager.play_sfx()
 
 
 func _on_settings_button_pressed() -> void:
 	%ButtonsMenu.visible = false
 	%OptionsPane.visible = true
 	%TitleContainer.visible = false
-	%SFX.play()
+	MusicManager.play_sfx()
 
 func _on_save_button_pressed() -> void:
 	%ButtonsMenu.visible = true
 	%OptionsPane.visible = false
 	%TitleContainer.visible = true
-	%SFX.play()
+	MusicManager.play_sfx()
 
 
 func _on_level_buttons_pressed() -> void:
@@ -47,7 +47,7 @@ func _on_level_buttons_pressed() -> void:
 		"speed": 5,
 		"pattern": "scribbles",
 	})
-	%SFX.play()
+	MusicManager.play_sfx()
 
 
 
