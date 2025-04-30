@@ -2,10 +2,12 @@ extends Control
 
 
 func _ready() -> void:
+	MusicManager.play_music()
+
 	$OptionsPane/MasterSetting/HSlider.value = AudioManager.volumes['master']
 	$OptionsPane/MusicSetting/HSlider.value = AudioManager.volumes['sfx']
 	$OptionsPane/SFXSetting/HSlider.value = AudioManager.volumes['music']
-	MusicManager.play_music()
+	
 
 
 func _on_exit_button_pressed() -> void:
