@@ -52,7 +52,7 @@ texture = ExtResource("2_bqqt6")
 
 [node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
 repeat_size = Vector2(1152, 0)
-autoscroll = Vector2(150, 0)
+autoscroll = Vector2(100, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
 position = Vector2(576.34, 261.5)
@@ -61,7 +61,7 @@ texture = ExtResource("3_oa1go")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
 repeat_size = Vector2(1152, 0)
-autoscroll = Vector2(200, 0)
+autoscroll = Vector2(150, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
 position = Vector2(576, 287.5)
@@ -70,7 +70,7 @@ texture = ExtResource("4_tbmy8")
 
 [node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
 repeat_size = Vector2(1152, 0)
-autoscroll = Vector2(250, 0)
+autoscroll = Vector2(200, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
 position = Vector2(576, 324)
@@ -96,7 +96,7 @@ text = "TITLE_LABEL"
 
 [node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
 repeat_size = Vector2(1152, 0)
-autoscroll = Vector2(300, 0)
+autoscroll = Vector2(225, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
 position = Vector2(576, 263)
