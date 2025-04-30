@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="1_byaxj"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_vcvio"]
 [ext_resource type="Texture2D" uid="uid://demyls617wo2m" path="res://assets/image/tilemap_block/desert assets/labyrinth wall.png" id="2_mcf11"]
-[ext_resource type="PackedScene" uid="uid://deur1k635kbrq" path="res://scenes/maincharacter.tscn" id="3_byaxj"]
+[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/maincharacter.tscn" id="3_byaxj"]
 [ext_resource type="Texture2D" uid="uid://c6buiftjk7ope" path="res://assets/image/tilemap_block/anyrgb.com (2).png" id="3_mcf11"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr1xi"]
