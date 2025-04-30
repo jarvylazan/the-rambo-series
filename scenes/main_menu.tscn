@@ -241,7 +241,6 @@ value = 1.0
 [node name="Music" type="AudioStreamPlayer2D" parent="OptionsPane/MusicSetting"]
 stream = ExtResource("9_5dd4i")
 autoplay = true
-bus = &"MUSIC"
 
 [node name="SFXSetting" type="HBoxContainer" parent="OptionsPane"]
 layout_mode = 0
@@ -269,7 +268,6 @@ value = 1.0
 [node name="SFX" type="AudioStreamPlayer2D" parent="OptionsPane/SFXSetting"]
 unique_name_in_owner = true
 stream = ExtResource("10_lgwnu")
-bus = &"SFX"
 
 [node name="SaveButton" type="Button" parent="OptionsPane"]
 layout_mode = 2

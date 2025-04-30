@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://nhyatsslf6ys"]
+[gd_scene load_steps=3 format=3 uid="uid://nhyatsslf6ys"]
 
 [ext_resource type="Script" uid="uid://dr6qsnsvyl347" path="res://scripts/storyteller_scene.gd" id="1_4abxg"]
+[ext_resource type="AudioStream" uid="uid://dj70xdmjmagx3" path="res://assets/sound/merlin_audio_eng/Audio_Merlin_Eng_v2.mp3" id="2_pjbkm"]
 
 [node name="StorytellerScene" type="Control"]
 layout_mode = 3
@@ -37,12 +38,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 justification_flags = 226
+
+[node name="Panel" type="Panel" parent="Subtitle_Panel"]
+modulate = Color(0.0823529, 1, 1, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 65.0
+offset_right = 1153.0
+offset_bottom = 115.0
 
 [node name="Skipping_Button" type="Button" parent="Subtitle_Panel"]
 layout_mode = 0
@@ -63,6 +76,7 @@ text = "SKIP
 "
 
 [node name="Narration_Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pjbkm")
 volume_db = 6.559
 
 [node name="Timer" type="Timer" parent="."]
