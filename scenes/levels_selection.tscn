@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dde56xvch6cv7" path="res://assets/image/selection_levels_Layers/trees.png" id="5_mrc68"]
 [ext_resource type="Texture2D" uid="uid://do181tkcvrljo" path="res://assets/image/main_menu/Merlin sage mage.png" id="6_call8"]
 [ext_resource type="Texture2D" uid="uid://e3bchdfdk8b4" path="res://assets/image/screenshotsForLevels/Screenshot 1.png" id="7_ckkj5"]
-[ext_resource type="Script" uid="uid://cfy1su0vw8cuy" path="res://scenes/levels.gd" id="7_gow0a"]
+[ext_resource type="Script" uid="uid://cfy1su0vw8cuy" path="res://scripts/levels.gd" id="7_gow0a"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="8_jh25w"]
 [ext_resource type="Texture2D" uid="uid://c8njs8pmur8vk" path="res://assets/image/screenshotsForLevels/Screenshot 2.png" id="9_4g5kd"]
 [ext_resource type="Texture2D" uid="uid://cifoug06d5jdy" path="res://assets/image/screenshotsForLevels/Screenshot 3.png" id="10_gow0a"]
@@ -108,7 +108,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = "Level 1"
+text = "LEVEL_1"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -143,7 +143,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = " Level 2"
+text = "LEVEL_2"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -178,7 +178,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = " Level 3"
+text = "LEVEL_3"
 
 [node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -213,7 +213,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_jh25w")
 theme_override_font_sizes/font_size = 30
-text = " Level 3"
+text = "LEVEL_4"
 
 [node name="BackButton" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -229,7 +229,7 @@ offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_jh25w")
-text = "MAIN MENU"
+text = "MAIN_MENU"
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TextureRect/LevelOneButton" to="CanvasLayer/Control" method="_on_level_one_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/BackButton" to="CanvasLayer/Control" method="_on_back_button_pressed"]

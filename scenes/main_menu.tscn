@@ -138,7 +138,7 @@ text = "MENU_OPTIONS"
 
 [node name="LevelButtons" type="Button" parent="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer"]
 layout_mode = 2
-text = "Levels"
+text = "LEVELS_LABEL"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer"]
 layout_mode = 2
@@ -148,10 +148,10 @@ text = "MENU_LABEL_QUIT"
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 282.0
+offset_left = 244.0
 offset_top = 31.0
-offset_right = 831.0
-offset_bottom = 562.0
+offset_right = 970.0
+offset_bottom = 576.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsPane"]
@@ -192,17 +192,17 @@ text = "FR"
 
 [node name="MasterSetting" type="HBoxContainer" parent="OptionsPane"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 181.0
-offset_right = 485.0
-offset_bottom = 221.0
-theme_override_constants/separation = 50
+offset_left = 46.0
+offset_top = 187.0
+offset_right = 671.0
+offset_bottom = 227.0
+theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="OptionsPane/MasterSetting"]
 layout_mode = 2
 theme = ExtResource("6_jk1qb")
 theme_override_font_sizes/font_size = 50
-text = "MASTER"
+text = "MENU_AUDIO_MASTER"
 
 [node name="HSlider" type="HSlider" parent="OptionsPane/MasterSetting"]
 layout_mode = 2
@@ -213,17 +213,17 @@ value = 100.0
 
 [node name="MusicSetting" type="HBoxContainer" parent="OptionsPane"]
 layout_mode = 0
-offset_left = 63.0
+offset_left = 50.0
 offset_top = 247.0
-offset_right = 484.0
-offset_bottom = 270.0
-theme_override_constants/separation = 50
+offset_right = 674.0
+offset_bottom = 276.0
+theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="OptionsPane/MusicSetting"]
 layout_mode = 2
 theme = ExtResource("6_jk1qb")
 theme_override_font_sizes/font_size = 50
-text = "MUSIC"
+text = "MENU_LABEL_MUSIC"
 
 [node name="HSlider" type="HSlider" parent="OptionsPane/MusicSetting"]
 layout_mode = 2
@@ -234,17 +234,17 @@ value = 100.0
 
 [node name="SFXSetting" type="HBoxContainer" parent="OptionsPane"]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 305.0
-offset_right = 476.0
-offset_bottom = 345.0
-theme_override_constants/separation = 50
+offset_left = 51.0
+offset_top = 315.0
+offset_right = 657.0
+offset_bottom = 355.0
+theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="OptionsPane/SFXSetting"]
 layout_mode = 2
 theme = ExtResource("6_jk1qb")
 theme_override_font_sizes/font_size = 50
-text = "SFX"
+text = "CREDITS_SFX"
 
 [node name="HSlider" type="HSlider" parent="OptionsPane/SFXSetting"]
 layout_mode = 2
@@ -255,10 +255,10 @@ value = 100.0
 
 [node name="SaveButton" type="Button" parent="OptionsPane"]
 layout_mode = 2
-offset_left = 158.0
-offset_top = 485.0
-offset_right = 391.0
-offset_bottom = 517.0
+offset_left = 233.0
+offset_top = 465.0
+offset_right = 518.0
+offset_bottom = 498.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0

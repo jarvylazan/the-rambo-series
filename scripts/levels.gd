@@ -30,4 +30,7 @@ func _on_level_three_button_pressed() -> void:
 	})
 
 func _on_level_four_button_pressed() -> void:
-	pass # Replace with function body.
+	SceneManager.change_scene("res://scenes/dungeon_Level_4.tscn",{
+		"speed": 5,
+		"pattern": "scribbles",
+	})
