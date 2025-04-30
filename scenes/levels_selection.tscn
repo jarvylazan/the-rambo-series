@@ -128,7 +128,7 @@ texture = ExtResource("9_4g5kd")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/MarginContainer2/TextureRect"]
+[node name="LevelTwoButton" type="Button" parent="CanvasLayer/Control/MarginContainer2/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -163,7 +163,7 @@ texture = ExtResource("10_gow0a")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/MarginContainer3/TextureRect"]
+[node name="LevelThreeButton" type="Button" parent="CanvasLayer/Control/MarginContainer3/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -198,7 +198,7 @@ texture = ExtResource("11_jw4xm")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/MarginContainer4/TextureRect"]
+[node name="LevelFourButton" type="Button" parent="CanvasLayer/Control/MarginContainer4/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -232,4 +232,7 @@ theme = ExtResource("8_jh25w")
 text = "MAIN_MENU"
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TextureRect/LevelOneButton" to="CanvasLayer/Control" method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer2/TextureRect/LevelTwoButton" to="CanvasLayer/Control" method="_on_level_two_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer3/TextureRect/LevelThreeButton" to="CanvasLayer/Control" method="_on_level_three_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer4/TextureRect/LevelFourButton" to="CanvasLayer/Control" method="_on_level_four_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/BackButton" to="CanvasLayer/Control" method="_on_back_button_pressed"]
