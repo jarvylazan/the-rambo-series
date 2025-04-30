@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://nhyatsslf6ys"]
+
+[ext_resource type="Script" uid="uid://dr6qsnsvyl347" path="res://scripts/storyteller_scene.gd" id="1_4abxg"]
+
+[node name="StorytellerScene" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.96
+offset_right = -1152.0
+offset_bottom = -622.08
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4abxg")
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 562.0
+offset_top = 323.0
+offset_right = 562.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+
+[node name="Subtitle_Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 539.0
+offset_right = 1151.0
+offset_bottom = 650.0
+
+[node name="Subtitles_Label" type="Label" parent="Subtitle_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 226
+
+[node name="Skipping_Button" type="Button" parent="Subtitle_Panel"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 71.0
+offset_right = 1106.0
+offset_bottom = 102.0
+text = "SKIP
+"
+
+[node name="Replay_Button" type="Button" parent="Subtitle_Panel"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 71.0
+offset_right = 1106.0
+offset_bottom = 102.0
+text = "SKIP
+"
+
+[node name="Narration_Audio" type="AudioStreamPlayer2D" parent="."]
+volume_db = 6.559
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
