@@ -1,8 +1,9 @@
-[gd_scene load_steps=249 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=251 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/rambo.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
 [ext_resource type="Texture2D" uid="uid://cqlw37m0313dv" path="res://assets/characters/The Male adventurer/Attack/Gun/Shooting_down.png" id="2_kavmj"]
+[ext_resource type="Resource" uid="uid://c2atvkmilfwkr" path="res://inventory/player_inv.tres" id="2_oukho"]
 [ext_resource type="Texture2D" uid="uid://23xod2pti621" path="res://assets/characters/The Male adventurer/Idle/Normal/idle_up.png" id="3_46jak"]
 [ext_resource type="Texture2D" uid="uid://bbgs51qiatgb4" path="res://assets/characters/The Male adventurer/Idle/Normal/idle_right_down.png" id="3_f7d38"]
 [ext_resource type="Texture2D" uid="uid://cj17pjehbm4dr" path="res://assets/characters/The Male adventurer/Idle/Normal/idle_left_down.png" id="3_h2dos"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cae66w0o2wvay" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_left_up.png" id="15_1bkhl"]
 [ext_resource type="Texture2D" uid="uid://dhphhhn6rcdjx" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right.png" id="15_7nbdq"]
 [ext_resource type="Texture2D" uid="uid://xyytqyptbwiu" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right_up.png" id="16_aipbf"]
+[ext_resource type="PackedScene" uid="uid://cf0406t5dpcrt" path="res://inventory/inventory_ui.tscn" id="30_j353b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emgyr"]
 atlas = ExtResource("2_kavmj")
@@ -1734,6 +1736,7 @@ height = 178.0
 [node name="Node2D" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_ij0mf")
+inv = ExtResource("2_oukho")
 
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -1752,3 +1755,9 @@ libraries = {
 [node name="EnvironmentCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
+
+[node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
+offset_left = -224.0
+offset_top = -578.0
+offset_right = 199.0
+offset_bottom = -266.0
