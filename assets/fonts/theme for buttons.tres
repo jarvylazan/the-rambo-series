@@ -8,7 +8,6 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 0.85098, 0.239216, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gugbo"]
 bg_color = Color(0.294118, 0.180392, 0.180392, 1)
@@ -16,7 +15,6 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inuuy"]
 bg_color = Color(0.164706, 0.0705882, 0.0705882, 1)
@@ -24,7 +22,6 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 0.270588, 0, 1)
 
 [resource]
 default_font = ExtResource("1_el5k4")

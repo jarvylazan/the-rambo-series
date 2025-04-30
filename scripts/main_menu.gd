@@ -22,10 +22,17 @@ func _on_fr_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	%ButtonsMenu.visible = false
-	
+	%OptionsPane.visible = true
 	%TitleContainer.visible = false
 
 func _on_save_button_pressed() -> void:
 	%ButtonsMenu.visible = true
-	
+	%OptionsPane.visible = false
 	%TitleContainer.visible = true
+
+
+func _on_level_buttons_pressed() -> void:
+	SceneManager.change_scene("res://scenes/levels_selection.tscn", {
+		"speed": 5,
+		"pattern": "scribbles",
+	})

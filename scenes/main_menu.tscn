@@ -1,12 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=11 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://dauqelcp2hrm4" path="res://assets/image/main_menu/parallax_layers/sky.png" id="2_bqqt6"]
-[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://c1ka3la8lgqlf" path="res://assets/image/main_menu/parallax_layers/clouds.png" id="3_oa1go"]
-[ext_resource type="Texture2D" uid="uid://co0hlg3ossiy8" path="res://assets/image/main_menu/parallax_layers/far-mountains.png" id="4_tbmy8"]
-[ext_resource type="Texture2D" uid="uid://dogvwyv7iv5x0" path="res://assets/image/main_menu/parallax_layers/canyon.png" id="5_jk1qb"]
-[ext_resource type="Texture2D" uid="uid://bsdqdfc7p5dha" path="res://assets/image/main_menu/parallax_layers/front.png" id="6_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://dauqelcp2hrm4" path="res://assets/image/main_menu/parallax_layers_menu/sky.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c1ka3la8lgqlf" path="res://assets/image/main_menu/parallax_layers_menu/clouds.png" id="3_oa1go"]
+[ext_resource type="Texture2D" uid="uid://co0hlg3ossiy8" path="res://assets/image/main_menu/parallax_layers_menu/far-mountains.png" id="4_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dogvwyv7iv5x0" path="res://assets/image/main_menu/parallax_layers_menu/canyon.png" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://bsdqdfc7p5dha" path="res://assets/image/main_menu/parallax_layers_menu/front.png" id="6_5dd4i"]
 [ext_resource type="Theme" uid="uid://cjhr8kmmfs2no" path="res://assets/fonts/label_theme.tres" id="6_jk1qb"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="8_tbmy8"]
 
@@ -18,20 +17,17 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="Theme" id="Theme_flqon"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 45
-Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
-
-[sub_resource type="Theme" id="Theme_jk1qb"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 50
-Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
-
-[sub_resource type="Theme" id="Theme_lgwnu"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 40
-Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0.960784, 0.870588, 0.701961, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.960784, 0.870588, 0.701961, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,7 +41,6 @@ grow_vertical = 2
 script = ExtResource("1_wu84c")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
 repeat_size = Vector2(1152, 0)
@@ -96,6 +91,7 @@ theme = ExtResource("6_jk1qb")
 
 [node name="Label" type="Label" parent="ParallaxBackground/TitleContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 200
 text = "TITLE_LABEL"
 
 [node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
@@ -113,7 +109,6 @@ texture = ExtResource("6_5dd4i")
 
 [node name="ButtonsMenu" type="MarginContainer" parent="CanvasLayer/Titles&Buttons"]
 unique_name_in_owner = true
-visible = false
 anchors_preset = -1
 anchor_left = 0.454
 anchor_top = 0.9
@@ -141,11 +136,17 @@ text = "MENU_LABEL_PLAY"
 layout_mode = 2
 text = "MENU_OPTIONS"
 
+[node name="LevelButtons" type="Button" parent="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer"]
+layout_mode = 2
+text = "Levels"
+
 [node name="ExitButton" type="Button" parent="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer"]
 layout_mode = 2
 text = "MENU_LABEL_QUIT"
 
 [node name="OptionsPane" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 282.0
 offset_top = 31.0
@@ -158,6 +159,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -165,7 +167,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("6_jk1qb")
-theme_override_constants/line_spacing = -70
+theme_override_constants/line_spacing = -65
 theme_override_font_sizes/font_size = 150
 text = "OPTIONS
 "
@@ -178,14 +180,14 @@ theme_override_constants/separation = 24
 
 [node name="EnButton" type="Button" parent="OptionsPane/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_flqon")
+theme = ExtResource("8_tbmy8")
 text = "EN"
 
 [node name="FrButton" type="Button" parent="OptionsPane/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource("Theme_jk1qb")
+theme = ExtResource("8_tbmy8")
 text = "FR"
 
 [node name="MasterSetting" type="HBoxContainer" parent="OptionsPane"]
@@ -206,6 +208,7 @@ text = "MASTER"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
 value = 100.0
 
 [node name="MusicSetting" type="HBoxContainer" parent="OptionsPane"]
@@ -226,14 +229,15 @@ text = "MUSIC"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
 value = 100.0
 
 [node name="SFXSetting" type="HBoxContainer" parent="OptionsPane"]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 285.0
-offset_right = 482.0
-offset_bottom = 325.0
+offset_left = 81.0
+offset_top = 305.0
+offset_right = 476.0
+offset_bottom = 345.0
 theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="OptionsPane/SFXSetting"]
@@ -246,6 +250,7 @@ text = "SFX"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
 value = 100.0
 
 [node name="SaveButton" type="Button" parent="OptionsPane"]
@@ -257,11 +262,12 @@ offset_bottom = 517.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
-theme = SubResource("Theme_lgwnu")
+theme = ExtResource("8_tbmy8")
 text = "MENU_IO_SAVE"
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/LevelButtons" to="." method="_on_level_buttons_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="OptionsPane/VBoxContainer/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
 [connection signal="pressed" from="OptionsPane/VBoxContainer/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
