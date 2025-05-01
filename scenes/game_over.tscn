@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://bojjckatnspuv"]
+
+[ext_resource type="Script" uid="uid://dq8fjdoiiyhc6" path="res://scenes/game_over.gd" id="1_7m3ot"]
+[ext_resource type="Texture2D" uid="uid://bjbns37w4hpd6" path="res://assets/image/gameover/Space002 (2).png" id="1_xeevv"]
+[ext_resource type="Texture2D" uid="uid://do181tkcvrljo" path="res://assets/image/main_menu/Merlin sage mage.png" id="2_wqhvx"]
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_tbwuq"]
+[ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="4_racf3"]
+
+[sub_resource type="Theme" id="Theme_racf3"]
+default_font = ExtResource("3_tbwuq")
+
+[sub_resource type="Theme" id="Theme_7m3ot"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m3ot")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Node" parent="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeevv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Background/TextureRect"]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 72.0
+offset_right = 1153.0
+offset_bottom = 650.0
+texture = ExtResource("2_wqhvx")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 70.0
+offset_top = 94.0
+offset_right = 665.0
+offset_bottom = 300.0
+size_flags_vertical = 4
+theme = SubResource("Theme_racf3")
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_7m3ot")
+theme_override_colors/font_color = Color(0.780392, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "YOU ARE DOOMED"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="WoldYouDiedLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_font_sizes/font_size = 50
+text = "WOLRD YOU DIED :"
+
+[node name="WorldNumberLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="CoinsCollectedLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_font_sizes/font_size = 50
+text = " Coins Collected :"
+
+[node name="NumberOfCoinsLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -435.0
+offset_top = -183.0
+offset_right = -6.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_racf3")
+theme_override_constants/separation = 15
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "GAME_RESTART"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "MAIN_MENU"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/MenuButton" to="." method="_on_menu_button_pressed"]
