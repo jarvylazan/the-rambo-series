@@ -90,6 +90,7 @@ patch_margin_bottom = 80
 
 [node name="Panel" type="Panel" parent="CanvasLayer/SubtitlePanel"]
 visible = false
+layout_mode = 0
 offset_left = 219.0
 offset_top = 142.0
 offset_right = 1042.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://u6inymgtp212"]
 
-[ext_resource type="Script" uid="uid://esqk684ekwao" path="res://inventory/inventory_slot.gd" id="1_nsnbm"]
+[ext_resource type="Script" path="res://inventory/inventory_slot.gd" id="1_nsnbm"]
 [ext_resource type="Texture2D" uid="uid://csym4g8u3e31b" path="res://assets/inventory/inventory-slot.png" id="1_refl1"]
 
 [node name="InventorySlot" type="Panel"]
