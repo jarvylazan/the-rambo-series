@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://btfewyknvf26i"]
+[gd_scene load_steps=13 format=4 uid="uid://btfewyknvf26i"]
 
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="1_byaxj"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_vcvio"]
 [ext_resource type="Texture2D" uid="uid://demyls617wo2m" path="res://assets/image/tilemap_block/desert assets/labyrinth wall.png" id="2_mcf11"]
-[ext_resource type="PackedScene" uid="uid://deur1k635kbrq" path="res://scenes/maincharacter.tscn" id="3_byaxj"]
+[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/maincharacter.tscn" id="3_byaxj"]
+[ext_resource type="Texture2D" uid="uid://c6buiftjk7ope" path="res://assets/image/tilemap_block/anyrgb.com (2).png" id="3_mcf11"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr1xi"]
 texture = ExtResource("1_byaxj")
@@ -531,6 +532,7 @@ sources/1 = SubResource("TileSetAtlasSource_ap136")
 sources/0 = SubResource("TileSetAtlasSource_hr1xi")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byaxj"]
+texture = ExtResource("3_mcf11")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -1541,6 +1543,7 @@ texture_region_size = Vector2i(32, 32)
 29:31/0 = 0
 30:31/0 = 0
 31:31/0 = 0
+26:21/size_in_atlas = Vector2i(2, 2)
 26:21/0 = 0
 26:21/0/y_sort_origin = 12
 26:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21.3483, -12.7452, 7.32851, -7.32851, 22.6228, -1.91179, 23.5787, 16.5688, 14.3384, 24.5346, -16, 16, -23.5787, 4.1422)
