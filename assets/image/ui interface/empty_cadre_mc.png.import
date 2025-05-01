@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm2vbg02cxnqf"
+uid="uid://bofm3e0b7fqf3"
 path="res://.godot/imported/empty_cadre_mc.png-cd5adbe06f3b02107f00b17d404167d8.ctex"
 metadata={
 "vram_texture": false
@@ -32,3 +32,4 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+

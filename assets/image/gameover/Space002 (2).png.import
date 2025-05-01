@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://bbt4tsbom4wbu"
-=======
-uid="uid://g1n2banefl6x"
->>>>>>> 7acade942dbc8f4f1551fe8ecbccc2402a8bd813
-path="res://.godot/imported/ui_parchemin_cadre.png-7abd6b08be80f935429f39307c82dc91.ctex"
+uid="uid://bjbns37w4hpd6"
+path="res://.godot/imported/Space002 (2).png-7118b8715fcc063dae94602132c7679d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/image/ui interface/ui_parchemin_cadre.png"
-dest_files=["res://.godot/imported/ui_parchemin_cadre.png-7abd6b08be80f935429f39307c82dc91.ctex"]
+source_file="res://assets/image/gameover/Space002 (2).png"
+dest_files=["res://.godot/imported/Space002 (2).png-7118b8715fcc063dae94602132c7679d.ctex"]
 
 [params]
 
