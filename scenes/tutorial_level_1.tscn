@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c5y6vu3h238rg"]
+[gd_scene load_steps=25 format=4 uid="uid://c5y6vu3h238rg"]
 
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
 [ext_resource type="Texture2D" uid="uid://bfmmyu2vj1pb6" path="res://assets/image/tilemap_block/desert assets/ground stain 256.png" id="3_8b7j2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/maincharacter.tscn" id="6_m77fg"]
 [ext_resource type="Texture2D" uid="uid://2a150wfyrb21" path="res://assets/image/tilemap_block/desert assets/tree desert 256.png" id="7_m77fg"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="9_hqnkb"]
+[ext_resource type="PackedScene" uid="uid://cyem0miqppoto" path="res://scenes/cobra.tscn" id="10_m77fg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
@@ -421,3 +422,6 @@ zoom = Vector2(1.2, 1.2)
 
 [node name="Ammo" parent="." instance=ExtResource("9_hqnkb")]
 position = Vector2(1527, 884)
+
+[node name="Cobra" parent="." instance=ExtResource("10_m77fg")]
+position = Vector2(1676, 679)
