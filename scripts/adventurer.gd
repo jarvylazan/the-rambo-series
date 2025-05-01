@@ -12,7 +12,7 @@ var attack_animation_priority = true  # This gives attack animations priority
 var shoot_timer = null  # Timer reference for shooting
 var bullet_timer = null  # Timer for spawning bullets
 var bullet_scene = null  # Will load at runtime
-var bullet_speed = 500  # How fast bullets travel
+var bullet_speed = 5000  # How fast bullets travel
 var shoot_cooldown = 0.2
 
 func get_animation_duration(animation_name: String) -> float:

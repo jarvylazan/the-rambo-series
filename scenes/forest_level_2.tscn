@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c02du1ygqmua0" path="res://assets/image/tilemap_block/level 1/tile elements muds.png" id="8_v7p28"]
 [ext_resource type="Texture2D" uid="uid://bmuhiy2dglwjr" path="res://assets/image/tilemap_block/level 1/tiles elements ground.png" id="9_wdumj"]
 [ext_resource type="Texture2D" uid="uid://demlbufjj1087" path="res://assets/image/tilemap_block/level 1/tiles elements.png" id="10_054tr"]
-[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/maincharacter.tscn" id="11_5n1c5"]
+[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="11_5n1c5"]
 [ext_resource type="Texture2D" uid="uid://cesd8vm1vflin" path="res://assets/image/tilemap_block/level 1/second layer tiles Mountain.png" id="11_mtoan"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="11_nngwt"]
 [ext_resource type="Texture2D" uid="uid://k7n7uwjwp0ys" path="res://assets/image/tilemap_block/level 1/second layer tiles colines.png" id="12_wdumj"]

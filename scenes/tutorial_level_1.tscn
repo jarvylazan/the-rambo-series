@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjkqst04ncy7m" path="res://assets/image/tilemap_block/desert assets/tree blue desert 128.png" id="5_lsqm8"]
 [ext_resource type="Texture2D" uid="uid://dqfy4y7vqgo7" path="res://assets/image/tilemap_block/desert assets/grass stain 256.png" id="6_gj6m2"]
 [ext_resource type="Texture2D" uid="uid://dp3rajka2wirl" path="res://assets/image/tilemap_block/desert assets/tree desert 128.png" id="6_hqnkb"]
-[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/maincharacter.tscn" id="6_m77fg"]
+[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
 [ext_resource type="Texture2D" uid="uid://2a150wfyrb21" path="res://assets/image/tilemap_block/desert assets/tree desert 256.png" id="7_m77fg"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="9_hqnkb"]
 
