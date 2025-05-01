@@ -5,6 +5,7 @@ signal scene_unloaded
 signal scene_loaded
 signal transition_finished
 
+var scene_args := {}
 var is_transitioning := false
 @onready var _tree := get_tree()
 @onready var _root := _tree.get_root()
@@ -98,6 +99,7 @@ func _process(_delta: float) -> void:
 		_previous_scene = _tree.current_scene
 
 func change_scene(path: Variant, setted_options: Dictionary = {}) -> void:
+	scene_args = setted_options.duplicate()
 	assert(path == null or path is String or path is PackedScene, 'Path must be a string or a PackedScene')
 	var options = _get_final_options(setted_options)
 	if not options["skip_fade_out"]:
@@ -175,3 +177,6 @@ func fade_in(setted_options: Dictionary = {}) -> void:
 	is_transitioning = false
 	transition_finished.emit()
 	options["on_fade_in"].call()
+	
+func get_scene_args() -> Dictionary:
+	return scene_args

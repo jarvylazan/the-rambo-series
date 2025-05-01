@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://nhyatsslf6ys"]
+[gd_scene load_steps=16 format=3 uid="uid://nhyatsslf6ys"]
 
 [ext_resource type="Script" uid="uid://dr6qsnsvyl347" path="res://scripts/storyteller_scene.gd" id="1_4abxg"]
 [ext_resource type="AudioStream" uid="uid://dj70xdmjmagx3" path="res://assets/sound/merlin_audio_eng/Audio_Merlin_Eng_v2.mp3" id="2_pjbkm"]
+[ext_resource type="Texture2D" uid="uid://cm24xvt4e8rgs" path="res://assets/image/storyteller/ui_parchemin_cadre.png" id="3_xfek3"]
+[ext_resource type="Texture2D" uid="uid://cygscaeoq4w0r" path="res://assets/image/storyteller/back_button.png" id="4_fd0sm"]
+[ext_resource type="Texture2D" uid="uid://1ugukregfnku" path="res://assets/image/storyteller/replay_button.png" id="5_48evc"]
+[ext_resource type="Texture2D" uid="uid://brea82q4rq05h" path="res://assets/image/storyteller/skip_button_pressed.png" id="5_x8wsi"]
+[ext_resource type="Texture2D" uid="uid://dpei2brbtiwas" path="res://assets/image/storyteller/skip_button.png" id="6_ie8p0"]
+[ext_resource type="Texture2D" uid="uid://ctsvalxy3qwg2" path="res://assets/image/storyteller/skip_button_hover.png" id="6_ucjqe"]
+[ext_resource type="Texture2D" uid="uid://bs62hjmck7yke" path="res://assets/image/storyteller/back_button_pressed.png" id="8_wa62t"]
+[ext_resource type="Texture2D" uid="uid://c7i2ehimsia8e" path="res://assets/image/storyteller/back_button_hover.png" id="9_6x00q"]
+[ext_resource type="Texture2D" uid="uid://d1hrdye10w360" path="res://assets/image/storyteller/replay_button_pressed.png" id="11_krx62"]
+[ext_resource type="Texture2D" uid="uid://8l8c3xy83gdi" path="res://assets/image/storyteller/replay_button_hover.png" id="12_ioc5q"]
+[ext_resource type="AudioStream" uid="uid://c1ipos1xqwt3k" path="res://assets/music/storyteller/epic-battle-song-182915.mp3" id="13_ucjqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd0sm"]
+bg_color = Color(0.227451, 0.164706, 0.0784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfek3"]
+bg_color = Color(0, 0, 0, 0.34902)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="StorytellerScene" type="Control"]
 layout_mode = 3
@@ -26,54 +47,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9, 0.9)
 
-[node name="Subtitle_Panel" type="Panel" parent="."]
+[node name="BackGround_2" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 1.0
-offset_top = 539.0
-offset_right = 1151.0
-offset_bottom = 650.0
-
-[node name="Subtitles_Label" type="Label" parent="Subtitle_Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 5.0
-offset_right = -4.0
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-justification_flags = 226
-
-[node name="Panel" type="Panel" parent="Subtitle_Panel"]
-modulate = Color(0.0823529, 1, 1, 1)
-layout_mode = 0
-offset_left = 2.0
-offset_top = 65.0
-offset_right = 1153.0
-offset_bottom = 115.0
-
-[node name="Skipping_Button" type="Button" parent="Subtitle_Panel"]
-layout_mode = 0
-offset_left = 1040.0
-offset_top = 71.0
-offset_right = 1106.0
-offset_bottom = 102.0
-text = "SKIP
-"
-
-[node name="Replay_Button" type="Button" parent="Subtitle_Panel"]
-layout_mode = 0
-offset_left = 1040.0
-offset_top = 71.0
-offset_right = 1106.0
-offset_bottom = 102.0
-text = "SKIP
-"
+offset_right = 1150.0
+offset_bottom = 548.0
 
 [node name="Narration_Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_pjbkm")
@@ -83,4 +61,87 @@ volume_db = 6.559
 wait_time = 6.0
 autostart = true
 
+[node name="StoryBGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ucjqe")
+volume_db = -15.0
+autoplay = true
+bus = &"MUSIC"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 545.0
+offset_right = 1152.0
+offset_bottom = 651.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fd0sm")
+
+[node name="SubtitlePanel" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = -65.0
+offset_top = 365.0
+offset_right = 1234.0
+offset_bottom = 729.0
+texture = ExtResource("3_xfek3")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="Panel" type="Panel" parent="CanvasLayer/SubtitlePanel"]
+visible = false
+offset_left = 219.0
+offset_top = 142.0
+offset_right = 1042.0
+offset_bottom = 232.0
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_xfek3")
+
+[node name="SubtitlesLabel" type="RichTextLabel" parent="CanvasLayer/SubtitlePanel"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 146.0
+offset_right = 1039.0
+offset_bottom = 208.0
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+
+[node name="Button-Container" type="Node2D" parent="CanvasLayer"]
+position = Vector2(0, -3.05176e-05)
+
+[node name="Skipping_Button" type="TextureButton" parent="CanvasLayer/Button-Container"]
+offset_left = 962.0
+offset_top = -33.0
+offset_right = 1986.0
+offset_bottom = 991.0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_ie8p0")
+texture_pressed = ExtResource("5_x8wsi")
+texture_hover = ExtResource("6_ucjqe")
+
+[node name="Back_Button" type="TextureButton" parent="CanvasLayer/Button-Container"]
+offset_left = -26.0
+offset_top = -33.0
+offset_right = 998.0
+offset_bottom = 991.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_fd0sm")
+texture_pressed = ExtResource("8_wa62t")
+texture_hover = ExtResource("9_6x00q")
+
+[node name="Replay_Button" type="TextureButton" parent="CanvasLayer/Button-Container"]
+offset_left = 1035.0
+offset_top = 509.0
+offset_right = 2059.0
+offset_bottom = 1533.0
+scale = Vector2(0.15, 0.15)
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_48evc")
+texture_pressed = ExtResource("11_krx62")
+texture_hover = ExtResource("12_ioc5q")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button-Container/Skipping_Button" to="." method="_on_skipping_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button-Container/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button-Container/Replay_Button" to="." method="_on_replay_button_pressed"]
