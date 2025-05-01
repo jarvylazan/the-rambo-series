@@ -2,6 +2,7 @@ extends CharacterBody2D
 @export var speed = 300.0  # Movement speed in pixels per second
 @export var acceleration = 1500.0  # How fast the character accelerates
 @export var friction = 1500.0  # How fast the character slows down
+@export var inv: Inv
 var facing_direction = "down"
 var is_moving = false
 var is_attacking = false
@@ -207,3 +208,6 @@ func play_shoot_animation() -> String:
 	
 	# Return the animation name so we can get its duration
 	return anim_name
+
+func collect(item):
+	inv.insert(item)
