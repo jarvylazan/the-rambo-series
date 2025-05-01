@@ -2198,7 +2198,11 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
+<<<<<<< HEAD
+animation = &"idleleft"
+=======
 animation = &"agunrunleft"
+>>>>>>> d43549f324e2bae277bda00224a088e5ba56a84f
 autoplay = "idledown"
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]

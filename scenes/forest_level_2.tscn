@@ -1125,6 +1125,10 @@ layer_0/tile_data = PackedInt32Array(196609, 0, 0, 327684, 0, 0, 196619, 0, 0, 4
 [node name="Node2D" parent="." instance=ExtResource("11_5n1c5")]
 position = Vector2(641, 320)
 scale = Vector2(0.18, 0.18)
+speed = 300.0
+acceleration = 1500.0
+friction = 1500.0
+bullet_scene_path = "res://scenes/bullet.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(140, -180)
