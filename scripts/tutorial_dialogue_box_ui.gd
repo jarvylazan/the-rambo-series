@@ -38,6 +38,8 @@ func display_text():
 		hide_dialogue_box()
 		return
 
+	type_sound.stop()  # 🛑 Ensure sound from previous line is stopped
+
 	var next_text = text_queue.pop_front()
 	dialogue_text.text = next_text
 	dialogue_text.visible_characters = 0
@@ -46,10 +48,8 @@ func display_text():
 	if tween:
 		tween.kill()
 	auto_advance_timer.stop()
-	type_sound.stop()
 
-	# 🔊 Start typewriter sound
-	type_sound.play()
+	type_sound.play()  # 🔊 Start typewriter sound
 
 	tween = create_tween()
 	tween.tween_property(
@@ -60,21 +60,23 @@ func display_text():
 	)
 
 	await tween.finished
-	type_sound.stop()  #  Stop after text fully shown
+
+	type_sound.stop()  # 🛑 Stop when typing animation finishes
 	auto_advance_timer.start(auto_advance_delay)
 
 func _on_continue_pressed():
 	if tween:
 		tween.kill()
 
+	type_sound.stop()  # 🛑 Stop sound if skipping line manually
 	auto_advance_timer.stop()
 
-	# If still typing → finish line
+	# If still typing → finish instantly
 	if dialogue_text.visible_characters < dialogue_text.text.length():
 		dialogue_text.visible_characters = dialogue_text.text.length()
 		return
 
-	# Otherwise, advance or close
+	# Otherwise, advance to next line or close
 	display_text()
 
 func show_dialogue_box():
@@ -83,3 +85,4 @@ func show_dialogue_box():
 func hide_dialogue_box():
 	self.visible = false
 	dialogue_text.text = ""
+	type_sound.stop()  # 🛑 Stop sound when box is hidden

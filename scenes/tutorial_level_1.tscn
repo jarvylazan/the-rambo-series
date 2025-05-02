@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=26 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/tutorial_level_1.gd" id="1_m77fg"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
 [ext_resource type="Texture2D" uid="uid://2a150wfyrb21" path="res://assets/image/tilemap_block/desert assets/tree desert 256.png" id="7_m77fg"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="9_hqnkb"]
+[ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="11_mmoqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
@@ -423,3 +424,6 @@ zoom = Vector2(1.2, 1.2)
 
 [node name="Ammo" parent="." instance=ExtResource("9_hqnkb")]
 position = Vector2(1527, 884)
+
+[node name="Portal" parent="." instance=ExtResource("11_mmoqx")]
+position = Vector2(831, 1013)
