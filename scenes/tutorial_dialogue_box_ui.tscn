@@ -77,6 +77,6 @@ text = "NEXT
 
 [node name="TypeSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_n36c0")
-volume_db = 5.0
+volume_db = 20.0
 bus = &"SFX"
 parameters/looping = true
