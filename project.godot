@@ -47,6 +47,14 @@ Inventory={
 
 locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGamedev - Master.en.translation", "res://assets/UI_Localization/PolyglotGamedev - Master.fr.translation")
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Ammo"
+2d_physics/layer_5="Items"
+
 [rendering]
 
 renderer/rendering_method="mobile"
