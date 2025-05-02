@@ -193,7 +193,7 @@ animations = [{
 radius = 13.0
 height = 56.0
 
-[node name="Portal" type="Area2D"]
+[node name="Portal_Levels" type="Area2D"]
 position = Vector2(49, 61)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_1ffj6")
