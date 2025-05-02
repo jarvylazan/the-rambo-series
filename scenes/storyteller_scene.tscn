@@ -106,6 +106,7 @@ offset_right = 1039.0
 offset_bottom = 208.0
 theme_override_font_sizes/normal_font_size = 16
 theme_override_font_sizes/bold_font_size = 16
+scroll_following = true
 
 [node name="Button-Container" type="Node2D" parent="CanvasLayer"]
 position = Vector2(0, -3.05176e-05)

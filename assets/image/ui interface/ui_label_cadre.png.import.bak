@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bofm3e0b7fqf3"
-path="res://.godot/imported/empty_cadre_mc.png-cd5adbe06f3b02107f00b17d404167d8.ctex"
+<<<<<<< HEAD
+uid="uid://3bdfa4pm1s4x"
+=======
+uid="uid://r4cdad85xp8n"
+>>>>>>> 7acade942dbc8f4f1551fe8ecbccc2402a8bd813
+path="res://.godot/imported/ui_label_cadre.png-0da2cefe1bd3be2bfb6e1332b2769e33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/image/ui interface/empty_cadre_mc.png"
-dest_files=["res://.godot/imported/empty_cadre_mc.png-cd5adbe06f3b02107f00b17d404167d8.ctex"]
+source_file="res://assets/image/ui interface/ui_label_cadre.png"
+dest_files=["res://.godot/imported/ui_label_cadre.png-0da2cefe1bd3be2bfb6e1332b2769e33.ctex"]
 
 [params]
 

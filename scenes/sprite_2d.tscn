@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5ghsc58j3i82"]
 
 [ext_resource type="Texture2D" uid="uid://41heapi3oas8" path="res://assets/image/main_menu/Screenshot 2025-04-26 181911.png" id="1_0daxb"]
-[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/maincharacter.tscn" id="2_h2p1k"]
+[ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="2_h2p1k"]
 [ext_resource type="Texture2D" uid="uid://2ws6d52x2g88" path="res://assets/image/tilemap_block/level 1/tile big treev2.png" id="2_k8p51"]
 [ext_resource type="Texture2D" uid="uid://64656wmki336" path="res://assets/image/tilemap_block/level 1/tile tall tree.png" id="3_mysbt"]
 

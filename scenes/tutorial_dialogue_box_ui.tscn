@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://hd12pcebmtf2"]
+
+[ext_resource type="Script" uid="uid://cw6xelg6vk2g3" path="res://scripts/tutorial_dialogue_box_ui.gd" id="1_g1wsg"]
+[ext_resource type="Texture2D" uid="uid://051mcrhro8ot" path="res://assets/image/dialogue/ui_label_cadre.png" id="2_g1wsg"]
+[ext_resource type="Texture2D" uid="uid://b60a3jrmipmm1" path="res://assets/image/dialogue/ui_parchemin_cadre.png" id="2_xe8jn"]
+[ext_resource type="Texture2D" uid="uid://c2qebf83y75gt" path="res://assets/image/dialogue/Merlin Dialogue Image.png" id="3_n36c0"]
+[ext_resource type="AudioStream" uid="uid://cawxhma8ocbrm" path="res://assets/sound/keyboard-typing-5997.mp3" id="5_n36c0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hyjp1"]
+texture = ExtResource("2_xe8jn")
+texture_margin_left = 84.0
+texture_margin_top = 84.0
+texture_margin_right = 84.0
+texture_margin_bottom = 84.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xe8jn"]
+texture = ExtResource("2_g1wsg")
+
+[node name="TutorialDialogueBox_UI" type="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+script = ExtResource("1_g1wsg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 18.0
+offset_top = -70.0
+offset_right = 2455.0
+offset_bottom = 804.0
+
+[node name="DialogPanel" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hyjp1")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 152.0
+offset_top = -23.0
+offset_right = 861.0
+offset_bottom = 788.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xe8jn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 232.0
+offset_top = 140.0
+offset_right = 1256.0
+offset_bottom = 1164.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Portrait" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_n36c0")
+
+[node name="DialogueText" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 150)
+offset_left = 806.0
+offset_top = 286.0
+offset_right = 1921.0
+offset_bottom = 436.0
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 1969.0
+offset_top = 167.0
+offset_right = 2156.0
+offset_bottom = 273.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "NEXT
+
+"
+
+[node name="AutoAdvanceTimer" type="Timer" parent="."]
+
+[node name="TypeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_n36c0")
+volume_db = 5.0
+bus = &"SFX"
+parameters/looping = true

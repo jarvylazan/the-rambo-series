@@ -1,6 +1,6 @@
 [gd_scene load_steps=323 format=3 uid="uid://bwir50i2hkrio"]
 
-[ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
+[ext_resource type="Script" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
 [ext_resource type="Texture2D" uid="uid://d2pim8bmfy6so" path="res://assets/characters/The Male adventurer/Run_while_shooting/Run_while_shooting_Down.png" id="2_jrfnu"]
 [ext_resource type="Texture2D" uid="uid://cqlw37m0313dv" path="res://assets/characters/The Male adventurer/Attack/Gun/Shooting_down.png" id="2_kavmj"]

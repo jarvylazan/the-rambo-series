@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bofm3e0b7fqf3"
-path="res://.godot/imported/empty_cadre_mc.png-cd5adbe06f3b02107f00b17d404167d8.ctex"
+<<<<<<< HEAD
+uid="uid://bno3mlx4quy20"
+=======
+uid="uid://bris6rkytdde0"
+>>>>>>> 7acade942dbc8f4f1551fe8ecbccc2402a8bd813
+path="res://.godot/imported/mc_profile_picture.png-2540b55812da4c26ac0fa0ed408898f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/image/ui interface/empty_cadre_mc.png"
-dest_files=["res://.godot/imported/empty_cadre_mc.png-cd5adbe06f3b02107f00b17d404167d8.ctex"]
+source_file="res://assets/image/ui interface/mc_profile_picture.png"
+dest_files=["res://.godot/imported/mc_profile_picture.png-2540b55812da4c26ac0fa0ed408898f3.ctex"]
 
 [params]
 
