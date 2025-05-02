@@ -20,5 +20,5 @@ func _ready():
 	# Camera limits
 	camera.limit_left = -2734
 	camera.limit_top = 227
-	camera.limit_right = 6406
+	camera.limit_right = 6683
 	camera.limit_bottom = 3750
