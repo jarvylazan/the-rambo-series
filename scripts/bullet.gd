@@ -31,4 +31,4 @@ func _on_lifetime_timeout():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
-		body.take_gun_damage()
+		body.take_gun_damage	()

@@ -30,8 +30,8 @@ radius = 5.0
 height = 54.0
 
 [node name="Bullet" type="Area2D"]
-collision_layer = 5
-collision_mask = 8
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_y25gk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

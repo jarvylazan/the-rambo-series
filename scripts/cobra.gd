@@ -9,3 +9,6 @@ func _ready():
 
 func take_gun_damage():
 	take_damage(10)
+
+func take_spear_damage():
+	take_damage(30)
