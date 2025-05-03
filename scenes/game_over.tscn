@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bojjckatnspuv"]
 
-[ext_resource type="Script" uid="uid://dq8fjdoiiyhc6" path="res://scenes/game_over.gd" id="1_7m3ot"]
+[ext_resource type="Script" uid="uid://dq8fjdoiiyhc6" path="res://scripts/game_over.gd" id="1_7m3ot"]
 [ext_resource type="Texture2D" uid="uid://bjbns37w4hpd6" path="res://assets/image/gameover/Space002 (2).png" id="1_xeevv"]
 [ext_resource type="Texture2D" uid="uid://do181tkcvrljo" path="res://assets/image/main_menu/Merlin sage mage.png" id="2_wqhvx"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_tbwuq"]

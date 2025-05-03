@@ -8,6 +8,7 @@
 
 [node name="HealthBar" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_6opq1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

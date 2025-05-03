@@ -2220,4 +2220,3 @@ offset_right = 199.0
 offset_bottom = -266.0
 
 [node name="HealthBar" parent="." groups=["player"] instance=ExtResource("39_vrpay")]
-anchors_preset = 0
