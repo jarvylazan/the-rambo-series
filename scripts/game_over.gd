@@ -11,6 +11,7 @@ func _on_restart_button_pressed() -> void:
 		"language": TranslationServer.get_locale() 
 	})
 	MusicManager.play_sfx()
+	Global.heal(100)
 
 
 func _on_menu_button_pressed() -> void:

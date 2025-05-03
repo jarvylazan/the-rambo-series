@@ -213,6 +213,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Melee") and not is_attacking and not is_shooting:
 		is_attacking = true
 		var anim_name = play_attack_animation()
+		Global.take_damage(10)
 		
 		# Use the duration of the animation for the timer
 		var duration = get_animation_duration(anim_name)

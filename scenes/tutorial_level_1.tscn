@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
 [ext_resource type="Texture2D" uid="uid://bfmmyu2vj1pb6" path="res://assets/image/tilemap_block/desert assets/ground stain 256.png" id="3_8b7j2"]
 [ext_resource type="Texture2D" uid="uid://cl8evkdi6fyw4" path="res://assets/image/tilemap_block/desert assets/desert_pack/_Spritesheet_tileset.png" id="3_grycn"]
-[ext_resource type="Texture2D" uid="uid://dy3elvbb2qk2m" path="res://assets/image/tilemap_block/desert assets/EntrÃ©e de caverne en pixels.png" id="5_5o7h0"]
+[ext_resource type="Texture2D" uid="uid://dy3elvbb2qk2m" path="res://assets/image/tilemap_block/desert assets/Entrée de caverne en pixels.png" id="5_5o7h0"]
 [ext_resource type="Texture2D" uid="uid://c5oblhdesa0t3" path="res://assets/image/tilemap_block/desert assets/desert rock.png" id="5_hqnkb"]
 [ext_resource type="Texture2D" uid="uid://cjkqst04ncy7m" path="res://assets/image/tilemap_block/desert assets/tree blue desert 128.png" id="5_lsqm8"]
 [ext_resource type="Texture2D" uid="uid://3cse81fujj2u" path="res://assets/image/tilemap_block/Objects.png" id="6_6n1ip"]
 [ext_resource type="Texture2D" uid="uid://dqfy4y7vqgo7" path="res://assets/image/tilemap_block/desert assets/grass stain 256.png" id="6_gj6m2"]
-[ext_resource type="Texture2D" uid="uid://ccvvf2t8unxqm" path="res://assets/image/tilemap_block/desert assets/EntrÃ©e de caverne en pixels_64.png" id="6_hle5c"]
+[ext_resource type="Texture2D" uid="uid://ccvvf2t8unxqm" path="res://assets/image/tilemap_block/desert assets/Entrée de caverne en pixels_64.png" id="6_hle5c"]
 [ext_resource type="Texture2D" uid="uid://dp3rajka2wirl" path="res://assets/image/tilemap_block/desert assets/tree desert 128.png" id="6_hqnkb"]
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
 [ext_resource type="Texture2D" uid="uid://2a150wfyrb21" path="res://assets/image/tilemap_block/desert assets/tree desert 256.png" id="7_m77fg"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ba3voagyj332v" path="res://assets/image/tilemap_block/desert assets/Blue tree dessert_v2_128.png" id="11_lwd2k"]
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="11_mmoqx"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
-[ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisÃ© sur fond noir.png" id="17_edrmo"]
+[ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisé sur fond noir.png" id="17_edrmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
