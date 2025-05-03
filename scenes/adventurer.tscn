@@ -1,6 +1,6 @@
-[gd_scene load_steps=324 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=333 format=3 uid="uid://bwir50i2hkrio"]
 
-[ext_resource type="Script" path="res://scripts/adventurer.gd" id="1_ij0mf"]
+[ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
 [ext_resource type="Texture2D" uid="uid://d2pim8bmfy6so" path="res://assets/characters/The Male adventurer/Run_while_shooting/Run_while_shooting_Down.png" id="2_jrfnu"]
 [ext_resource type="Texture2D" uid="uid://cqlw37m0313dv" path="res://assets/characters/The Male adventurer/Attack/Gun/Shooting_down.png" id="2_kavmj"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://buhxkw5se3nu4" path="res://assets/characters/The Male adventurer/Run_while_shooting/Run_while_shooting_Left_up.png" id="8_dboca"]
 [ext_resource type="Texture2D" uid="uid://bun38tuls074c" path="res://assets/characters/The Male adventurer/Run_while_shooting/Run_while_shooting_Right_up.png" id="9_ggbvb"]
 [ext_resource type="Texture2D" uid="uid://4a0vl33ne3tn" path="res://assets/characters/The Male adventurer/Attack/Gun/Shooting_right_up.png" id="9_oukho"]
+[ext_resource type="Texture2D" uid="uid://cbxulre0cgj3d" path="res://assets/characters/The Male adventurer/Death/Normal/death_normal_down.png" id="11_5yu0q"]
 [ext_resource type="Texture2D" uid="uid://dspu7bjqbc4tq" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_down.png" id="13_h0seb"]
 [ext_resource type="Texture2D" uid="uid://bi8ol785ifj4h" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right_down.png" id="14_5g8jq"]
 [ext_resource type="Texture2D" uid="uid://ehclldcucaq8" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_left.png" id="14_aipbf"]
@@ -294,6 +295,38 @@ region = Rect2(288, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvd6i"]
 atlas = ExtResource("9_ggbvb")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb0ai"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwiid"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jaud"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8imke"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs4q3"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgi1j"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hqh1"]
+atlas = ExtResource("11_5yu0q")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh1g7"]
+atlas = ExtResource("11_5yu0q")
 region = Rect2(336, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emgyr"]
@@ -1396,6 +1429,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gb0ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwiid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jaud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8imke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs4q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgi1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hqh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh1g7")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_emgyr")
 }, {
 "duration": 1.0,
@@ -2192,6 +2254,7 @@ height = 178.0
 
 [node name="Node2D" type="CharacterBody2D"]
 y_sort_enabled = true
+collision_layer = 2
 script = ExtResource("1_ij0mf")
 inv = ExtResource("2_oukho")
 
@@ -2199,8 +2262,10 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"speardownright"
+animation = &"die"
 autoplay = "idledown"
+frame = 7
+frame_progress = 1.0
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
@@ -2214,9 +2279,11 @@ position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
 
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
+visible = false
 offset_left = -224.0
 offset_top = -578.0
 offset_right = 199.0
 offset_bottom = -266.0
 
 [node name="HealthBar" parent="." groups=["player"] instance=ExtResource("39_vrpay")]
+visible = false

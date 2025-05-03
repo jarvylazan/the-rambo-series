@@ -14,6 +14,7 @@ var bullet_timer = null  # Timer for spawning bullets
 var bullet_scene = null  # Will load at runtime
 var bullet_speed = 5000  # How fast bullets travel
 var shoot_cooldown = 0.2
+var is_dead = false
 
 func get_animation_duration(animation_name: String) -> float:
 	# Get the frame count
@@ -45,6 +46,7 @@ func _ready():
 	bullet_timer.one_shot = false
 	add_child(bullet_timer)
 	bullet_timer.timeout.connect(_on_bullet_timer_timeout)
+	Global.die.connect(_on_player_die)
 
 func _on_shoot_timer_timeout():
 	# If player is still holding the shoot button, restart the animation
@@ -213,7 +215,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Melee") and not is_attacking and not is_shooting:
 		is_attacking = true
 		var anim_name = play_attack_animation()
-		Global.take_damage(10)
+		Global.take_damage(50)
 		
 		# Use the duration of the animation for the timer
 		var duration = get_animation_duration(anim_name)
@@ -317,7 +319,7 @@ func update_facing_direction(direction):
 			
 func play_idle_animation():
 	# Skip animation updates if in an action with priority
-	if (is_attacking or is_shooting) and attack_animation_priority:
+	if (is_attacking or is_shooting) and attack_animation_priority or is_dead:
 		return
 		
 	# Match the correct animation based on facing direction
@@ -450,3 +452,12 @@ func play_run_and_gun_animation(direction) -> String:
 	
 	# Return the animation name so we can get its duration
 	return anim_name
+
+func _on_player_die():
+	is_dead = true
+	play_death_animation()
+
+func play_death_animation():
+	%RamboAnimatedSprite2D.play("die")
+	
+	await %RamboAnimatedSprite2D.animation_finished
