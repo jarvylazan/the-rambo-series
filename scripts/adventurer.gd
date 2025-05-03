@@ -49,11 +49,11 @@ func _ready():
 	Global.die.connect(_on_player_die)
 
 func _on_shoot_timer_timeout():
-	# If player is still holding the shoot button, restart the animation
+	# If player is still holding the shoot batton, restart the animation
 	if Input.is_action_pressed("Shoot"):
 		var input_direction = Vector2(
-			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+			Input.get_action_strength("Right") - Input.get_action_strength("Left"),
+			Input.get_action_strength("Down") - Input.get_action_strength("Up")
 		)
 		
 		var anim_name = ""
@@ -167,8 +167,8 @@ func spawn_bullet():
 func _physics_process(delta):
 	# Get input direction (we need this before handling attacks to determine run-and-gun animations)
 	var input_direction = Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
+		Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	)
 	
 	# Normalize the input direction if it's greater than 1
@@ -215,7 +215,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Melee") and not is_attacking and not is_shooting:
 		is_attacking = true
 		var anim_name = play_attack_animation()
-		Global.take_damage(50)
 		
 		# Use the duration of the animation for the timer
 		var duration = get_animation_duration(anim_name)
@@ -352,20 +351,29 @@ func play_attack_animation() -> String:
 	match facing_direction:
 		"right":
 			anim_name = "spearright"
+			%RamboAnimationPlayer.play("spearright")
 		"left":
 			anim_name = "spearleft"
+			%RamboAnimationPlayer.play("spearleft")
 		"down":
 			anim_name = "speardown"
+			%RamboAnimationPlayer.play("speardown")
 		"up":
 			anim_name = "spearup"
+			%RamboAnimationPlayer.play("spearup")
+
 		"top_right":
 			anim_name = "spearupright"
+			%RamboAnimationPlayer.play("spearupright")
 		"top_left":
 			anim_name = "spearupleft"
+			%RamboAnimationPlayer.play("spearupleft")
 		"bottom_right":
 			anim_name = "speardownright"
+			%RamboAnimationPlayer.play("speardownright")
 		"bottom_left":
 			anim_name = "speardownleft"
+			%RamboAnimationPlayer.play("speardownleft")
 			
 	# Play the animation
 	%RamboAnimatedSprite2D.play(anim_name)
@@ -375,6 +383,9 @@ func play_attack_animation() -> String:
 	
 	# Return the animation name so we can get its duration
 	return anim_name
+	
+func attack_finished():
+	%RamboAnimationPlayer.play("RESET")
 
 func play_shoot_animation() -> String:
 	# Variable to store animation name
@@ -461,3 +472,8 @@ func play_death_animation():
 	%RamboAnimatedSprite2D.play("die")
 	
 	await %RamboAnimatedSprite2D.animation_finished
+
+
+func _on_spear_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		body.take_spear_damage()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=333 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=339 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -1109,25 +1109,13 @@ region = Rect2(48, 0, 48, 64)
 atlas = ExtResource("14_x002e")
 region = Rect2(96, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fr32u"]
-atlas = ExtResource("14_x002e")
-region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvmus"]
-atlas = ExtResource("14_x002e")
-region = Rect2(192, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0t73q"]
-atlas = ExtResource("14_x002e")
-region = Rect2(240, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xd7wk"]
-atlas = ExtResource("14_x002e")
-region = Rect2(288, 0, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nm0u0"]
 atlas = ExtResource("14_x002e")
 region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr32u"]
+atlas = ExtResource("14_x002e")
+region = Rect2(144, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spv7k"]
 atlas = ExtResource("15_1bkhl")
@@ -2032,7 +2020,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vvr8a")
 }],
-"loop": false,
+"loop": true,
 "name": &"speardown",
 "speed": 12.0
 }, {
@@ -2163,19 +2151,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_b2m6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fr32u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wvmus")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0t73q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xd7wk")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_nm0u0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr32u")
 }],
 "loop": false,
 "name": &"spearup",
@@ -2240,17 +2219,472 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_5yu0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-106, -62)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_ciayf"]
-resource_name = "new_animation"
+resource_name = "speardown"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(-88, 219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gb0ai"]
+resource_name = "spearup"
+length = 0.42
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(62, 0), Vector2(62, -127)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.42),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mwiid"]
+resource_name = "spearright"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(70, 80), Vector2(140, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_5jaud"]
+resource_name = "spearleft"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(-128, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_8imke"]
+resource_name = "speardownright"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(83, 148)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.802851]
+}
+
+[sub_resource type="Animation" id="Animation_cs4q3"]
+resource_name = "speardownleft"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(-185, 135)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.715585]
+}
+
+[sub_resource type="Animation" id="Animation_bgi1j"]
+resource_name = "spearupright"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(34, 100), Vector2(200, -43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.785398]
+}
+
+[sub_resource type="Animation" id="Animation_8hqh1"]
+resource_name = "spearupleft"
+length = 0.67
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-88, -62), Vector2(-23, -10), Vector2(-117, -96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.67),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpearArea/SpearCollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.837758]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oukho"]
 _data = {
-&"new_animation": SubResource("Animation_ciayf")
+&"RESET": SubResource("Animation_5yu0q"),
+&"speardown": SubResource("Animation_ciayf"),
+&"speardownleft": SubResource("Animation_cs4q3"),
+&"speardownright": SubResource("Animation_8imke"),
+&"spearleft": SubResource("Animation_5jaud"),
+&"spearright": SubResource("Animation_mwiid"),
+&"spearup": SubResource("Animation_gb0ai"),
+&"spearupleft": SubResource("Animation_8hqh1"),
+&"spearupright": SubResource("Animation_bgi1j")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i8mc"]
 radius = 72.0
 height = 178.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yu0q"]
+size = Vector2(69, 366.25)
 
 [node name="Node2D" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -2262,14 +2696,12 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"die"
+animation = &"spearupleft"
 autoplay = "idledown"
-frame = 7
-frame_progress = 1.0
+frame = 5
 
-[node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
+[node name="RamboAnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_oukho")
 }
@@ -2287,3 +2719,15 @@ offset_bottom = -266.0
 
 [node name="HealthBar" parent="." groups=["player"] instance=ExtResource("39_vrpay")]
 visible = false
+
+[node name="SpearArea" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 8
+
+[node name="SpearCollisionShape2D" type="CollisionShape2D" parent="SpearArea"]
+unique_name_in_owner = true
+position = Vector2(-106, -62)
+shape = SubResource("RectangleShape2D_5yu0q")
+disabled = true
+
+[connection signal="body_entered" from="SpearArea" to="." method="_on_spear_area_body_entered"]

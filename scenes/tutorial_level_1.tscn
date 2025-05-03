@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=54 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/tutorial_level_1.gd" id="1_m77fg"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="11_mmoqx"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisé sur fond noir.png" id="17_edrmo"]
+[ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="19_5o7h0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
@@ -2799,3 +2800,15 @@ polygon = PackedVector2Array(6372, 49, 6414, 1391, 6389, 2063, 6401, 2944, 6374,
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6683, 2391)
+
+[node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
+position = Vector2(872, 1258)
+
+[node name="Cobra2" parent="." instance=ExtResource("19_5o7h0")]
+position = Vector2(1051, 1264)
+
+[node name="Cobra3" parent="." instance=ExtResource("19_5o7h0")]
+position = Vector2(994, 848)
+
+[node name="Cobra4" parent="." instance=ExtResource("19_5o7h0")]
+position = Vector2(663, 983)
