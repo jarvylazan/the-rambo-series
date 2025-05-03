@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://bno3mlx4quy20"
+=======
+uid="uid://bris6rkytdde0"
+>>>>>>> 7acade942dbc8f4f1551fe8ecbccc2402a8bd813
+path="res://.godot/imported/mc_profile_picture.png-2540b55812da4c26ac0fa0ed408898f3.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/image/ui interface/mc_profile_picture.png"
+dest_files=["res://.godot/imported/mc_profile_picture.png-2540b55812da4c26ac0fa0ed408898f3.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

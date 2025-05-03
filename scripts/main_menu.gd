@@ -15,10 +15,13 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.change_scene("res://scenes/tutorial_level_1.tscn", {
+	MusicManager.stop_music()
+	SceneManager.change_scene("res://scenes/storyteller_scene.tscn", {
 		"speed": 5,
 		"pattern": "scribbles",
+		"language": TranslationServer.get_locale() 
 	})
+
 
 
 func _on_en_button_pressed() -> void:

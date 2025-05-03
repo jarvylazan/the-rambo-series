@@ -1,0 +1,72 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="The Rambo Series"
+run/main_scene="uid://c2737dsntwjmv"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+AudioManager="*res://scripts/AudioManager.gd"
+MusicManager="*res://scenes/MusicManager.tscn"
+Global="*res://scripts/global.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+enemy=""
+player=""
+
+[input]
+
+Melee={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":86,"key_label":0,"unicode":118,"location":0,"echo":false,"script":null)
+]
+}
+Shoot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+Inventory={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGamedev - Master.en.translation", "res://assets/UI_Localization/PolyglotGamedev - Master.fr.translation")
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+<<<<<<< HEAD
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Ammo"
+2d_physics/layer_5="Items"
+2d_physics/layer_6="Sensor"
+=======
+2d_physics/layer_3="Projectiles"
+2d_physics/layer_4="Enemy"
+>>>>>>> 870d8a5d890f82d80b37dab30762ae74f5080895
+
+[rendering]
+
+renderer/rendering_method="mobile"

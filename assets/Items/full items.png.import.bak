@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://u2x5kic74cbj"
+=======
+uid="uid://cwuf3kw6i3a4k"
+>>>>>>> a83c8bbd2fc27842487a30a05949cb7880c875da
+path="res://.godot/imported/full items.png-ad485b9309d8ea608d0765198c5f5ff0.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/Items/full items.png"
+dest_files=["res://.godot/imported/full items.png-ad485b9309d8ea608d0765198c5f5ff0.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

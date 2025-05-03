@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf0406t5dpcrt"]
+[gd_scene load_steps=5 format=3 uid="uid://cf0406t5dpcrt"]
 
 [ext_resource type="Script" uid="uid://o61ahf0pvdn8" path="res://inventory/inventory_ui.gd" id="1_2hut1"]
 [ext_resource type="Texture2D" uid="uid://dn3laywvhoi37" path="res://assets/inventory/inventory-background.png" id="2_cedrj"]
 [ext_resource type="PackedScene" uid="uid://u6inymgtp212" path="res://inventory/inventory_slot.tscn" id="3_7rvkw"]
+
+[sub_resource type="Theme" id="Theme_cedrj"]
 
 [node name="InventoryUI" type="Control"]
 custom_minimum_size = Vector2(423, 312)
@@ -38,6 +40,7 @@ offset_right = 216.0
 offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_cedrj")
 columns = 4
 
 [node name="InventorySlot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7rvkw")]

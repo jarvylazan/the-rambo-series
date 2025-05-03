@@ -10,6 +10,7 @@ func _on_level_one_button_pressed() -> void:
 	SceneManager.change_scene("res://scenes/tutorial_level_1.tscn",{
 		"speed": 5,
 		"pattern": "scribbles",
+		
 	})
 	
 
