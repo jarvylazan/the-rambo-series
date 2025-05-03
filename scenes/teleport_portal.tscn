@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://bajtcvja37o0r"]
+
+[ext_resource type="Texture2D" uid="uid://888w4gjln70j" path="res://assets/image/portals/Green Portal Sprite Sheet.png" id="1_h3bgq"]
+
+[sub_resource type="GDScript" id="GDScript_h3bgq"]
+script/source = "extends Area2D
+
+@export var target_position: Vector2
+var can_teleport: bool = true
+
+func _ready():
+	# Play the idle animation (assumes it exists)
+	$AnimatedSprite2D.play(\"idle\")
+
+	# Connect the signal if not already connected in editor
+	if not is_connected(\"body_entered\", Callable(self, \"_on_body_entered\")):
+		connect(\"body_entered\", Callable(self, \"_on_body_entered\"))
+
+func _on_body_entered(body: Node2D):
+	if body.name == \"Player\" and can_teleport:
+		can_teleport = false
+		print(\"Teleporting player to:\", target_position)
+		body.global_position = target_position
+
+		await get_tree().create_timer(1.0).timeout
+		can_teleport = true
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h3bgq"]
+radius = 44.0
+height = 158.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug7p4"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shwh0"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw8yy"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7iag"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi4m7"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eub37"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnvw7"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sliyh"]
+atlas = ExtResource("1_h3bgq")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5grf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug7p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shwh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw8yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7iag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi4m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eub37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnvw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sliyh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[node name="TeleportPortal" type="Area2D"]
+modulate = Color(1, 0.101961, 0, 1)
+collision_layer = 64
+collision_mask = 2
+script = SubResource("GDScript_h3bgq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_h3bgq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_j5grf")
+animation = &"idle"
+frame_progress = 0.127845
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
