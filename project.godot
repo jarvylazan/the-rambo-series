@@ -82,6 +82,7 @@ locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGame
 2d_physics/layer_6="Sensor"
 2d_physics/layer_7="Melee"
 2d_physics/layer_8="Portal"
+
 [rendering]
 
 renderer/rendering_method="mobile"

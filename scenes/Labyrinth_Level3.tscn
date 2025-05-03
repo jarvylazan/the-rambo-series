@@ -4260,10 +4260,9 @@ shape = SubResource("RectangleShape2D_wuajj")
 debug_color = Color(0.0901961, 0.25098, 0.85098, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("3_byaxj")]
-position = Vector2(1886, 2075)
+position = Vector2(211, 1076)
 scale = Vector2(0.2, 0.2)
-collision_layer = 2
-collision_mask = 101
+collision_mask = 165
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(20.0001, -55)
@@ -4276,16 +4275,19 @@ position = Vector2(-2, 1929)
 position = Vector2(62, 288)
 
 [node name="TeleportPortal" parent="Portals_container" groups=["player"] instance=ExtResource("7_h7hy3")]
+collision_layer = 128
 target_position = Vector2(2046, 586)
 
 [node name="TeleportPortal2" parent="Portals_container" instance=ExtResource("7_h7hy3")]
 modulate = Color(0.175134, 0.620821, 0.553741, 1)
 position = Vector2(277, 257)
+collision_layer = 128
 target_position = Vector2(617, 323)
 
 [node name="TeleportPortal3" parent="Portals_container" instance=ExtResource("7_h7hy3")]
 modulate = Color(0.67032, 0.402234, 0.841748, 1)
 position = Vector2(135, 565)
+collision_layer = 128
 target_position = Vector2(75, 1133)
 
 [connection signal="body_entered" from="CameraZones/Section_1/Section1_Trigger" to="." method="_on_section_1_trigger_body_entered"]
