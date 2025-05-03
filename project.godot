@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 AudioManager="*res://scripts/AudioManager.gd"
 MusicManager="*res://scenes/MusicManager.tscn"
+Global="*res://scripts/global.gd"
 
 [display]
 
@@ -53,9 +54,9 @@ locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGame
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Projectiles"
 2d_physics/layer_4="Enemy"
-
 2d_physics/layer_5="Items"
 2d_physics/layer_6="Sensor"
+
 [rendering]
 
 renderer/rendering_method="mobile"
