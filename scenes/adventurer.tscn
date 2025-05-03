@@ -2252,7 +2252,7 @@ _data = {
 radius = 72.0
 height = 178.0
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Node2D" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_ij0mf")

@@ -5,7 +5,9 @@ func _ready():
 	max_health = 30
 	health = max_health
 	damage = 8
-	$AnimatedSprite2D.play("idle")
+	detection_range = 120.0
+	attack_range = 35.0
+	super()
 
 func take_gun_damage():
 	take_damage(10)
