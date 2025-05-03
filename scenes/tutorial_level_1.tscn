@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
 [ext_resource type="Texture2D" uid="uid://2a150wfyrb21" path="res://assets/image/tilemap_block/desert assets/tree desert 256.png" id="7_m77fg"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="9_hqnkb"]
-[ext_resource type="PackedScene" uid="uid://cyem0miqppoto" path="res://scenes/cobra.tscn" id="10_m77fg"]
+[ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="10_m77fg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
@@ -423,5 +423,19 @@ zoom = Vector2(1.2, 1.2)
 [node name="Ammo" parent="." instance=ExtResource("9_hqnkb")]
 position = Vector2(1527, 884)
 
-[node name="Cobra" parent="." instance=ExtResource("10_m77fg")]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Cobra" parent="Enemies" instance=ExtResource("10_m77fg")]
 position = Vector2(1676, 679)
+
+[node name="Cobra2" parent="Enemies" instance=ExtResource("10_m77fg")]
+position = Vector2(956, 865)
+
+[node name="Cobra3" parent="Enemies" instance=ExtResource("10_m77fg")]
+position = Vector2(1073, 777)
+
+[node name="Cobra4" parent="Enemies" instance=ExtResource("10_m77fg")]
+position = Vector2(1717, 881)
+
+[node name="Cobra5" parent="Enemies" instance=ExtResource("10_m77fg")]
+position = Vector2(1516, 630)

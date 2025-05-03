@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cyem0miqppoto"]
+[gd_scene load_steps=38 format=3 uid="uid://cr2aaapa0djbq"]
 
 [ext_resource type="Script" uid="uid://bsh13obh7y2hd" path="res://scenes/cobra.gd" id="1_x40ej"]
 [ext_resource type="Texture2D" uid="uid://4i4uayqpqiu" path="res://assets/characters/enemies/Cobra Sprite Sheet.png" id="2_l8mt4"]
@@ -194,7 +194,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -255,20 +255,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x0scu"]
-radius = 19.2354
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x40ej"]
+radius = 16.0
+height = 50.0
 
-[node name="Cobra" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8mt4"]
+radius = 4.99752
+
+[node name="Cobra" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
 script = ExtResource("1_x40ej")
-metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.08, 3.08)
 sprite_frames = SubResource("SpriteFrames_8strt")
-animation = &"idle"
-frame = 7
+animation = &"hurt"
+frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 28)
-shape = SubResource("CircleShape2D_x0scu")
+position = Vector2(-5, 24)
+shape = SubResource("CapsuleShape2D_x40ej")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-22, 44)
+rotation = -1.57403
+shape = SubResource("CapsuleShape2D_l8mt4")

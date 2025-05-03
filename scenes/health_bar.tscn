@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwypel6cyarr8"]
+
+[ext_resource type="Script" uid="uid://dwapfypmm1p4e" path="res://scripts/health_bar.gd" id="1_6opq1"]
+[ext_resource type="Texture2D" uid="uid://chp85qwya7sri" path="res://assets/characters/Health/413-4135632_health-bar-png-video-game-health-bar-png.png" id="1_y3kqx"]
+[ext_resource type="Texture2D" uid="uid://cs462planrfo1" path="res://assets/characters/Health/fullhealthnew.png" id="2_6opq1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y3kqx"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+script = ExtResource("1_6opq1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(25, 0)
+transform = Transform2D(1, 0, 0, 1, 25, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_right = 1201.0
+offset_bottom = 900.0
+scale = Vector2(0.188006, 0.188006)
+value = 78.0
+texture_under = SubResource("CanvasTexture_y3kqx")
+texture_over = ExtResource("1_y3kqx")
+texture_progress = ExtResource("2_6opq1")
+texture_progress_offset = Vector2(132, 0)

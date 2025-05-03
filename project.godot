@@ -20,10 +20,16 @@ config/icon="res://icon.svg"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 AudioManager="*res://scripts/AudioManager.gd"
 MusicManager="*res://scenes/MusicManager.tscn"
+Global="*res://scripts/global.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+enemy=""
+player=""
 
 [input]
 
@@ -46,6 +52,13 @@ Inventory={
 [internationalization]
 
 locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGamedev - Master.en.translation", "res://assets/UI_Localization/PolyglotGamedev - Master.fr.translation")
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Projectiles"
+2d_physics/layer_4="Enemy"
 
 [rendering]
 
