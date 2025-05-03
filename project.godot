@@ -56,6 +56,7 @@ locale/translations=PackedStringArray("res://assets/UI_Localization/PolyglotGame
 2d_physics/layer_4="Enemy"
 2d_physics/layer_5="Items"
 2d_physics/layer_6="Sensor"
+2d_physics/layer_7="Portal"
 
 [rendering]
 

@@ -6148,8 +6148,8 @@ texture_region_size = Vector2i(32, 32)
 17:12/0 = 0
 15:12/size_in_atlas = Vector2i(2, 3)
 15:12/0 = 0
-15:12/0/y_sort_origin = 25
-15:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.2403, 16, 23.8973, 10.3555, 21.6669, 24.6939, 19.1178, 32.9783, 6.05399, 38.0764, -18.4806, 40.6254, -26.765, 20.2331, -27.4022, 13.8604)
+15:12/0/y_sort_origin = 40
+15:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.8802, 17.0467, -27.5616, 6.53192, 21.1889, -1.75247, 25.6498, 9.3996, 23.1007, 19.9144, 27.2429, 33.9342, 5.89467, 44.1304, -0.477951, 43.8117, -19.9144, 40.3068, -23.738, 41.8999, -21.5076, 27.2429)
 19:15/size_in_atlas = Vector2i(1, 3)
 19:15/0 = 0
 19:15/0/y_sort_origin = 25
@@ -9483,6 +9483,7 @@ tile_map_data = PackedByteArray("AAD8////AAARAB4AAAD8/wAAAAAQABsAAAD8/wEAAAARAB4
 tile_set = SubResource("TileSet_l2b46")
 
 [node name="TileMap_Dungeon" type="TileMapLayer" parent="."]
+z_index = 1
 position = Vector2(0, 505)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAAAAAYAAAAAAAYAAAAAAAcAAAAAAAcAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAABAAQAAAABAAQAAAABAAUAAAABAAUAAAABAAYAAAABAAYAAAABAAcAAAABAAcAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAACAAQAAAACAAQAAAACAAUAAAACAAUAAAACAAYAAAACAAYAAAACAAcAAAACAAcAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAADAAQAAAADAAQAAAADAAUAAAADAAUAAAADAAYAAAADAAYAAAADAAcAAAADAAcAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAEAAYAAAAEAAYAAAAEAAcAAAAEAAcAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAFAAIAAAAFAAIAAAAFAAMAAAAFAAMAAAAFAAQAAAAFAAQAAAAFAAUAAAAFAAUAAAAFAAYAAAAFAAYAAAAFAAcAAAAFAAcAAAAGAAAAAAAGAAAAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAMAAAAGAAQAAAAGAAQAAAAGAAUAAAAGAAUAAAAGAAYAAAAGAAYAAAAGAAcAAAAGAAcAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAAHAAMAAAAHAAQAAAAHAAQAAAAHAAUAAAAHAAUAAAAHAAYAAAAHAAYAAAAHAAcAAAAHAAcAAAA=")
 tile_set = SubResource("TileSet_f64e7")
@@ -9492,6 +9493,7 @@ tile_map_data = PackedByteArray("AAD9/wMAAAASAA8AAAD+/wIAAAASAA8AAAD//wEAAAASAA8
 tile_set = SubResource("TileSet_u74wp")
 
 [node name="TileMap_door" type="TileMapLayer" parent="."]
+z_index = 1
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAD//xMAAAARABUAAAD//xYAAAARABUAAAA=")
 tile_set = SubResource("TileSet_6rwpi")
@@ -9506,11 +9508,13 @@ tile_map_data = PackedByteArray("AAD7/wEAAAASAAgAAAD7/wIAAAASAAkAAAD7/wMAAAASAAo
 tile_set = SubResource("TileSet_4prg4")
 
 [node name="Y-sorting" type="Node2D" parent="."]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(789, 82.9999)
 scale = Vector2(0.18, 0.18)
 
 [node name="TileMap_Pilier_Statue" type="TileMapLayer" parent="Y-sorting"]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(-4383.33, -461.11)
 scale = Vector2(11.1111, 11.1111)
@@ -9527,11 +9531,12 @@ tile_set = SubResource("TileSet_ax4xa")
 
 [node name="TileMap_Chess" type="TileMapLayer" parent="."]
 
-[node name="Node2D" parent="." instance=ExtResource("3_u74wp")]
-position = Vector2(789, 82.9999)
+[node name="Player" parent="." instance=ExtResource("3_u74wp")]
+z_index = 1
+position = Vector2(1365, 1177)
 scale = Vector2(0.18, 0.18)
 
-[node name="Camera2D" type="Camera2D" parent="Node2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5.55566, -0.000976563)
 limit_left = -7056
 limit_top = -7206

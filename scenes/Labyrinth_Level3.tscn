@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://btfewyknvf26i"]
+[gd_scene load_steps=28 format=4 uid="uid://btfewyknvf26i"]
 
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="1_byaxj"]
 [ext_resource type="Script" uid="uid://8pnqdhhg3eor" path="res://scripts/labyrinth_level_3.gd" id="1_hr1xi"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://demyls617wo2m" path="res://assets/image/tilemap_block/desert assets/labyrinth wall.png" id="2_mcf11"]
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="3_byaxj"]
 [ext_resource type="Texture2D" uid="uid://c6buiftjk7ope" path="res://assets/image/tilemap_block/anyrgb.com (2).png" id="3_mcf11"]
+[ext_resource type="Texture2D" uid="uid://blh5ls3qek016" path="res://assets/image/tilemap_block/Cercle magique lumineux et mystique.png" id="4_stky2"]
+[ext_resource type="PackedScene" uid="uid://bajtcvja37o0r" path="res://scenes/teleport_portal.tscn" id="7_h7hy3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr1xi"]
 texture = ExtResource("1_byaxj")
@@ -1550,6 +1552,106 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_stky2"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_h7hy3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jjme"]
+texture = ExtResource("4_stky2")
+texture_region_size = Vector2i(64, 64)
+1:0/size_in_atlas = Vector2i(14, 15)
+1:0/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+7:9/0 = 0
+8:3/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+8:6/0 = 0
+8:9/0 = 0
+9:3/0 = 0
+9:4/0 = 0
+9:5/0 = 0
+9:6/0 = 0
+9:7/0 = 0
+10:3/0 = 0
+10:4/0 = 0
+10:5/0 = 0
+10:6/0 = 0
+10:7/0 = 0
+10:8/0 = 0
+11:3/0 = 0
+11:4/0 = 0
+11:5/0 = 0
+11:6/0 = 0
+11:7/0 = 0
+11:8/0 = 0
+11:9/0 = 0
+12:3/0 = 0
+12:4/0 = 0
+12:5/0 = 0
+12:6/0 = 0
+12:7/0 = 0
+12:8/0 = 0
+12:9/0 = 0
+13:4/0 = 0
+13:5/0 = 0
+13:6/0 = 0
+13:7/0 = 0
+13:8/0 = 0
+13:9/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:10/0 = 0
+6:11/0 = 0
+6:12/0 = 0
+7:10/0 = 0
+7:11/0 = 0
+7:12/0 = 0
+8:10/0 = 0
+8:11/0 = 0
+8:12/0 = 0
+8:13/0 = 0
+9:10/0 = 0
+9:11/0 = 0
+9:12/0 = 0
+9:13/0 = 0
+10:10/0 = 0
+10:11/0 = 0
+10:12/0 = 0
+10:13/0 = 0
+11:12/0 = 0
+11:13/0 = 0
+12:10/0 = 0
+12:11/0 = 0
+12:12/0 = 0
+13:10/0 = 0
+13:11/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+2:9/0 = 0
+2:10/0 = 0
+2:11/0 = 0
+3:10/0 = 0
+3:11/0 = 0
+4:10/0 = 0
+4:11/0 = 0
+5:10/0 = 0
+5:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3e5cv"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_7jjme")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8x14p"]
+texture = ExtResource("4_stky2")
+texture_region_size = Vector2i(64, 64)
+1:0/size_in_atlas = Vector2i(14, 15)
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_58bnw"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_8x14p")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byaxj"]
 texture = ExtResource("3_mcf11")
@@ -4042,6 +4144,12 @@ size = Vector2(1377, 1314)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7hy3"]
 size = Vector2(1343.5, 1306)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78x3d"]
+size = Vector2(1349, 1334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuajj"]
+size = Vector2(1344, 1341)
+
 [node name="Labyrinth_Level_3" type="Node2D"]
 script = ExtResource("1_hr1xi")
 
@@ -4053,6 +4161,18 @@ tile_set = SubResource("TileSet_p04hg")
 [node name="TileMap_Second _Ground" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAIAAAAIABQAAAAAAAIAAAAIABQAAAACAAMAAAAIABQAAAACAAQAAAAIABQAAAABAAUAAAAIABQAAAABAAYAAAAIABQAAAACAAcAAAAIABQAAAADAAcAAAAIABQAAAADAAgAAAAIABQAAAADAAkAAAAIABQAAAAFAAoAAAALABUAAAAGAAsAAAAIABQAAAAIAAsAAAAIABQAAAALAAoAAAAIABQAAAAPAAMAAAAIABQAAAAQAAMAAAAIABQAAAASAAMAAAAIABQAAAATAAQAAAAIABQAAAATAAUAAAAIABQAAAATAAcAAAAIABQAAAAUAAcAAAAIABQAAAATAAgAAAAIABQAAAAUAAkAAAAIABQAAAAVAAkAAAAIABQAAAAVAAoAAAAIABQAAAAFAB0AAAALABQAAAAHAB8AAAAMABQAAAAHACAAAAALABQAAAAHAB4AAAALABQAAAAHAB0AAAALABQAAAAGABwAAAALABQAAAAFABsAAAALABQAAAAGABkAAAALABQAAAAHABkAAAALABQAAAAIABkAAAALABQAAAATABQAAAALABQAAAAUABQAAAALABQAAAAVABMAAAAMABQAAAAWABMAAAALABQAAAAXABMAAAALABQAAAAYABIAAAALABQAAAAZABIAAAALABQAAAAYABEAAAALABQAAAAXABEAAAALABQAAAAWABEAAAAMABQAAAAWABAAAAALABQAAAAUABAAAAALABQAAAATAA8AAAALABQAAAAVAA0AAAALABQAAAAiABwAAAALABQAAAAjAB8AAAALABQAAAAkAB8AAAALABQAAAAlACAAAAALABQAAAAmACEAAAALABQAAAAnACIAAAAMABQAAAAmACMAAAALABQAAAAlACQAAAALABQAAAAjACQAAAALABQAAAAiACQAAAALABQAAAAhACEAAAALABQAAAAeACEAAAALABQAAAAcAB8AAAALABQAAAAbAB8AAAALABQAAAAaAB8AAAALABQAAAAaACAAAAALABQAAAAZACAAAAALABQAAAAZACEAAAALABQAAAAZACIAAAALABQAAAAXACQAAAALABQAAAAWAB8AAAALABQAAAAWAB4AAAALABUAAAAXAB4AAAALABUAAAAXAB0AAAALABUAAAANACMAAAALABQAAAANACQAAAALABQAAAALACQAAAALABQAAAAKACQAAAALABQAAAADACAAAAALABQAAAADAB8AAAALABQAAAABAB8AAAALABQAAAABAB4AAAALABQAAAABACAAAAALABUAAAACACAAAAALABQAAAADACEAAAALABQAAAACACIAAAALABQAAAACACMAAAALABQAAAACACQAAAALABQAAAABACQAAAALABQAAAA3AAoAAAALABQAAAA4AAsAAAALABQAAAA4AAwAAAALABQAAAA5AA0AAAALABQAAAA6ABAAAAALABQAAAA0ABAAAAALABQAAAAzABAAAAALABQAAAAyABAAAAALABQAAAAxABAAAAALABQAAAAwABEAAAALABQAAAAxABEAAAALABQAAAA0ABIAAAALABQAAAA1ABMAAAALABQAAAA1ABQAAAALABQAAAA2ABQAAAALABQAAAA2ABUAAAALABQAAAA3ABYAAAALABQAAAA7ABkAAAALABQAAAA8ABkAAAALABQAAAA9ABkAAAALABQAAAA+ABoAAAALABQAAAA/ABoAAAALABQAAABBABgAAAALABUAAABBABcAAAALABQAAABCABYAAAALABQAAABFABYAAAALABQAAABGABcAAAALABQAAABHABgAAAALABQAAABIABsAAAALABQAAABIABoAAAALABQAAABFABgAAAAMABQAAABGABgAAAALABQAAABHABkAAAALABQAAABNAAoAAAALABQAAABOAAkAAAALABQAAABQAAYAAAALABQAAABSAAMAAAALABQAAABSAAQAAAALABQAAABRAAkAAAALABQAAABSAAoAAAALABQAAABUAAgAAAALABQAAABTAAcAAAALABQAAABRACEAAAALABQAAABQACMAAAALABQAAABNACMAAAALABQAAABMACMAAAALABQAAABLACMAAAALABQAAABKACMAAAALABQAAABJACMAAAALABQAAABIACEAAAALABQAAABKACEAAAALABQAAABKACIAAAALABQAAAA4ACMAAAALABQAAAA4ACQAAAALABQAAAA3ACQAAAALABQAAAA1ACAAAAAJABQAAAA3ACMAAAALABUAAAA2ACMAAAAJABQAAAA1ACIAAAAJABQAAAAzACEAAAAJABQAAAAyACEAAAAJABQAAAAxACAAAAAJABQAAAAwAB4AAAAJABQAAAAsABsAAAAJABQAAAAsABwAAAALABUAAAAsAB0AAAALABUAAAAsAB4AAAAJABQAAAAsAB8AAAAJABQAAAAsACAAAAALABUAAAAsACEAAAAJABQAAAAsACIAAAAJABQAAAAqAB0AAAAJABQAAAApABwAAAAJABQAAAAmABkAAAAJABQAAAA7AEAAAAAJABQAAABBAD8AAAAJABQAAABAAD0AAAAJABQAAAA/AD4AAAAJABQAAAA+AD8AAAAJABQAAAA+AEAAAAAJABQAAAA+AEEAAAAJABQAAAA/AEEAAAAJABQAAABAAEEAAAAJABQAAABCAEIAAAAJABQAAABCAEMAAAAJABQAAAAgADsAAAAJABUAAAAfADoAAAAJABUAAAAgADoAAAAJABUAAAAhADoAAAAJABUAAAAiADoAAAAJABUAAAAjADoAAAAJABUAAAAjADsAAAAJABUAAAAkADwAAAAJABUAAAAlAD0AAAAJABUAAAAmAD0AAAAJABUAAAAdAEEAAAALABQAAAAdAEAAAAALABQAAAAeAD8AAAALABQAAAAeAD4AAAALABQAAAAdAD4AAAALABQAAAAcADoAAAALABQAAAAbADoAAAALABQAAAAaADkAAAALABQAAAAYADoAAAALABQAAAAXADsAAAALABQAAAAWAD0AAAALABQAAAAaADwAAAALABQAAAAbADsAAAALABQAAAAaADsAAAALABQAAAAZADsAAAALABQAAAAZADoAAAALABQAAAAXADkAAAALABQAAAAWADkAAAALABQAAAAVADgAAAALABQAAAAUADgAAAALABQAAAATADgAAAALABQAAAASADgAAAALABQAAAALAC0AAAALABQAAAALAC8AAAALABQAAAALADAAAAALABQAAAALADEAAAALABQAAAAMADIAAAALABQAAAANADIAAAALABQAAAAOADIAAAALABQAAAAPADIAAAALABQAAAAQADIAAAALABQAAAARAC8AAAALABQAAAAPAC8AAAALABQAAAAOAC8AAAALABQAAAANAC4AAAALABQAAAAMAC4AAAALABQAAAATADEAAAALABQAAAAUADEAAAALABQAAAATAC8AAAALABQAAAATAC4AAAALABQAAAASAC0AAAALABQAAAARAC4AAAALABQAAAAPAC0AAAALABQAAAAOAC4AAAALABQAAAANADQAAAALABQAAAAMADQAAAALABQAAAAMADUAAAALABQAAAALADUAAAALABQAAAAKADUAAAALABQAAAAJADUAAAALABQAAAAGADUAAAALABQAAAAFADUAAAALABQAAAAjAC0AAAALABQAAAAkAC0AAAALABQAAAAkAC4AAAALABQAAAAlAC8AAAALABQAAAAlADAAAAALABQAAAAmADEAAAALABQAAAAnADEAAAALABQAAAAnADIAAAALABQAAAAoADMAAAALABQAAAACAD4AAAAMABQAAAALAEIAAAAMABQAAAAMAEIAAAAMABQAAAANAEMAAAAMABQAAAAMAD4AAAAMABQAAAAKAEAAAAAMABQAAAALAEEAAAAMABQAAAANAEAAAAAMABQAAAAOAEEAAAAMABQAAAAPAEIAAAAMABQAAAARAEQAAAAKABUAAAASAEUAAAAKABUAAAAQAE8AAAAKABUAAAAPAE8AAAAKABUAAAARAEwAAAAKABUAAAASAEwAAAAKABUAAAASAE0AAAAKABUAAAASAE8AAAAKABUAAAATAE8AAAAKABUAAAAUAFAAAAAKABUAAAAUAE8AAAAKABUAAAAVAE8AAAAKABUAAAAWAE4AAAAKABUAAAAXAE0AAAAKABUAAAAaAEsAAAAKABUAAAAiAE0AAAAKABUAAAAjAEwAAAAKABUAAAAiAEwAAAAKABUAAAAhAE0AAAAKABUAAAAfAE4AAAAKABUAAAAfAE8AAAAKABUAAAAhAE4AAAAKABUAAAAiAE4AAAAKABUAAAAkAE8AAAAKABUAAAA2AE4AAAAKABUAAAAzAE8AAAAKABUAAAA0AE4AAAAKABUAAAA2AE0AAAAKABUAAAA3AEsAAAAKABUAAAA2AEkAAAAKABUAAAA2AEgAAAAKABUAAAA1AEgAAAAKABUAAAAyAEcAAAAKABUAAAAzAEkAAAAKABUAAAAzAEoAAAAKABUAAABBAEwAAAAKABUAAABDAC8AAAAKABUAAAA7AC8AAAAKABUAAAA8AC0AAAAKABUAAAA9AC4AAAAKABUAAAA+AC8AAAAKABUAAAA/AC8AAAAKABUAAABAAC8AAAAKABUAAABBAC8AAAAKABUAAABCAC8AAAAKABUAAABAAC4AAAAKABUAAAA/ADAAAAAKABUAAAA/ADEAAAAKABUAAAA+ADEAAAAKABUAAAA8ADEAAAAKABUAAABBAA4AAAAKABUAAABCAA4AAAAKABUAAABDAA0AAAAKABUAAABEAAoAAAAKABUAAAA=")
 tile_set = SubResource("TileSet_stky2")
+
+[node name="CercleMagic_sec_1" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="CercleMagic_sec_1"]
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AAA6ADAAAAABAAAAAAAQAFcAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_3e5cv")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="CercleMagic_sec_1"]
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AAA6ADAAAAABAAAAAAAQAFcAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_58bnw")
 
 [node name="TileMap_small detail" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -4098,31 +4218,77 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZones/Section_1/Section1_Trigger"]
+visible = false
 position = Vector2(672.5, 553)
 shape = SubResource("RectangleShape2D_hr1xi")
 debug_color = Color(0.885525, 0.229559, 0.603755, 0.42)
 
-[node name="Section2_Trigger" type="Area2D" parent="CameraZones/Section_1"]
+[node name="Section 2" type="Node2D" parent="CameraZones"]
+
+[node name="Section2_Trigger" type="Area2D" parent="CameraZones/Section 2"]
 collision_layer = 32
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZones/Section_1/Section2_Trigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZones/Section 2/Section2_Trigger"]
+visible = false
 position = Vector2(2049.25, 558)
 shape = SubResource("RectangleShape2D_h7hy3")
 debug_color = Color(0.339572, 0.517385, 0.905185, 0.42)
 
+[node name="Section 3" type="Node2D" parent="CameraZones"]
+
+[node name="Section3_Trigger" type="Area2D" parent="CameraZones/Section 3"]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZones/Section 3/Section3_Trigger"]
+visible = false
+position = Vector2(681.5, 1936)
+shape = SubResource("RectangleShape2D_78x3d")
+debug_color = Color(0.172422, 0.635991, 0.290401, 0.42)
+
+[node name="Section 4" type="Node2D" parent="CameraZones"]
+
+[node name="Section4_Trigger" type="Area2D" parent="CameraZones/Section 4"]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZones/Section 4/Section4_Trigger"]
+visible = false
+position = Vector2(2060, 1936.5)
+shape = SubResource("RectangleShape2D_wuajj")
+debug_color = Color(0.0901961, 0.25098, 0.85098, 0.419608)
+
 [node name="Player" parent="." instance=ExtResource("3_byaxj")]
-position = Vector2(1728, 659)
+position = Vector2(1886, 2075)
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
-collision_mask = 37
+collision_mask = 101
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(20.0001, -55)
 zoom = Vector2(1.8, 1.8)
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(1396, 801)
+position = Vector2(-2, 1929)
+
+[node name="Portals_container" type="Node2D" parent="."]
+position = Vector2(62, 288)
+
+[node name="TeleportPortal" parent="Portals_container" groups=["player"] instance=ExtResource("7_h7hy3")]
+target_position = Vector2(2046, 586)
+
+[node name="TeleportPortal2" parent="Portals_container" instance=ExtResource("7_h7hy3")]
+modulate = Color(0.175134, 0.620821, 0.553741, 1)
+position = Vector2(277, 257)
+target_position = Vector2(617, 323)
+
+[node name="TeleportPortal3" parent="Portals_container" instance=ExtResource("7_h7hy3")]
+modulate = Color(0.67032, 0.402234, 0.841748, 1)
+position = Vector2(135, 565)
+target_position = Vector2(75, 1133)
 
 [connection signal="body_entered" from="CameraZones/Section_1/Section1_Trigger" to="." method="_on_section_1_trigger_body_entered"]
-[connection signal="body_entered" from="CameraZones/Section_1/Section2_Trigger" to="." method="_on_section_2_trigger_body_entered"]
+[connection signal="body_entered" from="CameraZones/Section 2/Section2_Trigger" to="." method="_on_section_2_trigger_body_entered"]
+[connection signal="body_entered" from="CameraZones/Section 3/Section3_Trigger" to="." method="_on_section_3_trigger_body_entered"]
+[connection signal="body_entered" from="CameraZones/Section 4/Section4_Trigger" to="." method="_on_section_4_trigger_body_entered"]
