@@ -2770,7 +2770,7 @@ collision_mask = 129
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(140, -180)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(1.2, 1.2)
 
 [node name="Ammo" parent="." instance=ExtResource("9_hqnkb")]
 position = Vector2(1527, 884)

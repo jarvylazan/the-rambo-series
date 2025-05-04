@@ -80,3 +80,5 @@ stream = ExtResource("5_n36c0")
 volume_db = 20.0
 bus = &"SFX"
 parameters/looping = true
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
