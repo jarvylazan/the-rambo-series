@@ -1,4 +1,4 @@
-[gd_scene load_steps=339 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=342 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://dhphhhn6rcdjx" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right.png" id="15_7nbdq"]
 [ext_resource type="Texture2D" uid="uid://xyytqyptbwiu" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right_up.png" id="16_aipbf"]
 [ext_resource type="PackedScene" uid="uid://cf0406t5dpcrt" path="res://inventory/inventory_ui.tscn" id="30_j353b"]
-[ext_resource type="PackedScene" path="res://scenes/health_bar.tscn" id="39_vrpay"]
+[ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/health_bar.tscn" id="39_vrpay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc5b8"]
 atlas = ExtResource("2_jrfnu")
@@ -1109,13 +1109,25 @@ region = Rect2(48, 0, 48, 64)
 atlas = ExtResource("14_x002e")
 region = Rect2(96, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nm0u0"]
-atlas = ExtResource("14_x002e")
-region = Rect2(336, 0, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr32u"]
 atlas = ExtResource("14_x002e")
 region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvmus"]
+atlas = ExtResource("14_x002e")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t73q"]
+atlas = ExtResource("14_x002e")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd7wk"]
+atlas = ExtResource("14_x002e")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm0u0"]
+atlas = ExtResource("14_x002e")
+region = Rect2(336, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spv7k"]
 atlas = ExtResource("15_1bkhl")
@@ -2020,7 +2032,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vvr8a")
 }],
-"loop": true,
+"loop": false,
 "name": &"speardown",
 "speed": 12.0
 }, {
@@ -2151,10 +2163,19 @@ animations = [{
 "texture": SubResource("AtlasTexture_b2m6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nm0u0")
+"texture": SubResource("AtlasTexture_fr32u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fr32u")
+"texture": SubResource("AtlasTexture_wvmus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t73q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd7wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm0u0")
 }],
 "loop": false,
 "name": &"spearup",
@@ -2686,8 +2707,7 @@ height = 178.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yu0q"]
 size = Vector2(69, 366.25)
 
-[node name="Node2D" type="CharacterBody2D"]
-y_sort_enabled = true
+[node name="Node2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_ij0mf")
 inv = ExtResource("2_oukho")
@@ -2696,12 +2716,14 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"spearupleft"
+animation = &"die"
 autoplay = "idledown"
-frame = 5
+frame = 7
+frame_progress = 1.0
 
-[node name="RamboAnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_oukho")
 }

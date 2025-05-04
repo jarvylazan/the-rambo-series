@@ -2399,6 +2399,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
+
 sources/0 = SubResource("TileSetAtlasSource_qhc4u")
 sources/1 = SubResource("TileSetAtlasSource_b1gtu")
 
@@ -2818,14 +2819,5 @@ polygon = PackedVector2Array(6372, 49, 6414, 1391, 6389, 2063, 6401, 2944, 6374,
 position = Vector2(6683, 2391)
 
 [node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(872, 1258)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-1670, 764)
 
-[node name="Cobra2" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(1051, 1264)
-
-[node name="Cobra3" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(994, 848)
-
-[node name="Cobra4" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(663, 983)
