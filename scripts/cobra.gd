@@ -1,5 +1,7 @@
 extends Enemy
 
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+
 func _ready():
 	speed = 40
 	max_health = 30
@@ -24,3 +26,8 @@ func attack() -> void:
 
 func take_gun_damage():
 	take_damage(10)
+
+
+func _on_fang_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		Global.take_damage(10)

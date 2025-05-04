@@ -1,4 +1,4 @@
-[gd_scene load_steps=333 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=342 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -2707,8 +2707,7 @@ height = 178.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yu0q"]
 size = Vector2(69, 366.25)
 
-[node name="Node2D" type="CharacterBody2D"] groups=["player"]]
-y_sort_enabled = true
+[node name="Node2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_ij0mf")
 inv = ExtResource("2_oukho")
