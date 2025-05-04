@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cr2aaapa0djbq"]
+[gd_scene load_steps=42 format=3 uid="uid://cr2aaapa0djbq"]
 
 [ext_resource type="Script" uid="uid://bsh13obh7y2hd" path="res://scripts/cobra.gd" id="1_x40ej"]
 [ext_resource type="Texture2D" uid="uid://4i4uayqpqiu" path="res://assets/characters/enemies/Cobra Sprite Sheet.png" id="2_l8mt4"]
@@ -262,6 +262,167 @@ height = 50.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8mt4"]
 radius = 4.99752
 
+[sub_resource type="Animation" id="Animation_x40ej"]
+resource_name = "attack"
+length = 0.1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.02, 0.04, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 16, 17, 18, 19, 20, 21]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FangHitbox/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 16), Vector2(35, 16), Vector2(35, 16), Vector2(0, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FangHitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FangHitbox/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3.565, 3.565), Vector2(3.565, 3.565), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [true, false, false, false, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l8mt4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FangHitbox/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FangHitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FangHitbox/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxuhc"]
+_data = {
+&"RESET": SubResource("Animation_l8mt4"),
+&"attack": SubResource("Animation_x40ej")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x40ej"]
+radius = 10.4403
+
 [node name="Cobra" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 script = ExtResource("1_x40ej")
@@ -271,11 +432,34 @@ scale = Vector2(3.08, 3.08)
 sprite_frames = SubResource("SpriteFrames_8strt")
 animation = &"attack"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BodyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 24)
 shape = SubResource("CapsuleShape2D_x40ej")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="TailHitBox" type="CollisionShape2D" parent="."]
 position = Vector2(-22, 44)
 rotation = -1.57512
 shape = SubResource("CapsuleShape2D_l8mt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(3.025, 3.025)
+texture = ExtResource("2_l8mt4")
+hframes = 8
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yxuhc")
+}
+
+[node name="FangHitbox" type="Area2D" parent="."]
+disable_mode = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FangHitbox"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_x40ej")
+disabled = true
+
+[connection signal="body_entered" from="FangHitbox" to="." method="_on_fang_hitbox_body_entered"]
