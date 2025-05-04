@@ -15,6 +15,7 @@ var bullet_scene = null  # Will load at runtime
 var bullet_speed = 5000  # How fast bullets travel
 var shoot_cooldown = 0.2
 var is_dead = false
+var can_move := true  # Used to freeze/unfreeze player movement
 
 func get_animation_duration(animation_name: String) -> float:
 	# Get the frame count
@@ -165,6 +166,16 @@ func spawn_bullet():
 	print("Bullet direction: ", direction)
 
 func _physics_process(delta):
+	# Manual unfreeze during testing (press U key)
+	if Input.is_action_just_pressed("unfreeze_player"):
+		can_move = true
+
+	# Freeze player if needed (used for when dialogue appears in the tutorial level)
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	# Get input direction (we need this before handling attacks to determine run-and-gun animations)
 	var input_direction = Vector2(
 		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
@@ -174,6 +185,7 @@ func _physics_process(delta):
 	# Normalize the input direction if it's greater than 1
 	if input_direction.length() > 1.0:
 		input_direction = input_direction.normalized()
+
 	
 	# Check if character is moving
 	is_moving = input_direction != Vector2.ZERO
