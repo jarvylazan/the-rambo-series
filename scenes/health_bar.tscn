@@ -1,10 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwypel6cyarr8"]
+[gd_scene load_steps=11 format=3 uid="uid://dwypel6cyarr8"]
 
 [ext_resource type="Script" uid="uid://dwapfypmm1p4e" path="res://scripts/health_bar.gd" id="1_6opq1"]
-[ext_resource type="Texture2D" uid="uid://chp85qwya7sri" path="res://assets/characters/Health/413-4135632_health-bar-png-video-game-health-bar-png.png" id="1_y3kqx"]
 [ext_resource type="Texture2D" uid="uid://cs462planrfo1" path="res://assets/characters/Health/fullhealthnew.png" id="2_6opq1"]
+[ext_resource type="Texture2D" uid="uid://r4cdad85xp8n" path="res://assets/image/ui interface/ui_label_cadre.png" id="2_tujlf"]
+[ext_resource type="Texture2D" uid="uid://bris6rkytdde0" path="res://assets/image/ui interface/mc_profile_picture.png" id="3_tujlf"]
+[ext_resource type="Texture2D" uid="uid://b222dx8lyan2q" path="res://assets/image/ui interface/coinGold.png" id="5_5oo0i"]
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="6_s32md"]
+[ext_resource type="Texture2D" uid="uid://bdbecx65psfbc" path="res://assets/image/ui interface/bullet.png" id="7_5xgdr"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_y3kqx"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_5oo0i"]
+
+[sub_resource type="Theme" id="Theme_oeie6"]
+default_font = ExtResource("6_s32md")
+
+[sub_resource type="Theme" id="Theme_x53g4"]
+default_font = ExtResource("6_s32md")
 
 [node name="HealthBar" type="Control"]
 layout_mode = 3
@@ -15,14 +25,61 @@ script = ExtResource("1_6opq1")
 offset = Vector2(25, 0)
 transform = Transform2D(1, 0, 0, 1, 25, 0)
 
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = 269.0
+offset_top = 136.0
+offset_right = 540.0
+offset_bottom = 246.0
+texture = ExtResource("2_tujlf")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 280.0
+offset_top = 146.0
+offset_right = 339.0
+offset_bottom = 187.0
+texture = ExtResource("3_tujlf")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 1.0
-offset_right = 1201.0
-offset_bottom = 900.0
+offset_left = 325.0
+offset_top = 89.0
+offset_right = 1525.0
+offset_bottom = 989.0
 scale = Vector2(0.188006, 0.188006)
 value = 78.0
-texture_under = SubResource("CanvasTexture_y3kqx")
-texture_over = ExtResource("1_y3kqx")
+texture_under = SubResource("CanvasTexture_5oo0i")
 texture_progress = ExtResource("2_6opq1")
-texture_progress_offset = Vector2(132, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 436.0
+offset_top = 200.0
+offset_right = 491.0
+offset_bottom = 241.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_5oo0i")
+expand_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_oeie6")
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 443.0
+offset_top = 178.0
+offset_right = 494.0
+offset_bottom = 212.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("7_5xgdr")
+expand_mode = 2
+
+[node name="BulletsLabel" type="Label" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_x53g4")
+text = "0"
