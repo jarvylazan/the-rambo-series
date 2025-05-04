@@ -2802,4 +2802,4 @@ polygon = PackedVector2Array(6372, 49, 6414, 1391, 6389, 2063, 6401, 2944, 6374,
 position = Vector2(6683, 2391)
 
 [node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(-1645, 795)
+position = Vector2(-1670, 764)
