@@ -2808,6 +2808,7 @@ position = Vector2(6683, 2391)
 
 [node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
 position = Vector2(872, 1258)
+scale = Vector2(1.5, 1.5)
 
 [node name="Cobra2" parent="." instance=ExtResource("19_5o7h0")]
 position = Vector2(1051, 1264)
