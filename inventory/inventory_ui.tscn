@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf0406t5dpcrt"]
 
-[ext_resource type="Script" uid="uid://o61ahf0pvdn8" path="res://inventory/inventory_ui.gd" id="1_2hut1"]
+[ext_resource type="Script" path="res://inventory/inventory_ui.gd" id="1_2hut1"]
 [ext_resource type="Texture2D" uid="uid://dn3laywvhoi37" path="res://assets/inventory/inventory-background.png" id="2_cedrj"]
 [ext_resource type="PackedScene" uid="uid://u6inymgtp212" path="res://inventory/inventory_slot.tscn" id="3_7rvkw"]
 
@@ -19,8 +19,10 @@ script = ExtResource("1_2hut1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 438.0
-offset_bottom = 356.0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 440.0
+offset_bottom = 362.0
 texture = ExtResource("2_cedrj")
 patch_margin_left = 6
 patch_margin_top = 6

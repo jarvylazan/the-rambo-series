@@ -7,7 +7,7 @@ var intro_dialogue_lines := [
 	"Hello adventurer… I'm Merlin's remaining soul.",
 	"I will be your guide in this adventure.",
 	"Before starting your journey, learn your ability and the possibility of these worlds I created.",
-	"Use the arrow keys to move and master your environment."
+	"Use the arrow keys  or 'w', 's','d','a', to move and master your environment."
 ]
 
 var dialogue_box  # Store reference for later use
