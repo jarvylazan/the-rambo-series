@@ -1,4 +1,4 @@
-[gd_scene load_steps=343 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=342 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -2701,12 +2701,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i8mc"]
-radius = 94.0
-height = 266.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrpay"]
-radius = 136.0
-height = 468.0
+radius = 95.0
+height = 202.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yu0q"]
 size = Vector2(69, 366.25)
@@ -2733,11 +2729,6 @@ libraries = {
 [node name="EnvironmentCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
-
-[node name="Environment_EnemyCollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -32)
-shape = SubResource("CapsuleShape2D_vrpay")
-debug_color = Color(0.388682, 0.495715, 0.932824, 0.42)
 
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
 anchors_preset = 8

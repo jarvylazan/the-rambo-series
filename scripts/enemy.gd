@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var speed: float = 50.0
+@export var speed: float = 150.0
 @export var health: int = 100
 @export var max_health: int = 100
 @export var damage: int = 10
@@ -25,6 +25,7 @@ var patrol_flip_cooldown := false
 
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -40,8 +41,10 @@ func _physics_process(delta: float) -> void:
 		var dist_to_player = global_position.distance_to(player.global_position)
 
 		if dist_to_player <= attack_range:
+			var flip_left = player.global_position.x < global_position.x
 			velocity = Vector2.ZERO
-			attack()
+			attack(flip_left)
+
 		elif dist_to_player <= detection_range:
 			move_towards(player.global_position)
 		else:
@@ -70,14 +73,13 @@ func update_animation(last_velocity: Vector2) -> void:
 		anim.play("die")
 	elif is_hurt:
 		anim.play("hurt")
-	elif is_attacking:
-		anim.play("attack")
 	elif last_velocity.length() > 1:
 		anim.play("move")
 	else:
 		anim.play("idle")
 
-	anim.flip_h = direction.x < 0
+	if not is_attacking:
+		anim.flip_h = direction.x < 0
 
 func take_damage(amount: int) -> void:
 	if is_dead:
@@ -100,18 +102,21 @@ func die() -> void:
 	await anim.animation_finished
 	queue_free()
 
-func attack() -> void:
+func attack(flip_left: bool) -> void:
 	if is_attacking or is_dead or not can_attack:
 		return
 
 	is_attacking = true
 	can_attack = false
-	anim.play("attack")
-	await anim.animation_finished
-	is_attacking = false
 
+	var attack_anim = "attack_left" if flip_left else "attack_right"
+	anim_player.play(attack_anim)
+	await anim_player.animation_finished
+
+	is_attacking = false
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
+
 
 func move_towards(target_position: Vector2) -> void:
 	if is_dead or is_attacking:
