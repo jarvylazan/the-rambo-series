@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="11_mmoqx"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisé sur fond noir.png" id="17_edrmo"]
-[ext_resource type="PackedScene" path="res://scenes/cobra.tscn" id="19_5o7h0"]
+[ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="19_5o7h0"]
 [ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/hud.tscn" id="20_hle5c"]
 [ext_resource type="PackedScene" uid="uid://jwe253ux2r3v" path="res://inventory/items/blue_potion.tscn" id="21_4nlgx"]
 [ext_resource type="PackedScene" uid="uid://bk6xd1hoam6xj" path="res://inventory/items/red_potion.tscn" id="21_e0lhq"]
