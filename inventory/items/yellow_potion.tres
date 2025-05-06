@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://x8wxhux8rtdr"]
+
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="1_5vp1i"]
+[ext_resource type="Texture2D" uid="uid://col3jargwhjpf" path="res://assets/Items/Yellow_potion.png" id="2_5vp1i"]
+
+[resource]
+script = ExtResource("1_5vp1i")
+name = "_potion"
+texture = ExtResource("2_5vp1i")
+metadata/_custom_type_script = "uid://cho0oo0tgufqt"
