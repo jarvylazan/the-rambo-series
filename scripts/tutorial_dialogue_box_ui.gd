@@ -7,7 +7,7 @@ const CHAR_READ_RATE := 0.05  # Speed per character
 @onready var continue_button = $ContinueButton
 @onready var portrait = $HBoxContainer/Portrait
 @onready var auto_advance_timer = $AutoAdvanceTimer
-@onready var type_sound = $TypeSound
+@onready var type_sound = $TypingSound
 
 @export var auto_advance_delay := 5.0  
 
@@ -16,6 +16,9 @@ var tween
 
 func _ready():
 	MusicManager.stop_music()
+
+	type_sound.play()
+	print("🔊 Playing sound!")  # Log to confirm it's being called
 
 	if continue_button:
 		continue_button.visible = true
@@ -29,6 +32,7 @@ func _ready():
 	if not text_queue.is_empty():
 		display_text()
 
+
 func queue_text(text: String):
 	text_queue.push_back(text)
 
@@ -39,7 +43,7 @@ func display_text():
 		return
 
 	if type_sound:
-		type_sound.stop()  # 🛑 Ensure sound from previous line is stopped
+		type_sound.stop()  #  Ensure sound from previous line is stopped
 
 	var next_text = text_queue.pop_front()
 
@@ -69,9 +73,11 @@ func display_text():
 	await tween.finished
 
 	if type_sound:
-		type_sound.stop()  # 🛑 Stop when typing animation finishes
+		type_sound.stop()  # Stop when typing animation finishes
 	if auto_advance_timer:
 		auto_advance_timer.start(auto_advance_delay)
+		
+		
 
 func _on_continue_pressed():
 	if tween:

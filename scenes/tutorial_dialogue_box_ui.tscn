@@ -75,10 +75,9 @@ text = "NEXT
 
 [node name="AutoAdvanceTimer" type="Timer" parent="."]
 
-[node name="TypeSound" type="AudioStreamPlayer2D" parent="."]
+[node name="TypingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_n36c0")
-volume_db = 20.0
+volume_db = 15.0
 bus = &"SFX"
-parameters/looping = true
 
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]

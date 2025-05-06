@@ -3,11 +3,11 @@ extends Enemy
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	speed = 40
+	speed = 150
 	max_health = 30
 	health = max_health
 	damage = 8
-	detection_range = 120.0
+	detection_range = 400.0
 	attack_range = 35.0
 	super()
 	

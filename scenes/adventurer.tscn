@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://dhphhhn6rcdjx" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right.png" id="15_7nbdq"]
 [ext_resource type="Texture2D" uid="uid://xyytqyptbwiu" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right_up.png" id="16_aipbf"]
 [ext_resource type="PackedScene" uid="uid://cf0406t5dpcrt" path="res://inventory/inventory_ui.tscn" id="30_j353b"]
-[ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/health_bar.tscn" id="39_vrpay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc5b8"]
 atlas = ExtResource("2_jrfnu")
@@ -2701,8 +2700,12 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i8mc"]
-radius = 72.0
-height = 178.0
+radius = 94.0
+height = 266.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrpay"]
+radius = 136.0
+height = 468.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yu0q"]
 size = Vector2(69, 366.25)
@@ -2716,10 +2719,8 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"die"
+animation = &"idleright"
 autoplay = "idledown"
-frame = 7
-frame_progress = 1.0
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
@@ -2732,15 +2733,23 @@ libraries = {
 position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
 
+[node name="Environment_EnemyCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("CapsuleShape2D_vrpay")
+debug_color = Color(0.388682, 0.495715, 0.932824, 0.42)
+
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
 visible = false
-offset_left = -224.0
-offset_top = -578.0
-offset_right = 199.0
-offset_bottom = -266.0
-
-[node name="HealthBar" parent="." groups=["player"] instance=ExtResource("39_vrpay")]
-visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.5
+offset_top = -156.0
+offset_right = 211.5
+offset_bottom = 156.0
+scale = Vector2(5, 5)
 
 [node name="SpearArea" type="Area2D" parent="."]
 collision_layer = 64
