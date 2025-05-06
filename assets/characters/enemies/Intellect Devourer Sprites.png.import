@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4i4uayqpqiu"
-path="res://.godot/imported/Cobra Sprite Sheet.png-254e0ff1420ce0e8f97e1413608762cd.ctex"
+uid="uid://dxll1fug66x8w"
+path="res://.godot/imported/Intellect Devourer Sprites.png-64984f371a10dde76d8e3bd0fea62621.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/Cobra Sprite Sheet.png"
-dest_files=["res://.godot/imported/Cobra Sprite Sheet.png-254e0ff1420ce0e8f97e1413608762cd.ctex"]
+source_file="res://assets/characters/enemies/Intellect Devourer Sprites.png"
+dest_files=["res://.godot/imported/Intellect Devourer Sprites.png-64984f371a10dde76d8e3bd0fea62621.ctex"]
 
 [params]
 

@@ -16,6 +16,6 @@ func take_gun_damage():
 func take_spear_damage():
 	take_damage(30)
 
-func _on_fang_hitbox_body_entered(body: Node2D) -> void:
+func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.take_damage(10)

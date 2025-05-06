@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=55 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/tutorial_level_1.gd" id="1_m77fg"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="11_mmoqx"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisé sur fond noir.png" id="17_edrmo"]
+[ext_resource type="PackedScene" uid="uid://yr2slshdbm6j" path="res://scenes/intellect_devourer.tscn" id="18_scb12"]
 [ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="19_5o7h0"]
 [ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/hud.tscn" id="20_hle5c"]
 [ext_resource type="PackedScene" uid="uid://jwe253ux2r3v" path="res://inventory/items/blue_potion.tscn" id="21_4nlgx"]
@@ -2522,8 +2523,8 @@ polygon = PackedVector2Array(6372, 49, 6414, 1391, 6389, 2063, 6401, 2944, 6374,
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6683, 2391)
 
-[node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(-1670, 764)
+[node name="IntellectDevourer" parent="." instance=ExtResource("18_scb12")]
+position = Vector2(1541, 1586)
 
 [node name="HealthBar" parent="." instance=ExtResource("20_hle5c")]
 offset_left = -40.0
@@ -2595,3 +2596,6 @@ position = Vector2(-248, 1755)
 position = Vector2(1527, 884)
 collision_layer = 16
 collision_mask = 2
+
+[node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
+position = Vector2(836, 793)
