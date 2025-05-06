@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn2kk0mrdn81h"]
+
+[ext_resource type="Script" uid="uid://wth02vkhvu3v" path="res://inventory/items/coins.gd" id="1_u7cka"]
+[ext_resource type="Resource" uid="uid://461kxmeymkjv" path="res://inventory/items/coins.tres" id="2_tgxpl"]
+[ext_resource type="Texture2D" uid="uid://b0dv1gppkcc60" path="res://assets/Items/full packages items/Separated Files/64x64/fc131.png" id="3_tgxpl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pi7aa"]
+radius = 26.0
+
+[node name="Coins" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_u7cka")
+item = ExtResource("2_tgxpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_tgxpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_pi7aa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

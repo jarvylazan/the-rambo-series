@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://461kxmeymkjv"]
+
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="1_eq5k3"]
+[ext_resource type="Texture2D" uid="uid://b0dv1gppkcc60" path="res://assets/Items/full packages items/Separated Files/64x64/fc131.png" id="2_eq5k3"]
+
+[resource]
+script = ExtResource("1_eq5k3")
+name = "coins"
+texture = ExtResource("2_eq5k3")
+metadata/_custom_type_script = "uid://cho0oo0tgufqt"

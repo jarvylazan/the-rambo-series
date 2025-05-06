@@ -30,7 +30,7 @@ func _ready():
 	camera.make_current()
 
 	# Zoom level
-	camera.zoom = Vector2(1.2, 1.2)  # Zoom in
+	camera.zoom = Vector2(0.5, 0.5)  # Zoom in
 
 	# Camera limits
 	camera.limit_left = -2734

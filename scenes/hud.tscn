@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bq70mx8coxw7u" path="res://assets/image/ui interface/cadre_mc.png" id="3_mphia"]
 [ext_resource type="Texture2D" uid="uid://bris6rkytdde0" path="res://assets/image/ui interface/mc_profile_picture.png" id="4_0m4u7"]
 [ext_resource type="Texture2D" uid="uid://cs462planrfo1" path="res://assets/characters/Health/fullhealthnew.png" id="5_apjy4"]
-[ext_resource type="Texture2D" uid="uid://b222dx8lyan2q" path="res://assets/image/ui interface/coinGold.png" id="6_5n1hp"]
+[ext_resource type="Texture2D" uid="uid://bdqedo15rr72h" path="res://assets/Items/full packages items/Separated Files/64x64/fc136.png" id="6_hd3ao"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="7_eld54"]
-[ext_resource type="Texture2D" uid="uid://bdbecx65psfbc" path="res://assets/image/ui interface/bullet.png" id="8_3swnk"]
+[ext_resource type="Texture2D" uid="uid://bx1rs6rdg3ap5" path="res://assets/Items/2D health & ammor/32px/ammo-pistol-alt 32px.png" id="8_0i1j5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeie6"]
 texture = ExtResource("3_mphia")
@@ -71,14 +71,14 @@ texture_under = SubResource("CanvasTexture_5oo0i")
 texture_progress = ExtResource("5_apjy4")
 
 [node name="Coins_Container" type="HBoxContainer" parent="CanvasLayer"]
-offset_left = 239.0
-offset_top = 33.0
-offset_right = 294.0
-offset_bottom = 74.0
+offset_left = 240.0
+offset_top = 31.0
+offset_right = 285.0
+offset_bottom = 62.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Coins_Container"]
 layout_mode = 2
-texture = ExtResource("6_5n1hp")
+texture = ExtResource("6_hd3ao")
 expand_mode = 2
 
 [node name="CoinsLabel" type="Label" parent="CanvasLayer/Coins_Container"]
@@ -88,14 +88,14 @@ text = "0"
 
 [node name="Bullet_Container" type="HBoxContainer" parent="CanvasLayer/Coins_Container/CoinsLabel"]
 layout_mode = 0
-offset_left = -38.0
-offset_top = -39.0
-offset_right = 13.0
-offset_bottom = -4.99999
+offset_left = -35.0
+offset_top = -41.0
+offset_right = 16.0
+offset_bottom = -6.99999
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Coins_Container/CoinsLabel/Bullet_Container"]
 layout_mode = 2
-texture = ExtResource("8_3swnk")
+texture = ExtResource("8_0i1j5")
 expand_mode = 2
 
 [node name="BulletsLabel" type="Label" parent="CanvasLayer/Coins_Container/CoinsLabel/Bullet_Container"]

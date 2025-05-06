@@ -1,18 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf0406t5dpcrt"]
 
-[ext_resource type="Script" path="res://inventory/inventory_ui.gd" id="1_2hut1"]
-[ext_resource type="Texture2D" uid="uid://dn3laywvhoi37" path="res://assets/inventory/inventory-background.png" id="2_cedrj"]
-[ext_resource type="PackedScene" uid="uid://u6inymgtp212" path="res://inventory/inventory_slot.tscn" id="3_7rvkw"]
+[ext_resource type="Script" uid="uid://o61ahf0pvdn8" path="res://inventory/inventory_ui.gd" id="1_2hut1"]
+[ext_resource type="Texture2D" uid="uid://dmt43li575a28" path="res://assets/inventory/InventoryRect_v2.png" id="2_cedrj"]
+[ext_resource type="PackedScene" uid="uid://bdifcbrylw65x" path="res://inventory/inventory_slot.tscn" id="3_7rvkw"]
 
 [sub_resource type="Theme" id="Theme_cedrj"]
 
 [node name="InventoryUI" type="Control"]
+z_index = 1
 custom_minimum_size = Vector2(423, 312)
 layout_mode = 3
 anchor_right = 0.367
 anchor_bottom = 0.481
-offset_right = 0.215973
-offset_bottom = 27.312
+offset_left = 228.0
+offset_top = 141.0
+offset_right = 228.216
+offset_bottom = 168.312
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2hut1")
@@ -21,8 +24,8 @@ script = ExtResource("1_2hut1")
 layout_mode = 0
 offset_left = 2.0
 offset_top = 6.0
-offset_right = 440.0
-offset_bottom = 362.0
+offset_right = 237.0
+offset_bottom = 169.0
 texture = ExtResource("2_cedrj")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -36,13 +39,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.0
-offset_top = -153.0
-offset_right = 216.0
-offset_bottom = 158.0
+offset_left = -101.5
+offset_top = -72.5
+offset_right = 163.5
+offset_bottom = 167.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cedrj")
+theme_override_constants/h_separation = -30
+theme_override_constants/v_separation = -50
 columns = 4
 
 [node name="InventorySlot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7rvkw")]

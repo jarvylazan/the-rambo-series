@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://u6inymgtp212"]
+[gd_scene load_steps=3 format=3 uid="uid://bdifcbrylw65x"]
 
-[ext_resource type="Script" path="res://inventory/inventory_slot.gd" id="1_nsnbm"]
-[ext_resource type="Texture2D" uid="uid://csym4g8u3e31b" path="res://assets/inventory/inventory-slot.png" id="1_refl1"]
+[ext_resource type="Script" uid="uid://esqk684ekwao" path="res://inventory/inventory_slot.gd" id="1_nsnbm"]
+[ext_resource type="Texture2D" uid="uid://cxrkn8tarhi1g" path="res://assets/inventory/inventorySlot_v2.png" id="2_nsnbm"]
 
 [node name="InventorySlot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -17,29 +17,30 @@ script = ExtResource("1_nsnbm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1.26218e-29)
-scale = Vector2(5.3125, 6.25)
-texture = ExtResource("1_refl1")
+scale = Vector2(1.7, 2)
+texture = ExtResource("2_nsnbm")
 centered = false
+vframes = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(86, 100)
 layout_mode = 0
 offset_right = 86.0
 offset_bottom = 100.0
+scale = Vector2(0.4, 0.4)
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel"]
-position = Vector2(1, -19)
+position = Vector2(-0.500003, -4.76837e-07)
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 custom_minimum_size = Vector2(70, 47)
 layout_mode = 0
-offset_left = -139.0
-offset_top = -6.0
-offset_right = -69.0
-offset_bottom = 41.0
-scale = Vector2(2.5, 2.5)
+offset_left = -18.0
+offset_right = 52.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 45
 text = "99"
 horizontal_alignment = 2
