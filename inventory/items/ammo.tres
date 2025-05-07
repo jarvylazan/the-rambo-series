@@ -7,5 +7,5 @@
 script = ExtResource("1_ejwvi")
 name = "ammo"
 texture = ExtResource("2_vbeb6")
-type = "ammo"
+type = ""
 metadata/_custom_type_script = "uid://cho0oo0tgufqt"

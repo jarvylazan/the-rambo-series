@@ -7,5 +7,5 @@
 script = ExtResource("1_eq5k3")
 name = "coins"
 texture = ExtResource("2_eq5k3")
-type = "coin"
+type = ""
 metadata/_custom_type_script = "uid://cho0oo0tgufqt"

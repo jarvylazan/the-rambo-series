@@ -2753,5 +2753,6 @@ shape = SubResource("RectangleShape2D_5yu0q")
 disabled = true
 
 [node name="Hud" parent="." instance=ExtResource("40_5yu0q")]
+visible = false
 
 [connection signal="body_entered" from="SpearArea" to="." method="_on_spear_area_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=53 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/tutorial_level_1.gd" id="1_m77fg"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisé sur fond noir.png" id="17_edrmo"]
 [ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="19_5o7h0"]
-[ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/hud.tscn" id="20_hle5c"]
 [ext_resource type="PackedScene" uid="uid://jwe253ux2r3v" path="res://inventory/items/blue_potion.tscn" id="21_4nlgx"]
 [ext_resource type="PackedScene" uid="uid://bk6xd1hoam6xj" path="res://inventory/items/red_potion.tscn" id="21_e0lhq"]
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="21_qhc4u"]
@@ -2524,12 +2523,6 @@ position = Vector2(6683, 2391)
 
 [node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
 position = Vector2(-1670, 764)
-
-[node name="HealthBar" parent="." instance=ExtResource("20_hle5c")]
-offset_left = -40.0
-offset_top = 485.0
-offset_right = -40.0
-offset_bottom = 485.0
 
 [node name="Items_Containers" type="Node2D" parent="."]
 
