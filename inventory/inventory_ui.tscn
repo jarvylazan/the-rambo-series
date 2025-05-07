@@ -18,6 +18,7 @@ offset_right = 228.216
 offset_bottom = 168.312
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_2hut1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -45,6 +46,7 @@ offset_right = 163.5
 offset_bottom = 167.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_cedrj")
 theme_override_constants/h_separation = -30
 theme_override_constants/v_separation = -50
