@@ -21,6 +21,7 @@ SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 AudioManager="*res://scripts/AudioManager.gd"
 MusicManager="*res://scenes/MusicManager.tscn"
 Global="*res://scripts/global.gd"
+SettingsManager="*res://scripts/SettingsManager.gd"
 
 [display]
 
