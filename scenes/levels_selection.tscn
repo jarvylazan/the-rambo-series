@@ -249,7 +249,7 @@ offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_jh25w")
-text = "MAIN_MENU"
+text = "MENU_LABEL_MAINMENU"
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TextureRect/LevelOneButton" to="CanvasLayer/Control" method="_on_level_one_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer2/TextureRect/LevelTwoButton" to="CanvasLayer/Control" method="_on_level_two_button_pressed"]
