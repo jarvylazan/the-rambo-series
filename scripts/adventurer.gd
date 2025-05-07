@@ -4,8 +4,8 @@ extends CharacterBody2D
 @export var friction = 1500.0  # How fast the character slows down
 @export_file("*.tscn") var bullet_scene_path = "res://scenes/bullet.tscn"  # Exported path for easier editing
 @export var inv: Inv
-var hud
 
+var hud
 
 
 var coin_count: int = 0
@@ -58,8 +58,7 @@ func _ready():
 	Global.die.connect(_on_player_die)
 	
 func _get_hud():
-	hud = get_node("../HealthBar")
-	print("HUD:", hud)
+	hud = get_node("Hud")
 
 func _on_shoot_timer_timeout():
 	# If player is still holding the shoot batton, restart the animation
@@ -458,10 +457,9 @@ func play_shoot_animation() -> String:
 func collect(item):
 	
 	inv.insert(item)
-	print("Collected:", item.name, "type:", item.type) 
 
-	match item.type:
-		"coin":
+	match item.name:
+		"coins":
 			coin_count += 10
 			hud.update_coins(coin_count)
 		"ammo":
