@@ -26,6 +26,10 @@ Global="*res://scripts/global.gd"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+enemy="Group containing enemies."
+
 [input]
 
 Melee={

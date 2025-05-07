@@ -273,9 +273,7 @@ script = ExtResource("1_x40ej")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.08, 3.08)
 sprite_frames = SubResource("SpriteFrames_8strt")
-animation = &"attack"
-frame = 5
-frame_progress = 1.0
+animation = &"move"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../TailHitBox")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://yr2slshdbm6j"]
+[gd_scene load_steps=36 format=3 uid="uid://yr2slshdbm6j"]
 
-[ext_resource type="Script" uid="uid://cx3jj0oqey6g2" path="res://scenes/intellect_devourer.gd" id="1_scc7h"]
+[ext_resource type="Script" uid="uid://cx3jj0oqey6g2" path="res://scripts/intellect_devourer.gd" id="1_scc7h"]
 [ext_resource type="Texture2D" uid="uid://dxll1fug66x8w" path="res://assets/characters/enemies/Intellect Devourer Sprites.png" id="2_1kk3n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4aihd"]
@@ -130,7 +130,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -145,7 +145,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v6qt1")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 10.0
 }, {
@@ -208,10 +208,138 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ijfup")
 }],
-"loop": true,
+"loop": false,
 "name": &"move",
 "speed": 12.0
 }]
+
+[sub_resource type="Animation" id="Animation_1kk3n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackHitbox/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4aihd"]
+resource_name = "attack_right"
+length = 0.5
+step = 0.0833
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 16), Vector2(-25, 16), Vector2(-25, 16), Vector2(0, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackHitbox/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.72, 3.425), Vector2(2.72, 3.425), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_scc7h"]
+resource_name = "attack_right"
+length = 0.5
+step = 0.0833
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 16), Vector2(25, 16), Vector2(25, 16), Vector2(0, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackHitbox/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.331978, 0.415311, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.72, 3.425), Vector2(2.72, 3.425), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewbya"]
+_data = {
+&"RESET": SubResource("Animation_1kk3n"),
+&"attack_left": SubResource("Animation_4aihd"),
+&"attack_right": SubResource("Animation_scc7h")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewbya"]
 radius = 16.0
@@ -220,16 +348,20 @@ height = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lphy"]
 radius = 10.4403
 
-[node name="IntellectDevourer" type="CharacterBody2D"]
+[node name="IntellectDevourer" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
 script = ExtResource("1_scc7h")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.08, 3.08)
 sprite_frames = SubResource("SpriteFrames_4aihd")
-animation = &"move"
-frame = 5
-frame_progress = 0.0629661
+animation = &"attack"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ewbya")
+}
 
 [node name="BodyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 10)
