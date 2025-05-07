@@ -75,6 +75,10 @@ func _on_bullet_timer_timeout():
 	spawn_bullet()
 
 func spawn_bullet():
+	
+	if is_dead:
+		return
+	
 	# Skip if bullet scene isn't loaded
 	if not bullet_scene:
 		push_error("Bullet scene not loaded. Cannot spawn bullet.")
@@ -166,6 +170,12 @@ func spawn_bullet():
 	print("Bullet direction: ", direction)
 
 func _physics_process(delta):
+	
+	if is_dead:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	# Manual unfreeze during testing (press U key)
 	if Input.is_action_just_pressed("unfreeze_player"):
 		can_move = true
@@ -478,6 +488,8 @@ func play_run_and_gun_animation(direction) -> String:
 
 func _on_player_die():
 	is_dead = true
+	can_move = false
+	velocity = Vector2.ZERO
 	play_death_animation()
 
 func play_death_animation():

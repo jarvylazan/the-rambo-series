@@ -4175,7 +4175,6 @@ tile_set = SubResource("TileSet_58bnw")
 y_sort_enabled = true
 position = Vector2(2120, 1948)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AADR/w0AAAAWABUAAAA=")
 tile_set = SubResource("TileSet_hr1xi")
 
 [node name="TileMap_Labyrynth_S1" type="TileMapLayer" parent="."]
