@@ -4,6 +4,13 @@ extends CharacterBody2D
 @export var friction = 1500.0  # How fast the character slows down
 @export_file("*.tscn") var bullet_scene_path = "res://scenes/bullet.tscn"  # Exported path for easier editing
 @export var inv: Inv
+var hud
+
+
+
+var coin_count: int = 0
+var bullet_count: int = 0
+
 var facing_direction = "down"
 var is_moving = false
 var is_attacking = false
@@ -30,6 +37,7 @@ func get_animation_duration(animation_name: String) -> float:
 	return duration
 
 func _ready():
+	call_deferred("_get_hud")
 	# Load the bullet scene at runtime instead of preloading
 	bullet_scene = load(bullet_scene_path)
 	if not bullet_scene:
@@ -48,6 +56,10 @@ func _ready():
 	add_child(bullet_timer)
 	bullet_timer.timeout.connect(_on_bullet_timer_timeout)
 	Global.die.connect(_on_player_die)
+	
+func _get_hud():
+	hud = get_node("../HealthBar")
+	print("HUD:", hud)
 
 func _on_shoot_timer_timeout():
 	# If player is still holding the shoot batton, restart the animation
@@ -73,6 +85,8 @@ func _on_shoot_timer_timeout():
 func _on_bullet_timer_timeout():
 	# Spawn a bullet
 	spawn_bullet()
+
+
 
 func spawn_bullet():
 	
@@ -442,7 +456,18 @@ func play_shoot_animation() -> String:
 	return anim_name
 
 func collect(item):
+	
 	inv.insert(item)
+	print("Collected:", item.name, "type:", item.type) 
+
+	match item.type:
+		"coin":
+			coin_count += 10
+			hud.update_coins(coin_count)
+		"ammo":
+			bullet_count += 20
+			hud.update_ammo(bullet_count)
+
 
 func play_run_and_gun_animation(direction) -> String:
 	# Variable to store animation name

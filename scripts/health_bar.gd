@@ -17,3 +17,10 @@ func _on_health_changed(new_health: float) -> void:
 		new_health,
 		0.4  # duratsion in seconds
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func update_coins(amount: int) -> void:
+	%CoinsLabel.text = str(amount)
+	
+	
+func update_ammo(amount: int) -> void:
+	%BulletsLabel.text = str(amount)
