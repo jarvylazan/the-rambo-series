@@ -9,6 +9,10 @@ signal die
 var counter := 0
 var can_shoot = false
 var bullet_count := 0
+var boosted := false
+var boost_timer: Timer = null
+var base_spear_damage := 30
+var base_gun_damage := 10
 
 
 
@@ -37,3 +41,34 @@ func heal(percentage):
 
 func modify_shoot_state(state):
 	can_shoot = state
+	
+# === DAMAGE SYSTEM FOR WEAPONS ===
+
+func get_spear_damage() -> int:
+	return base_spear_damage * (2 if boosted else 1)
+
+func get_gun_damage() -> int:
+	return base_gun_damage * (2 if boosted else 1)
+	
+func apply_power_boost():
+	if boosted:
+		return  # Already boosted, don't stack
+
+	boosted = true
+	print("🔷 Power boost activated!")
+
+	if boost_timer:
+		boost_timer.queue_free()
+
+	boost_timer = Timer.new()
+	boost_timer.wait_time = 10  # Boost duration in seconds
+	boost_timer.one_shot = true
+	boost_timer.timeout.connect(_on_boost_timeout)
+	add_child(boost_timer)
+	boost_timer.start()
+
+func _on_boost_timeout():
+	boosted = false
+	boost_timer.queue_free()
+	boost_timer = null
+	print("🔷 Power boost ended.")
