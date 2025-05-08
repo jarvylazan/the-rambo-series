@@ -7,6 +7,8 @@ signal health_changed(new_health)
 signal took_damage
 signal die
 var counter := 0
+var can_shoot = false
+var bullet_count := 0
 
 func take_damage(percentage):
 	counter += 1
@@ -30,3 +32,6 @@ func heal(percentage):
 	var healing_done = MAX_HEALTH * (percentage / 100.0)
 	health = min(health + healing_done, MAX_HEALTH)
 	emit_signal("health_changed", health)
+
+func modify_shoot_state(state):
+	can_shoot = state

@@ -61,6 +61,9 @@ func _get_hud():
 	hud = get_node("Hud")
 
 func _on_shoot_timer_timeout():
+	if Global.can_shoot == false:
+		return
+		
 	# If player is still holding the shoot batton, restart the animation
 	if Input.is_action_pressed("Shoot"):
 		var input_direction = Vector2(
@@ -97,6 +100,10 @@ func spawn_bullet():
 		push_error("Bullet scene not loaded. Cannot spawn bullet.")
 		return
 		
+		
+	Global.bullet_count -= 1
+	hud.update_ammo(Global.bullet_count)
+
 	# Create instance of bullet
 	var bullet = bullet_scene.instantiate()
 	
@@ -184,6 +191,11 @@ func spawn_bullet():
 
 func _physics_process(delta):
 	
+	if Global.bullet_count == 0:
+		Global.modify_shoot_state(false)
+	elif Global.bullet_count > 0:
+		Global.modify_shoot_state(true)
+	
 	if is_dead:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -222,7 +234,7 @@ func _physics_process(delta):
 			play_run_and_gun_animation(input_direction)
 	
 	# Check if shoot button was just pressed or if it's still being held
-	if Input.is_action_just_pressed("Shoot") and not is_attacking and not is_shooting:
+	if Input.is_action_just_pressed("Shoot") and not is_attacking and not is_shooting and Global.can_shoot:
 		is_shooting = true
 		var anim_name = ""
 		
@@ -463,8 +475,8 @@ func collect(item):
 			coin_count += 10
 			hud.update_coins(coin_count)
 		"ammo":
-			bullet_count += 20
-			hud.update_ammo(bullet_count)
+			Global.bullet_count += 20
+			hud.update_ammo(Global.bullet_count)
 
 
 func play_run_and_gun_animation(direction) -> String:
