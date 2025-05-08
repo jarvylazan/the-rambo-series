@@ -1,12 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://dycdeoa3q4x60"]
 
 [ext_resource type="Script" uid="uid://dc71i66g3jbd1" path="res://scripts/dropped_item.gd" id="1_qu2ag"]
-[ext_resource type="Texture2D" uid="uid://b5w1dc1revbbs" path="res://assets/Items/full items.png" id="2_x65sn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qu2ag"]
+radius = 46.6905
 
 [node name="DroppedItem" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_qu2ag")
 
-[node name="ItemSprite" type="Sprite2D" parent="."]
-scale = Vector2(31487, 52214)
-texture = ExtResource("2_x65sn")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 region_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qu2ag")

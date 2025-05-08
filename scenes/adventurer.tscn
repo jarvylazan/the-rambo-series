@@ -2709,7 +2709,9 @@ size = Vector2(69, 366.25)
 
 [node name="Node2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_ij0mf")
+speed = 500.0
 inv = ExtResource("2_oukho")
 
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -2754,5 +2756,8 @@ disabled = true
 
 [node name="Hud" parent="." instance=ExtResource("40_5yu0q")]
 visible = false
+
+[node name="DropSpawnPoint" type="Node2D" parent="."]
+position = Vector2(222, 188)
 
 [connection signal="body_entered" from="SpearArea" to="." method="_on_spear_area_body_entered"]
