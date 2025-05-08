@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=56 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/tutorial_level_1.gd" id="1_m77fg"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
@@ -18,14 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="Texture2D" uid="uid://bv47u76krk0mr" path="res://assets/image/tilemap_block/desert assets/Cactus pixelisé sur fond noir.png" id="17_edrmo"]
 [ext_resource type="PackedScene" uid="uid://yr2slshdbm6j" path="res://scenes/intellect_devourer.tscn" id="18_scb12"]
-[ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="19_5o7h0"]
 [ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/hud.tscn" id="20_hle5c"]
 [ext_resource type="PackedScene" uid="uid://jwe253ux2r3v" path="res://inventory/items/blue_potion.tscn" id="21_4nlgx"]
 [ext_resource type="PackedScene" uid="uid://bk6xd1hoam6xj" path="res://inventory/items/red_potion.tscn" id="21_e0lhq"]
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="21_qhc4u"]
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="21_scb12"]
-[ext_resource type="PackedScene" uid="uid://wma3q2tf0ewf" path="res://scenes/akaname.tscn" id="25_b1gtu"]
-[ext_resource type="PackedScene" uid="uid://cb8pfhn5ux4nh" path="res://scenes/kobold_priest.tscn" id="25_kphnv"]
+[ext_resource type="PackedScene" uid="uid://b6ht1ls6wyr1a" path="res://scenes/brain_mole_monarch.tscn" id="24_b1gtu"]
+[ext_resource type="PackedScene" uid="uid://b2h1bch4v7cny" path="res://scenes/shardsoul_slayer.tscn" id="27_csdyc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
@@ -2599,11 +2598,8 @@ position = Vector2(1527, 884)
 collision_layer = 16
 collision_mask = 2
 
-[node name="Cobra" parent="." instance=ExtResource("19_5o7h0")]
-position = Vector2(836, 793)
+[node name="BrainMoleMonarch" parent="." instance=ExtResource("24_b1gtu")]
+position = Vector2(-625, 1480)
 
-[node name="KoboldPriest" parent="." instance=ExtResource("25_kphnv")]
-position = Vector2(-496, 1469)
-
-[node name="Akaname" parent="." instance=ExtResource("25_b1gtu")]
-position = Vector2(-758, 813)
+[node name="ShardsoulSlayer" parent="." instance=ExtResource("27_csdyc")]
+position = Vector2(708, 2091)
