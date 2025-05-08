@@ -55,7 +55,7 @@ func apply_power_boost():
 		return  # Already boosted, don't stack
 
 	boosted = true
-	print("🔷 Power boost activated!")
+	print(" Power boost activated!")
 
 	if boost_timer:
 		boost_timer.queue_free()
@@ -71,4 +71,4 @@ func _on_boost_timeout():
 	boosted = false
 	boost_timer.queue_free()
 	boost_timer = null
-	print("🔷 Power boost ended.")
+	print("Power boost ended.")

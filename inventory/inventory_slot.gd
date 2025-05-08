@@ -3,7 +3,7 @@ extends Button
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/ItemDisplay
 @onready var amount_text: Label = $CenterContainer/Panel/Label
 @onready var slot_sprite: Sprite2D = $Sprite2D
-@onready var tooltip_label := preload("res://scenes/TooltipLabel.tscn")  
+@onready var tooltip_label := preload("res://scenes/TooltipLabel.tscn")
 
 var inventory_slot: InvSlot
 var tooltip_instance: Label = null
@@ -13,15 +13,25 @@ func update_slot():
 		item_visual.visible = false
 		amount_text.visible = false
 		slot_sprite.frame = 0
+		slot_sprite.modulate = Color(1, 1, 1)  # Reset tint
 	else:
 		item_visual.visible = true
 		item_visual.texture = inventory_slot.item.texture
 		slot_sprite.frame = 1
+
+		# Show item count
 		if inventory_slot.amount > 1:
 			amount_text.visible = true
 			amount_text.text = str(inventory_slot.amount)
 		else:
 			amount_text.visible = false
+
+		# ✅ Highlight usable (potion) items
+		var item_name := inventory_slot.item.name
+		if item_name == "red_potion" or item_name == "yellow_potion" or item_name == "blue_potion":
+			slot_sprite.modulate = Color(1.2, 1.2, 1.0)  # Light yellowish tint (slightly glowing)
+		else:
+			slot_sprite.modulate = Color(1, 1, 1)  # Normal color
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -30,7 +40,6 @@ func _gui_input(event):
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			var is_shift: bool = event.shift_pressed
 			get_tree().call_group("InventoryUI", "slot_right_clicked", self, is_shift)
-
 
 func _on_mouse_entered():
 	if inventory_slot and inventory_slot.item:

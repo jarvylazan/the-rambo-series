@@ -475,12 +475,13 @@ func collect(item):
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
+		# Don't auto-use potion here anymore
+
 		"red_potion":
 			Global.heal(30)
 		"yellow_potion":
 			Global.heal(100)
-		"blue_potion":
-			Global.apply_power_boost()
+		
 
 
 func play_run_and_gun_animation(direction) -> String:
