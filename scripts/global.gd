@@ -10,6 +10,8 @@ var counter := 0
 var can_shoot = false
 var bullet_count := 0
 
+
+
 func take_damage(percentage):
 	counter += 1
 	var damage = MAX_HEALTH * (percentage / 100.0)

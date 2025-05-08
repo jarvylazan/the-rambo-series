@@ -204,3 +204,29 @@ func _on_DropAllButton_pressed():
 
 	inv.update.emit()
 	
+func _on_UseItemButton_pressed():
+	if selected_slot_data and selected_slot_data.item:
+		var item_name = selected_slot_data.item.name
+		
+		match item_name:
+			"red_potion":
+				Global.heal(10)  # heal 30%
+			"yellow_potion":
+				Global.heal(100)  # full heal
+			"blue_potion":
+				Global.power_boost()  # Add this method if needed
+
+		# Decrease amount or clear slot
+		selected_slot_data.amount -= 1
+		if selected_slot_data.amount <= 0:
+			var i = slots.find(selected_slot_gui)
+			if i != -1:
+				inv.slots[i] = InvSlot.new()
+			selected_slot_gui.inventory_slot = null
+			selected_slot_gui.update_slot()
+			selected_slot_gui = null
+			selected_slot_data = null
+		else:
+			selected_slot_gui.update_slot()
+
+		inv.update.emit()
