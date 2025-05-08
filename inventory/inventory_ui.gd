@@ -207,14 +207,14 @@ func _on_DropAllButton_pressed():
 func _on_UseItemButton_pressed():
 	if selected_slot_data and selected_slot_data.item:
 		var item_name = selected_slot_data.item.name
-		
+
 		match item_name:
 			"red_potion":
-				Global.heal(10)  # heal 30%
+				Global.heal(10)  # Heal 30% of max health
 			"yellow_potion":
-				Global.heal(100)  # full heal
+				Global.heal(100)  # Full heal
 			"blue_potion":
-				Global.power_boost()  # Add this method if needed
+				Global.apply_power_boost()  # Temporarily double damage
 
 		# Decrease amount or clear slot
 		selected_slot_data.amount -= 1
