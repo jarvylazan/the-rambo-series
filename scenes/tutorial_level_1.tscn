@@ -2394,7 +2394,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_gj6m2")
 sources/2 = SubResource("TileSetAtlasSource_aseo8")
 
-[node name="Tutorial_Level_1" type="Node2D" groups=["player"]]
+[node name="Tutorial_Level_1" type="Node2D" groups=["Environment"]]
 y_sort_enabled = true
 script = ExtResource("1_m77fg")
 
