@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://bck5ume4yek73" path="res://assets/image/tilemap_block/dungeon level/Objects_2.png" id="5_u74wp"]
 [ext_resource type="Texture2D" uid="uid://dnrm6l2u677ff" path="res://assets/image/tilemap_block/dungeon level/object/Dead_arm_shadow3_2.png" id="6_7j0n3"]
 [ext_resource type="Texture2D" uid="uid://b5rkycr63r7rb" path="res://assets/image/tilemap_block/dungeon level/Tiled_files/Objects.png" id="6_wst6o"]
+<<<<<<< HEAD
+=======
+[ext_resource type="Texture2D" uid="uid://dwovrylgw5ge1" path="res://assets/image/tilemap_block/dungeon level/Lich_shadow1.png" id="7_4prg4"]
+>>>>>>> main
 [ext_resource type="Texture2D" uid="uid://bomop4esx2sdp" path="res://assets/image/tilemap_block/dungeon level/object/Dead_tree_shadow3_1.png" id="7_wyldn"]
 [ext_resource type="Texture2D" uid="uid://d35cujfphqy1h" path="res://assets/image/tilemap_block/dungeon level/object/Bones_shadow1_9.png" id="8_f1vt2"]
 [ext_resource type="Texture2D" uid="uid://dmtn7grvxjku4" path="res://assets/image/tilemap_block/dungeon level/object/Thorn_plant_shadow1_4.png" id="8_semk5"]
@@ -31,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://b4r2jrp4ethtx" path="res://assets/image/tilemap_block/dungeon level/object/Ruin_shadow3_3.png" id="25_fpg1q"]
 [ext_resource type="Texture2D" uid="uid://c851sdd8b8o1k" path="res://assets/image/tilemap_block/dungeon level/object/Scull_door_shadow2.png" id="26_t4ufi"]
 [ext_resource type="Texture2D" uid="uid://clr4nh73r6htm" path="res://assets/image/tilemap_block/Bannière rouge avec dragon doré.png" id="27_ga125"]
-[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="32_mmini"]
+[ext_resource type="PackedScene" uid="uid://dtysgncprgicw" path="res://scenes/pause_menu.tscn" id="32_mmini"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")
@@ -2151,7 +2155,7 @@ sources/4 = SubResource("TileSetAtlasSource_30xwh")
 sources/5 = SubResource("TileSetAtlasSource_7wif5")
 sources/6 = SubResource("TileSetAtlasSource_xnwi0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4prg4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7j0n3"]
 texture = ExtResource("2_l2b46")
 texture_region_size = Vector2i(32, 32)
 14:12/size_in_atlas = Vector2i(1, 3)
@@ -2181,7 +2185,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_4prg4")
+sources/0 = SubResource("TileSetAtlasSource_7j0n3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_semk5"]
 texture = ExtResource("12_1a5vp")
@@ -9063,6 +9067,7 @@ scale = Vector2(1.11111, 1.11111)
 [node name="Camera2D" type="Camera2D" parent="Y-sorting2/Player"]
 position = Vector2(0.00099802, 94.4448)
 scale = Vector2(2, 2)
+zoom = Vector2(0.8, 0.8)
 limit_left = -745
 limit_top = -180
 limit_right = 1800

@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://bvrii0bc5q487"]
 
 [ext_resource type="Texture2D" uid="uid://bb6d6u2skk6du" path="res://assets/image/tilemap_block/level 1/grass darker.png" id="1_po1ef"]
-[ext_resource type="Script" path="res://forest_level_2.gd" id="1_wdumj"]
+[ext_resource type="Script" uid="uid://cjfjyfl5rnlxt" path="res://forest_level_2.gd" id="1_wdumj"]
 [ext_resource type="Texture2D" uid="uid://cxffnxha2seb6" path="res://assets/image/tilemap_block/level 1/main grass.png" id="2_gohk1"]
 [ext_resource type="Texture2D" uid="uid://4h8o3d54lm5g" path="res://assets/image/tilemap_block/level 1/main ground.png" id="3_uh5v3"]
 [ext_resource type="Texture2D" uid="uid://cyya5cmo4n6oh" path="res://assets/image/tilemap_block/level 1/seconnd grass texture.png" id="4_mnau6"]

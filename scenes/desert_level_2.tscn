@@ -1,6 +1,6 @@
-[gd_scene load_steps=53 format=4 uid="uid://cf5sysg7mbfk3"]
+[gd_scene load_steps=54 format=4 uid="uid://cf5sysg7mbfk3"]
 
-[ext_resource type="Script" path="res://scripts/desert_level_2.gd" id="1_4gjgi"]
+[ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/desert_level_2.gd" id="1_4gjgi"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="3_oe8kg"]
 [ext_resource type="Texture2D" uid="uid://3cse81fujj2u" path="res://assets/image/tilemap_block/Objects.png" id="4_3rpe7"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="20_36d2e"]
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="21_kbe65"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="22_lrdev"]
+[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_y21nk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("2_y21nk")
@@ -2601,3 +2602,5 @@ collision_mask = 2
 position = Vector2(-236, 1309)
 collision_layer = 16
 collision_mask = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("23_y21nk")]

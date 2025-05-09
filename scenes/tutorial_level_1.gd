@@ -13,6 +13,7 @@ var intro_dialogue_lines := [
 var dialogue_box  # Store reference for later use
 
 func _ready():
+	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
 
 	# Instantiate and add the DialogueBox UI

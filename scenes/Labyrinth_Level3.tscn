@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://btfewyknvf26i"]
+[gd_scene load_steps=28 format=4 uid="uid://btfewyknvf26i"]
 
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="1_byaxj"]
 [ext_resource type="Script" uid="uid://8pnqdhhg3eor" path="res://scripts/labyrinth_level_3.gd" id="1_hr1xi"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="3_byaxj"]
 [ext_resource type="Texture2D" uid="uid://blh5ls3qek016" path="res://assets/image/tilemap_block/Cercle magique lumineux et mystique.png" id="4_stky2"]
 [ext_resource type="PackedScene" uid="uid://bajtcvja37o0r" path="res://scenes/teleport_portal.tscn" id="7_h7hy3"]
+[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="8_stky2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr1xi"]
 texture = ExtResource("1_byaxj")
@@ -4285,6 +4286,8 @@ modulate = Color(0.67032, 0.402234, 0.841748, 1)
 position = Vector2(135, 565)
 collision_layer = 128
 target_position = Vector2(75, 1133)
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_stky2")]
 
 [connection signal="body_entered" from="CameraZones/Section_1/Section1_Trigger" to="." method="_on_section_1_trigger_body_entered"]
 [connection signal="body_entered" from="CameraZones/Section 2/Section2_Trigger" to="." method="_on_section_2_trigger_body_entered"]
