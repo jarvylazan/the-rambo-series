@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm2ef7b0cw2my"]
 
-[ext_resource type="Script" uid="uid://d0a2rivw8n146" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_n87rw"]
 
 [sub_resource type="Theme" id="Theme_myx47"]

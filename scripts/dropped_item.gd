@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 

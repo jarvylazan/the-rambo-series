@@ -1,4 +1,8 @@
-[gd_scene load_steps=53 format=4 uid="uid://cf5sysg7mbfk3"]
+<<<<<<< HEAD
+[gd_scene load_steps=52 format=4 uid="uid://dr27a0unkv60h"]
+=======
+[gd_scene load_steps=54 format=4 uid="uid://cf5sysg7mbfk3"]
+>>>>>>> 4242cdb9b9ae9a74f50cea66cb5ea3ccb859dda0
 
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="3_oe8kg"]
@@ -2488,7 +2492,7 @@ collision_mask = 145
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(140, -180)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(0.7, 0.7)
 
 [node name="Grotte" type="StaticBody2D" parent="."]
 
