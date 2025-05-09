@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://cvip6ll3kj2cv"]
+=======
+[gd_scene format=3 uid="uid://d07pxjflc8uqu"]
+>>>>>>> 23b78285948749d808f5e017820422418120d45c
 
 [node name="Label" type="Label"]
 offset_left = 48.0

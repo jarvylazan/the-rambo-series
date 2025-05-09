@@ -26,6 +26,11 @@ func _process(delta):
 		else:
 			open()
 
+	if is_open and selected_slot_data and Input.is_action_just_pressed("use_item"):
+		print("🟦 I key pressed for:", selected_slot_data.item.name)
+		_use_selected_item()
+
+
 func close():
 	visible = false
 	is_open = false
@@ -93,7 +98,6 @@ func slot_right_clicked(slot_gui, drop_all := false):
 		slot_gui.update_slot()
 		inv.update.emit()
 
-
 # DROP ITEM AS AREA2D
 func _drop_item(inv_item: InvItem):
 	if not inv_item or not inv_item.texture:
@@ -118,7 +122,6 @@ func _drop_item(inv_item: InvItem):
 	shape.disabled = false
 	drop_area.add_child(shape)
 
-	# Get base position once
 	var base_position: Vector2
 	var spawn_point = get_parent().get_node("DropSpawnPoint")
 	if spawn_point:
@@ -126,24 +129,18 @@ func _drop_item(inv_item: InvItem):
 	else:
 		base_position = Vector2(400, 400)
 
-	# Add slight random offset
 	var offset := Vector2(randi_range(-50, 50), randi_range(-50, 50))
 	drop_area.global_position = base_position + offset
 
 	get_tree().current_scene.add_child(drop_area)
 
-	# Signal connection
 	drop_area.connect("body_entered", Callable(self, "_on_drop_collected").bind(drop_area, inv_item))
-
 
 # COLLECT ITEM ON TOUCH
 func _on_drop_collected(body: Node, drop_area: Area2D, item: InvItem):
 	if body is CharacterBody2D:
-		
-
+		# Add directly to inventory
 		var item_added := false
-
-		# Stack into matching slot
 		for i in range(inv.slots.size()):
 			var slot := inv.slots[i]
 			if slot.item and slot.item.name == item.name:
@@ -151,7 +148,6 @@ func _on_drop_collected(body: Node, drop_area: Area2D, item: InvItem):
 				item_added = true
 				break
 
-		# Or place in first empty slot
 		if not item_added:
 			for i in range(inv.slots.size()):
 				if inv.slots[i].item == null:
@@ -180,8 +176,7 @@ func _on_DropOneButton_pressed():
 			selected_slot_gui.update_slot()
 
 		inv.update.emit()
-		
-		
+
 func _on_DropAllButton_pressed():
 	if not selected_slot_data or selected_slot_data.amount <= 0:
 		return
@@ -192,7 +187,6 @@ func _on_DropAllButton_pressed():
 	for i in range(amount):
 		_drop_item(item_data)
 
-	# Clear slot
 	var i = slots.find(selected_slot_gui)
 	if i != -1:
 		inv.slots[i] = InvSlot.new()
@@ -203,4 +197,36 @@ func _on_DropAllButton_pressed():
 	selected_slot_data = null
 
 	inv.update.emit()
-	
+
+func _on_UseItemButton_pressed():
+	_use_selected_item()
+
+func _use_selected_item():
+	if selected_slot_data and selected_slot_data.item:
+		var item_name = selected_slot_data.item.name
+
+		match item_name:
+			"red_potion":
+				Global.heal(10)
+			"yellow_potion":
+				Global.heal(100)
+			"blue_potion":
+				Global.apply_power_boost()
+			_:
+				print("Item can't be used directly.")
+				return
+
+		# Remove used item
+		selected_slot_data.amount -= 1
+		if selected_slot_data.amount <= 0:
+			var i = slots.find(selected_slot_gui)
+			if i != -1:
+				inv.slots[i] = InvSlot.new()
+			selected_slot_gui.inventory_slot = null
+			selected_slot_gui.update_slot()
+			selected_slot_gui = null
+			selected_slot_data = null
+		else:
+			selected_slot_gui.update_slot()
+
+		inv.update.emit()

@@ -61,11 +61,9 @@ func _get_hud():
 	hud = get_node("Hud")
 
 func _on_shoot_timer_timeout():
-	if Global.can_shoot == false:
-		return
-		
+	
 	# If player is still holding the shoot batton, restart the animation
-	if Input.is_action_pressed("Shoot"):
+	if Input.is_action_pressed("Shoot") and Global.can_shoot:
 		var input_direction = Vector2(
 			Input.get_action_strength("Right") - Input.get_action_strength("Left"),
 			Input.get_action_strength("Down") - Input.get_action_strength("Up")
@@ -86,7 +84,8 @@ func _on_shoot_timer_timeout():
 
 func _on_bullet_timer_timeout():
 	# Spawn a bullet
-	spawn_bullet()
+	if Global.can_shoot:
+		spawn_bullet()
 
 
 
@@ -467,7 +466,6 @@ func play_shoot_animation() -> String:
 	return anim_name
 
 func collect(item):
-	
 	inv.insert(item)
 
 	match item.name:
@@ -477,6 +475,13 @@ func collect(item):
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
+		# Don't auto-use potion here anymore
+
+		"red_potion":
+			Global.heal(30)
+		"yellow_potion":
+			Global.heal(100)
+		
 
 
 func play_run_and_gun_animation(direction) -> String:
