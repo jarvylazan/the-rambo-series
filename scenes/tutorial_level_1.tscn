@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=27 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://cb4u355uxqsub" path="res://scenes/tutorial_level_1.gd" id="1_lsqm8"]
 [ext_resource type="Texture2D" uid="uid://c038yaydv41ts" path="res://assets/image/tilemap_block/status.png" id="2_4w756"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
 [ext_resource type="Texture2D" uid="uid://tkn2rmgh12iy" path="res://assets/image/tilemap_block/level 1/wall door.png" id="11_qhc4u"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
+[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_4nlgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsqm8"]
 texture = ExtResource("13_plxmq")
@@ -7837,3 +7838,5 @@ polygon = PackedVector2Array(-163, -182, -135, 0, -111, 337, -100, 438, -84, 826
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-157, 273)
 scale = Vector2(5, 5)
+
+[node name="PauseMenu" parent="." instance=ExtResource("23_4nlgx")]

@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://b4r2jrp4ethtx" path="res://assets/image/tilemap_block/dungeon level/object/Ruin_shadow3_3.png" id="25_fpg1q"]
 [ext_resource type="Texture2D" uid="uid://c851sdd8b8o1k" path="res://assets/image/tilemap_block/dungeon level/object/Scull_door_shadow2.png" id="26_t4ufi"]
 [ext_resource type="Texture2D" uid="uid://clr4nh73r6htm" path="res://assets/image/tilemap_block/Bannière rouge avec dragon doré.png" id="27_ga125"]
-[ext_resource type="PackedScene" uid="uid://dtysgncprgicw" path="res://scenes/pause_menu.tscn" id="32_mmini"]
+[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="32_mmini"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")

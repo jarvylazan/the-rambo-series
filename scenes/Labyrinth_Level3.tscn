@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="3_byaxj"]
 [ext_resource type="Texture2D" uid="uid://blh5ls3qek016" path="res://assets/image/tilemap_block/Cercle magique lumineux et mystique.png" id="4_stky2"]
 [ext_resource type="PackedScene" uid="uid://bajtcvja37o0r" path="res://scenes/teleport_portal.tscn" id="7_h7hy3"]
-[ext_resource type="PackedScene" uid="uid://dtysgncprgicw" path="res://scenes/pause_menu.tscn" id="8_stky2"]
+[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="8_stky2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr1xi"]
 texture = ExtResource("1_byaxj")
