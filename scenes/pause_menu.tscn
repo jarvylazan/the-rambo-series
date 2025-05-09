@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm2ef7b0cw2my"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_n87rw"]
+
+[sub_resource type="Theme" id="Theme_myx47"]
+default_font = ExtResource("1_n87rw")
+
+[sub_resource type="Theme" id="Theme_kukqi"]
+default_font = ExtResource("1_n87rw")
+default_font_size = 50
+Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_myx47")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 400)
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.191
+anchor_right = 0.976
+anchor_bottom = 1.0
+offset_left = 211.512
+offset_top = -42.768
+offset_right = -348.352
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 22.0
+offset_right = 85.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme = SubResource("Theme_myx47")
+theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme_override_font_sizes/font_size = 60
+text = "PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 278.0
+offset_top = 88.0
+offset_right = -274.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kukqi")
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume"
+
+[node name="WorldsButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEVELS_LABEL"
+
+[node name="CommandsButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "commands"
+
+[node name="MenuButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MENU_LABEL_MAINMENU"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/WorldsButton" to="." method="_on_worlds_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CommandsButton" to="." method="_on_commands_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

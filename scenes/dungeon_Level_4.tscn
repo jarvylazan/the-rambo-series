@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bck5ume4yek73" path="res://assets/image/tilemap_block/dungeon level/Objects_2.png" id="5_u74wp"]
 [ext_resource type="Texture2D" uid="uid://dnrm6l2u677ff" path="res://assets/image/tilemap_block/dungeon level/object/Dead_arm_shadow3_2.png" id="6_7j0n3"]
 [ext_resource type="Texture2D" uid="uid://b5rkycr63r7rb" path="res://assets/image/tilemap_block/dungeon level/Tiled_files/Objects.png" id="6_wst6o"]
-[ext_resource type="Texture2D" uid="uid://bbq8cqif8x3re" path="res://assets/image/tilemap_block/Lich_shadow1.png" id="7_4prg4"]
+[ext_resource type="Texture2D" uid="uid://dwovrylgw5ge1" path="res://assets/image/tilemap_block/dungeon level/Lich_shadow1.png" id="7_4prg4"]
 [ext_resource type="Texture2D" uid="uid://bomop4esx2sdp" path="res://assets/image/tilemap_block/dungeon level/object/Dead_tree_shadow3_1.png" id="7_wyldn"]
 [ext_resource type="Texture2D" uid="uid://d35cujfphqy1h" path="res://assets/image/tilemap_block/dungeon level/object/Bones_shadow1_9.png" id="8_f1vt2"]
 [ext_resource type="Texture2D" uid="uid://dmtn7grvxjku4" path="res://assets/image/tilemap_block/dungeon level/object/Thorn_plant_shadow1_4.png" id="8_semk5"]
