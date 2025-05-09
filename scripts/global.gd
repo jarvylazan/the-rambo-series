@@ -9,6 +9,7 @@ signal die
 var counter := 0
 var can_shoot = false
 var bullet_count := 0
+var pause_menu: Node = null
 
 func take_damage(percentage):
 	counter += 1
@@ -35,3 +36,11 @@ func heal(percentage):
 
 func modify_shoot_state(state):
 	can_shoot = state
+	
+	
+func _input(event):
+	if  event.is_action_pressed("ui_cancel") and pause_menu:
+		if  pause_menu.visible:
+			pause_menu.hide_pause_menu()
+		else:
+			pause_menu.show_pause_menu()

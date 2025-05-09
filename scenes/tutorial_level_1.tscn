@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=54 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://dlhnpsd6xagkr" path="res://scripts/tutorial_level_1.gd" id="1_m77fg"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="1_p04hg"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bk6xd1hoam6xj" path="res://inventory/items/red_potion.tscn" id="21_e0lhq"]
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="21_qhc4u"]
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="21_scb12"]
+[ext_resource type="PackedScene" uid="uid://dtysgncprgicw" path="res://scenes/pause_menu.tscn" id="23_4nlgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("1_p04hg")
@@ -2589,3 +2590,5 @@ position = Vector2(-248, 1755)
 position = Vector2(1527, 884)
 collision_layer = 16
 collision_mask = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("23_4nlgx")]

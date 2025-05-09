@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	Global.pause_menu = $PauseMenu
 	lock_camera_to_section("Section_1")  # Start in section 1
 
 func _on_section_1_trigger_body_entered(body: Node2D) -> void:
