@@ -92,7 +92,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("8_gow0a")
+texture = ExtResource("10_jw4xm")
 expand_mode = 5
 stretch_mode = 6
 
@@ -131,7 +131,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("10_jw4xm")
+texture = ExtResource("8_gow0a")
 expand_mode = 5
 stretch_mode = 6
 

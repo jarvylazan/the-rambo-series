@@ -25,7 +25,7 @@ func _on_back_button_pressed() -> void:
 
 func _on_level_two_button_pressed() -> void:
 	MusicManager.play_sfx()
-	SceneManager.change_scene("res://scenes/forest_level_2.tscn",{
+	SceneManager.change_scene("res://scenes/desert_level_2.tscn",{
 		"speed": 5,
 		"pattern": "scribbles",
 	})
