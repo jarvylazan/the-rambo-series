@@ -29,7 +29,7 @@ func _ready():
 	player.add_child(camera)
 	camera.position = Vector2.ZERO
 	camera.make_current()
-	camera.zoom = Vector2(1 , 1)  # Zoomed-out view (more of the map)
+	camera.zoom = Vector2(0.9 , 0.9)  # Zoomed-out view (more of the map)
 
 	# Camera limits based on your markers + padding
 	camera.limit_left = -130

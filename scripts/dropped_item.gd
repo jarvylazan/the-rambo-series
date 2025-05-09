@@ -1,23 +1,17 @@
 extends Area2D
 
-@onready var sprite: Sprite2D = $Sprite2D
-
-var item_data: InvItem
-var _pending_item: InvItem = null
-
-func setup(item: InvItem):
-	_pending_item = item
+@export var item_data: InvItem
 
 func _ready():
-	if _pending_item:
-		item_data = _pending_item
-		sprite.texture = item_data.texture
+	if item_data:
+		$Sprite2D.texture = item_data.texture
 	else:
-		print("⚠️ No item data in dropped item")
+		print("❌ No item_data passed!")
 
-	# Debug visuals
-	sprite.modulate = Color(1, 0, 0)
-	sprite.scale = Vector2(2, 2)
-	sprite.z_index = 100
+	connect("body_entered", Callable(self, "_on_DroppedItem_body_entered"))
 
-	print("✅ DroppedItem is ready at:", global_position)
+func _on_DroppedItem_body_entered(body):
+	if body.name == "Player" and "collect" in body:
+		print("✅ Called player.collect():", item_data.name)
+		body.collect(item_data)  # ✅ This now handles everything: coins, ammo, potions
+		queue_free()

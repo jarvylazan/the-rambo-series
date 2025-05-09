@@ -1,7 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://cr2aaapa0djbq"]
+[gd_scene load_steps=45 format=3 uid="uid://cr2aaapa0djbq"]
 
 [ext_resource type="Script" uid="uid://bsh13obh7y2hd" path="res://scripts/cobra.gd" id="1_x40ej"]
 [ext_resource type="Texture2D" uid="uid://4i4uayqpqiu" path="res://assets/characters/enemies/Cobra Sprite Sheet.png" id="2_l8mt4"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_yxuhc"]
+[ext_resource type="Resource" uid="uid://461kxmeymkjv" path="res://inventory/items/coins.tres" id="3_1jai2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxuhc"]
 atlas = ExtResource("2_l8mt4")
@@ -540,6 +542,9 @@ radius = 10.4403
 [node name="Cobra" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 script = ExtResource("1_x40ej")
+max_drops = 7
+drop_chance = 1.0
+possible_drops = Array[ExtResource("2_yxuhc")]([ExtResource("3_1jai2"), ExtResource("3_1jai2"), ExtResource("3_1jai2"), ExtResource("3_1jai2"), ExtResource("3_1jai2"), ExtResource("3_1jai2"), ExtResource("3_1jai2")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.08, 3.08)

@@ -14,6 +14,12 @@ var boosted := false
 var boost_timer: Timer = null
 var base_spear_damage := 30
 var base_gun_damage := 10
+@onready var inv: Inv = preload("res://inventory/player_inv.tres")  # ✅ same as UI
+
+
+func _ready():
+	var saved = load("res://inventory/player_inv.tres") as Resource
+	inv.slots = saved.slots.duplicate(true)
 
 func take_damage(percentage):
 	counter += 1

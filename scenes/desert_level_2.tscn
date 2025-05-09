@@ -2482,13 +2482,13 @@ next_level_scene = "\"res://scenes/Labyrinth_Level3.tscn\""
 
 [node name="Player" parent="." instance=ExtResource("16_mic2q")]
 z_index = 1
-position = Vector2(-20, 1306)
+position = Vector2(-1256, 1315)
 scale = Vector2(0.18, 0.18)
 collision_mask = 145
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(140, -180)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(0.9, 0.9)
 
 [node name="Grotte" type="StaticBody2D" parent="."]
 

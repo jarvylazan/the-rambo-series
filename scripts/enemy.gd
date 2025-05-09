@@ -23,6 +23,13 @@ var patrol_origin: Vector2
 var patrol_direction := 1
 var patrol_flip_cooldown := false
 
+#----Item drop by enmies-----
+@export var max_drops: int = 2  # Number of items this enemy can drop
+@export var drop_chance: float = 0.5  # Chance per item slot
+@export var possible_drops: Array[InvItem]
+
+var DroppedItemScene := preload("res://scenes/dropped_item.tscn")
+#-----------------------------
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -100,7 +107,44 @@ func die() -> void:
 	anim.play("die")
 	velocity = Vector2.ZERO
 	await anim.animation_finished
+
+	_on_Death()  # Drop logic
+	
+# --This is where we’ll handle drops--
+func _on_Death():
+	var num_drops := max_drops  # Uses the exported value
+	var used_positions: Array[Vector2] = []
+	var drop_radius := 64  # Minimum distance from center
+
+	for i in range(num_drops):
+		if randf() < drop_chance and possible_drops.size() > 0:
+			var item = possible_drops[randi() % possible_drops.size()]
+			var drop = DroppedItemScene.instantiate()
+			drop.item_data = item
+
+			# Try to find a non-overlapping, far enough position
+			var offset := Vector2.ZERO
+			var attempts := 0
+
+			while attempts < 10:
+				var angle = randf_range(0, TAU)  # Random direction
+				var distance = randi_range(drop_radius, drop_radius + 48)  # Safe distance out
+				offset = Vector2.RIGHT.rotated(angle) * distance
+				offset = offset.snapped(Vector2(8, 8))
+
+				if not used_positions.has(offset):
+					used_positions.append(offset)
+					break
+
+				attempts += 1
+
+			drop.global_position = global_position + offset
+			get_tree().current_scene.add_child(drop)
+
 	queue_free()
+
+
+
 
 func attack(flip_left: bool) -> void:
 	if is_attacking or is_dead or not can_attack:
@@ -125,3 +169,4 @@ func move_towards(target_position: Vector2) -> void:
 	var to_target = target_position - global_position
 	direction = Vector2(sign(to_target.x), 0)  # Clamp to horizontal
 	velocity = to_target.normalized() * speed
+	
