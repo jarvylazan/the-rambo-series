@@ -2711,7 +2711,6 @@ size = Vector2(69, 366.25)
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_ij0mf")
-speed = 500.0
 inv = ExtResource("2_oukho")
 
 [node name="RamboAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -2733,16 +2732,17 @@ position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
 
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1830.0
-offset_top = -2884.0
-offset_right = -1407.0
-offset_bottom = -2572.0
-scale = Vector2(15, 15)
+offset_left = -1794.0
+offset_top = -2131.0
+offset_right = -1371.0
+offset_bottom = -1819.0
+scale = Vector2(10, 10)
 
 [node name="SpearArea" type="Area2D" parent="."]
 collision_layer = 64
@@ -2755,7 +2755,6 @@ shape = SubResource("RectangleShape2D_5yu0q")
 disabled = true
 
 [node name="Hud" parent="." instance=ExtResource("40_5yu0q")]
-visible = false
 
 [node name="DropSpawnPoint" type="Node2D" parent="."]
 position = Vector2(222, 188)
