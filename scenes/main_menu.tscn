@@ -129,10 +129,10 @@ text = "MENU_LABEL_QUIT"
 [node name="OptionsPane" parent="." instance=ExtResource("9_jk1qb")]
 visible = false
 layout_mode = 0
-offset_left = 244.0
-offset_top = 39.0
-offset_right = 960.0
-offset_bottom = 564.0
+offset_left = 263.0
+offset_top = 60.0
+offset_right = 1006.0
+offset_bottom = 606.0
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

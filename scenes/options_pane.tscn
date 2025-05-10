@@ -28,7 +28,7 @@ corner_radius_bottom_left = 6
 offset_left = 210.0
 offset_top = 63.0
 offset_right = 953.0
-offset_bottom = 570.0
+offset_bottom = 609.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
 script = ExtResource("1_eq6ja")
 
@@ -137,12 +137,35 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.585
+anchor_right = 0.234
+anchor_bottom = 0.585
+offset_left = -20.155
+offset_top = 70.59
+offset_right = 478.0
+offset_bottom = 99.702
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_bpgty")
+theme_override_font_sizes/font_size = 50
+text = "MENU_OPTIONS_FULLSCREEN"
+
+[node name="FullScreen" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
 [node name="SaveButton" type="Button" parent="."]
 layout_mode = 2
-offset_left = 233.0
-offset_top = 465.0
-offset_right = 518.0
-offset_bottom = 498.0
+offset_left = 227.0
+offset_top = 491.0
+offset_right = 516.0
+offset_bottom = 528.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
@@ -154,4 +177,5 @@ text = "MENU_IO_SAVE"
 [connection signal="value_changed" from="MasterSetting/HSlider" to="." method="_on_h_slider_master_value_changed"]
 [connection signal="value_changed" from="MusicSetting/HSlider" to="." method="_on_h_slider_music_value_changed"]
 [connection signal="value_changed" from="SFXSetting/HSlider" to="." method="_on_h_slider_sfx_value_changed"]
+[connection signal="toggled" from="HBoxContainer/FullScreen" to="." method="_on_full_screen_toggled"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

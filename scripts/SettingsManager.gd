@@ -6,6 +6,7 @@ var volume_master: float = 0.5
 var volume_music: float = 0.5
 var volume_sfx: float = 0.5
 var current_language: String = "en"
+var fullscreen := false
 
 func _ready():
 	load_settings()
@@ -18,7 +19,8 @@ func save_settings():
 			"volume_master": volume_master,
 			"volume_music": volume_music,
 			"volume_sfx": volume_sfx,
-			"language": current_language
+			"language": current_language,
+			"fullscreen": fullscreen
 		}
 		file.store_var(data)
 		file.close()
@@ -33,6 +35,8 @@ func load_settings():
 			volume_music = data.get("volume_music", 0.5)
 			volume_sfx = data.get("volume_sfx", 0.5)
 			current_language = data.get("language", "en")
+			fullscreen = data.get("fullscreen", false)
+			
 			file.close()
 			print(" Settings loaded.")
 	else:
@@ -48,3 +52,7 @@ func apply_settings():
 
 	# Apply language
 	TranslationServer.set_locale(current_language)
+	
+	DisplayServer.window_set_mode(
+		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
+	)

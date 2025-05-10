@@ -1,10 +1,16 @@
 extends Panel
 
+
+var isFullScreen := false
+
+
 func _ready() -> void:
 	# Load saved settings into sliders
 	$MasterSetting/HSlider.value = SettingsManager.volume_master
 	$MusicSetting/HSlider.value = SettingsManager.volume_music
 	$SFXSetting/HSlider.value = SettingsManager.volume_sfx
+	
+	$HBoxContainer/FullScreen.button_pressed = SettingsManager.fullscreen
 
 	# Apply audio settings
 	AudioManager.change_volume(AudioManager.AUDIO_BUSES.Master, SettingsManager.volume_master)
@@ -47,4 +53,16 @@ func _on_save_button_pressed() -> void:
 		%TitleContainer.visible = true
 	elif get_parent().has_node("Panel/VBoxContainer"):
 		get_parent().get_node("Panel/VBoxContainer").visible = true
+	
+
+
+func _on_full_screen_toggled(toggled_on: bool) -> void:
+	isFullScreen = toggled_on
+	SettingsManager.fullscreen = toggled_on  # ✅ this is the critical line
+	DisplayServer.window_set_mode(
+		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN if toggled_on else DisplayServer.WINDOW_MODE_WINDOWED
+	)
+
+	
+
 	
