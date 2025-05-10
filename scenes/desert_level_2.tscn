@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://cf5sysg7mbfk3"]
+[gd_scene load_steps=57 format=4 uid="uid://cf5sysg7mbfk3"]
 
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="3_oe8kg"]
@@ -18,7 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://jwe253ux2r3v" path="res://inventory/items/blue_potion.tscn" id="19_r6n1j"]
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="20_36d2e"]
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="21_kbe65"]
+[ext_resource type="PackedScene" uid="uid://cvg1fjw36k3xn" path="res://scenes/Enemies/minotaur.tscn" id="21_mp6l3"]
+[ext_resource type="PackedScene" uid="uid://gx3awikxvqxe" path="res://scenes/Enemies/ghoul.tscn" id="21_y21nk"]
+[ext_resource type="PackedScene" uid="uid://bacdxvteo0aav" path="res://scenes/Enemies/ratfolk_axe.tscn" id="22_f1eru"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="22_lrdev"]
+[ext_resource type="PackedScene" uid="uid://b400a0dsgvx2w" path="res://scenes/Enemies/cyclops.tscn" id="22_oe8kg"]
+[ext_resource type="PackedScene" uid="uid://cohm7unmq6b4v" path="res://scenes/Enemies/dwarf.tscn" id="23_3rpe7"]
+[ext_resource type="PackedScene" uid="uid://b4esrikri3onx" path="res://scenes/Enemies/swampling.tscn" id="23_qx2ae"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_y21nk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
@@ -2589,4 +2595,66 @@ position = Vector2(-236, 1309)
 collision_layer = 16
 collision_mask = 2
 
+[node name="Ammo4" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
+position = Vector2(-776, 1802)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Ammo5" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
+position = Vector2(-500, 1570)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Ammo6" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
+position = Vector2(-811, 1405)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Ammo7" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
+position = Vector2(-1050, 2375)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Ammo8" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
+position = Vector2(701, 2395)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Ammo9" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
+position = Vector2(-1237, 1085)
+collision_layer = 16
+collision_mask = 2
+
 [node name="PauseMenu" parent="." instance=ExtResource("23_y21nk")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Minotaur" parent="Enemies" instance=ExtResource("21_mp6l3")]
+position = Vector2(-846, 2027)
+
+[node name="Minotaur2" parent="Enemies" instance=ExtResource("21_mp6l3")]
+position = Vector2(-1436, 2332)
+
+[node name="Minotaur3" parent="Enemies" instance=ExtResource("21_mp6l3")]
+position = Vector2(774, 2580)
+
+[node name="RatfolkAxe" parent="Enemies" instance=ExtResource("22_f1eru")]
+position = Vector2(-529, 2112)
+
+[node name="Swampling" parent="Enemies" instance=ExtResource("23_qx2ae")]
+position = Vector2(-1836, 1848)
+
+[node name="Ghoul" parent="Enemies" instance=ExtResource("21_y21nk")]
+position = Vector2(-755, 894)
+
+[node name="Ghoul2" parent="Enemies" instance=ExtResource("21_y21nk")]
+position = Vector2(-931, 1186)
+
+[node name="Cyclops" parent="Enemies" instance=ExtResource("22_oe8kg")]
+position = Vector2(-1615, 1020)
+
+[node name="Cyclops2" parent="Enemies" instance=ExtResource("22_oe8kg")]
+position = Vector2(50, 1244)
+
+[node name="Dwarf" parent="Enemies" instance=ExtResource("23_3rpe7")]
+position = Vector2(-250, 719)
