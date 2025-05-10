@@ -13,6 +13,7 @@ var intro_dialogue_lines := {
 }
 
 func _ready():
+	Global.pause_menu = $PauseMenu
 	# Setup camera
 	var player = $Player
 	var camera = player.get_node("Camera2D")
