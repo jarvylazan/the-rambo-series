@@ -2202,7 +2202,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"spearupright",
-"speed": 12.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_5yu0q"]
@@ -2600,7 +2600,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_bgi1j"]
 resource_name = "spearupright"
-length = 0.42
+length = 0.625
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2608,7 +2608,7 @@ tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-88, -62), Vector2(34, 100), Vector2(200, -43)]
@@ -2620,7 +2620,7 @@ tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.42),
+"times": PackedFloat32Array(0, 0.0333333, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
@@ -2632,7 +2632,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.42),
+"times": PackedFloat32Array(0.625),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -2682,9 +2682,9 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"spearup"
+animation = &"spearupright"
 autoplay = "idledown"
-frame = 5
+frame = 4
 frame_progress = 1.0
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
