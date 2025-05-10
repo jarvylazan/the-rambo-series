@@ -1,8 +1,7 @@
-[gd_scene load_steps=53 format=4 uid="uid://cf5sysg7mbfk3"]
+[gd_scene load_steps=51 format=4 uid="uid://cf5sysg7mbfk3"]
 
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="3_oe8kg"]
-[ext_resource type="Texture2D" uid="uid://3cse81fujj2u" path="res://assets/image/tilemap_block/Objects.png" id="4_3rpe7"]
 [ext_resource type="Texture2D" uid="uid://dy3elvbb2qk2m" path="res://assets/image/tilemap_block/desert assets/Entrée de caverne en pixels.png" id="5_mp6l3"]
 [ext_resource type="Texture2D" uid="uid://ccvvf2t8unxqm" path="res://assets/image/tilemap_block/desert assets/Entrée de caverne en pixels_64.png" id="6_f1eru"]
 [ext_resource type="Texture2D" uid="uid://cl8evkdi6fyw4" path="res://assets/image/tilemap_block/desert assets/desert_pack/_Spritesheet_tileset.png" id="7_qx2ae"]
@@ -15,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://ba3voagyj332v" path="res://assets/image/tilemap_block/desert assets/Blue tree dessert_v2_128.png" id="14_fs60q"]
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="15_a7qhm"]
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="16_mic2q"]
-[ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/cobra.tscn" id="17_o8huk"]
 [ext_resource type="PackedScene" uid="uid://bk6xd1hoam6xj" path="res://inventory/items/red_potion.tscn" id="18_icjt6"]
 [ext_resource type="PackedScene" uid="uid://jwe253ux2r3v" path="res://inventory/items/blue_potion.tscn" id="19_r6n1j"]
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="20_36d2e"]
@@ -566,7 +564,6 @@ texture_region_size = Vector2i(32, 32)
 28:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.00988, -6.69125, -24.5346, -6.37262, -27.0836, 0, -28.9954, 10.1962, -27.4022, 19.1178, -29.314, 24.5346, -17.2061, 28.3581, -6.05398, 29.314, 0.31863, 27.7209, 11.1521, 27.4022, 17.8433, 25.8091, 23.5787, 21.3483, 27.4022, 16.2502, 24.5346, -5.73535, 2.23042, -12.108)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5o7h0"]
-texture = ExtResource("4_3rpe7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2301,17 +2298,12 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_hle5c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0lhq"]
-texture = ExtResource("4_3rpe7")
-23:29/size_in_atlas = Vector2i(2, 2)
 23:29/0 = 0
 23:29/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.33816, -5.66555, 1.61873, -6.20513, 10.0721, 2.33816, 10.9714, 7.37421, 8.09364, 12.5002, 5.73536, 11.1521, -12.77, 7.01449, -10.2519, -0.899294)
-27:29/size_in_atlas = Vector2i(2, 2)
 27:29/0 = 0
 27:29/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.57562, -5.84541, 3.77703, -10.162, 4.85619, -4.22668, 11.3311, -5.30583, 4.31661, 6.38498, -6.29506, 9.44258, -12.77, 7.01449, -10.2519, -0.899294)
-24:34/size_in_atlas = Vector2i(3, 3)
 24:34/0 = 0
 24:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.59315, -15.2943, 8, -8, 8, -1.79859, 10.0721, 2.33816, 10.9714, 7.37421, 10.4318, 13.1297, 5.73536, 11.1521, -8, 1.27452, -14.9283, -4.85618, -11.1512, -11.511)
-9:34/size_in_atlas = Vector2i(3, 3)
 9:34/0 = 0
 9:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(11.3311, -17.2664, 14.2088, -15.1081, 15.4679, -11.6908, 2.87774, -0.539576, -6.47491, 12.0505, -11.8707, 13.4894, -14.9283, 11.8707, -15.288, 8.2735)
 
@@ -2521,9 +2513,6 @@ polygon = PackedVector2Array(6372, 49, 6414, 1391, 6389, 2063, 6401, 2944, 6374,
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6683, 2391)
-
-[node name="Cobra" parent="." instance=ExtResource("17_o8huk")]
-position = Vector2(-1670, 764)
 
 [node name="Items_Containers" type="Node2D" parent="."]
 
