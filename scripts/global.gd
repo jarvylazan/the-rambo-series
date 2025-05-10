@@ -14,7 +14,7 @@ var boosted := false
 var boost_timer: Timer = null
 var base_spear_damage := 30
 var base_gun_damage := 10
-@onready var inv: Inv = preload("res://inventory/player_inv.tres")  # ✅ same as UI
+@onready var inv: Inv = preload("res://inventory/player_inv.tres") 
 
 
 func _ready():
@@ -49,10 +49,10 @@ func modify_shoot_state(state):
 # === DAMAGE SYSTEM FOR WEAPONS ===
 
 func get_spear_damage() -> int:
-	return base_spear_damage * (2 if boosted else 1)
+	return base_spear_damage * (100 if boosted else 1)
 
 func get_gun_damage() -> int:
-	return base_gun_damage * (2 if boosted else 1)
+	return base_gun_damage * (100 if boosted else 1)
 	
 func apply_power_boost():
 	if boosted:

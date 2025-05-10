@@ -27,7 +27,7 @@ func _process(delta):
 			open()
 
 	if is_open and selected_slot_data and Input.is_action_just_pressed("use_item"):
-		print("🟦 I key pressed for:", selected_slot_data.item.name)
+		print("I key pressed for:", selected_slot_data.item.name)
 		_use_selected_item()
 
 

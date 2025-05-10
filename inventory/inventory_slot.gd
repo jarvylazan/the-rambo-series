@@ -26,7 +26,7 @@ func update_slot():
 		else:
 			amount_text.visible = false
 
-		# ✅ Highlight usable (potion) items
+		# Highlight usable (potion) items
 		var item_name := inventory_slot.item.name
 		if item_name == "red_potion" or item_name == "yellow_potion" or item_name == "blue_potion":
 			slot_sprite.modulate = Color(1.2, 1.2, 1.0)  # Light yellowish tint (slightly glowing)
