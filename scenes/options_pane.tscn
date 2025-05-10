@@ -25,6 +25,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [node name="OptionsPane" type="Panel"]
+visible = false
 offset_left = 210.0
 offset_top = 63.0
 offset_right = 953.0
