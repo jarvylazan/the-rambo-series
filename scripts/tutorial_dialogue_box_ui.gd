@@ -93,6 +93,23 @@ func _on_continue_pressed():
 		return
 
 	display_text()
+	
+func _on_skip_pressed() -> void:
+	if tween:
+		tween.kill()
+
+	text_queue.clear()
+
+	if type_sound:
+		type_sound.stop()
+
+	if auto_advance_timer:
+		auto_advance_timer.stop()
+
+	hide_dialogue_box()
+	emit_signal("dialogue_finished")
+
+
 
 func show_dialogue_box():
 	self.visible = true

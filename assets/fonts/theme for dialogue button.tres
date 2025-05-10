@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://hn5720a0k2rn"]
+
+[ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_uxumr"]
+[ext_resource type="Texture2D" uid="uid://dbxlv28ayiv23" path="res://assets/fonts/dialogue_button.png" id="2_uxumr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxumr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in3jg"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_uxumr")
+expand_margin_top = 30.0
+expand_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v506j"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_uxumr")
+expand_margin_top = 30.0
+expand_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpbwv"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_uxumr")
+expand_margin_top = 30.0
+expand_margin_bottom = 30.0
+
+[resource]
+default_font = ExtResource("1_uxumr")
+default_font_size = 50
+Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.882353, 0.764706, 0.364706, 1)
+Button/fonts/font = ExtResource("1_uxumr")
+Button/styles/focus = SubResource("StyleBoxEmpty_uxumr")
+Button/styles/hover = SubResource("StyleBoxTexture_in3jg")
+Button/styles/normal = SubResource("StyleBoxTexture_v506j")
+Button/styles/pressed = SubResource("StyleBoxTexture_lpbwv")
