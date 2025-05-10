@@ -1,13 +1,26 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://phtncaa76ox1"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://phtncaa76ox1"]
 
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_el5k4"]
+[ext_resource type="Texture2D" uid="uid://bqd2bvvx2rbwf" path="res://assets/fonts/button_theme.png" id="2_pdy8l"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inuuy"]
-bg_color = Color(0.164706, 0.0705882, 0.0705882, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in3jg"]
+texture = ExtResource("2_pdy8l")
+expand_margin_top = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v506j"]
+content_margin_left = 60.0
+content_margin_top = 12.0
+content_margin_right = 60.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_pdy8l")
+expand_margin_top = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpbwv"]
+texture = ExtResource("2_pdy8l")
+expand_margin_top = 25.0
+expand_margin_bottom = 25.0
 
 [resource]
 default_font = ExtResource("1_el5k4")
@@ -16,5 +29,6 @@ Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.882353, 0.764706, 0.364706, 1)
 Button/fonts/font = ExtResource("1_el5k4")
-Button/styles/normal = null
-Button/styles/pressed = SubResource("StyleBoxFlat_inuuy")
+Button/styles/hover = SubResource("StyleBoxTexture_in3jg")
+Button/styles/normal = SubResource("StyleBoxTexture_v506j")
+Button/styles/pressed = SubResource("StyleBoxTexture_lpbwv")
