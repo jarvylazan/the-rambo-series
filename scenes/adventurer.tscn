@@ -1,4 +1,4 @@
-[gd_scene load_steps=340 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=337 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -1153,25 +1153,13 @@ region = Rect2(288, 0, 48, 64)
 atlas = ExtResource("15_1bkhl")
 region = Rect2(336, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqii1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo62v"]
 atlas = ExtResource("16_aipbf")
-region = Rect2(0, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4yf0"]
-atlas = ExtResource("16_aipbf")
-region = Rect2(48, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1pae"]
-atlas = ExtResource("16_aipbf")
-region = Rect2(96, 0, 48, 64)
+region = Rect2(192, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rc385"]
 atlas = ExtResource("16_aipbf")
 region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eo62v"]
-atlas = ExtResource("16_aipbf")
-region = Rect2(192, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0xff"]
 atlas = ExtResource("16_aipbf")
@@ -2198,19 +2186,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iqii1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4yf0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q1pae")
+"texture": SubResource("AtlasTexture_eo62v")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rc385")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eo62v")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l0xff")
@@ -2621,7 +2600,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_bgi1j"]
 resource_name = "spearupright"
-length = 0.67
+length = 0.42
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2629,7 +2608,7 @@ tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-88, -62), Vector2(34, 100), Vector2(200, -43)]
@@ -2641,7 +2620,7 @@ tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"times": PackedFloat32Array(0, 0.0333333, 0.42),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
@@ -2653,7 +2632,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.67),
+"times": PackedFloat32Array(0.42),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
