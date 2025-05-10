@@ -1,4 +1,4 @@
-[gd_scene load_steps=342 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=340 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -1109,14 +1109,6 @@ region = Rect2(48, 0, 48, 64)
 atlas = ExtResource("14_x002e")
 region = Rect2(96, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fr32u"]
-atlas = ExtResource("14_x002e")
-region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvmus"]
-atlas = ExtResource("14_x002e")
-region = Rect2(192, 0, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t73q"]
 atlas = ExtResource("14_x002e")
 region = Rect2(240, 0, 48, 64)
@@ -2163,12 +2155,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_b2m6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fr32u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wvmus")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_0t73q")
 }, {
 "duration": 1.0,
@@ -2717,8 +2703,10 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"idleright"
+animation = &"spearup"
 autoplay = "idledown"
+frame = 5
+frame_progress = 1.0
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
@@ -2732,6 +2720,7 @@ position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
 
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
