@@ -1,8 +1,8 @@
 extends Enemy
-
+#BOSS LEVEL 3
 func _ready():
 	speed = 150
-	max_health = 30
+	max_health = 500
 	health = max_health
 	damage = 8
 	detection_range = 450.0

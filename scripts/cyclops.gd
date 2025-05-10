@@ -1,5 +1,5 @@
 extends Enemy
-
+#BOSS LEVEL 2
 func _ready():
 	speed = 150
 	max_health = 30
