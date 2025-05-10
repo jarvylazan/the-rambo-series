@@ -51,8 +51,20 @@ func _on_body_entered(body):
 	else:
 		print("Key found in player. Opening portal.")
 
-	# Player has the key → teleport
-	body.visible = false  # hides the player
+		# 1. Remove from collected_keys
+		body.collected_keys.erase(required_key_id)
+
+		# 2. Remove key item from inventory
+		for i in range(body.inv.slots.size()):
+			var slot = body.inv.slots[i]
+			if slot.item and slot.item.key_id == required_key_id:
+				body.inv.slots[i] = InvSlot.new()
+				break
+
+		body.inv.update.emit()  # refresh UI if needed
+
+	# Visual effect + teleport
+	body.visible = false
 	activated = false
 	collision.disabled = true
 	sprite.play("Disappear")

@@ -9052,8 +9052,8 @@ debug_color = Color(0.569051, 0.21399, 0.131354, 0.42)
 [node name="SecretPathTrigger" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(-14, 35)
-collision_layer = 256
-collision_mask = 3
+collision_layer = 288
+collision_mask = 35
 script = ExtResource("15_6n1ip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretPathTrigger"]
