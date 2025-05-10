@@ -108,6 +108,7 @@ theme_override_font_sizes/font_size = 50
 text = "LEVEL_1"
 
 [node name="LevelOneButton" type="Button" parent="CanvasLayer/Control/MarginContainer/TextureRect"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,6 +148,7 @@ theme_override_font_sizes/font_size = 50
 text = "LEVEL_2"
 
 [node name="LevelTwoButton" type="Button" parent="CanvasLayer/Control/MarginContainer2/TextureRect"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,6 +188,7 @@ theme_override_font_sizes/font_size = 50
 text = "LEVEL_3"
 
 [node name="LevelThreeButton" type="Button" parent="CanvasLayer/Control/MarginContainer3/TextureRect"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -225,6 +228,7 @@ theme_override_font_sizes/font_size = 50
 text = "LEVEL_4"
 
 [node name="LevelFourButton" type="Button" parent="CanvasLayer/Control/MarginContainer4/TextureRect"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
