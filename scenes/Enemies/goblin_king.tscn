@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://cn5ibjnbvy7m4"]
 
-[ext_resource type="Script" uid="uid://cuxqw4g3321g8" path="res://scripts/goblin_king.gd" id="1_klhwt"]
+[ext_resource type="Script" path="res://scripts/goblin_king.gd" id="1_klhwt"]
 [ext_resource type="Texture2D" uid="uid://bbl2fp0ui24le" path="res://assets/characters/enemies/Goblin King Sprite Sheet.png" id="2_7giuw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wc8n3"]
@@ -262,23 +262,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Animation" id="Animation_gb8wo"]
-resource_name = "attack_right"
-length = 0.8
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.45, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, false, true]
-}
-
 [sub_resource type="Animation" id="Animation_wn60r"]
 length = 0.001
 tracks/0/type = "value"
@@ -333,6 +316,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-700, 0), Vector2(-700, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gb8wo"]
+resource_name = "attack_right"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3ax1p"]
