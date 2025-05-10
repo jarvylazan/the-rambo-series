@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2737dsntwjmv"]
+[gd_scene load_steps=10 format=3 uid="uid://c2737dsntwjmv"]
 
 [ext_resource type="Script" uid="uid://bijxgsxjbcr1u" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dauqelcp2hrm4" path="res://assets/image/main_menu/parallax_layers_menu/sky.png" id="2_bqqt6"]
@@ -8,26 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bsdqdfc7p5dha" path="res://assets/image/main_menu/parallax_layers_menu/front.png" id="6_5dd4i"]
 [ext_resource type="Theme" uid="uid://cjhr8kmmfs2no" path="res://assets/fonts/label_theme.tres" id="6_jk1qb"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="8_tbmy8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
-bg_color = Color(0.643137, 0.419608, 0.556863, 1)
-border_color = Color(0.364706, 0.168627, 0.278431, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
-bg_color = Color(0.960784, 0.870588, 0.701961, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.960784, 0.870588, 0.701961, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[ext_resource type="PackedScene" uid="uid://dnkyfgeg0tpeb" path="res://scenes/options_pane.tscn" id="9_jk1qb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -104,6 +85,7 @@ scale = Vector2(3.6, 3.19167)
 texture = ExtResource("6_5dd4i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Titles&Buttons" type="Node" parent="CanvasLayer"]
 
@@ -144,140 +126,15 @@ text = "LEVELS_LABEL"
 layout_mode = 2
 text = "MENU_LABEL_QUIT"
 
-[node name="OptionsPane" type="Panel" parent="."]
-unique_name_in_owner = true
+[node name="OptionsPane" parent="." instance=ExtResource("9_jk1qb")]
 visible = false
 layout_mode = 0
 offset_left = 244.0
-offset_top = 31.0
-offset_right = 970.0
-offset_bottom = 576.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPane"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="OptionsPane/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("6_jk1qb")
-theme_override_constants/line_spacing = -65
-theme_override_font_sizes/font_size = 150
-text = "OPTIONS
-"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsPane/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 24
-
-[node name="EnButton" type="Button" parent="OptionsPane/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("8_tbmy8")
-text = "EN"
-
-[node name="FrButton" type="Button" parent="OptionsPane/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("8_tbmy8")
-text = "FR"
-
-[node name="MasterSetting" type="HBoxContainer" parent="OptionsPane"]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 187.0
-offset_right = 671.0
-offset_bottom = 227.0
-theme_override_constants/separation = 100
-
-[node name="Label" type="Label" parent="OptionsPane/MasterSetting"]
-layout_mode = 2
-theme = ExtResource("6_jk1qb")
-theme_override_font_sizes/font_size = 50
-text = "MENU_AUDIO_MASTER"
-
-[node name="HSlider" type="HSlider" parent="OptionsPane/MasterSetting"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="MusicSetting" type="HBoxContainer" parent="OptionsPane"]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 247.0
-offset_right = 674.0
-offset_bottom = 276.0
-theme_override_constants/separation = 100
-
-[node name="Label" type="Label" parent="OptionsPane/MusicSetting"]
-layout_mode = 2
-theme = ExtResource("6_jk1qb")
-theme_override_font_sizes/font_size = 50
-text = "MENU_LABEL_MUSIC"
-
-[node name="HSlider" type="HSlider" parent="OptionsPane/MusicSetting"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="SFXSetting" type="HBoxContainer" parent="OptionsPane"]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 315.0
-offset_right = 657.0
-offset_bottom = 355.0
-theme_override_constants/separation = 100
-
-[node name="Label" type="Label" parent="OptionsPane/SFXSetting"]
-layout_mode = 2
-theme = ExtResource("6_jk1qb")
-theme_override_font_sizes/font_size = 50
-text = "CREDITS_SFX"
-
-[node name="HSlider" type="HSlider" parent="OptionsPane/SFXSetting"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="SaveButton" type="Button" parent="OptionsPane"]
-layout_mode = 2
-offset_left = 233.0
-offset_top = 465.0
-offset_right = 518.0
-offset_bottom = 498.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-size_flags_stretch_ratio = 0.0
-theme = ExtResource("8_tbmy8")
-text = "MENU_IO_SAVE"
+offset_top = 39.0
+offset_right = 960.0
+offset_bottom = 564.0
 
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/LevelButtons" to="." method="_on_level_buttons_pressed"]
 [connection signal="pressed" from="CanvasLayer/Titles&Buttons/ButtonsMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="OptionsPane/VBoxContainer/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
-[connection signal="pressed" from="OptionsPane/VBoxContainer/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
-[connection signal="value_changed" from="OptionsPane/MasterSetting/HSlider" to="." method="_on_h_slider_master_value_changed"]
-[connection signal="value_changed" from="OptionsPane/MusicSetting/HSlider" to="." method="_on_h_slider_music_value_changed"]
-[connection signal="value_changed" from="OptionsPane/SFXSetting/HSlider" to="." method="_on_h_slider_sfx_value_changed"]
-[connection signal="pressed" from="OptionsPane/SaveButton" to="." method="_on_save_button_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm2ef7b0cw2my"]
+[gd_scene load_steps=6 format=3 uid="uid://cm2ef7b0cw2my"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="Script" uid="uid://d0a2rivw8n146" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://dnkyfgeg0tpeb" path="res://scenes/options_pane.tscn" id="3_kukqi"]
 
 [sub_resource type="Theme" id="Theme_myx47"]
 default_font = ExtResource("1_n87rw")
@@ -49,10 +50,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 278.0
-offset_top = 88.0
-offset_right = -274.0
-offset_bottom = -104.0
+offset_left = 20.0
+offset_top = 97.0
+offset_right = -12.0001
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_kukqi")
@@ -62,6 +63,11 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 4
 text = "RESUME_LABEL"
+
+[node name="OptionsButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OPTIONS"
 
 [node name="WorldsButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -78,7 +84,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "MENU_LABEL_MAINMENU"
 
+[node name="OptionsPane" parent="." instance=ExtResource("3_kukqi")]
+visible = false
+
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/WorldsButton" to="." method="_on_worlds_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/CommandsButton" to="." method="_on_commands_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
