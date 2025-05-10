@@ -59,12 +59,14 @@ theme_override_constants/separation = 24
 
 [node name="EnButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_bpgty")
 text = "EN"
 
 [node name="FrButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_bpgty")
 text = "FR"
 
 [node name="MasterSetting" type="HBoxContainer" parent="."]
