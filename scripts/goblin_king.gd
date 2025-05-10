@@ -10,11 +10,11 @@ func _ready():
 	super()
 
 
-func take_gun_damage():
-	take_damage(10)
-	
 func take_spear_damage():
-	take_damage(30)
+	take_damage(Global.get_spear_damage())
+
+func take_gun_damage():
+	take_damage(Global.get_gun_damage())
 
 func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

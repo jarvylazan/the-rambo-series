@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://cn5ibjnbvy7m4"]
 
-[ext_resource type="Script" path="res://scripts/goblin_king.gd" id="1_klhwt"]
+[ext_resource type="Script" uid="uid://cuxqw4g3321g8" path="res://scripts/goblin_king.gd" id="1_klhwt"]
 [ext_resource type="Texture2D" uid="uid://bbl2fp0ui24le" path="res://assets/characters/enemies/Goblin King Sprite Sheet.png" id="2_7giuw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wc8n3"]
