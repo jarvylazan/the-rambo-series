@@ -1,7 +1,21 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://phtncaa76ox1"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://phtncaa76ox1"]
 
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_el5k4"]
 [ext_resource type="Texture2D" uid="uid://bqd2bvvx2rbwf" path="res://assets/fonts/button_theme.png" id="2_pdy8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdy8l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdy8l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in3jg"]
 texture = ExtResource("2_pdy8l")
@@ -26,9 +40,17 @@ expand_margin_bottom = 25.0
 default_font = ExtResource("1_el5k4")
 default_font_size = 50
 Button/colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.882353, 0.764706, 0.364706, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
 Button/fonts/font = ExtResource("1_el5k4")
+Button/styles/disabled = SubResource("StyleBoxFlat_pdy8l")
+Button/styles/focus = SubResource("StyleBoxEmpty_pdy8l")
 Button/styles/hover = SubResource("StyleBoxTexture_in3jg")
 Button/styles/normal = SubResource("StyleBoxTexture_v506j")
 Button/styles/pressed = SubResource("StyleBoxTexture_lpbwv")
