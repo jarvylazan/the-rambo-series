@@ -300,4 +300,4 @@ position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_x40ej")
 disabled = true
 
-[connection signal="body_entered" from="AttackHitbox" to="." method="_on_fang_hitbox_body_entered"]
+[connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
