@@ -127,7 +127,6 @@ layout_mode = 2
 text = "MENU_LABEL_QUIT"
 
 [node name="OptionsPane" parent="." instance=ExtResource("9_jk1qb")]
-visible = false
 layout_mode = 0
 offset_left = 263.0
 offset_top = 60.0
