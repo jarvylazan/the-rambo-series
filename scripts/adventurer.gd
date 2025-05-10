@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 var hud
 
+var collected_keys: Array[String] = []
 
 var coin_count: int = 0
 var bullet_count: int = 0
@@ -468,6 +469,11 @@ func play_shoot_animation() -> String:
 func collect(item):
 	inv.insert(item)
 
+	# Register keys using item.key_id (if present)
+	if item.key_id != "" and not collected_keys.has(item.key_id):
+		collected_keys.append(item.key_id)
+		print("Key collected by player:", item.key_id)
+
 	match item.name:
 		"coins":
 			coin_count += 10
@@ -475,12 +481,11 @@ func collect(item):
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
-		# Don't auto-use potion here anymore
-
 		"red_potion":
 			Global.heal(30)
 		"yellow_potion":
 			Global.heal(100)
+
 		
 
 

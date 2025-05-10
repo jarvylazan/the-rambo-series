@@ -9,8 +9,18 @@ var intro_dialogue_lines := {
 		"But worry not... use the blue potion to boost your attack for 10 seconds!",
 		"You also have ammunition now. Press SPACE to shoot with your gun.",
 		"Be careful: your ammo is limited. Use it wisely!"
+	],
+	"fr": [
+		"Félicitations, aventurier ! Tu as trouvé le premier des nombreux chemins secrets cachés dans ton aventure.",
+		"Cet endroit faisait autrefois partie du jardin de Merlin, maintenant déformé par la cupidité.",
+		"Un nain égoïste a volé ce trésor et l’a scellé ici, loin des regards indiscrets.",
+		"Il est trop puissant pour ta force actuelle...",
+		"Mais ne t’inquiète pas... utilise la potion bleue pour augmenter ton attaque pendant 10 secondes !",
+		"Tu as aussi des munitions maintenant. Appuie sur ESPACE pour tirer avec ton arme.",
+		"Attention : tes munitions sont limitées. Utilise-les avec sagesse !"
 	]
 }
+
 
 func _ready():
 	Global.pause_menu = $PauseMenu

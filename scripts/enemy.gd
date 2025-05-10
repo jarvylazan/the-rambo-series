@@ -8,6 +8,10 @@ class_name Enemy
 @export var attack_range: float = 50.0
 @export var detection_range: float = 200.0
 @export var attack_cooldown: float = 1.0
+#------BOSS--------
+@export var is_boss := false
+@onready var PortalScene := preload("res://scenes/portal.tscn")  # Update path as needed
+#--------------------------
 var drop_dialogue_lines := {}
 var drop_dialogue_triggered := false
 var health_bar := preload("res://scenes/enemy_health_bar.tscn")
@@ -146,6 +150,7 @@ func _on_Death():
 			var item = possible_drops[randi() % possible_drops.size()]
 			var drop = DroppedItemScene.instantiate()
 			drop.item_data = item
+
 			var offset := Vector2.ZERO
 			var attempts := 0
 			while attempts < 10:
@@ -157,14 +162,26 @@ func _on_Death():
 					used_positions.append(offset)
 					break
 				attempts += 1
+
 			drop.global_position = global_position + offset
 			get_tree().current_scene.add_child(drop)
 
+	# ✅ Spawn portal if this is a boss
+	if is_boss:
+		var portal = PortalScene.instantiate()
+		portal.global_position = global_position + Vector2(96, 0)
+		get_tree().current_scene.add_child(portal)
+
+		if portal.has_method("activate_portal"):
+			portal.activate_portal()
+
+	# ✅ Dialogue once
 	if not drop_dialogue_triggered and drop_dialogue_lines and not drop_dialogue_lines.is_empty():
 		_show_drop_dialogue()
 		drop_dialogue_triggered = true
 
 	queue_free()
+
 
 func _show_drop_dialogue():
 	if drop_dialogue_lines.is_empty():

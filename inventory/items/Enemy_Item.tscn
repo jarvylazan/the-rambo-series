@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6ucp477k3n2n"]
+
+[ext_resource type="Script" uid="uid://biwo3v6sivnfe" path="res://inventory/items/yellow_potion.gd" id="1_ynv8a"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_ynv8a"]
+[ext_resource type="Texture2D" uid="uid://dmr2x4voiywj4" path="res://assets/Items/full packages items/Separated Files/64x64/fc293.png" id="3_ynv8a"]
+
+[sub_resource type="Resource" id="Resource_pibe6"]
+script = ExtResource("2_ynv8a")
+name = "Enemy_Item"
+texture = ExtResource("3_ynv8a")
+metadata/_custom_type_script = "uid://cho0oo0tgufqt"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pi7aa"]
+radius = 30.0666
+
+[node name="Enemy_Item" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_ynv8a")
+item = SubResource("Resource_pibe6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ynv8a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_pi7aa")
