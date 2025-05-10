@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=48 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" path="res://scripts/tutorial_level_1.gd" id="1_lsqm8"]
 [ext_resource type="Texture2D" uid="uid://c038yaydv41ts" path="res://assets/image/tilemap_block/status.png" id="2_4w756"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://cxmuss48sm4qr" path="res://inventory/items/red_potion.tres" id="12_mgijy"]
 [ext_resource type="Resource" uid="uid://djt6vupnhse1o" path="res://inventory/items/ammo.tres" id="13_aseo8"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
+[ext_resource type="Script" uid="uid://bxwevc5kmbt8y" path="res://scripts/secret_path_trigger.gd" id="15_6n1ip"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_4nlgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsqm8"]
@@ -8805,6 +8806,9 @@ radius = 238.019
 [sub_resource type="CircleShape2D" id="CircleShape2D_plxmq"]
 radius = 238.019
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6n1ip"]
+radius = 154.159
+
 [node name="EveGarden" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_lsqm8")
@@ -8910,6 +8914,7 @@ limit_bottom = 774
 [node name="Section_Top" type="Node2D" parent="Boarders_Main Section"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boarders_Main Section/Section_Top"]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boarders_Main Section/Section_Top/StaticBody2D"]
 polygon = PackedVector2Array(-193, -121, -52, 6, 145, -48, 186, -100, 276, -106, 462, -117, 704, -117, 704, -78, 784, -82, 859, -81, 871, -111, 919, -100, 951, -178, 1043, -97, 1097, -84, 1271, 51, 1584, -160, 1578, -247, -184, -245)
@@ -8917,6 +8922,7 @@ polygon = PackedVector2Array(-193, -121, -52, 6, 145, -48, 186, -100, 276, -106,
 [node name="Section_Right" type="Node2D" parent="Boarders_Main Section"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boarders_Main Section/Section_Right"]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boarders_Main Section/Section_Right/StaticBody2D"]
 polygon = PackedVector2Array(1300, -159, 1264, -11, 1272, 139, 1324, 163, 1327, 234, 1321, 382, 1216, 408, 1190, 606, 1248, 660, 1243, 826, 1543, 825, 1561, -161)
@@ -8924,6 +8930,7 @@ polygon = PackedVector2Array(1300, -159, 1264, -11, 1272, 139, 1324, 163, 1327, 
 [node name="Section_Bottom" type="Node2D" parent="Boarders_Main Section"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boarders_Main Section/Section_Bottom"]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boarders_Main Section/Section_Bottom/StaticBody2D"]
 polygon = PackedVector2Array(1255, 767, 1134, 773, 1123, 697, 1090, 743, 696, 738, 504, 736, 440, 743, 50, 715, -169, 691, -208, 836, 1268, 897)
@@ -8931,6 +8938,7 @@ polygon = PackedVector2Array(1255, 767, 1134, 773, 1123, 697, 1090, 743, 696, 73
 [node name="Section_Left" type="Node2D" parent="Boarders_Main Section"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boarders_Main Section/Section_Left"]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boarders_Main Section/Section_Left/StaticBody2D"]
 polygon = PackedVector2Array(-163, -182, -135, 0, -111, 337, -100, 438, -84, 826, -261, 826, -256, -172)
@@ -8975,8 +8983,39 @@ polygon = PackedVector2Array(-809, -208, -850, 45, -920, 161, -902, 282, -913, 7
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Swampling" parent="Enemies" instance=ExtResource("9_hqnkb")]
-position = Vector2(997, 657)
-collision_mask = 0
+position = Vector2(981, 601)
+damage = 15
+detection_range = 60.0
+max_drops = 9
+drop_chance = 1.0
+possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
+
+[node name="Swampling7" parent="Enemies" instance=ExtResource("9_hqnkb")]
+position = Vector2(-741, 622)
+damage = 15
+detection_range = 60.0
+max_drops = 9
+drop_chance = 1.0
+possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
+
+[node name="Swampling4" parent="Enemies" instance=ExtResource("9_hqnkb")]
+position = Vector2(-479, 1143)
+damage = 15
+detection_range = 60.0
+max_drops = 9
+drop_chance = 1.0
+possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
+
+[node name="Swampling5" parent="Enemies" instance=ExtResource("9_hqnkb")]
+position = Vector2(711, 1156)
+damage = 15
+detection_range = 60.0
+max_drops = 9
+drop_chance = 1.0
+possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
+
+[node name="Swampling6" parent="Enemies" instance=ExtResource("9_hqnkb")]
+position = Vector2(-765, 201)
 damage = 15
 detection_range = 60.0
 max_drops = 9
@@ -8986,7 +9025,7 @@ possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtRes
 [node name="EnemyIntroTrigger" type="Area2D" parent="."]
 visible = false
 z_index = 2
-collision_layer = 257
+collision_layer = 256
 collision_mask = 3
 script = ExtResource("10_m77fg")
 enemy_path = NodePath("../Enemies/Swampling")
@@ -9010,3 +9049,15 @@ debug_color = Color(0.1013, 0.408882, 0.225475, 0.42)
 position = Vector2(464, 610)
 shape = SubResource("CircleShape2D_plxmq")
 debug_color = Color(0.569051, 0.21399, 0.131354, 0.42)
+
+[node name="SecretPathTrigger" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(-14, 35)
+collision_layer = 256
+collision_mask = 3
+script = ExtResource("15_6n1ip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretPathTrigger"]
+position = Vector2(1309, 246)
+shape = SubResource("CircleShape2D_6n1ip")
+debug_color = Color(0.47451, 0.513726, 0.517647, 0.635294)

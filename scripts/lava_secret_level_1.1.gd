@@ -1,42 +1,40 @@
-extends Area2D
+extends Node2D
 
-@export var next_scene_path := "res://scenes/secret_room.tscn"
-
-var has_triggered := false
-
-var messages := {
+var intro_dialogue_lines := {
 	"en": [
-		"Hmm... something feels off here.",
-		"That wall... is it solid?",
-		"Try walking through it. Merlin left us hidden paths for the worthy."
-	],
-	"fr": [
-		"Hmm... quelque chose semble étrange ici.",
-		"Ce mur... est-il vraiment solide ?",
-		"Essaie de passer à travers. Merlin a laissé des chemins secrets pour les dignes."
+		"Congratulations, adventurer! You've found the first of many secret paths hidden throughout your journey.",
+		"This place was once part of Merlin's garden, now twisted by greed.",
+		"A selfish dwarf stole this treasure and sealed it here, far from prying eyes.",
+		"He is too powerful for your current strength...",
+		"But worry not... use the blue potion to boost your attack for 10 seconds!",
+		"You also have ammunition now. Press SPACE to shoot with your gun.",
+		"Be careful: your ammo is limited. Use it wisely!"
 	]
 }
 
 func _ready():
-	connect("body_entered", Callable(self, "_on_body_entered"))
+	# Setup camera
+	var player = $Player
+	var camera = player.get_node("Camera2D")
+	camera.zoom = Vector2(0.9, 0.9)
+	camera.limit_left = 0
+	camera.limit_top = 0
+	camera.limit_right = 1154
+	camera.limit_bottom = 665
+	camera.make_current()
 
-func _on_body_entered(body):
-	if has_triggered or not body.is_in_group("player"):
-		return
+	# Wait a moment before showing intro dialogue
+	await get_tree().create_timer(0.5).timeout
+	_show_intro_dialogue()
 
-	has_triggered = true
-	body.can_move = false  # Optional: freeze player
-	
+func _show_intro_dialogue():
 	var dialogue_box = preload("res://scenes/tutorial_dialogue_box_ui.tscn").instantiate()
 	get_tree().root.add_child(dialogue_box)
 
 	var lang = TranslationServer.get_locale()
-	for msg in messages.get(lang, messages["en"]):
+	var lines = intro_dialogue_lines.get(lang, intro_dialogue_lines.get("en", []))
+	for msg in lines:
 		dialogue_box.queue_text(msg)
 
 	dialogue_box.show_dialogue_box()
 	dialogue_box.display_text()
-	dialogue_box.dialogue_finished.connect(_on_dialogue_finished)
-
-func _on_dialogue_finished():
-	get_tree().change_scene_to_file(next_scene_path)
