@@ -27,6 +27,10 @@ SettingsManager="*res://scripts/SettingsManager.gd"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+enemy="Group containing enemies."
+
 [input]
 
 ui_cancel={

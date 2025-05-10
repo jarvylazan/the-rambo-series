@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhmot77vn2bho"]
 
-[ext_resource type="Script" path="res://inventory/items/ammo.gd" id="1_kxu0n"]
+[ext_resource type="Script" uid="uid://bw4jcxkblopmq" path="res://inventory/items/ammo.gd" id="1_kxu0n"]
 [ext_resource type="Resource" uid="uid://djt6vupnhse1o" path="res://inventory/items/ammo.tres" id="2_8r3a7"]
 [ext_resource type="Texture2D" uid="uid://bx1rs6rdg3ap5" path="res://assets/Items/2D health & ammor/32px/ammo-pistol-alt 32px.png" id="3_1pag2"]
 
