@@ -14,6 +14,9 @@ class_name Enemy
 #--------------------------
 var drop_dialogue_lines := {}
 var drop_dialogue_triggered := false
+var health_bar := preload("res://scenes/enemy_health_bar.tscn")
+var health_bar_instance = null
+var health_bar_offset = Vector2(-30, -75)
 
 @export var patrol_distance: float = 40.0
 @export var patrol_speed: float = 20.0
@@ -64,6 +67,9 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 
 	update_animation(movement_this_frame)
+	
+	if health_bar_instance:
+		health_bar_instance.global_position = global_position + health_bar_offset
 
 func patrol() -> void:
 	var offset = global_position.x - patrol_origin.x
@@ -92,19 +98,45 @@ func update_animation(last_velocity: Vector2) -> void:
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
+	
 	health -= amount
 	is_hurt = true
 	anim.play("hurt")
+	
+	if health < max_health and not health_bar_instance:
+		_create_health_bar()
+	
+	if health_bar_instance:
+		var health_percent = float(health) / float(max_health) * 100
+		health_bar_instance.value = health_percent
+	
 	if health <= 0:
 		die()
 	else:
 		await anim.animation_finished
 		is_hurt = false
 
+func _create_health_bar() -> void:
+	health_bar_instance = health_bar.instantiate()
+	
+	var health_percent = float(health) / float(max_health) * 100
+	health_bar_instance.value = health_percent
+	health_bar_instance.min_value = 0
+	health_bar_instance.max_value = 100
+	
+	health_bar_instance.global_position = global_position + health_bar_offset
+	
+	get_tree().current_scene.add_child(health_bar_instance)
+
 func die() -> void:
 	is_dead = true
 	anim.play("die")
 	velocity = Vector2.ZERO
+	
+	if health_bar_instance:
+		health_bar_instance.queue_free()
+		health_bar_instance = null
+	
 	await anim.animation_finished
 	_on_Death()
 

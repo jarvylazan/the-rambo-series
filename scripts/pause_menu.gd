@@ -3,6 +3,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	visible = false
+	$OptionsPane.visible = false
 	
 	
 
@@ -13,6 +14,8 @@ func show_pause_menu():
 func hide_pause_menu():
 	visible = false
 	get_tree().paused = false
+	$OptionsPane.visible = false  # hide in case it was left open
+	$Panel/VBoxContainer.visible = true
 
 
 
@@ -39,3 +42,12 @@ func _on_menu_button_pressed() -> void:
 		"speed": 5,
 		"pattern": "scribbles",
 	})
+
+
+
+	
+
+
+func _on_options_button_pressed() -> void:
+	$Panel/VBoxContainer.visible = false
+	$OptionsPane.visible = true

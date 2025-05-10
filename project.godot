@@ -25,6 +25,7 @@ SettingsManager="*res://scripts/SettingsManager.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [global_group]
