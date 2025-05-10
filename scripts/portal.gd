@@ -2,13 +2,14 @@ extends Area2D
 
 @export var next_level_scene: String
 @export var is_entry_portal := false
+@export var required_key_id: String = "main_boss_key"
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var collision := $CollisionShape2D
+
 
 var activated := false
 
 func _ready():
-	# Entry portal appears at scene start (used on new level spawn)
 	if is_entry_portal:
 		visible = true
 		collision.disabled = true
@@ -20,9 +21,8 @@ func _ready():
 		await sprite.animation_finished
 		queue_free()
 	else:
-		# Exit portal is inactive until boss dies (for now just show it directly for testing)
-		visible = true  # TEMP: Show immediately for testing
-		collision.disabled = false  # TEMP: Enable collision immediately
+		visible = true
+		collision.disabled = false
 		sprite.play("Emerge")
 		await sprite.animation_finished
 		sprite.play("Idle")
@@ -37,18 +37,22 @@ func activate_portal():
 	activated = true
 
 func _on_body_entered(body):
-	if !activated:
+	if not activated:
 		return
 
-	# 🔒 TO IMPLEMENT LATER: Key check logic when you add enemies/items
-	# if !body.has_method("has_key"): return
-	# if body.has_key():
-	#     pass
-	# else:
-	#     print("Portal locked. Key required.")
-	#     return
+	if not body.is_in_group("player"):
+		return
 
-	# TEMP: Always teleport for now
+	print("Checking for key:", required_key_id)
+
+	if "collected_keys" not in body or not body.collected_keys.has(required_key_id):
+		print("Portal locked. You need the key to enter.")
+		return
+	else:
+		print("Key found in player. Opening portal.")
+
+	# Player has the key → teleport
+	body.visible = false  # hides the player
 	activated = false
 	collision.disabled = true
 	sprite.play("Disappear")

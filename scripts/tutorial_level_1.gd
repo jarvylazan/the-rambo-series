@@ -55,5 +55,5 @@ func _ready():
 	await dialogue_box.display_text()
 
 func _on_intro_finished():
-	print("✅ Dialogue finished signal received!")
+	print("Dialogue finished signal received!")
 	$Player.can_move = true

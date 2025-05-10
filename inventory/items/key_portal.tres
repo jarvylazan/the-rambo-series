@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://pluo8cbouvee"]
+
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="1_gammu"]
+[ext_resource type="Texture2D" uid="uid://dax2s28oky3tt" path="res://assets/Items/full packages items/Separated Files/64x64/fc179.png" id="2_gammu"]
+
+[resource]
+script = ExtResource("1_gammu")
+name = "key_portal"
+texture = ExtResource("2_gammu")
+description = ""
+stackable = true
+key_id = "main_boss_key"
+metadata/_custom_type_script = "uid://cho0oo0tgufqt"

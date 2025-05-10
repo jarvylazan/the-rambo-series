@@ -2473,14 +2473,14 @@ tile_map_data = PackedByteArray("AAAEAAgAAgAAAAAAAAAAAAIAAgAAAAAAAAD//wUAAgAAAAA
 tile_set = SubResource("TileSet_8b7j2")
 
 [node name="Portal_Levels" parent="." instance=ExtResource("15_a7qhm")]
-position = Vector2(855, 989)
-collision_layer = 128
+position = Vector2(-2137, 863)
 collision_mask = 2
-next_level_scene = "\"res://scenes/Labyrinth_Level3.tscn\""
+next_level_scene = ""
+is_entry_portal = true
 
 [node name="Player" parent="." instance=ExtResource("16_mic2q")]
 z_index = 1
-position = Vector2(-1256, 1315)
+position = Vector2(-2090, 961)
 scale = Vector2(0.18, 0.18)
 collision_mask = 145
 

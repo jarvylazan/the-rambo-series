@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cee1w636r687k"]
+
+[ext_resource type="Script" uid="uid://b0sw8sit8buv2" path="res://inventory/items/key_portal.gd" id="1_xjqsl"]
+[ext_resource type="Resource" uid="uid://pluo8cbouvee" path="res://inventory/items/key_portal.tres" id="2_7koai"]
+[ext_resource type="Texture2D" uid="uid://dax2s28oky3tt" path="res://assets/Items/full packages items/Separated Files/64x64/fc179.png" id="3_dgvxa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pi7aa"]
+radius = 30.5287
+
+[node name="Key_Portal" type="Area2D"]
+collision_layer = 16
+collision_mask = 130
+script = ExtResource("1_xjqsl")
+item = ExtResource("2_7koai")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dgvxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_pi7aa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

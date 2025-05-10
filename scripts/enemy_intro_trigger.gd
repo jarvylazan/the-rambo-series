@@ -31,16 +31,16 @@ func _on_body_entered(body):
 	if already_triggered and trigger_once:
 		return
 	if not body.is_in_group("player"):
-		print("🚫 Not the player:", body.name)
+		print("ot the player:", body.name)
 		return
 
-	print("✅ Player entered trigger zone!")
+	print("Player entered trigger zone!")
 	already_triggered = true
 	player_ref = body
 
 	# Freeze player movement if possible
 	if "can_move" in player_ref:
-		print("🔒 Freezing player")
+		print("Freezing player")
 		player_ref.can_move = false
 
 	_show_dialogue()
@@ -61,7 +61,7 @@ func _show_dialogue():
 
 func _on_dialogue_finished():
 	if player_ref and "can_move" in player_ref:
-		print("✅ Unfreezing player")
+		print("Unfreezing player")
 		player_ref.can_move = true
 
 		# Optional: force idle animation so the player doesn't slide weirdly

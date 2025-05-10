@@ -193,11 +193,12 @@ animations = [{
 radius = 13.0
 height = 56.0
 
-[node name="Portal_Levels" type="Area2D"]
-position = Vector2(49, 61)
+[node name="LockedPortal" type="Area2D"]
 scale = Vector2(2.5, 2.5)
+collision_layer = 128
+collision_mask = 18
 script = ExtResource("1_1ffj6")
-next_level_scene = "res://scenes/forest_level_2.tscn"
+next_level_scene = "res://scenes/desert_level_2.tscn"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wpor6")
