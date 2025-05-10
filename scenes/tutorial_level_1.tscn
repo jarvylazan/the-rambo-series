@@ -1,11 +1,17 @@
-[gd_scene load_steps=36 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=46 format=4 uid="uid://dr27a0unkv60h"]
 
-[ext_resource type="Script" path="res://scripts/tutorial_level_1.gd" id="1_lsqm8"]
+[ext_resource type="Script" uid="uid://2m40taofg15e" path="res://scripts/tutorial_level_1.gd" id="1_lsqm8"]
 [ext_resource type="Texture2D" uid="uid://c038yaydv41ts" path="res://assets/image/tilemap_block/status.png" id="2_4w756"]
 [ext_resource type="Texture2D" uid="uid://blh5ls3qek016" path="res://assets/image/tilemap_block/Cercle magique lumineux et mystique.png" id="3_8b7j2"]
 [ext_resource type="Texture2D" uid="uid://bi703ukng35g2" path="res://assets/image/tilemap_block/status_vs.png" id="3_ap136"]
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
+[ext_resource type="PackedScene" uid="uid://b4esrikri3onx" path="res://scenes/Enemies/swampling.tscn" id="9_hqnkb"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="10_lwd2k"]
+[ext_resource type="Script" uid="uid://bly6tqiso7ar3" path="res://scripts/enemy_intro_trigger.gd" id="10_m77fg"]
+[ext_resource type="Resource" uid="uid://461kxmeymkjv" path="res://inventory/items/coins.tres" id="11_6n1ip"]
 [ext_resource type="Texture2D" uid="uid://tkn2rmgh12iy" path="res://assets/image/tilemap_block/level 1/wall door.png" id="11_qhc4u"]
+[ext_resource type="Resource" uid="uid://cxmuss48sm4qr" path="res://inventory/items/red_potion.tres" id="12_mgijy"]
+[ext_resource type="Resource" uid="uid://djt6vupnhse1o" path="res://inventory/items/ammo.tres" id="13_aseo8"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_4nlgx"]
 
@@ -8787,6 +8793,18 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_6n1ip")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m77fg"]
+radius = 393.062
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmoqx"]
+radius = 331.303
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grycn"]
+radius = 238.019
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plxmq"]
+radius = 238.019
+
 [node name="EveGarden" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_lsqm8")
@@ -8877,15 +8895,15 @@ tile_set = SubResource("TileSet_mgijy")
 
 [node name="Player" parent="." instance=ExtResource("6_m77fg")]
 z_index = 2
-position = Vector2(0, 2)
+position = Vector2(23, 59)
 scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.2, 1.2)
-limit_left = 176
-limit_top = -150
-limit_right = 1344
-limit_bottom = 762
+zoom = Vector2(0.9, 0.9)
+limit_left = -130
+limit_top = -139
+limit_right = 1326
+limit_bottom = 774
 
 [node name="Boarders_Main Section" type="Node2D" parent="."]
 
@@ -8953,3 +8971,41 @@ polygon = PackedVector2Array(-968, 1159, -785, 1300, -477, 1407, -25, 1470, 824,
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boarder_section_Two/Sec_left/StaticBody2D"]
 polygon = PackedVector2Array(-809, -208, -850, 45, -920, 161, -902, 282, -913, 720, -879, 974, -760, 1290, -636, 1387, -657, 1559, -1009, 1608, -1085, -215)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Swampling" parent="Enemies" instance=ExtResource("9_hqnkb")]
+position = Vector2(997, 657)
+collision_mask = 0
+damage = 15
+detection_range = 60.0
+max_drops = 9
+drop_chance = 1.0
+possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
+
+[node name="EnemyIntroTrigger" type="Area2D" parent="."]
+z_index = 2
+collision_layer = 257
+collision_mask = 3
+script = ExtResource("10_m77fg")
+enemy_path = NodePath("../Enemies/Swampling")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyIntroTrigger"]
+position = Vector2(958, 499)
+shape = SubResource("CircleShape2D_m77fg")
+debug_color = Color(0.887446, 0.204547, 0.643571, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyIntroTrigger"]
+position = Vector2(987, -29)
+shape = SubResource("CircleShape2D_mmoqx")
+debug_color = Color(0.224029, 0.531936, 0.930002, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EnemyIntroTrigger"]
+position = Vector2(42, 656)
+shape = SubResource("CircleShape2D_grycn")
+debug_color = Color(0.1013, 0.408882, 0.225475, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyIntroTrigger"]
+position = Vector2(464, 610)
+shape = SubResource("CircleShape2D_plxmq")
+debug_color = Color(0.569051, 0.21399, 0.131354, 0.42)

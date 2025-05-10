@@ -539,5 +539,6 @@ func play_death_animation():
 
 
 func _on_spear_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
-		body.take_spear_damage()
+	if body.is_in_group("enemy") and body is Enemy:
+		var enemy := body as Enemy
+		enemy.take_spear_damage()

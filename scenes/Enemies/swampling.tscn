@@ -357,6 +357,7 @@ height = 76.0
 radius = 29.0172
 
 [node name="Swampling" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(1.5, 1.5)
 collision_layer = 8
 script = ExtResource("1_qo38s")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

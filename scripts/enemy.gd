@@ -8,6 +8,8 @@ class_name Enemy
 @export var attack_range: float = 50.0
 @export var detection_range: float = 200.0
 @export var attack_cooldown: float = 1.0
+var drop_dialogue_lines := {}
+var drop_dialogue_triggered := false
 
 @export var patrol_distance: float = 40.0
 @export var patrol_speed: float = 20.0
@@ -23,13 +25,11 @@ var patrol_origin: Vector2
 var patrol_direction := 1
 var patrol_flip_cooldown := false
 
-#----Item drop by enmies-----
-@export var max_drops: int = 2  # Number of items this enemy can drop
-@export var drop_chance: float = 0.5  # Chance per item slot
+@export var max_drops: int = 2
+@export var drop_chance: float = 0.5
 @export var possible_drops: Array[InvItem]
 
 var DroppedItemScene := preload("res://scenes/dropped_item.tscn")
-#-----------------------------
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -42,16 +42,14 @@ func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
 
-	var movement_this_frame = velocity  # Save current velocity for animation
+	var movement_this_frame = velocity
 
 	if player:
 		var dist_to_player = global_position.distance_to(player.global_position)
-
 		if dist_to_player <= attack_range:
 			var flip_left = player.global_position.x < global_position.x
 			velocity = Vector2.ZERO
 			attack(flip_left)
-
 		elif dist_to_player <= detection_range:
 			move_towards(player.global_position)
 		else:
@@ -65,13 +63,11 @@ func _physics_process(delta: float) -> void:
 
 func patrol() -> void:
 	var offset = global_position.x - patrol_origin.x
-
 	if abs(offset) >= patrol_distance and not patrol_flip_cooldown:
 		patrol_direction *= -1
 		patrol_flip_cooldown = true
 		await get_tree().create_timer(0.5).timeout
 		patrol_flip_cooldown = false
-
 	direction = Vector2(patrol_direction, 0)
 	velocity = direction * patrol_speed
 
@@ -86,18 +82,15 @@ func update_animation(last_velocity: Vector2) -> void:
 		anim.play("attack")
 	else:
 		anim.play("idle")
-
 	if not is_attacking:
 		anim.flip_h = direction.x < 0
 
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
-
 	health -= amount
 	is_hurt = true
 	anim.play("hurt")
-
 	if health <= 0:
 		die()
 	else:
@@ -109,77 +102,68 @@ func die() -> void:
 	anim.play("die")
 	velocity = Vector2.ZERO
 	await anim.animation_finished
+	_on_Death()
 
-	_on_Death()  # Drop logic
-	
-# --This is where we’ll handle drops--
 func _on_Death():
-	var num_drops := max_drops  # Uses the exported value
+	var num_drops := max_drops
 	var used_positions: Array[Vector2] = []
-	var drop_radius := 64  # Minimum distance from center
+	var drop_radius := 64
 
 	for i in range(num_drops):
 		if randf() < drop_chance and possible_drops.size() > 0:
 			var item = possible_drops[randi() % possible_drops.size()]
 			var drop = DroppedItemScene.instantiate()
 			drop.item_data = item
-
-			# Try to find a non-overlapping, far enough position
 			var offset := Vector2.ZERO
 			var attempts := 0
-
 			while attempts < 10:
-				var angle = randf_range(0, TAU)  # Random direction
-				var distance = randi_range(drop_radius, drop_radius + 48)  # Safe distance out
+				var angle = randf_range(0, TAU)
+				var distance = randi_range(drop_radius, drop_radius + 48)
 				offset = Vector2.RIGHT.rotated(angle) * distance
 				offset = offset.snapped(Vector2(8, 8))
-
 				if not used_positions.has(offset):
 					used_positions.append(offset)
 					break
-
 				attempts += 1
-
 			drop.global_position = global_position + offset
 			get_tree().current_scene.add_child(drop)
 
+	if not drop_dialogue_triggered and drop_dialogue_lines and not drop_dialogue_lines.is_empty():
+		_show_drop_dialogue()
+		drop_dialogue_triggered = true
+
 	queue_free()
 
-
-
+func _show_drop_dialogue():
+	if drop_dialogue_lines.is_empty():
+		return
+	var dialogue_box = preload("res://scenes/tutorial_dialogue_box_ui.tscn").instantiate()
+	get_tree().root.add_child(dialogue_box)
+	var lang = TranslationServer.get_locale()
+	var lines = drop_dialogue_lines.get(lang, drop_dialogue_lines.get("en", []))
+	for msg in lines:
+		dialogue_box.queue_text(msg)
+	dialogue_box.show_dialogue_box()
+	dialogue_box.display_text()
 
 func attack(flip_left: bool) -> void:
 	if is_attacking or is_dead or not can_attack:
 		return
-
 	is_attacking = true
 	can_attack = false
-
-	# Flip the sprite to face the player
 	direction = Vector2.LEFT if flip_left else Vector2.RIGHT
 	anim.flip_h = direction.x < 0
-
-	# Play visual attack animation (same animation for both sides)
 	anim.play("attack")
-
-	# Play hitbox timing/movement logic (different per side)
 	var hitbox_anim = "attack_left" if flip_left else "attack_right"
 	anim_player.play(hitbox_anim)
-
-	# Wait for hitbox animation to finish
 	await anim_player.animation_finished
-
 	is_attacking = false
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 
-
-
 func move_towards(target_position: Vector2) -> void:
 	if is_dead or is_attacking:
 		return
-
 	var to_target = target_position - global_position
-	direction = Vector2(sign(to_target.x), 0)  # Clamp to horizontal
+	direction = Vector2(sign(to_target.x), 0)
 	velocity = to_target.normalized() * speed
-	
