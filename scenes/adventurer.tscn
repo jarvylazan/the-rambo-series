@@ -1,4 +1,4 @@
-[gd_scene load_steps=342 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=337 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -1109,14 +1109,6 @@ region = Rect2(48, 0, 48, 64)
 atlas = ExtResource("14_x002e")
 region = Rect2(96, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fr32u"]
-atlas = ExtResource("14_x002e")
-region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvmus"]
-atlas = ExtResource("14_x002e")
-region = Rect2(192, 0, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t73q"]
 atlas = ExtResource("14_x002e")
 region = Rect2(240, 0, 48, 64)
@@ -1161,25 +1153,13 @@ region = Rect2(288, 0, 48, 64)
 atlas = ExtResource("15_1bkhl")
 region = Rect2(336, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqii1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo62v"]
 atlas = ExtResource("16_aipbf")
-region = Rect2(0, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4yf0"]
-atlas = ExtResource("16_aipbf")
-region = Rect2(48, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1pae"]
-atlas = ExtResource("16_aipbf")
-region = Rect2(96, 0, 48, 64)
+region = Rect2(192, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rc385"]
 atlas = ExtResource("16_aipbf")
 region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eo62v"]
-atlas = ExtResource("16_aipbf")
-region = Rect2(192, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0xff"]
 atlas = ExtResource("16_aipbf")
@@ -2163,12 +2143,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_b2m6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fr32u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wvmus")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_0t73q")
 }, {
 "duration": 1.0,
@@ -2212,19 +2186,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iqii1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4yf0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q1pae")
+"texture": SubResource("AtlasTexture_eo62v")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rc385")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eo62v")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l0xff")
@@ -2237,7 +2202,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"spearupright",
-"speed": 12.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_5yu0q"]
@@ -2635,7 +2600,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_bgi1j"]
 resource_name = "spearupright"
-length = 0.67
+length = 0.625
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2643,7 +2608,7 @@ tracks/0/path = NodePath("SpearArea/SpearCollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-88, -62), Vector2(34, 100), Vector2(200, -43)]
@@ -2655,7 +2620,7 @@ tracks/1/path = NodePath("SpearArea/SpearCollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.666667),
+"times": PackedFloat32Array(0, 0.0333333, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
@@ -2667,7 +2632,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.67),
+"times": PackedFloat32Array(0.625),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -2709,6 +2674,7 @@ size = Vector2(69, 366.25)
 
 [node name="Node2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
+collision_mask = 273
 script = ExtResource("1_ij0mf")
 inv = ExtResource("2_oukho")
 
@@ -2716,8 +2682,10 @@ inv = ExtResource("2_oukho")
 unique_name_in_owner = true
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_abj65")
-animation = &"gundownleft"
+animation = &"spearupright"
 autoplay = "idledown"
+frame = 4
+frame_progress = 1.0
 
 [node name="RamboAnimationPlayer" type="AnimationPlayer" parent="RamboAnimatedSprite2D"]
 unique_name_in_owner = true
@@ -2731,16 +2699,17 @@ position = Vector2(-4, 92)
 shape = SubResource("CapsuleShape2D_5i8mc")
 
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1830.0
-offset_top = -2884.0
-offset_right = -1407.0
-offset_bottom = -2572.0
-scale = Vector2(15, 15)
+offset_left = -799.0
+offset_top = -1091.0
+offset_right = -376.0
+offset_bottom = -779.0
+scale = Vector2(5, 5)
 
 [node name="SpearArea" type="Area2D" parent="."]
 collision_layer = 64
@@ -2753,5 +2722,8 @@ shape = SubResource("RectangleShape2D_5yu0q")
 disabled = true
 
 [node name="Hud" parent="." instance=ExtResource("40_5yu0q")]
+
+[node name="DropSpawnPoint" type="Node2D" parent="."]
+position = Vector2(222, 188)
 
 [connection signal="body_entered" from="SpearArea" to="." method="_on_spear_area_body_entered"]

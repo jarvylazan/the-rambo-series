@@ -1,19 +1,17 @@
-extends Node2D
+extends Area2D
 
-@export var item_index := 0            # Which item to show
-@export var item_size := Vector2i(16, 16)  # Size of one item tile (adjust to your sprite sheet grid)
-
-@onready var sprite := $ItemSprite     # Reference to the Sprite2D node
+@export var item_data: InvItem
 
 func _ready():
-	set_item_region(item_index)
+	if item_data:
+		$Sprite2D.texture = item_data.texture
+	else:
+		print("No item_data passed!")
 
-func set_item_region(index: int):
-	if sprite.texture == null:
-		return
+	connect("body_entered", Callable(self, "_on_DroppedItem_body_entered"))
 
-	var columns = sprite.texture.get_width() / item_size.x
-	var x = int(index % columns) * item_size.x
-	var y = int(index / columns) * item_size.y
-	sprite.region_enabled = true
-	sprite.region_rect = Rect2(x, y, item_size.x, item_size.y)
+func _on_DroppedItem_body_entered(body):
+	if body and body.is_in_group("player") and "collect" in body:
+		print("Called player.collect():", item_data.name)
+		body.collect(item_data)
+		queue_free()

@@ -77,7 +77,7 @@ text = "NEXT
 
 [node name="TypingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_n36c0")
-volume_db = 15.0
+volume_db = 5.0
 bus = &"SFX"
 
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]

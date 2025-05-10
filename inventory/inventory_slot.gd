@@ -1,45 +1,54 @@
-extends Panel
+extends Button
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/ItemDisplay
 @onready var amount_text: Label = $CenterContainer/Panel/Label
 @onready var slot_sprite: Sprite2D = $Sprite2D
+@onready var tooltip_label := preload("res://scenes/TooltipLabel.tscn")
 
-var slot_data: InvSlot
+var inventory_slot: InvSlot
+var tooltip_instance: Label = null
 
-func update(slot: InvSlot):
-	slot_data = slot
-	if !slot.item:
+func update_slot():
+	if !inventory_slot or !inventory_slot.item:
 		item_visual.visible = false
 		amount_text.visible = false
 		slot_sprite.frame = 0
+		slot_sprite.modulate = Color(1, 1, 1)  # Reset tint
 	else:
 		item_visual.visible = true
-		item_visual.texture = slot.item.texture
+		item_visual.texture = inventory_slot.item.texture
 		slot_sprite.frame = 1
-		amount_text.visible = slot.amount > 1
-		amount_text.text = str(slot.amount)
 
-# Step 1: Start drag
-func get_drag_data(_position):
-	if slot_data and slot_data.item:
-		var preview = TextureRect.new()
-		preview.texture = slot_data.item.texture
-		preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		preview.custom_minimum_size = Vector2(32, 32)
-		set_drag_preview(preview)
-		return slot_data
+		# Show item count
+		if inventory_slot.amount > 1:
+			amount_text.visible = true
+			amount_text.text = str(inventory_slot.amount)
+		else:
+			amount_text.visible = false
 
-# Step 2: Accept drag
-func can_drop_data(_position, data):
-	return data is InvSlot
+		# ✅ Highlight usable (potion) items
+		var item_name := inventory_slot.item.name
+		if item_name == "red_potion" or item_name == "yellow_potion" or item_name == "blue_potion":
+			slot_sprite.modulate = Color(1.2, 1.2, 1.0)  # Light yellowish tint (slightly glowing)
+		else:
+			slot_sprite.modulate = Color(1, 1, 1)  # Normal color
 
-# Step 3: Handle drop
-func drop_data(_position, data):
-	if data is InvSlot:
-		var temp_item = slot_data.item
-		var temp_amount = slot_data.amount
-		slot_data.item = data.item
-		slot_data.amount = data.amount
-		data.item = temp_item
-		data.amount = temp_amount
-		get_tree().call_group("InventoryUI", "update_slots")
+func _gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			get_tree().call_group("InventoryUI", "slot_clicked", self)
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
+			var is_shift: bool = event.shift_pressed
+			get_tree().call_group("InventoryUI", "slot_right_clicked", self, is_shift)
+
+func _on_mouse_entered():
+	if inventory_slot and inventory_slot.item:
+		tooltip_instance = tooltip_label.instantiate()
+		tooltip_instance.text = inventory_slot.item.name
+		tooltip_instance.global_position = get_global_mouse_position() + Vector2(16, -32)
+		get_tree().current_scene.add_child(tooltip_instance)
+
+func _on_mouse_exited():
+	if tooltip_instance:
+		tooltip_instance.queue_free()
+		tooltip_instance = null

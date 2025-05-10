@@ -92,7 +92,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("8_gow0a")
+texture = ExtResource("10_jw4xm")
 expand_mode = 5
 stretch_mode = 6
 
@@ -131,7 +131,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("10_jw4xm")
+texture = ExtResource("8_gow0a")
 expand_mode = 5
 stretch_mode = 6
 
@@ -249,7 +249,7 @@ offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_jh25w")
-text = "MAIN_MENU"
+text = "MENU_LABEL_MAINMENU"
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TextureRect/LevelOneButton" to="CanvasLayer/Control" method="_on_level_one_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer2/TextureRect/LevelTwoButton" to="CanvasLayer/Control" method="_on_level_two_button_pressed"]

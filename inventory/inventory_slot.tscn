@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://esqk684ekwao" path="res://inventory/inventory_slot.gd" id="1_nsnbm"]
 [ext_resource type="Texture2D" uid="uid://cxrkn8tarhi1g" path="res://assets/inventory/inventorySlot_v2.png" id="2_nsnbm"]
 
-[node name="InventorySlot" type="Panel"]
+[node name="InventorySlot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(85, 100)
 anchors_preset = 15

@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+[gd_scene format=3 uid="uid://cvip6ll3kj2cv"]
+=======
+[gd_scene format=3 uid="uid://d07pxjflc8uqu"]
+>>>>>>> 23b78285948749d808f5e017820422418120d45c
+
+[node name="Label" type="Label"]
+offset_left = 48.0
+offset_top = 41.0
+offset_right = 88.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://wma3q2tf0ewf"]
 
-[ext_resource type="Script" uid="uid://d3u7pfxkuton0" path="res://scripts/akaname.gd" id="1_it3sk"]
+[ext_resource type="Script" path="res://scripts/akaname.gd" id="1_it3sk"]
 [ext_resource type="Texture2D" uid="uid://uompoargxcij" path="res://assets/characters/enemies/Akaname Sprite Sheet.png" id="2_dp0om"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxlom"]

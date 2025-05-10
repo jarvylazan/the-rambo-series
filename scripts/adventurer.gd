@@ -4,6 +4,13 @@ extends CharacterBody2D
 @export var friction = 1500.0  # How fast the character slows down
 @export_file("*.tscn") var bullet_scene_path = "res://scenes/bullet.tscn"  # Exported path for easier editing
 @export var inv: Inv
+
+var hud
+
+
+var coin_count: int = 0
+var bullet_count: int = 0
+
 var facing_direction = "down"
 var is_moving = false
 var is_attacking = false
@@ -30,6 +37,7 @@ func get_animation_duration(animation_name: String) -> float:
 	return duration
 
 func _ready():
+	call_deferred("_get_hud")
 	# Load the bullet scene at runtime instead of preloading
 	bullet_scene = load(bullet_scene_path)
 	if not bullet_scene:
@@ -48,10 +56,14 @@ func _ready():
 	add_child(bullet_timer)
 	bullet_timer.timeout.connect(_on_bullet_timer_timeout)
 	Global.die.connect(_on_player_die)
+	
+func _get_hud():
+	hud = get_node("Hud")
 
 func _on_shoot_timer_timeout():
+	
 	# If player is still holding the shoot batton, restart the animation
-	if Input.is_action_pressed("Shoot"):
+	if Input.is_action_pressed("Shoot") and Global.can_shoot:
 		var input_direction = Vector2(
 			Input.get_action_strength("Right") - Input.get_action_strength("Left"),
 			Input.get_action_strength("Down") - Input.get_action_strength("Up")
@@ -72,7 +84,10 @@ func _on_shoot_timer_timeout():
 
 func _on_bullet_timer_timeout():
 	# Spawn a bullet
-	spawn_bullet()
+	if Global.can_shoot:
+		spawn_bullet()
+
+
 
 func spawn_bullet():
 	
@@ -84,6 +99,10 @@ func spawn_bullet():
 		push_error("Bullet scene not loaded. Cannot spawn bullet.")
 		return
 		
+		
+	Global.bullet_count -= 1
+	hud.update_ammo(Global.bullet_count)
+
 	# Create instance of bullet
 	var bullet = bullet_scene.instantiate()
 	
@@ -171,6 +190,11 @@ func spawn_bullet():
 
 func _physics_process(delta):
 	
+	if Global.bullet_count == 0:
+		Global.modify_shoot_state(false)
+	elif Global.bullet_count > 0:
+		Global.modify_shoot_state(true)
+	
 	if is_dead:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -209,7 +233,7 @@ func _physics_process(delta):
 			play_run_and_gun_animation(input_direction)
 	
 	# Check if shoot button was just pressed or if it's still being held
-	if Input.is_action_just_pressed("Shoot") and not is_attacking and not is_shooting:
+	if Input.is_action_just_pressed("Shoot") and not is_attacking and not is_shooting and Global.can_shoot:
 		is_shooting = true
 		var anim_name = ""
 		
@@ -444,6 +468,22 @@ func play_shoot_animation() -> String:
 func collect(item):
 	inv.insert(item)
 
+	match item.name:
+		"coins":
+			coin_count += 10
+			hud.update_coins(coin_count)
+		"ammo":
+			Global.bullet_count += 20
+			hud.update_ammo(Global.bullet_count)
+		# Don't auto-use potion here anymore
+
+		"red_potion":
+			Global.heal(30)
+		"yellow_potion":
+			Global.heal(100)
+		
+
+
 func play_run_and_gun_animation(direction) -> String:
 	# Variable to store animation name
 	var anim_name = ""
@@ -499,5 +539,6 @@ func play_death_animation():
 
 
 func _on_spear_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
-		body.take_spear_damage()
+	if body.is_in_group("enemy") and body is Enemy:
+		var enemy := body as Enemy
+		enemy.take_spear_damage()

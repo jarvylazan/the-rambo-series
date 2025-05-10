@@ -6,7 +6,7 @@
 
 [sub_resource type="Theme" id="Theme_cedrj"]
 
-[node name="InventoryUI" type="Control"]
+[node name="InventoryUI" type="Control" groups=["player"]]
 z_index = 1
 custom_minimum_size = Vector2(423, 312)
 layout_mode = 3
@@ -18,13 +18,14 @@ offset_right = 228.216
 offset_bottom = 168.312
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_2hut1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 6.0
-offset_right = 237.0
+offset_right = 308.0
 offset_bottom = 169.0
 texture = ExtResource("2_cedrj")
 patch_margin_left = 6
@@ -39,12 +40,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.5
-offset_top = -72.5
-offset_right = 163.5
-offset_bottom = 167.5
+offset_left = -144.0
+offset_top = -69.5
+offset_right = 121.0
+offset_bottom = 170.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_cedrj")
 theme_override_constants/h_separation = -30
 theme_override_constants/v_separation = -50
@@ -85,3 +87,34 @@ layout_mode = 2
 
 [node name="InventorySlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_7rvkw")]
 layout_mode = 2
+
+[node name="DropOneButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 28.0
+offset_right = 292.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 10
+text = "Drop One"
+
+[node name="DropAllButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 71.0
+offset_right = 292.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 10
+text = "Drop All"
+
+[node name="UseItemButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 122.0
+offset_right = 296.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 10
+text = "Use"
+
+[connection signal="pressed" from="DropOneButton" to="." method="_on_DropOneButton_pressed"]
+[connection signal="pressed" from="DropAllButton" to="." method="_on_DropAllButton_pressed"]
+[connection signal="pressed" from="UseItemButton" to="." method="_on_UseItemButton_pressed"]

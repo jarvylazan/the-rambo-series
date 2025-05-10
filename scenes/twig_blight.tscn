@@ -1,6 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://y1pwjcs7qms4"]
+[gd_scene load_steps=38 format=3 uid="uid://2nqnaiyo82cw"]
 
-[ext_resource type="Script" uid="uid://g1nltwidu5ke" path="res://scripts/twig_blight.gd" id="1_emlid"]
+[ext_resource type="Script" path="res://scripts/twig_blight.gd" id="1_emlid"]
 [ext_resource type="Texture2D" uid="uid://cpdyr4u7ik6tf" path="res://assets/characters/enemies/Twig Blight Sprite Sheet.png" id="2_j1p8a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl7tu"]
@@ -227,23 +227,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Animation" id="Animation_gb8wo"]
-resource_name = "attack_right"
-length = 0.8
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.45, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, false, true]
-}
-
 [sub_resource type="Animation" id="Animation_wn60r"]
 length = 0.001
 tracks/0/type = "value"
@@ -298,6 +281,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-700, 0), Vector2(-700, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gb8wo"]
+resource_name = "attack_right"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3ax1p"]

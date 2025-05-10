@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://bedhm5phhbtm3"]
+[gd_scene load_steps=34 format=3 uid="uid://bvrii0bc5q487"]
 
 [ext_resource type="Texture2D" uid="uid://bb6d6u2skk6du" path="res://assets/image/tilemap_block/level 1/grass darker.png" id="1_po1ef"]
+[ext_resource type="Script" uid="uid://cjfjyfl5rnlxt" path="res://forest_level_2.gd" id="1_wdumj"]
 [ext_resource type="Texture2D" uid="uid://cxffnxha2seb6" path="res://assets/image/tilemap_block/level 1/main grass.png" id="2_gohk1"]
 [ext_resource type="Texture2D" uid="uid://4h8o3d54lm5g" path="res://assets/image/tilemap_block/level 1/main ground.png" id="3_uh5v3"]
 [ext_resource type="Texture2D" uid="uid://cyya5cmo4n6oh" path="res://assets/image/tilemap_block/level 1/seconnd grass texture.png" id="4_mnau6"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://tkn2rmgh12iy" path="res://assets/image/tilemap_block/level 1/wall door.png" id="11_v7p28"]
 [ext_resource type="Texture2D" uid="uid://k7n7uwjwp0ys" path="res://assets/image/tilemap_block/level 1/second layer tiles colines.png" id="12_wdumj"]
 [ext_resource type="Texture2D" uid="uid://cpioseouge3pn" path="res://assets/image/tilemap_block/level 1/tiles second layer.png" id="13_054tr"]
+[ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="13_v7p28"]
 [ext_resource type="Texture2D" uid="uid://dryu6dbq1ifqa" path="res://assets/image/tilemap_block/level 1/tile big tree.png" id="14_nk5ff"]
 [ext_resource type="Texture2D" uid="uid://2ws6d52x2g88" path="res://assets/image/tilemap_block/level 1/tile big treev2.png" id="15_wox5n"]
 
@@ -342,6 +344,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_wdumj")
 
 [node name="ForestLevel_2" type="Node2D"]
+script = ExtResource("1_wdumj")
 
 [node name="TileMap_Grass" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mtoan")
@@ -397,3 +400,5 @@ scale = Vector2(0.18, 0.18)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(140, -180)
 zoom = Vector2(0.5, 0.5)
+
+[node name="PauseMenu" parent="." instance=ExtResource("13_v7p28")]
