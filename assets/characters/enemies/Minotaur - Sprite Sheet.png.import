@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4i4uayqpqiu"
-path="res://.godot/imported/Cobra Sprite Sheet.png-254e0ff1420ce0e8f97e1413608762cd.ctex"
+uid="uid://bwkdgaxei4wg7"
+path="res://.godot/imported/Minotaur - Sprite Sheet.png-ff3f0dabbef76e7b77844ca6268f7e28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/Cobra Sprite Sheet.png"
-dest_files=["res://.godot/imported/Cobra Sprite Sheet.png-254e0ff1420ce0e8f97e1413608762cd.ctex"]
+source_file="res://assets/characters/enemies/Minotaur - Sprite Sheet.png"
+dest_files=["res://.godot/imported/Minotaur - Sprite Sheet.png-ff3f0dabbef76e7b77844ca6268f7e28.ctex"]
 
 [params]
 

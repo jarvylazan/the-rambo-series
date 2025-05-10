@@ -82,6 +82,8 @@ func update_animation(last_velocity: Vector2) -> void:
 		anim.play("hurt")
 	elif last_velocity.length() > 1:
 		anim.play("move")
+	elif is_attacking:
+		anim.play("attack")
 	else:
 		anim.play("idle")
 
@@ -153,13 +155,24 @@ func attack(flip_left: bool) -> void:
 	is_attacking = true
 	can_attack = false
 
-	var attack_anim = "attack_left" if flip_left else "attack_right"
-	anim_player.play(attack_anim)
+	# Flip the sprite to face the player
+	direction = Vector2.LEFT if flip_left else Vector2.RIGHT
+	anim.flip_h = direction.x < 0
+
+	# Play visual attack animation (same animation for both sides)
+	anim.play("attack")
+
+	# Play hitbox timing/movement logic (different per side)
+	var hitbox_anim = "attack_left" if flip_left else "attack_right"
+	anim_player.play(hitbox_anim)
+
+	# Wait for hitbox animation to finish
 	await anim_player.animation_finished
 
 	is_attacking = false
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
+
 
 
 func move_towards(target_position: Vector2) -> void:
