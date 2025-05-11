@@ -7,4 +7,8 @@
 script = ExtResource("1_5vp1i")
 name = "yellow_potion"
 texture = ExtResource("2_5vp1i")
+description = ""
+stackable = true
+rarity = "rare"
+key_id = ""
 metadata/_custom_type_script = "uid://cho0oo0tgufqt"

@@ -476,8 +476,8 @@ func collect(item):
 
 	match item.name:
 		"coins":
-			coin_count += 10
-			hud.update_coins(coin_count)
+			Global.coin_count += 10  # use Global
+			hud.update_coins(Global.coin_count)
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
@@ -485,6 +485,7 @@ func collect(item):
 			Global.heal(30)
 		"yellow_potion":
 			Global.heal(100)
+
 
 		
 

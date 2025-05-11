@@ -9,5 +9,6 @@ name = "key_portal"
 texture = ExtResource("2_gammu")
 description = ""
 stackable = true
+rarity = "legendary"
 key_id = "main_boss_key"
 metadata/_custom_type_script = "uid://cho0oo0tgufqt"

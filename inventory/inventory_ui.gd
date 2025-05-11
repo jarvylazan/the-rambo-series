@@ -6,6 +6,7 @@ class_name InventoryUI
 var selected_slot_gui: Button = null
 var selected_slot_data: InvSlot = null
 
+
 var is_open = false
 
 func _ready():

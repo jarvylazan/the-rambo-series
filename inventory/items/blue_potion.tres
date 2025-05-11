@@ -7,4 +7,8 @@
 script = ExtResource("1_ngv3t")
 name = "blue_potion"
 texture = ExtResource("2_ngv3t")
+description = ""
+stackable = true
+rarity = "unique"
+key_id = ""
 metadata/_custom_type_script = "uid://cho0oo0tgufqt"
