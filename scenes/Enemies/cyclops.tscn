@@ -497,6 +497,7 @@ height = 116.0
 size = Vector2(671, 115)
 
 [node name="Cyclops" type="CharacterBody2D" groups=["enemy"]]
+z_index = 1
 scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 3

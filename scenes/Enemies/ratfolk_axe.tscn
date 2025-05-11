@@ -351,7 +351,7 @@ radius = 49.0408
 
 [node name="RatfolkAxe" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_qlmjx")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
