@@ -9161,7 +9161,7 @@ position = Vector2(1316, 612)
 
 [node name="PoisonGPUParticles2D6" parent="World/Particles" instance=ExtResource("32_semk5")]
 z_index = 1
-position = Vector2(-302, 418)
+position = Vector2(-282, 213)
 
 [node name="PoisonGPUParticles2D3" parent="World/Particles" instance=ExtResource("32_semk5")]
 z_index = 1
