@@ -6,7 +6,7 @@ func _ready():
 	health = max_health
 	damage = 40
 	detection_range = 400
-	attack_range = 60.0
+	attack_range = 80.0
 	super()
 
 	drop_dialogue_lines = {
