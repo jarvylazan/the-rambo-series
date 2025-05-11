@@ -9,9 +9,6 @@ var hud
 
 var collected_keys: Array[String] = []
 
-var coin_count: int = 0
-var bullet_count: int = 0
-
 var facing_direction = "down"
 var is_moving = false
 var is_attacking = false
@@ -476,8 +473,8 @@ func collect(item):
 
 	match item.name:
 		"coins":
-			coin_count += 10
-			hud.update_coins(coin_count)
+			Global.coin_count += 10
+			hud.update_coins(Global.coin_count)
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
