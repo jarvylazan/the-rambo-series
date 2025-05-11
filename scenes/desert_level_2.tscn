@@ -1,6 +1,6 @@
 [gd_scene load_steps=47 format=4 uid="uid://cf5sysg7mbfk3"]
 
-[ext_resource type="Script" path="res://scripts/desert_level_2.gd" id="1_f1eru"]
+[ext_resource type="Script" uid="uid://bwa822ia6q42k" path="res://scripts/desert_level_2.gd" id="1_f1eru"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="3_oe8kg"]
 [ext_resource type="Texture2D" uid="uid://dy3elvbb2qk2m" path="res://assets/image/tilemap_block/desert assets/Entrée de caverne en pixels.png" id="5_mp6l3"]

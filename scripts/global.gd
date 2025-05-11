@@ -14,7 +14,6 @@ var boosted := false
 var boost_timer: Timer = null
 var base_spear_damage := 30
 var base_gun_damage := 10
-var coin_count: int = 0  # Add this near bullet_count
 @onready var inv: Inv = preload("res://inventory/player_inv.tres") 
 
 

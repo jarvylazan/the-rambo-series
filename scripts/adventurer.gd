@@ -476,8 +476,8 @@ func collect(item):
 
 	match item.name:
 		"coins":
-			Global.coin_count += 10  # use Global
-			hud.update_coins(Global.coin_count)
+			coin_count += 10
+			hud.update_coins(coin_count)
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
@@ -486,9 +486,7 @@ func collect(item):
 		"yellow_potion":
 			Global.heal(100)
 
-
 		
-
 
 func play_run_and_gun_animation(direction) -> String:
 	# Variable to store animation name
