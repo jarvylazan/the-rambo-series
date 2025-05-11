@@ -30,6 +30,7 @@ var world_intro_dialogue_lines := {
 var dialogue_box  # Dialogue box instance
 
 func _ready():
+	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
 
 	# Instantiate and add dialogue box

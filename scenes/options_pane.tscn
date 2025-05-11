@@ -1,49 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnkyfgeg0tpeb"]
+[gd_scene load_steps=8 format=3 uid="uid://dnkyfgeg0tpeb"]
 
+[ext_resource type="Texture2D" uid="uid://dsx3a4ms0tiae" path="res://assets/fonts/panel_theme.png" id="1_6taqd"]
 [ext_resource type="Theme" uid="uid://cjhr8kmmfs2no" path="res://assets/fonts/label_theme.tres" id="1_bpgty"]
 [ext_resource type="Script" uid="uid://021s3an1u7uo" path="res://scenes/options_pane.gd" id="1_eq6ja"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="2_eq6ja"]
+[ext_resource type="Theme" uid="uid://ctfajrfwf0hp4" path="res://assets/fonts/slider_theme.tres" id="4_6ww1o"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
-bg_color = Color(0.643137, 0.419608, 0.556863, 1)
-border_color = Color(0.364706, 0.168627, 0.278431, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7feo"]
+texture = ExtResource("1_6taqd")
+expand_margin_left = 84.0
+expand_margin_top = 56.0
+expand_margin_right = 141.0
+expand_margin_bottom = 84.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
-bg_color = Color(0.960784, 0.870588, 0.701961, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.960784, 0.870588, 0.701961, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[sub_resource type="Theme" id="Theme_6fy3x"]
+Panel/styles/panel = SubResource("StyleBoxTexture_u7feo")
 
 [node name="OptionsPane" type="Panel"]
-visible = false
-offset_left = 210.0
-offset_top = 63.0
-offset_right = 953.0
-offset_bottom = 609.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+anchors_preset = -1
+anchor_top = 0.012
+anchor_right = 0.943
+anchor_bottom = 0.94
+offset_left = 65.0
+offset_top = 6.224
+offset_right = -66.3361
+offset_bottom = -6.12006
+theme = SubResource("Theme_6fy3x")
 script = ExtResource("1_eq6ja")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
+offset_left = 244.0
+offset_top = 72.0
+offset_right = 736.0
+offset_bottom = 179.0
 size_flags_horizontal = 4
 theme = ExtResource("1_bpgty")
 theme_override_constants/line_spacing = -65
@@ -51,30 +41,31 @@ theme_override_font_sizes/font_size = 150
 text = "OPTIONS
 "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 161.0
+offset_right = 746.0
+offset_bottom = 214.0
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 24
+theme = ExtResource("2_eq6ja")
 
-[node name="EnButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="EnButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
-theme = ExtResource("1_bpgty")
+size_flags_horizontal = 3
 text = "EN"
 
-[node name="FrButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="FrButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("1_bpgty")
+size_flags_horizontal = 3
 text = "FR"
 
 [node name="MasterSetting" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 187.0
-offset_right = 671.0
-offset_bottom = 227.0
+offset_left = 196.0
+offset_top = 227.0
+offset_right = 821.0
+offset_bottom = 275.0
 theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="MasterSetting"]
@@ -87,17 +78,17 @@ text = "MENU_AUDIO_MASTER"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
+theme = ExtResource("4_6ww1o")
 max_value = 1.0
 step = 0.01
 value = 1.0
 
 [node name="MusicSetting" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 247.0
-offset_right = 674.0
-offset_bottom = 276.0
+offset_left = 187.0
+offset_top = 303.0
+offset_right = 811.0
+offset_bottom = 351.0
 theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="MusicSetting"]
@@ -110,17 +101,17 @@ text = "MENU_LABEL_MUSIC"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
+theme = ExtResource("4_6ww1o")
 max_value = 1.0
 step = 0.01
 value = 1.0
 
 [node name="SFXSetting" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 315.0
-offset_right = 657.0
-offset_bottom = 355.0
+offset_left = 232.0
+offset_top = 327.0
+offset_right = 838.0
+offset_bottom = 472.0
 theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="SFXSetting"]
@@ -133,7 +124,7 @@ text = "CREDITS_SFX"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_5dd4i")
+theme = ExtResource("4_6ww1o")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -145,10 +136,10 @@ anchor_left = 0.085
 anchor_top = 0.585
 anchor_right = 0.234
 anchor_bottom = 0.585
-offset_left = -20.155
-offset_top = 70.59
-offset_right = 478.0
-offset_bottom = 99.702
+offset_left = 33.68
+offset_top = 81.64
+offset_right = 680.973
+offset_bottom = 121.64
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
@@ -163,18 +154,18 @@ size_flags_vertical = 4
 
 [node name="SaveButton" type="Button" parent="."]
 layout_mode = 2
-offset_left = 227.0
-offset_top = 491.0
-offset_right = 516.0
-offset_bottom = 528.0
+offset_left = 254.0
+offset_top = 495.0
+offset_right = 735.0
+offset_bottom = 548.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme = ExtResource("2_eq6ja")
 text = "MENU_IO_SAVE"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/EnButton" to="." method="_on_en_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/FrButton" to="." method="_on_fr_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/EnButton" to="." method="_on_en_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/FrButton" to="." method="_on_fr_button_pressed"]
 [connection signal="value_changed" from="MasterSetting/HSlider" to="." method="_on_h_slider_master_value_changed"]
 [connection signal="value_changed" from="MusicSetting/HSlider" to="." method="_on_h_slider_music_value_changed"]
 [connection signal="value_changed" from="SFXSetting/HSlider" to="." method="_on_h_slider_sfx_value_changed"]

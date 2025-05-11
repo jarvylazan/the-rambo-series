@@ -1,6 +1,6 @@
 [gd_scene load_steps=90 format=4 uid="uid://cqb3rkkw1c4ei"]
 
-[ext_resource type="Script" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
+[ext_resource type="Script" uid="uid://cuy0eiyw2mbcb" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
 [ext_resource type="Texture2D" uid="uid://4bh2hk8i0g5v" path="res://assets/image/tilemap_block/dungeon.png" id="1_yew4o"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="2_l2b46"]
 [ext_resource type="Texture2D" uid="uid://cm7rx3xjj2e6i" path="res://assets/image/tilemap_block/dungeon level/Tiled_files/Ground_rocks.png" id="3_7sx4x"]
