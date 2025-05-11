@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf0406t5dpcrt"]
+[gd_scene load_steps=6 format=3 uid="uid://cf0406t5dpcrt"]
 
 [ext_resource type="Script" uid="uid://o61ahf0pvdn8" path="res://inventory/inventory_ui.gd" id="1_2hut1"]
 [ext_resource type="Texture2D" uid="uid://dmt43li575a28" path="res://assets/inventory/InventoryRect_v2.png" id="2_cedrj"]
 [ext_resource type="PackedScene" uid="uid://bdifcbrylw65x" path="res://inventory/inventory_slot.tscn" id="3_7rvkw"]
+[ext_resource type="Theme" uid="uid://b784ob4ykfraw" path="res://assets/fonts/theme for inventory button.tres" id="4_7rvkw"]
 
 [sub_resource type="Theme" id="Theme_cedrj"]
 
@@ -90,29 +91,32 @@ layout_mode = 2
 
 [node name="DropOneButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 227.0
-offset_top = 28.0
-offset_right = 292.0
-offset_bottom = 49.0
-theme_override_font_sizes/font_size = 10
+offset_left = 230.0
+offset_top = 10.0
+offset_right = 295.0
+offset_bottom = 61.0
+theme = ExtResource("4_7rvkw")
+theme_override_font_sizes/font_size = 7
 text = "Drop One"
 
 [node name="DropAllButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 227.0
-offset_top = 71.0
-offset_right = 292.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 10
+offset_left = 230.0
+offset_top = 45.0
+offset_right = 295.0
+offset_bottom = 96.0
+theme = ExtResource("4_7rvkw")
+theme_override_font_sizes/font_size = 7
 text = "Drop All"
 
 [node name="UseItemButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 122.0
-offset_right = 296.0
-offset_bottom = 144.0
-theme_override_font_sizes/font_size = 10
+offset_left = 230.0
+offset_top = 120.0
+offset_right = 295.0
+offset_bottom = 171.0
+theme = ExtResource("4_7rvkw")
+theme_override_font_sizes/font_size = 7
 text = "Use"
 
 [connection signal="pressed" from="DropOneButton" to="." method="_on_DropOneButton_pressed"]
