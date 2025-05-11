@@ -1,7 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://wma3q2tf0ewf"]
+[gd_scene load_steps=41 format=3 uid="uid://wma3q2tf0ewf"]
 
 [ext_resource type="Script" uid="uid://d3u7pfxkuton0" path="res://scripts/akaname.gd" id="1_it3sk"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_8daal"]
 [ext_resource type="Texture2D" uid="uid://uompoargxcij" path="res://assets/characters/enemies/Akaname Sprite Sheet.png" id="2_dp0om"]
+[ext_resource type="Resource" uid="uid://461kxmeymkjv" path="res://inventory/items/coins.tres" id="3_nv0ws"]
+[ext_resource type="Resource" uid="uid://cxmuss48sm4qr" path="res://inventory/items/red_potion.tres" id="4_64s74"]
+[ext_resource type="Resource" uid="uid://x8wxhux8rtdr" path="res://inventory/items/yellow_potion.tres" id="5_opo5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxlom"]
 atlas = ExtResource("2_dp0om")
@@ -351,8 +355,14 @@ height = 50.0
 radius = 10.4403
 
 [node name="Akaname" type="CharacterBody2D" groups=["enemy"]]
+z_index = 1
+scale = Vector2(1.5, 1.5)
 collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_it3sk")
+max_drops = 3
+drop_chance = 0.8
+possible_drops = Array[ExtResource("2_8daal")]([ExtResource("3_nv0ws"), ExtResource("3_nv0ws"), ExtResource("3_nv0ws"), ExtResource("3_nv0ws"), ExtResource("4_64s74"), ExtResource("5_opo5y")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -370,6 +380,7 @@ libraries = {
 [node name="BodyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 10)
 shape = SubResource("CapsuleShape2D_dp0om")
+debug_color = Color(0.864819, 0.206401, 0.720663, 0.42)
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 position = Vector2(0, -17)

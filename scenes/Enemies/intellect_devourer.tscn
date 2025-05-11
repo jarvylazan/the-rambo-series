@@ -1,7 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://yr2slshdbm6j"]
+[gd_scene load_steps=39 format=3 uid="uid://yr2slshdbm6j"]
 
 [ext_resource type="Script" uid="uid://cx3jj0oqey6g2" path="res://scripts/intellect_devourer.gd" id="1_scc7h"]
 [ext_resource type="Texture2D" uid="uid://dxll1fug66x8w" path="res://assets/characters/enemies/Intellect Devourer Sprites.png" id="2_1kk3n"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_86woj"]
+[ext_resource type="Resource" uid="uid://461kxmeymkjv" path="res://inventory/items/coins.tres" id="3_bh8sx"]
+[ext_resource type="Resource" uid="uid://djt6vupnhse1o" path="res://inventory/items/ammo.tres" id="4_jm5ch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4aihd"]
 atlas = ExtResource("2_1kk3n")
@@ -349,8 +352,14 @@ height = 50.0
 radius = 10.4403
 
 [node name="IntellectDevourer" type="CharacterBody2D" groups=["enemy"]]
+z_index = 1
+scale = Vector2(1.5, 1.5)
 collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_scc7h")
+max_drops = 5
+drop_chance = 0.7
+possible_drops = Array[ExtResource("2_86woj")]([ExtResource("3_bh8sx"), ExtResource("3_bh8sx"), ExtResource("3_bh8sx"), ExtResource("3_bh8sx"), ExtResource("4_jm5ch"), ExtResource("4_jm5ch"), ExtResource("4_jm5ch"), ExtResource("4_jm5ch")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -366,6 +375,7 @@ libraries = {
 [node name="BodyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 10)
 shape = SubResource("CapsuleShape2D_ewbya")
+debug_color = Color(0.0886385, 0.616655, 0.570363, 0.42)
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 position = Vector2(0, -17)

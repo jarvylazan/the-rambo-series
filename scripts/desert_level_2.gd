@@ -45,7 +45,7 @@ func _ready():
 	player.add_child(camera)
 	camera.position = Vector2.ZERO
 	camera.make_current()
-	camera.zoom = Vector2(0.7, 0.7)
+	camera.zoom = Vector2(0.85, 0.85)
 	camera.limit_left = -2734
 	camera.limit_top = 227
 	camera.limit_right = 6683
@@ -65,5 +65,5 @@ func _ready():
 	await dialogue_box.display_text()
 
 func _on_intro_finished():
-	print("✅ Dialogue finished signal received!")
+	print("Dialogue finished signal received!")
 	$Player.can_move = true

@@ -2,11 +2,11 @@ extends Enemy
 
 func _ready():
 	speed = 150
-	max_health = 30
+	max_health = 35
 	health = max_health
-	damage = 8
+	damage = 10
 	detection_range = 450.0
-	attack_range = 60.0
+	attack_range = 80.0
 	super()
 
 func take_spear_damage():
