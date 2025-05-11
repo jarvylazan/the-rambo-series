@@ -28,6 +28,7 @@ var world_intro_dialogue_lines := {
 }
 
 var dialogue_box  # Dialogue box instance
+var enemy_count := 0
 
 func _ready():
 	MusicManager.stop_music()
@@ -67,3 +68,12 @@ func _ready():
 func _on_intro_finished():
 	print("Dialogue finished signal received!")
 	$Player.can_move = true
+
+func _physics_process(delta):
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	enemy_count = enemies.size()
+	
+	print("Current enemy count: " + str(enemy_count))
+	
+	if enemy_count == 0:
+		print("All enemies defeated!")

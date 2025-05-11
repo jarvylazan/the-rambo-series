@@ -5,8 +5,8 @@ func _ready():
 	max_health = 30
 	health = max_health
 	damage = 8
-	detection_range = 450.0
-	attack_range = 60.0
+	detection_range = 500.0
+	attack_range = 140.0
 	super()
 
 func take_spear_damage():

@@ -6,7 +6,7 @@ func _ready():
 	health = max_health
 	damage = 8
 	detection_range = 450.0
-	attack_range = 60.0
+	attack_range = 100.0
 	super()
 
 
