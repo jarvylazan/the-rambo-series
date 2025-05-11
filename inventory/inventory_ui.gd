@@ -44,22 +44,36 @@ func open():
 func slot_clicked(slot_gui):
 	var clicked_index = slots.find(slot_gui)
 
+	# Deselect previously selected slot visually
+	if selected_slot_gui:
+		selected_slot_gui.set_selected(false)
+
+	# Selection just started
 	if selected_slot_gui == null:
 		if slot_gui.inventory_slot and slot_gui.inventory_slot.item:
 			selected_slot_gui = slot_gui
 			selected_slot_data = slot_gui.inventory_slot
+
 			if clicked_index != -1:
 				inv.slots[clicked_index] = InvSlot.new()
 			slot_gui.inventory_slot = null
 			slot_gui.update_slot()
+
+			# Show selection overlay
+			slot_gui.set_selected(true)
+
+	# Second click to drop or swap
 	else:
 		var selected_index = slots.find(selected_slot_gui)
+
 		if clicked_index == selected_index:
+			# Put the item back in the same slot
 			selected_slot_gui.inventory_slot = selected_slot_data
 			if selected_index != -1:
 				inv.slots[selected_index] = selected_slot_data
 			selected_slot_gui.update_slot()
 		elif clicked_index != -1 and selected_index != -1:
+			# Swap items
 			var target_data: InvSlot = slot_gui.inventory_slot
 			slot_gui.inventory_slot = selected_slot_data
 			selected_slot_gui.inventory_slot = target_data
@@ -68,10 +82,12 @@ func slot_clicked(slot_gui):
 			slot_gui.update_slot()
 			selected_slot_gui.update_slot()
 
+		# Clear selection after drop or swap
 		selected_slot_gui = null
 		selected_slot_data = null
 
 	inv.update.emit()
+
 
 # RIGHT CLICK TO DROP (supports shift-drop-all)
 func slot_right_clicked(slot_gui, drop_all := false):

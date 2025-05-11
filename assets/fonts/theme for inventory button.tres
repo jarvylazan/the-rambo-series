@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b784ob4ykfraw"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://0aj3nskvmxvs"]
 
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="1_uc75r"]
 [ext_resource type="Texture2D" uid="uid://cuqgxwsilmgnq" path="res://assets/fonts/inventory_button.png" id="2_uc75r"]

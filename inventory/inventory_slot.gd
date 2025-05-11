@@ -4,6 +4,7 @@ extends Button
 @onready var amount_text: Label = $CenterContainer/Panel/Label
 @onready var slot_sprite: Sprite2D = $Sprite2D
 @onready var tooltip_label := preload("res://scenes/TooltipLabel.tscn")
+@onready var selection_overlay: ColorRect = $SelectionOverlay
 
 var inventory_slot: InvSlot
 var tooltip_instance: Label = null
@@ -74,3 +75,9 @@ func _on_mouse_exited():
 	if tooltip_instance:
 		tooltip_instance.queue_free()
 		tooltip_instance = null
+		
+var is_selected := false
+
+func set_selected(state: bool):
+	is_selected = state
+	selection_overlay.visible = is_selected
