@@ -497,7 +497,9 @@ height = 116.0
 size = Vector2(671, 115)
 
 [node name="Cyclops" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(2, 2)
 collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_o6gxg")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
@@ -516,6 +518,7 @@ libraries = {
 [node name="BodyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_v7p0v")
+debug_color = Color(0.743987, 0.307909, 0.867133, 0.42)
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 position = Vector2(350, -8)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=87 format=4 uid="uid://cqb3rkkw1c4ei"]
+[gd_scene load_steps=90 format=4 uid="uid://cqb3rkkw1c4ei"]
 
-[ext_resource type="Script" uid="uid://cuy0eiyw2mbcb" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
+[ext_resource type="Script" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
 [ext_resource type="Texture2D" uid="uid://4bh2hk8i0g5v" path="res://assets/image/tilemap_block/dungeon.png" id="1_yew4o"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="2_l2b46"]
 [ext_resource type="Texture2D" uid="uid://cm7rx3xjj2e6i" path="res://assets/image/tilemap_block/dungeon level/Tiled_files/Ground_rocks.png" id="3_7sx4x"]
@@ -32,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://c851sdd8b8o1k" path="res://assets/image/tilemap_block/dungeon level/object/Scull_door_shadow2.png" id="26_t4ufi"]
 [ext_resource type="Texture2D" uid="uid://clr4nh73r6htm" path="res://assets/image/tilemap_block/Bannière rouge avec dragon doré.png" id="27_ga125"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="32_mmini"]
+[ext_resource type="PackedScene" uid="uid://b2h1bch4v7cny" path="res://scenes/Enemies/shardsoul_slayer.tscn" id="33_rqmde"]
+[ext_resource type="PackedScene" uid="uid://b6ht1ls6wyr1a" path="res://scenes/Enemies/brain_mole_monarch.tscn" id="34_wyldn"]
+[ext_resource type="PackedScene" uid="uid://bacdxvteo0aav" path="res://scenes/Enemies/ratfolk_axe.tscn" id="35_semk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")
@@ -9174,3 +9177,37 @@ polygon = PackedVector2Array(-958, 1773, -656, 1780, -522, 1818, -320, 1831, -17
 polygon = PackedVector2Array(-752, 2108, -704, 1621, -747, 1173, -695, 650, -702, 457, -708, 322, -692, 76, -640, -96, -671, -273, -829, -329, -961, -279, -1118, 577, -991, 1739)
 
 [node name="PauseMenu" parent="." instance=ExtResource("32_mmini")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Enemies"]
+
+[node name="ShardsoulSlayer" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(-412, 835)
+
+[node name="ShardsoulSlayer2" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(1427, 895)
+
+[node name="ShardsoulSlayer3" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(1466, 1649)
+
+[node name="ShardsoulSlayer4" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(1214, 162)
+
+[node name="Node2D2" type="Node2D" parent="Enemies"]
+
+[node name="BrainMoleMonarch" parent="Enemies/Node2D2" instance=ExtResource("34_wyldn")]
+position = Vector2(291, 1629)
+
+[node name="BrainMoleMonarch2" parent="Enemies/Node2D2" instance=ExtResource("34_wyldn")]
+
+[node name="Node2D3" type="Node2D" parent="Enemies"]
+
+[node name="RatfolkAxe" parent="Enemies/Node2D3" instance=ExtResource("35_semk5")]
+position = Vector2(32, 481)
+
+[node name="RatfolkAxe2" parent="Enemies/Node2D3" instance=ExtResource("35_semk5")]
+position = Vector2(862, 1112)
+
+[node name="RatfolkAxe3" parent="Enemies/Node2D3" instance=ExtResource("35_semk5")]
+position = Vector2(392, 831)

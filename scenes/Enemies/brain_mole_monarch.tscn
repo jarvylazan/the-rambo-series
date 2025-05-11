@@ -280,7 +280,9 @@ height = 82.0
 radius = 31.0161
 
 [node name="BrainMoleMonarch" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(1.2, 1.2)
 collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_xq3vo")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://051mcrhro8ot" path="res://assets/image/dialogue/ui_label_cadre.png" id="2_g1wsg"]
 [ext_resource type="Texture2D" uid="uid://b60a3jrmipmm1" path="res://assets/image/dialogue/ui_parchemin_cadre.png" id="2_xe8jn"]
 [ext_resource type="Texture2D" uid="uid://c2qebf83y75gt" path="res://assets/image/dialogue/Merlin Dialogue Image.png" id="3_n36c0"]
-[ext_resource type="Theme" uid="uid://hn5720a0k2rn" path="res://assets/fonts/theme for dialogue button.tres" id="5_hyjp1"]
+[ext_resource type="Theme" uid="uid://dsnjnxq48vvc0" path="res://assets/fonts/theme for dialogue button.tres" id="5_hyjp1"]
 [ext_resource type="AudioStream" uid="uid://cawxhma8ocbrm" path="res://assets/sound/keyboard-typing-5997.mp3" id="5_n36c0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hyjp1"]

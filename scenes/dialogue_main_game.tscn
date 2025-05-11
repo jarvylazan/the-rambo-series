@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqm08px27ahim"]
+
+[ext_resource type="Script" uid="uid://b8b5qf51mabki" path="res://scripts/dialogue_main_game.gd" id="1_rlvwa"]
+[ext_resource type="Texture2D" uid="uid://b60a3jrmipmm1" path="res://assets/image/dialogue/ui_parchemin_cadre.png" id="2_mb5mn"]
+[ext_resource type="Texture2D" uid="uid://051mcrhro8ot" path="res://assets/image/dialogue/ui_label_cadre.png" id="3_1yd2t"]
+[ext_resource type="Texture2D" uid="uid://c2qebf83y75gt" path="res://assets/image/dialogue/Merlin Dialogue Image.png" id="4_5a87l"]
+[ext_resource type="Theme" uid="uid://dsnjnxq48vvc0" path="res://assets/fonts/theme for dialogue button.tres" id="5_wmups"]
+[ext_resource type="AudioStream" uid="uid://cawxhma8ocbrm" path="res://assets/sound/keyboard-typing-5997.mp3" id="6_a6qpw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ghyd"]
+texture = ExtResource("2_mb5mn")
+texture_margin_left = 84.0
+texture_margin_top = 84.0
+texture_margin_right = 84.0
+texture_margin_bottom = 84.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw5dw"]
+texture = ExtResource("3_1yd2t")
+
+[node name="Dialogue_MainGame" type="CanvasLayer"]
+script = ExtResource("1_rlvwa")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 373.0
+offset_top = 352.0
+offset_right = 2455.0
+offset_bottom = 804.0
+
+[node name="DialogPanel" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ghyd")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 645.0
+offset_top = 453.0
+offset_right = 877.0
+offset_bottom = 718.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bw5dw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 657.0
+offset_top = 1060.0
+offset_right = 1681.0
+offset_bottom = 2084.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Portrait" type="TextureRect" parent="."]
+offset_left = 674.0
+offset_top = 509.0
+offset_right = 836.0
+offset_bottom = 664.0
+texture = ExtResource("4_5a87l")
+expand_mode = 1
+
+[node name="DialogueText" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 150)
+offset_left = 852.0
+offset_top = 515.0
+offset_right = 1967.0
+offset_bottom = 665.0
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 2013.0
+offset_top = 480.0
+offset_right = 2208.0
+offset_bottom = 562.0
+theme = ExtResource("5_wmups")
+theme_override_font_sizes/font_size = 70
+text = "NEXT"
+
+[node name="SkipButton" type="Button" parent="."]
+offset_left = 2027.0
+offset_top = 600.0
+offset_right = 2225.0
+offset_bottom = 681.0
+theme = ExtResource("5_wmups")
+theme_override_font_sizes/font_size = 70
+text = "SKIP"
+
+[node name="AutoAdvanceTimer" type="Timer" parent="."]
+
+[node name="TypingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a6qpw")
+volume_db = 5.0
+bus = &"SFX"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_pressed"]

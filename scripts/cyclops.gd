@@ -2,10 +2,10 @@ extends Enemy
 # BOSS LEVEL 2
 
 func _ready():
-	speed = 150
-	max_health = 30
+	speed = 120
+	max_health = 250
 	health = max_health
-	damage = 8
+	damage = 65
 	detection_range = 700.0
 	attack_range = 350.0
 	super()

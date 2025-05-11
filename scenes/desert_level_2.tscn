@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://cf5sysg7mbfk3"]
+[gd_scene load_steps=59 format=4 uid="uid://cf5sysg7mbfk3"]
 
 [ext_resource type="Script" uid="uid://bwa822ia6q42k" path="res://scripts/desert_level_2.gd" id="1_f1eru"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
@@ -2480,6 +2480,12 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_gj6m2")
 sources/2 = SubResource("TileSetAtlasSource_aseo8")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rpe7"]
+radius = 749.947
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mp6l3"]
+radius = 898.72
+
 [node name="Desert_Level_2" type="Node2D" groups=["Environment"]]
 y_sort_enabled = true
 script = ExtResource("1_f1eru")
@@ -2588,7 +2594,7 @@ polygon = PackedVector2Array(-2632, 353, -2606, 313, -2600, 270, -2583, 256, -25
 
 [node name="Player" parent="." instance=ExtResource("16_mic2q")]
 z_index = 1
-position = Vector2(-2090, 961)
+position = Vector2(4227, 2898)
 scale = Vector2(0.18, 0.18)
 collision_mask = 145
 
@@ -2654,7 +2660,7 @@ position = Vector2(123, 1750)
 position = Vector2(-2810, 778)
 
 [node name="Blue_Potion2" parent="Items_Containers/Blue_Potion_Container" instance=ExtResource("19_r6n1j")]
-position = Vector2(3049, 3278)
+position = Vector2(2792, 2963)
 
 [node name="Blue_Potion3" parent="Items_Containers/Blue_Potion_Container" instance=ExtResource("19_r6n1j")]
 position = Vector2(2642, 770)
@@ -2755,3 +2761,19 @@ position = Vector2(975, 2580)
 position = Vector2(4138, 1593)
 
 [node name="PauseMenu" parent="." instance=ExtResource("23_y21nk")]
+
+[node name="Dialogue_Zones" type="Node2D" parent="."]
+
+[node name="Monsters" type="Area2D" parent="Dialogue_Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Monsters"]
+position = Vector2(513, 1493)
+shape = SubResource("CircleShape2D_3rpe7")
+debug_color = Color(0.733519, 0.212021, 0.414539, 0.42)
+
+[node name="Secret_level" type="Area2D" parent="Dialogue_Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Secret_level"]
+position = Vector2(5696, 600)
+shape = SubResource("CircleShape2D_mp6l3")
+debug_color = Color(0.502575, 0.251295, 0.89551, 0.42)
