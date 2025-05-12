@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://ctfajrfwf0hp4"]
 
-[ext_resource type="Texture2D" uid="uid://bu0h5sw8x8j6j" path="res://assets/fonts/grabber.png" id="1_r0s1x"]
+[ext_resource type="Texture2D" uid="uid://c8dulcqifn7s0" path="res://assets/fonts/grabber_theme.png" id="1_r0s1x"]
 [ext_resource type="Texture2D" uid="uid://bgmox88jcht1d" path="res://assets/fonts/slider.png" id="2_l1eau"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fy3x"]

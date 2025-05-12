@@ -1,0 +1,172 @@
+[gd_scene load_steps=11 format=3 uid="uid://dws4kv7viyjlv"]
+
+[ext_resource type="Script" uid="uid://bpw32kxpq2ap5" path="res://scripts/controls_layout.gd" id="1_g18vs"]
+[ext_resource type="Texture2D" uid="uid://bcrejrpmdlmsf" path="res://assets/image/imagescommand/textureforcommandpallete.png" id="1_haar3"]
+[ext_resource type="Theme" uid="uid://cqhhm5ikvjql1" path="res://assets/fonts/options_theme.tres" id="2_57j05"]
+[ext_resource type="Texture2D" uid="uid://cvvnmo672g5k8" path="res://assets/image/imagescommand/awsd.png" id="3_47pwq"]
+[ext_resource type="Texture2D" uid="uid://do52qossd5pds" path="res://assets/image/imagescommand/arrowkeys.png" id="4_jabpg"]
+[ext_resource type="Texture2D" uid="uid://c2wr2wmb1e8xl" path="res://assets/image/imagescommand/e.png" id="5_u74jl"]
+[ext_resource type="Texture2D" uid="uid://dqb6b5ebqilmi" path="res://assets/image/imagescommand/space.png" id="6_koc46"]
+[ext_resource type="Texture2D" uid="uid://cq7a3k1mechjv" path="res://assets/image/imagescommand/v.png" id="7_kb3sf"]
+[ext_resource type="Texture2D" uid="uid://7kx7cf7q1pbw" path="res://assets/image/imagescommand/esc,p.png" id="8_koc46"]
+[ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="9_kb3sf"]
+
+[node name="control_layout" type="Control"]
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 0.997
+offset_right = 0.543945
+offset_bottom = -0.0560303
+script = ExtResource("1_g18vs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.009
+offset_right = 0.312012
+offset_bottom = 0.185974
+texture = ExtResource("1_haar3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 27.0
+offset_right = 1020.0
+offset_bottom = 85.0
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 100
+text = "CONTROLS_LABEL"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -476.0
+offset_top = -220.0
+offset_right = 387.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 50
+text = "CHARACTER_LABEL"
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_47pwq")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_jabpg")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -105.0
+offset_right = 388.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 300
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 50
+text = "INVENTORY_LABEL"
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_u74jl")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = 5.0
+offset_right = 425.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 50
+text = "PLAYER_ATTACKS"
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("6_koc46")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("7_kb3sf")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 427.0
+offset_right = 770.0
+offset_bottom = 451.0
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 40
+text = "FIRE_LABEL"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 455.0
+offset_right = 1041.0
+offset_bottom = 479.0
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 40
+text = "S_LABLE"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 430.0
+offset_right = 353.0
+offset_bottom = 558.0
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("2_57j05")
+theme_override_font_sizes/font_size = 50
+text = "Pause"
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("8_koc46")
+
+[node name="PauseMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 572.0
+offset_right = 816.0
+offset_bottom = 625.0
+theme = ExtResource("9_kb3sf")
+text = "PauseMenu
+"
+
+[connection signal="pressed" from="PauseMenuButton" to="." method="_on_pause_menu_button_pressed"]
