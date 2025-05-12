@@ -58,7 +58,7 @@ func _on_save_button_pressed() -> void:
 
 func _on_full_screen_toggled(toggled_on: bool) -> void:
 	isFullScreen = toggled_on
-	SettingsManager.fullscreen = toggled_on  # ✅ this is the critical line
+	SettingsManager.fullscreen = toggled_on  # his is the critical line
 	DisplayServer.window_set_mode(
 		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN if toggled_on else DisplayServer.WINDOW_MODE_WINDOWED
 	)

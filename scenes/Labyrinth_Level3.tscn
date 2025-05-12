@@ -4262,6 +4262,7 @@ debug_color = Color(0.0901961, 0.25098, 0.85098, 0.419608)
 position = Vector2(211, 1076)
 scale = Vector2(0.2, 0.2)
 collision_mask = 165
+bullet_scene_path = "uid://fnu26keu0s7p"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(20.0001, -55)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://cf5sysg7mbfk3"]
+[gd_scene load_steps=64 format=4 uid="uid://cf5sysg7mbfk3"]
 
 [ext_resource type="Script" uid="uid://bwa822ia6q42k" path="res://scripts/desert_level_2.gd" id="1_f1eru"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="21_kbe65"]
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="22_lrdev"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_y21nk"]
+[ext_resource type="Script" uid="uid://bvktcqkoukm4e" path="res://scripts/monsters_alert_Lvl2.gd" id="25_3rpe7"]
+[ext_resource type="Script" uid="uid://r2wd5sgoqqkf" path="res://scripts/reveal _secret_leve2l.gd" id="26_f1eru"]
+[ext_resource type="Script" uid="uid://c3wbtl81bge1b" path="res://scripts/secret_path_trigger_Lv2.gd" id="27_f1eru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("2_y21nk")
@@ -2481,10 +2484,16 @@ sources/0 = SubResource("TileSetAtlasSource_gj6m2")
 sources/2 = SubResource("TileSetAtlasSource_aseo8")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rpe7"]
-radius = 749.947
+radius = 1362.72
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1eru"]
+radius = 853.994
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp6l3"]
 radius = 898.72
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qx2ae"]
+radius = 244.008
 
 [node name="Desert_Level_2" type="Node2D" groups=["Environment"]]
 y_sort_enabled = true
@@ -2507,6 +2516,7 @@ position = Vector2(-7717, 156)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Worlds/CercleMagic_sec_1"]
 modulate = Color(0.397411, 0.209326, 0.810916, 1)
+position = Vector2(6316, 1929)
 scale = Vector2(0.2, 0.2)
 tile_map_data = PackedByteArray("AAC3AUAAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_3rpe7")
@@ -2580,7 +2590,7 @@ tile_map_data = PackedByteArray("AAAEAAgAAgAAAAAAAAAAAAIAAgAAAAAAAAD//wUAAgAAAAA
 tile_set = SubResource("TileSet_8b7j2")
 
 [node name="Portal_Levels" parent="." instance=ExtResource("15_a7qhm")]
-position = Vector2(-2221, 805)
+position = Vector2(4361, 2941)
 collision_mask = 2
 next_level_scene = ""
 is_entry_portal = true
@@ -2593,9 +2603,9 @@ polygon = PackedVector2Array(-2632, 353, -2606, 313, -2600, 270, -2583, 256, -25
 
 [node name="Player" parent="." instance=ExtResource("16_mic2q")]
 z_index = 1
-position = Vector2(4227, 2898)
+position = Vector2(4224, 2888)
 scale = Vector2(0.18, 0.18)
-collision_mask = 145
+collision_mask = 177
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(140, -180)
@@ -2696,83 +2706,67 @@ position = Vector2(-818, 877)
 [node name="Akaname" type="Node2D" parent="Enemies"]
 
 [node name="Akaname" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1592, 2809)
+position = Vector2(1109, 2940)
 
 [node name="Akaname2" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1735, 3085)
-
-[node name="Akaname3" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1016, 2808)
-
-[node name="Akaname4" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1637, 2647)
-
-[node name="Akaname5" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1468, 2520)
-
-[node name="Akaname7" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-810, 2924)
-
-[node name="Akaname8" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1431, 2832)
-
-[node name="Akaname9" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(4155, 1153)
+position = Vector2(1425, 3072)
 
 [node name="Devourer" type="Node2D" parent="Enemies"]
 
 [node name="IntellectDevourer" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1928, 2359)
+position = Vector2(1035, 2556)
 
 [node name="IntellectDevourer2" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1496, 3084)
-
-[node name="IntellectDevourer3" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1654, 2938)
-
-[node name="IntellectDevourer4" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1217, 3096)
-
-[node name="IntellectDevourer5" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(1702, 2081)
-
-[node name="IntellectDevourer6" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(5400, 3116)
-
-[node name="IntellectDevourer7" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-649, 1739)
+position = Vector2(1047, 3058)
 
 [node name="Kobold" type="Node2D" parent="Enemies"]
 
 [node name="KoboldPriest" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
-position = Vector2(-1669, 2433)
+position = Vector2(1001, 2765)
 
 [node name="KoboldPriest2" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(3724, 3092)
-
-[node name="KoboldPriest3" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
-position = Vector2(-1175, 2949)
-
-[node name="KoboldPriest4" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
-position = Vector2(975, 2580)
-
-[node name="KoboldPriest5" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
-position = Vector2(-1773, 2302)
 
 [node name="PauseMenu" parent="." instance=ExtResource("23_y21nk")]
 
 [node name="Dialogue_Zones" type="Node2D" parent="."]
 
-[node name="Monsters" type="Area2D" parent="Dialogue_Zones"]
+[node name="Monsters_Alert" type="Area2D" parent="Dialogue_Zones"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("25_3rpe7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Monsters"]
-position = Vector2(513, 1493)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Monsters_Alert"]
+position = Vector2(-393, 2636)
 shape = SubResource("CircleShape2D_3rpe7")
 debug_color = Color(0.733519, 0.212021, 0.414539, 0.42)
 
+[node name="Monsters_Alert2" type="Area2D" parent="Dialogue_Zones"]
+position = Vector2(3369, -355)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("25_3rpe7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Monsters_Alert2"]
+position = Vector2(-1279, 1237)
+shape = SubResource("CircleShape2D_f1eru")
+debug_color = Color(0.733519, 0.212021, 0.414539, 0.42)
+
 [node name="Secret_level" type="Area2D" parent="Dialogue_Zones"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("26_f1eru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Secret_level"]
 position = Vector2(5696, 600)
 shape = SubResource("CircleShape2D_mp6l3")
 debug_color = Color(0.502575, 0.251295, 0.89551, 0.42)
+
+[node name="SecretPath_Trigger" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("27_f1eru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretPath_Trigger"]
+position = Vector2(-2525, 287)
+shape = SubResource("CircleShape2D_qx2ae")

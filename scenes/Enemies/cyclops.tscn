@@ -1,6 +1,8 @@
-[gd_scene load_steps=64 format=3 uid="uid://b400a0dsgvx2w"]
+[gd_scene load_steps=66 format=3 uid="uid://b400a0dsgvx2w"]
 
 [ext_resource type="Script" uid="uid://bfmtjg0fa11ry" path="res://scripts/cyclops.gd" id="1_o6gxg"]
+[ext_resource type="Resource" uid="uid://pluo8cbouvee" path="res://inventory/items/key_portal.tres" id="2_nrutm"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_sk8jp"]
 [ext_resource type="Texture2D" uid="uid://diqlc063g0ivq" path="res://assets/characters/enemies/Cyclops Sprite Sheet.png" id="2_ub561"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0m5xl"]
@@ -498,10 +500,13 @@ size = Vector2(671, 115)
 
 [node name="Cyclops" type="CharacterBody2D" groups=["enemy"]]
 z_index = 1
-scale = Vector2(2, 2)
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_o6gxg")
+next_level_scene = "\"res://scenes/Labyrinth_Level3.tscn\""
+is_boss = true
+max_drops = 1
+drop_chance = 1.0
+possible_drops = Array[ExtResource("2_sk8jp")]([ExtResource("2_nrutm")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

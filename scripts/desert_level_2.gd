@@ -2,7 +2,7 @@ extends Node2D
 
 var DialogueBoxScene := preload("res://scenes/tutorial_dialogue_box_ui.tscn")
 
-# Desert level lore dialogue
+# Desert level lore dialogue/win condition
 var world_intro_dialogue_lines := {
 	"en": [
 		"You’ve taken your first steps, adventurer... now the true journey begins.",
@@ -10,8 +10,9 @@ var world_intro_dialogue_lines := {
 		"The creatures here twisted this realm into their domain.",
 		"It breathes with danger and mystery. Watch the sand… it hides more than dust.",
 		"Explore the ruins, uncover the truth, and conquer what lies ahead.",
-		"Fifteen enemies await you—each a challenge of its own.",
-		"Eliminate them all… and face the one who commands this scorched world.",
+		"Many enemies await you... each a challenge of its own.",
+		"Defeat them if you must... but know this: somewhere in this scorched land, the one who commands them still hides.",
+		"Find him... or eliminate them all. Either way, the path forward will be revealed.",
 		"This is your first true trial. Let it be a beginning, not an end."
 	],
 
@@ -21,11 +22,13 @@ var world_intro_dialogue_lines := {
 		"Ces créatures ont fait de ce royaume leur domaine.",
 		"Il respire le danger et le mystère. Attention au sable... il cache plus que de la poussière.",
 		"Explore les ruines, découvre la vérité, et conquiers ce qui t’attend.",
-		"Quinze ennemis t’attendent—chacun avec ses propres défis.",
-		"Élimine-les tous… et affronte celui qui commande ce monde brûlé.",
+		"De nombreux ennemis t’attendent... chacun avec ses propres défis.",
+		"Tu peux tous les vaincre... mais sache-le : quelque part dans ces terres brûlées, celui qui les dirige se cache encore.",
+		"Trouve-le... ou élimine-les tous. Dans les deux cas, le chemin s’ouvrira.",
 		"Voici ta première véritable épreuve. Qu’elle soit un commencement, et non une fin."
 	]
 }
+
 
 var dialogue_box  # Dialogue box instance
 var enemy_count := 0
@@ -69,11 +72,27 @@ func _on_intro_finished():
 	print("Dialogue finished signal received!")
 	$Player.can_move = true
 
+@onready var portal_scene := preload("res://scenes/portal.tscn")
+var portal_spawned := false
+
 func _physics_process(delta):
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	enemy_count = enemies.size()
+
+	if not portal_spawned and enemies.all(func(e): not e.is_boss):
+		_spawn_portal_near_player()
+		portal_spawned = true
+		
+func _spawn_portal_near_player():
+	var portal = portal_scene.instantiate()
+	portal.required_key_id = "desert_clear_key"  # Set a unique key ID
+	portal.next_level_scene = "res://scenes/Labyrinth_Level3.tscn"
 	
-	print("Current enemy count: " + str(enemy_count))
-	
-	if enemy_count == 0:
-		print("All enemies defeated!")
+	var player = $Player
+	portal.global_position = player.global_position + Vector2(96, 0)
+	get_tree().current_scene.add_child(portal)
+
+	# Grant the key to the player directly
+	if not player.collected_keys.has("desert_clear_key"):
+		player.collected_keys.append("desert_clear_key")
+		print("Non-boss portal key granted.")

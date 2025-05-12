@@ -85,7 +85,6 @@ size_flags_horizontal = 4
 text = "MENU_LABEL_MAINMENU"
 
 [node name="OptionsPane" parent="." instance=ExtResource("3_kukqi")]
-visible = false
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

@@ -3,7 +3,7 @@ signal dialogue_finished
 
 const CHAR_READ_RATE := 0.05  # Speed per character
 
-@onready var dialogue_text = $DialogueText
+@onready var dialogue_text =$NinePatchRect/DialogueText
 @onready var continue_button = $ContinueButton
 @onready var portrait = $Portrait
 @onready var auto_advance_timer = $AutoAdvanceTimer

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var target_scene_path: String = "res://scenes/lava_secret_level_1.1.tscn"
+@export var target_scene_path: String = "res://scenes/secret_level_grotte_2_1.tscn"
 
 @export var messages := {
 	"en": [
@@ -38,6 +38,7 @@ func _on_body_entered(body):
 	var lang = TranslationServer.get_locale()
 	for msg in messages.get(lang, messages["en"]):
 		dialogue_box.queue_text(msg)
+
 	dialogue_box.show_dialogue_box()
 	dialogue_box.display_text()
 	dialogue_box.dialogue_finished.connect(_on_dialogue_finished.bind(body))

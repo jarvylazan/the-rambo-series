@@ -8,6 +8,8 @@ class_name Enemy
 @export var attack_range: float = 50.0
 @export var detection_range: float = 200.0
 @export var attack_cooldown: float = 1.0
+@export var next_level_scene: String = ""  # Set this in each boss scene
+
 #------BOSS--------
 @export var is_boss := false
 @onready var PortalScene := preload("res://scenes/portal.tscn")  # Update path as needed
@@ -166,16 +168,20 @@ func _on_Death():
 			drop.global_position = global_position + offset
 			get_tree().current_scene.add_child(drop)
 
-	# ✅ Spawn portal if this is a boss
+	# Spawn portal if this is a boss
 	if is_boss:
 		var portal = PortalScene.instantiate()
 		portal.global_position = global_position + Vector2(96, 0)
+
+		portal.set("next_level_scene", next_level_scene)  # ✅ FIXED!
 		get_tree().current_scene.add_child(portal)
 
 		if portal.has_method("activate_portal"):
 			portal.activate_portal()
 
-	# ✅ Dialogue once
+
+
+	# Dialogue once
 	if not drop_dialogue_triggered and drop_dialogue_lines and not drop_dialogue_lines.is_empty():
 		_show_drop_dialogue()
 		drop_dialogue_triggered = true

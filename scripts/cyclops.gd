@@ -3,13 +3,38 @@ extends Enemy
 
 func _ready():
 	speed = 120
-	max_health = 250
+	max_health = 450
 	health = max_health
 	damage = 65
 	detection_range = 700.0
 	attack_range = 350.0
 	super()
 	
+	drop_dialogue_lines = {
+	"en": [
+		"Victory, Adventurer!",
+		"You’ve defeated the Cyclops—the tyrant who turned this desert into his domain.",
+		"He was not born of this world, but corrupted it with brute strength and blind rage.",
+		"Yet you stood tall... and crushed his reign.",
+		"A golden key drops at your feet... it will open the next sealed gate.",
+		"Your journey doesn't end here... greater worlds and foes await.",
+		"Continue on... only glory lies ahead.",
+		"My friend... this is how your legend was born."
+	],
+
+	"fr": [
+		"Victoire, Aventurier !",
+		"Tu as vaincu le Cyclope—le tyran qui avait transformé ce désert en son domaine.",
+		"Il n’était pas né de ce monde, mais l’a corrompu par sa force brute et sa fureur aveugle.",
+		"Et pourtant tu as tenu bon... et brisé son règne.",
+		"Une clé dorée tombe à tes pieds... elle ouvrira la prochaine porte scellée.",
+		"Ton voyage ne s’arrête pas ici... d’autres mondes et ennemis t’attendent.",
+		"Poursuis ta route... seule la gloire t’attend désormais.",
+		"Mon ami... c’est ainsi que ta légende est née."
+	]
+}
+
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
