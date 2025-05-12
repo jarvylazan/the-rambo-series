@@ -2487,10 +2487,10 @@ sources/2 = SubResource("TileSetAtlasSource_aseo8")
 radius = 1362.72
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f1eru"]
-radius = 853.994
+radius = 993.266
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp6l3"]
-radius = 898.72
+radius = 689.361
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qx2ae"]
 radius = 244.008
@@ -2687,7 +2687,7 @@ position = Vector2(3446, 3489)
 [node name="Munitions_container" type="Node2D" parent="Items_Containers"]
 
 [node name="Ammo" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
-position = Vector2(916, 1468)
+position = Vector2(-69, 1182)
 
 [node name="Ammo2" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
 position = Vector2(-995, 2039)
@@ -2701,73 +2701,108 @@ position = Vector2(88, 3290)
 [node name="Ammo5" parent="Items_Containers/Munitions_container" instance=ExtResource("22_lrdev")]
 position = Vector2(-818, 877)
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies_Red_Sections" type="Node2D" parent="."]
 
-[node name="Akaname" type="Node2D" parent="Enemies"]
+[node name="Akaname" type="Node2D" parent="Enemies_Red_Sections"]
 
-[node name="Akaname" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(-1592, 2809)
 
-[node name="Akaname2" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname2" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(-1735, 3085)
 
-[node name="Akaname3" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname3" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(-1016, 2808)
 
-[node name="Akaname4" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname4" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(-1637, 2647)
 
-[node name="Akaname5" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(-1468, 2520)
+[node name="Akaname5" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(-954, 2157)
 
-[node name="Akaname7" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname7" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(-810, 2924)
 
-[node name="Akaname8" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname8" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(-1431, 2832)
 
-[node name="Akaname9" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+[node name="Akaname9" parent="Enemies_Red_Sections/Akaname" instance=ExtResource("16_aq0fh")]
 position = Vector2(4155, 1153)
 
-[node name="Devourer" type="Node2D" parent="Enemies"]
+[node name="Devourer" type="Node2D" parent="Enemies_Red_Sections"]
 
-[node name="IntellectDevourer" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1928, 2359)
+[node name="IntellectDevourer" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-2011, 1024)
 
-[node name="IntellectDevourer2" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1496, 3084)
+[node name="IntellectDevourer2" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-426, 2102)
 
-[node name="IntellectDevourer3" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+[node name="IntellectDevourer3" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
 position = Vector2(-1654, 2938)
 
-[node name="IntellectDevourer4" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(-1217, 3096)
+[node name="IntellectDevourer4" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-1152, 3345)
 
-[node name="IntellectDevourer5" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(1702, 2081)
+[node name="IntellectDevourer5" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-199, 810)
 
-[node name="IntellectDevourer6" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+[node name="IntellectDevourer6" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
 position = Vector2(5400, 3116)
 
-[node name="IntellectDevourer7" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+[node name="IntellectDevourer7" parent="Enemies_Red_Sections/Devourer" instance=ExtResource("17_au7gu")]
 position = Vector2(-649, 1739)
 
-[node name="Kobold" type="Node2D" parent="Enemies"]
+[node name="Kobold" type="Node2D" parent="Enemies_Red_Sections"]
 
-[node name="KoboldPriest" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+[node name="KoboldPriest" parent="Enemies_Red_Sections/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(-1669, 2433)
 
-[node name="KoboldPriest2" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+[node name="KoboldPriest2" parent="Enemies_Red_Sections/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(3724, 3092)
 
-[node name="KoboldPriest3" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+[node name="KoboldPriest3" parent="Enemies_Red_Sections/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(-1175, 2949)
 
-[node name="KoboldPriest4" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+[node name="KoboldPriest4" parent="Enemies_Red_Sections/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(975, 2580)
 
-[node name="KoboldPriest5" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+[node name="KoboldPriest5" parent="Enemies_Red_Sections/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(-1773, 2302)
+
+[node name="Enemies_Blue_Section" type="Node2D" parent="."]
+
+[node name="Akaname" type="Node2D" parent="Enemies_Blue_Section"]
+
+[node name="Akaname" parent="Enemies_Blue_Section/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(1667, 675)
+
+[node name="Akaname2" parent="Enemies_Blue_Section/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(1885, 1109)
+
+[node name="Akaname3" parent="Enemies_Blue_Section/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(1245, 823)
+
+[node name="Akaname4" parent="Enemies_Blue_Section/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(619, 1117)
+
+[node name="Devourer" type="Node2D" parent="Enemies_Blue_Section"]
+
+[node name="IntellectDevourer" parent="Enemies_Blue_Section/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(1490, 412)
+
+[node name="IntellectDevourer2" parent="Enemies_Blue_Section/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(1186, 1440)
+
+[node name="IntellectDevourer3" parent="Enemies_Blue_Section/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(2211, 2073)
+
+[node name="Kobold" type="Node2D" parent="Enemies_Blue_Section"]
+
+[node name="KoboldPriest" parent="Enemies_Blue_Section/Kobold" instance=ExtResource("18_74kbb")]
+position = Vector2(2933, 1843)
+
+[node name="KoboldPriest2" parent="Enemies_Blue_Section/Kobold" instance=ExtResource("18_74kbb")]
+position = Vector2(2518, 1079)
 
 [node name="PauseMenu" parent="." instance=ExtResource("23_y21nk")]
 
@@ -2790,9 +2825,9 @@ collision_mask = 2
 script = ExtResource("25_3rpe7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Zones/Monsters_Alert2"]
-position = Vector2(-1279, 1237)
+position = Vector2(-1535, 1305)
 shape = SubResource("CircleShape2D_f1eru")
-debug_color = Color(0.733519, 0.212021, 0.414539, 0.42)
+debug_color = Color(0.116619, 0.32531, 0.768626, 0.42)
 
 [node name="Secret_level" type="Area2D" parent="Dialogue_Zones"]
 collision_layer = 32
