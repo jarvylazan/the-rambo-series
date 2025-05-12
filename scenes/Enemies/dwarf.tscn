@@ -276,7 +276,24 @@ tracks/1/keys = {
 "values": [Vector2(0, 16)]
 }
 
-[sub_resource type="Animation" id="Animation_hubc2"]
+[sub_resource type="Animation" id="Animation_uappe"]
+resource_name = "attack_right"
+length = 0.5
+step = 0.0833
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.416667, 0.49961),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_e7gd3"]
 resource_name = "attack_right"
 length = 0.5
 step = 0.0833
@@ -299,33 +316,16 @@ tracks/1/path = NodePath("AttackHitbox/CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.165523, 0.414561, 0.49961),
+"times": PackedFloat32Array(0, 0.0833333, 0.416667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-55, 0), Vector2(-55, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_uappe"]
-resource_name = "attack_right"
-length = 0.5
-step = 0.0833
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.416667, 0.49961),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, false, true]
+"values": [Vector2(0, 0), Vector2(-58, 0), Vector2(-58, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3ax1p"]
 _data = {
 &"RESET": SubResource("Animation_wn60r"),
-&"attack_left": SubResource("Animation_hubc2"),
+&"attack_left": SubResource("Animation_e7gd3"),
 &"attack_right": SubResource("Animation_uappe")
 }
 
