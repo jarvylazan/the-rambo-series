@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6f6tb53v0335"
-path="res://.godot/imported/label_theme.png-ff584d541f072e5c8ab5d8d39bacc13a.ctex"
+uid="uid://c8dulcqifn7s0"
+path="res://.godot/imported/grabber_theme.png-ba8eb9c5771de2199f1bf3f62df300f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fonts/label_theme.png"
-dest_files=["res://.godot/imported/label_theme.png-ff584d541f072e5c8ab5d8d39bacc13a.ctex"]
+source_file="res://assets/fonts/grabber_theme.png"
+dest_files=["res://.godot/imported/grabber_theme.png-ba8eb9c5771de2199f1bf3f62df300f6.ctex"]
 
 [params]
 
