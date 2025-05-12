@@ -36,10 +36,10 @@ var world_intro_dialogue_lines := {
 # Second win-condition explanation dialogue
 var win_condition_dialogue_lines := {
 	"en": [
-		"Find all the enemies and defeat them, or locate the domain of the boss and destroy him to win this world."
+		"QUEST: Find all the enemies and defeat them, or locate the domain of the boss and destroy him to win this world."
 	],
 	"fr": [
-		"Trouve tous les ennemis et élimine-les, ou localise le domaine du boss et détruis-le pour remporter ce monde."
+		"QUÊTE: Trouve tous les ennemis et élimine-les, ou localise le domaine du boss et détruis-le pour remporter ce monde."
 	]
 }
 

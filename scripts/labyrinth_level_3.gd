@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	MusicManager.stop_music()
 	Global.pause_menu = $PauseMenu
 	lock_camera_to_section("Section_1")  # Start in section 1
 

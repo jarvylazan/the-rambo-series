@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://btfewyknvf26i"]
+[gd_scene load_steps=32 format=4 uid="uid://btfewyknvf26i"]
 
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="1_byaxj"]
 [ext_resource type="Script" uid="uid://8pnqdhhg3eor" path="res://scripts/labyrinth_level_3.gd" id="1_hr1xi"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="8_stky2"]
 [ext_resource type="PackedScene" uid="uid://cr2aaapa0djbq" path="res://scenes/Enemies/cobra.tscn" id="9_7jjme"]
 [ext_resource type="PackedScene" uid="uid://cvg1fjw36k3xn" path="res://scenes/Enemies/minotaur.tscn" id="10_3e5cv"]
+[ext_resource type="Script" uid="uid://buiqnjabw3x3n" path="res://scripts/boss_entrance_trigge_lv3.gd" id="10_8x14p"]
+[ext_resource type="AudioStream" uid="uid://dg3mm8d8pvwvn" path="res://assets/sound/monster-roar-ps-o27-333060.mp3" id="12_58bnw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr1xi"]
 texture = ExtResource("1_byaxj")
@@ -3133,6 +3135,9 @@ size = Vector2(1349, 1334)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuajj"]
 size = Vector2(1344, 1341)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58bnw"]
+size = Vector2(67, 55)
+
 [node name="Labyrinth_Level_3" type="Node2D"]
 script = ExtResource("1_hr1xi")
 
@@ -3202,6 +3207,7 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZones/Section_1/Section1_Trigger"]
+visible = false
 position = Vector2(672.5, 553)
 shape = SubResource("RectangleShape2D_hr1xi")
 debug_color = Color(0.885525, 0.229559, 0.603755, 0.42)
@@ -3243,7 +3249,7 @@ shape = SubResource("RectangleShape2D_wuajj")
 debug_color = Color(0.0901961, 0.25098, 0.85098, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("3_byaxj")]
-position = Vector2(1239, 71)
+position = Vector2(414, 1150)
 scale = Vector2(0.2, 0.2)
 collision_mask = 165
 bullet_scene_path = "uid://fnu26keu0s7p"
@@ -3251,9 +3257,6 @@ bullet_scene_path = "uid://fnu26keu0s7p"
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(20.0001, -55)
 zoom = Vector2(1.8, 1.8)
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(199, 1099)
 
 [node name="Portals_container" type="Node2D" parent="."]
 position = Vector2(62, 288)
@@ -3306,10 +3309,29 @@ visible = false
 [node name="Cobra" parent="Enemies/Cobras" instance=ExtResource("9_7jjme")]
 position = Vector2(1176, 559)
 
-[node name="Minotaur" type="Node2D" parent="Enemies"]
+[node name="BossEntrance" type="Node2D" parent="."]
 
-[node name="Minotaur" parent="Enemies/Minotaur" instance=ExtResource("10_3e5cv")]
-position = Vector2(723, 573)
+[node name="BossEntranceTrigge" type="Area2D" parent="BossEntrance" node_paths=PackedStringArray("boss_spawn_point")]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("10_8x14p")
+boss_scene = ExtResource("10_3e5cv")
+boss_spawn_point = NodePath("../BossSpawnPoint")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossEntrance/BossEntranceTrigge"]
+position = Vector2(731.5, 916.5)
+shape = SubResource("RectangleShape2D_58bnw")
+debug_color = Color(0.363844, 0.389738, 0.411632, 0.42)
+
+[node name="roar_sound" type="AudioStreamPlayer" parent="BossEntrance"]
+stream = ExtResource("12_58bnw")
+bus = &"SFX"
+
+[node name="BossSpawnPoint" type="Marker2D" parent="BossEntrance"]
+position = Vector2(740, 524)
+
+[node name="Camera2D" type="Camera2D" parent="BossEntrance"]
+position = Vector2(740, 491)
 
 [connection signal="body_entered" from="CameraZones/Section_1/Section1_Trigger" to="." method="_on_section_1_trigger_body_entered"]
 [connection signal="body_entered" from="CameraZones/Section 2/Section2_Trigger" to="." method="_on_section_2_trigger_body_entered"]

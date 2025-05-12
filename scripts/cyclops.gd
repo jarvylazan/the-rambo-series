@@ -3,9 +3,9 @@ extends Enemy
 
 func _ready():
 	speed = 120
-	max_health = 450
+	max_health = 900
 	health = max_health
-	damage = 65
+	damage = 70
 	detection_range = 700.0
 	attack_range = 350.0
 	super()
@@ -13,7 +13,7 @@ func _ready():
 	drop_dialogue_lines = {
 	"en": [
 		"Victory, Adventurer!",
-		"You’ve defeated the Cyclops—the tyrant who turned this desert into his domain.",
+		"You’ve defeated the Cyclops... the tyrant who turned this desert into his domain.",
 		"He was not born of this world, but corrupted it with brute strength and blind rage.",
 		"Yet you stood tall... and crushed his reign.",
 		"A golden key drops at your feet... it will open the next sealed gate.",
@@ -24,7 +24,7 @@ func _ready():
 
 	"fr": [
 		"Victoire, Aventurier !",
-		"Tu as vaincu le Cyclope—le tyran qui avait transformé ce désert en son domaine.",
+		"Tu as vaincu le Cyclope...le tyran qui avait transformé ce désert en son domaine.",
 		"Il n’était pas né de ce monde, mais l’a corrompu par sa force brute et sa fureur aveugle.",
 		"Et pourtant tu as tenu bon... et brisé son règne.",
 		"Une clé dorée tombe à tes pieds... elle ouvrira la prochaine porte scellée.",

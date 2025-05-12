@@ -1,5 +1,6 @@
 extends Node2D
 
+# Intro (tutorial-style) dialogue
 var intro_dialogue_lines := {
 	"en": [
 		"You’ve stepped into the heart of danger... the Cyclops domain.",
@@ -21,6 +22,12 @@ var intro_dialogue_lines := {
 		"Prépare-toi, aventurier. Ce combat n’est pas ordinaire... c’est une épreuve d’esprit et de courage.",
 		"Vaincs-le, et le chemin s’ouvrira enfin."
 	]
+}
+
+# Second message (main game dialogue)
+var boss_goal_dialogue_lines := {
+	"en": ["Kill the boss to escape this place."],
+	"fr": ["Tue le boss pour t’échapper d’ici."]
 }
 
 var dialogue_box
@@ -49,11 +56,11 @@ func _show_intro_dialogue():
 	dialogue_box = preload("res://scenes/tutorial_dialogue_box_ui.tscn").instantiate()
 	get_tree().root.add_child(dialogue_box)
 
-	# When the dialogue finishes, unfreeze the player
+	# When the dialogue finishes, unfreeze the player and show second message
 	dialogue_box.dialogue_finished.connect(_on_dialogue_finished)
 
 	var lang = TranslationServer.get_locale()
-	var lines = intro_dialogue_lines.get(lang, intro_dialogue_lines.get("en", []))
+	var lines = intro_dialogue_lines.get(lang, intro_dialogue_lines["en"])
 	for msg in lines:
 		dialogue_box.queue_text(msg)
 
@@ -62,3 +69,17 @@ func _show_intro_dialogue():
 
 func _on_dialogue_finished():
 	$Player.can_move = true
+	await get_tree().create_timer(0.8).timeout
+	_show_boss_goal_dialogue()
+
+func _show_boss_goal_dialogue():
+	var second_box = preload("res://scenes/dialogue_main_game.tscn").instantiate()
+	get_tree().root.add_child(second_box)
+
+	var lang = TranslationServer.get_locale()
+	var lines = boss_goal_dialogue_lines.get(lang, boss_goal_dialogue_lines["en"])
+	for msg in lines:
+		second_box.queue_text(msg)
+
+	second_box.show_dialogue_box()
+	second_box.display_text()
