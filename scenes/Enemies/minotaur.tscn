@@ -343,6 +343,8 @@ height = 122.0
 radius = 93.6483
 
 [node name="Minotaur" type="CharacterBody2D" groups=["enemy"]]
+z_index = 2
+scale = Vector2(1.5, 1.5)
 collision_layer = 8
 script = ExtResource("1_umvy0")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

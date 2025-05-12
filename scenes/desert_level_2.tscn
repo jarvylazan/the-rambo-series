@@ -2706,26 +2706,68 @@ position = Vector2(-818, 877)
 [node name="Akaname" type="Node2D" parent="Enemies"]
 
 [node name="Akaname" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(1109, 2940)
+position = Vector2(-1592, 2809)
 
 [node name="Akaname2" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
-position = Vector2(1425, 3072)
+position = Vector2(-1735, 3085)
+
+[node name="Akaname3" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(-1016, 2808)
+
+[node name="Akaname4" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(-1637, 2647)
+
+[node name="Akaname5" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(-1468, 2520)
+
+[node name="Akaname7" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(-810, 2924)
+
+[node name="Akaname8" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(-1431, 2832)
+
+[node name="Akaname9" parent="Enemies/Akaname" instance=ExtResource("16_aq0fh")]
+position = Vector2(4155, 1153)
 
 [node name="Devourer" type="Node2D" parent="Enemies"]
 
 [node name="IntellectDevourer" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(1035, 2556)
+position = Vector2(-1928, 2359)
 
 [node name="IntellectDevourer2" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
-position = Vector2(1047, 3058)
+position = Vector2(-1496, 3084)
+
+[node name="IntellectDevourer3" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-1654, 2938)
+
+[node name="IntellectDevourer4" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-1217, 3096)
+
+[node name="IntellectDevourer5" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(1702, 2081)
+
+[node name="IntellectDevourer6" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(5400, 3116)
+
+[node name="IntellectDevourer7" parent="Enemies/Devourer" instance=ExtResource("17_au7gu")]
+position = Vector2(-649, 1739)
 
 [node name="Kobold" type="Node2D" parent="Enemies"]
 
 [node name="KoboldPriest" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
-position = Vector2(1001, 2765)
+position = Vector2(-1669, 2433)
 
 [node name="KoboldPriest2" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
 position = Vector2(3724, 3092)
+
+[node name="KoboldPriest3" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+position = Vector2(-1175, 2949)
+
+[node name="KoboldPriest4" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+position = Vector2(975, 2580)
+
+[node name="KoboldPriest5" parent="Enemies/Kobold" instance=ExtResource("18_74kbb")]
+position = Vector2(-1773, 2302)
 
 [node name="PauseMenu" parent="." instance=ExtResource("23_y21nk")]
 

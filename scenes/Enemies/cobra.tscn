@@ -343,6 +343,7 @@ height = 50.0
 radius = 27.0
 
 [node name="Cobra" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(1.1, 1.1)
 collision_layer = 8
 script = ExtResource("1_x40ej")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

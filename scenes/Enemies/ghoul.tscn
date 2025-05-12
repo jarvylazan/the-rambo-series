@@ -315,6 +315,8 @@ height = 82.0
 radius = 31.0161
 
 [node name="Ghoul" type="CharacterBody2D" groups=["enemy"]]
+z_index = 2
+scale = Vector2(1.5, 1.5)
 collision_layer = 8
 script = ExtResource("1_jdvld")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

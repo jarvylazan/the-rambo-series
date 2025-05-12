@@ -542,3 +542,23 @@ func play_death_animation():
 func _on_spear_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") and body is Enemy:
 		body.take_spear_damage()
+
+var is_blinking_poison := false
+
+func start_poison_blink(duration: float):
+	if is_blinking_poison:
+		return
+
+	is_blinking_poison = true
+	var sprite = %RamboAnimatedSprite2D  # Adjust if needed
+	var blink_time := 0.2
+	var elapsed := 0.0
+
+	while elapsed < duration:
+		sprite.modulate = Color(1.0, 0.0, 1.0, 1.0)  # Purple
+		await get_tree().create_timer(blink_time).timeout
+		sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)  # Normal
+		await get_tree().create_timer(blink_time).timeout
+		elapsed += blink_time * 2
+
+	is_blinking_poison = false
