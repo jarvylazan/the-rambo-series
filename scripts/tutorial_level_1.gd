@@ -23,6 +23,8 @@ var dialogue_box
 func _ready():
 	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
+	
+	Global.level_tracker = 1
 
 	var language = TranslationServer.get_locale()
 

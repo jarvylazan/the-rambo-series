@@ -4,6 +4,8 @@ var enemy_count := 0
 
 func _ready() -> void:
 	Global.pause_menu = $PauseMenu
+	
+	Global.level_tracker = 4
 
 func _physics_process(delta):
 	var enemies = get_tree().get_nodes_in_group("enemy")

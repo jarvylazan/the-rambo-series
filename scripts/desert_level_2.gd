@@ -33,6 +33,8 @@ var enemy_count := 0
 func _ready():
 	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
+	
+	Global.level_tracker = 2
 
 	# Instantiate and add dialogue box
 	dialogue_box = DialogueBoxScene.instantiate()

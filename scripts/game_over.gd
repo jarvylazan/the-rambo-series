@@ -1,7 +1,14 @@
 extends Control
 
+@onready var level_died: Label = $CanvasLayer/VBoxContainer/HBoxContainer/WorldNumberLabel
+@onready var coin_collected: Label = $CanvasLayer/VBoxContainer/HBoxContainer2/NumberOfCoinsLabel
+
 func _ready() -> void:
 	Global.heal(100)
+	
+	level_died.text = str(Global.level_tracker)
+	
+	coin_collected.text = str(Global.coin_count)
 
 
 func _on_restart_button_pressed() -> void:
