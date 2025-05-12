@@ -35,6 +35,7 @@ func get_animation_duration(animation_name: String) -> float:
 	return duration
 
 func _ready():
+
 	call_deferred("_get_hud")
 	# Load the bullet scene at runtime instead of preloading
 	bullet_scene = load(bullet_scene_path)
@@ -54,6 +55,9 @@ func _ready():
 	add_child(bullet_timer)
 	bullet_timer.timeout.connect(_on_bullet_timer_timeout)
 	Global.die.connect(_on_player_die)
+	
+	
+
 	
 func _get_hud():
 	hud = get_node("Hud")
@@ -88,6 +92,8 @@ func _on_bullet_timer_timeout():
 
 
 func spawn_bullet():
+	MusicManager.play_gun()
+
 	
 	if is_dead:
 		return
@@ -388,6 +394,8 @@ func play_idle_animation():
 	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 
 func play_attack_animation() -> String:
+	MusicManager.play_spear()
+
 	# Variable to store animation name
 	var anim_name = ""
 	
@@ -542,3 +550,4 @@ func play_death_animation():
 func _on_spear_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") and body is Enemy:
 		body.take_spear_damage()
+		
