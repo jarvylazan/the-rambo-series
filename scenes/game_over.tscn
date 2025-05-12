@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bojjckatnspuv"]
+[gd_scene load_steps=10 format=3 uid="uid://bojjckatnspuv"]
 
 [ext_resource type="Script" uid="uid://dq8fjdoiiyhc6" path="res://scripts/game_over.gd" id="1_7m3ot"]
 [ext_resource type="Texture2D" uid="uid://bjbns37w4hpd6" path="res://assets/image/gameover/Space002 (2).png" id="1_xeevv"]
 [ext_resource type="Texture2D" uid="uid://do181tkcvrljo" path="res://assets/image/main_menu/Merlin sage mage.png" id="2_wqhvx"]
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_tbwuq"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="4_racf3"]
+[ext_resource type="Theme" uid="uid://cqhhm5ikvjql1" path="res://assets/fonts/options_theme.tres" id="5_v3hpu"]
 
 [sub_resource type="Theme" id="Theme_racf3"]
 default_font = ExtResource("3_tbwuq")
@@ -78,13 +79,13 @@ theme_override_constants/separation = 10
 
 [node name="WoldYouDiedLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
 text = "WORLD_YOU_DIED_LABEL"
 
 [node name="WorldNumberLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
 text = "0"
 
@@ -95,18 +96,18 @@ theme_override_constants/separation = 10
 
 [node name="CoinsCollectedLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
 text = "COINS_LABEL"
 
 [node name="NumberOfCoinsLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 207.0
@@ -118,18 +119,18 @@ theme_override_constants/separation = 10
 
 [node name="HighestScoreLabel" type="Label" parent="CanvasLayer/HBoxContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
 text = "GAME_OBJECTIVE_HIGH_SCORE"
 
 [node name="HighestScoreNumberLabel" type="Label" parent="CanvasLayer/HBoxContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.870588, 0.701961, 1)
+theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 141.0
