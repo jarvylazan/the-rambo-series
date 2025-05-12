@@ -302,7 +302,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.165523, 0.414561, 0.49961),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-38, 0), Vector2(-38, 0), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(-55, 0), Vector2(-55, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_uappe"]
@@ -334,7 +334,7 @@ radius = 23.0
 height = 50.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klbyc"]
-radius = 37.054
+radius = 43.4153
 
 [node name="Dwarf" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(1.5, 1.5)
@@ -362,7 +362,7 @@ position = Vector2(-1, 10)
 shape = SubResource("CapsuleShape2D_2u7n3")
 
 [node name="AttackHitbox" type="Area2D" parent="."]
-position = Vector2(14, -15)
+position = Vector2(28.6667, 6.66667)
 disable_mode = 2
 collision_mask = 2
 
