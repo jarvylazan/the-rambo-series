@@ -12,7 +12,7 @@ var messages := {
 		"If you wish to reach the next world, you must find the one who guards it.",
 		"He awaits in a place where light dares not linger...",
 		"A forgotten crack beneath the roots of the mountain.",
-		"Step into the shadows — if you dare — and face the trial."
+		"Step into the shadows... if you dare... and face the trial."
 	],
 	"fr": [
 		"Haha... Tu as trouvé l’indice que j’avais soigneusement dissimulé.",
@@ -21,7 +21,7 @@ var messages := {
 		"Pour accéder au monde suivant, tu devras affronter celui qui le protège.",
 		"Il t’attend là où la lumière refuse d’entrer...",
 		"Une fissure oubliée, tapie sous les racines de la montagne.",
-		"Pénètre dans les ténèbres — si tu l’oses — et relève l’épreuve."
+		"Pénètre dans les ténèbres... si tu l’oses... et relève l’épreuve."
 	]
 }
 

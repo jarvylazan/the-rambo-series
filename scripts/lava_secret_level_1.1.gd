@@ -1,5 +1,6 @@
 extends Node2D
 
+# Intro (tutorial-style) dialogue
 var intro_dialogue_lines := {
 	"en": [
 		"Congratulations, adventurer! You've found the first of many secret paths hidden throughout your journey.",
@@ -21,9 +22,15 @@ var intro_dialogue_lines := {
 	]
 }
 
+# Second message about goal
+var boss_goal_dialogue_lines := {
+	"en": ["Eliminate the boss to complete this secret challenge."],
+	"fr": ["Élimine le boss pour réussir ce défi secret."]
+}
 
 func _ready():
 	Global.pause_menu = $PauseMenu
+
 	# Setup camera
 	var player = $Player
 	var camera = player.get_node("Camera2D")
@@ -34,7 +41,7 @@ func _ready():
 	camera.limit_bottom = 665
 	camera.make_current()
 
-	# Wait a moment before showing intro dialogue
+	# Start intro after short delay
 	await get_tree().create_timer(0.5).timeout
 	_show_intro_dialogue()
 
@@ -43,9 +50,32 @@ func _show_intro_dialogue():
 	get_tree().root.add_child(dialogue_box)
 
 	var lang = TranslationServer.get_locale()
-	var lines = intro_dialogue_lines.get(lang, intro_dialogue_lines.get("en", []))
+	var lines = intro_dialogue_lines.get(lang, intro_dialogue_lines["en"])
 	for msg in lines:
 		dialogue_box.queue_text(msg)
 
+	dialogue_box.dialogue_finished.connect(_on_intro_finished)
 	dialogue_box.show_dialogue_box()
 	dialogue_box.display_text()
+
+func _on_intro_finished():
+	# Disconnect and free the first dialogue box
+	var db = get_tree().root.get_children().filter(func(c): return c.scene_file_path == "res://scenes/tutorial_dialogue_box_ui.tscn").front()
+	if db:
+		db.queue_free()
+
+	# Wait briefly then show the second dialogue
+	await get_tree().create_timer(1.0).timeout
+	_show_boss_goal_dialogue()
+
+func _show_boss_goal_dialogue():
+	var second_box = preload("res://scenes/dialogue_main_game.tscn").instantiate()
+	get_tree().root.add_child(second_box)
+
+	var lang = TranslationServer.get_locale()
+	var lines = boss_goal_dialogue_lines.get(lang, boss_goal_dialogue_lines["en"])
+	for msg in lines:
+		second_box.queue_text(msg)
+
+	second_box.show_dialogue_box()
+	second_box.display_text()
