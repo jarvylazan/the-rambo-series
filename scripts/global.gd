@@ -18,6 +18,7 @@ var base_gun_damage := 10
 @onready var inv: Inv = preload("res://inventory/player_inv.tres") 
 
 
+
 func _ready():
 	var saved = load("res://inventory/player_inv.tres") as Resource
 	inv.slots = saved.slots.duplicate(true)
@@ -80,8 +81,8 @@ func _on_boost_timeout():
 	
 	
 func _input(event):
-	if  event.is_action_pressed("ui_cancel") and pause_menu:
-		if  pause_menu.visible:
+	if event.is_action_pressed("pause_toggle") and pause_menu:
+		if pause_menu.visible:
 			pause_menu.hide_pause_menu()
 		else:
 			pause_menu.show_pause_menu()

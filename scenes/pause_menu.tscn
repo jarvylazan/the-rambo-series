@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm2ef7b0cw2my"]
+[gd_scene load_steps=9 format=3 uid="uid://cm2ef7b0cw2my"]
 
 [ext_resource type="Script" uid="uid://d0a2rivw8n146" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Texture2D" uid="uid://6tb7w52xcpj4" path="res://assets/fonts/panel_theme.png" id="2_7l7mv"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="3_5d2l8"]
 [ext_resource type="PackedScene" uid="uid://dnkyfgeg0tpeb" path="res://scenes/options_pane.tscn" id="3_kukqi"]
 [ext_resource type="Theme" uid="uid://cqhhm5ikvjql1" path="res://assets/fonts/options_theme.tres" id="3_v4r4p"]
+[ext_resource type="PackedScene" uid="uid://dws4kv7viyjlv" path="res://scenes/controls_layout.tscn" id="6_v4r4p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1s2dm"]
 texture = ExtResource("2_7l7mv")
@@ -13,7 +14,7 @@ texture = ExtResource("2_7l7mv")
 Panel/styles/panel = SubResource("StyleBoxTexture_1s2dm")
 
 [node name="PauseMenu" type="CanvasLayer"]
-process_mode = 2
+process_mode = 3
 script = ExtResource("1_myx47")
 
 [node name="Panel" type="Panel" parent="."]
@@ -78,7 +79,7 @@ text = "LEVELS_LABEL"
 [node name="CommandsButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "COMMANDS_LABEL"
+text = "CONTROLS_LABEL"
 
 [node name="MenuButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -91,6 +92,11 @@ offset_left = 148.0
 offset_top = 14.224
 offset_right = -60.3361
 offset_bottom = -36.12
+
+[node name="controlslayout" parent="." instance=ExtResource("6_v4r4p")]
+visible = false
+offset_top = 1.0
+offset_bottom = 0.94397
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

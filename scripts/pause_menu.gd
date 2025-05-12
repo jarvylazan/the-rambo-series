@@ -9,6 +9,8 @@ func _ready() -> void:
 
 func show_pause_menu():
 	visible = true
+	get_tree().paused = false
+	MusicManager.play_sfx()
 	get_tree().paused = true
 	
 func hide_pause_menu():
@@ -20,6 +22,7 @@ func hide_pause_menu():
 
 
 func _on_resume_button_pressed() -> void:
+	MusicManager.play_sfx()
 	hide_pause_menu()
 
 
@@ -32,8 +35,9 @@ func _on_worlds_button_pressed() -> void:
 	})
 
 func _on_commands_button_pressed() -> void:
-	pass # Replace with function body.
-
+	MusicManager.play_sfx()
+	$Panel/VBoxContainer.visible = false
+	$controlslayout.visible = true
 
 func _on_menu_button_pressed() -> void:
 	MusicManager.play_sfx()
@@ -49,5 +53,8 @@ func _on_menu_button_pressed() -> void:
 
 
 func _on_options_button_pressed() -> void:
+	MusicManager.play_sfx()
 	$Panel/VBoxContainer.visible = false
 	$OptionsPane.visible = true
+	
+	
