@@ -9,6 +9,7 @@ signal die
 var counter := 0
 var can_shoot = false
 var bullet_count := 0
+var coin_count := 0
 var pause_menu: Node = null
 var boosted := false
 var boost_timer: Timer = null

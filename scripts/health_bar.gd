@@ -4,6 +4,8 @@ var tween
 
 func _ready() -> void:
 	%TextureProgressBar.value = Global.health
+	%BulletsLabel.text = str(Global.bullet_count)
+	%CoinsLabel.text = str(Global.coin_count)
 	Global.health_changed.connect(_on_health_changed)
 
 func _on_health_changed(new_health: float) -> void:
