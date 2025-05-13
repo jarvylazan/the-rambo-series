@@ -47,8 +47,9 @@ var dialogue_box  # Dialogue box instance
 
 var enemy_count := 0
 var enemy_count_label  # Will properly initialize this in _ready
-
+var hud
 func _ready():
+	call_deferred("_get_hud")
 	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
 	
@@ -90,9 +91,13 @@ func _ready():
 	await dialogue_box.display_text()
 	
 	var hud = get_node("Hud")
+	
 	hud.update_ammo(Global.bullet_count)
 	hud.update_coins(Global.coin_count)
 
+
+func _get_hud():
+	hud = get_node("Hud")
 func _on_intro_finished():
 	print("Tutorial dialogue finished.")
 

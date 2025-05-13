@@ -1,6 +1,9 @@
 extends Node2D
 
+var hud
+
 func _ready():
+	call_deferred("_get_hud")
 	MusicManager.stop_music()
 	Global.pause_menu = $PauseMenu
 	Global.level_tracker = 3
@@ -8,9 +11,12 @@ func _ready():
 	lock_camera_to_section("Section_1")  # Start in section 1
 	MusicManager.stop_music()
 	
-	var hud = get_node("Hud")
 	hud.update_ammo(Global.bullet_count)
 	hud.update_coins(Global.coin_count)
+
+
+func _get_hud():
+	hud = get_node("Hud")
 
 func _on_section_1_trigger_body_entered(body: Node2D) -> void:
 	print("Entered by: ", body.name)

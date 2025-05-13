@@ -10,16 +10,24 @@ var boss_spawned := false
 @onready var player_camera :=  $World/Player/Camera2D# Adjust path if needed
 @onready var roar_player :=  $BossRoar # Optional
 
+var hud
+
 func _ready() -> void:
+	call_deferred("_get_hud")
 	Global.pause_menu = $PauseMenu
 	
 	Global.level_tracker = 4
 	
 	# Get the EnemyCountLabel from the group
 	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
-	var hud = get_node("Hud")
+	await get_tree().create_timer(10).timeout 
+	
 	hud.update_ammo(Global.bullet_count)
 	hud.update_coins(Global.coin_count)
+
+func _get_hud():
+	hud = get_node("Hud")
+
 
 func _physics_process(delta): # Fixed function name with underscores
 	var previous_enemy_count = enemy_count
