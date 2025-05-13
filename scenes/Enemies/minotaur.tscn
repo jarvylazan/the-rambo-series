@@ -1,7 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://cvg1fjw36k3xn"]
+[gd_scene load_steps=44 format=3 uid="uid://cvg1fjw36k3xn"]
 
 [ext_resource type="Script" uid="uid://bobadd4hcg752" path="res://scripts/minotaur.gd" id="1_umvy0"]
 [ext_resource type="Texture2D" uid="uid://bwkdgaxei4wg7" path="res://assets/characters/enemies/Minotaur - Sprite Sheet.png" id="2_4agob"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_clcct"]
+[ext_resource type="Resource" uid="uid://pluo8cbouvee" path="res://inventory/items/key_portal.tres" id="3_lmi5t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8fdv"]
 atlas = ExtResource("2_4agob")
@@ -347,6 +349,8 @@ z_index = 1
 scale = Vector2(1.3, 1.3)
 collision_layer = 8
 script = ExtResource("1_umvy0")
+is_boss = true
+possible_drops = Array[ExtResource("2_clcct")]([ExtResource("3_lmi5t")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

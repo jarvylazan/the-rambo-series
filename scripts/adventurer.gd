@@ -389,7 +389,7 @@ func play_idle_animation():
 	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 
 func play_attack_animation() -> String:
-		MusicManager.play_spear()
+	MusicManager.play_spear()
 
 	# Variable to store animation name
 	var anim_name = ""
