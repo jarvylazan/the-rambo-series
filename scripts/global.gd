@@ -87,3 +87,9 @@ func _input(event):
 			pause_menu.hide_pause_menu()
 		else:
 			pause_menu.show_pause_menu()
+
+func update_hud():
+	var hud = get_node("Hud")
+	if hud:
+		hud.update_ammo(Global.bullet_count)
+		hud.update_coins(Global.coin_count)
