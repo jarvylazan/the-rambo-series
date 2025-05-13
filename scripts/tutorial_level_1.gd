@@ -27,7 +27,6 @@ func _ready():
 	
 	Global.level_tracker = 1
 
-	# Get the EnemyCountLabel from the group
 	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
 	
 	var language = TranslationServer.get_locale()

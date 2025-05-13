@@ -1,12 +1,15 @@
 extends Node2D
 
+var enemy_count := 0
+var enemy_count_label  # Will properly initialize this in _ready
 
 func _ready():
 	call_deferred("_get_hud")
 	MusicManager.stop_music()
 	Global.pause_menu = $PauseMenu
 	Global.level_tracker = 3
-	
+	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
+
 	lock_camera_to_section("Section_1")  # Start in section 1
 	MusicManager.stop_music()
 	
@@ -67,3 +70,17 @@ func lock_camera_to_section(section_name: String):
 			
 		_:
 			push_error("Unknown section: " + section_name)
+			
+func _physics_process(delta):
+	var previous_enemy_count = enemy_count
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	enemy_count = enemies.size()
+	
+	# Set text instead of appending with +=
+	if enemy_count_label and previous_enemy_count != enemy_count:
+		enemy_count_label.text = tr("ENEMIES_REMAINING") + ": " + str(enemy_count)
+	
+	print("Current enemy count: " + str(enemy_count))
+	
+	if enemy_count == 0:
+		print("All enemies defeated!")
