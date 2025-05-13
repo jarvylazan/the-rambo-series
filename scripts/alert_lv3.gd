@@ -3,12 +3,12 @@ extends Area2D
 var intro_lines := {
 	"en": [
 		"You have entered the domain of the beast... now accept the challenge.",
-		"Long ago, the Minotaur ruled these halls — a creature born of rage and bound to darkness.",
+		"Long ago, the Minotaur ruled these halls... a creature born of rage and bound to darkness.",
 		"His prison became his throne, and now... it is your battleground."
 	],
 	"fr": [
 		"Tu es entré dans le domaine de la bête... accepte maintenant le défi.",
-		"Il y a longtemps, le Minotaure régnait sur ces couloirs — une créature née de la rage et liée aux ténèbres.",
+		"Il y a longtemps, le Minotaure régnait sur ces couloirs... une créature née de la rage et liée aux ténèbres.",
 		"Sa prison est devenue son trône... et aujourd’hui, c’est ton champ de bataille."
 	]
 }
