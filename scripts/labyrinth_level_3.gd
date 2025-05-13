@@ -7,10 +7,6 @@ func _ready():
 	
 	lock_camera_to_section("Section_1")  # Start in section 1
 	MusicManager.stop_music()
-	
-	var hud = get_node("Hud")
-	hud.update_ammo(Global.bullet_count)
-	hud.update_coins(Global.coin_count)
 
 func _on_section_1_trigger_body_entered(body: Node2D) -> void:
 	print("Entered by: ", body.name)

@@ -1,10 +1,10 @@
 extends Area2D
-
 @export var item: InvItem
 
-var player = null
+func _ready():
+	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
-	player = body
-	player.collect(item)
-	queue_free()
+	if body.is_in_group("player"):
+		body.collect(item)
+		queue_free()

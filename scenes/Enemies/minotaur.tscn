@@ -349,6 +349,7 @@ z_index = 1
 scale = Vector2(1.3, 1.3)
 collision_layer = 8
 script = ExtResource("1_umvy0")
+next_level_scene = "res://scenes/dungeon_Level_4.tscn"
 is_boss = true
 possible_drops = Array[ExtResource("2_clcct")]([ExtResource("3_lmi5t")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

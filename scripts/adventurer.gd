@@ -565,3 +565,5 @@ func start_poison_blink(duration: float):
 		elapsed += blink_time * 2
 
 	is_blinking_poison = false
+	
+	
