@@ -32,6 +32,8 @@ var final_dialogue := {
 }
 
 func _ready():
+	MusicManager.stop_music()
+	$BGMPlayer.play()
 	Global.pause_menu = $PauseMenu
 
 	await get_tree().create_timer(0.5).timeout

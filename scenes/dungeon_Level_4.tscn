@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://cqb3rkkw1c4ei"]
+[gd_scene load_steps=109 format=4 uid="uid://cqb3rkkw1c4ei"]
 
 [ext_resource type="Script" uid="uid://cuy0eiyw2mbcb" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
 [ext_resource type="Texture2D" uid="uid://4bh2hk8i0g5v" path="res://assets/image/tilemap_block/dungeon.png" id="1_yew4o"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://dhmot77vn2bho" path="res://inventory/items/ammo.tscn" id="46_2oafn"]
 [ext_resource type="PackedScene" uid="uid://dyyrj3rg0myt" path="res://inventory/items/Rune.tscn" id="47_30xwh"]
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="49_xnwi0"]
+[ext_resource type="AudioStream" uid="uid://vpx5g2wsm76g" path="res://assets/Audio/the-chase-main-theme-338295.mp3" id="50_xnwi0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")
@@ -9729,3 +9730,8 @@ position = Vector2(441, 1252)
 [node name="LockedPortal" parent="." instance=ExtResource("49_xnwi0")]
 position = Vector2(327, 1083)
 is_entry_portal = true
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("50_xnwi0")
+bus = &"MUSIC"
+parameters/looping = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dr27a0unkv60h"]
+[gd_scene load_steps=49 format=4 uid="uid://dr27a0unkv60h"]
 
 [ext_resource type="Script" uid="uid://2m40taofg15e" path="res://scripts/tutorial_level_1.gd" id="1_lsqm8"]
 [ext_resource type="Texture2D" uid="uid://c038yaydv41ts" path="res://assets/image/tilemap_block/status.png" id="2_4w756"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://djt6vupnhse1o" path="res://inventory/items/ammo.tres" id="13_aseo8"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
 [ext_resource type="Script" uid="uid://bxwevc5kmbt8y" path="res://scripts/secret_path_trigger.gd" id="15_6n1ip"]
+[ext_resource type="AudioStream" uid="uid://vpx5g2wsm76g" path="res://assets/Audio/the-chase-main-theme-338295.mp3" id="16_mgijy"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_4nlgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsqm8"]
@@ -9030,3 +9031,8 @@ script = ExtResource("15_6n1ip")
 position = Vector2(1389, 235)
 shape = SubResource("CircleShape2D_6n1ip")
 debug_color = Color(0.47451, 0.513726, 0.517647, 0.635294)
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_mgijy")
+bus = &"MUSIC"
+parameters/looping = true

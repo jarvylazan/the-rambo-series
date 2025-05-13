@@ -34,7 +34,8 @@ var dialogue_box
 
 func _ready():
 	Global.pause_menu = $PauseMenu
-
+	MusicManager.stop_music()
+	$BGMPlayer.play()
 	# Setup camera
 	var player = $Player
 	var camera = player.get_node("Camera2D")

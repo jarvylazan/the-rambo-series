@@ -52,6 +52,7 @@ func _ready():
 	call_deferred("_get_hud")
 	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
+	$BGMPlayer.play()
 	
 	Global.level_tracker = 2
 	

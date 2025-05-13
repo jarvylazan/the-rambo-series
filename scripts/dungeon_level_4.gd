@@ -46,6 +46,8 @@ var boss_quest_lines := {
 }
 
 func _ready() -> void:
+	MusicManager.stop_music()
+	$BGMPlayer.play()
 	call_deferred("_get_hud")
 	Global.pause_menu = $PauseMenu
 	Global.level_tracker = 4

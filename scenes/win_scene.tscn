@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bc4g5nc8aehfv"]
+[gd_scene load_steps=27 format=4 uid="uid://bc4g5nc8aehfv"]
 
 [ext_resource type="Script" uid="uid://cg60inj8uxup6" path="res://scripts/win_scene.gd" id="1_1a68o"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="1_7yt3q"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0i7uwh8ovjnt" path="res://scenes/fire_gpu_particles_2d.tscn" id="4_qcp0s"]
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="5_b6ng8"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="7_qcp0s"]
+[ext_resource type="AudioStream" uid="uid://c7ddvokdvr88y" path="res://assets/Audio/game win.mp3" id="8_3vslu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vslu"]
 texture = ExtResource("1_7yt3q")
@@ -5571,3 +5572,7 @@ limit_bottom = 583
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_qcp0s")]
 visible = false
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3vslu")
+parameters/looping = true

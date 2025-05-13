@@ -46,6 +46,8 @@ var section_status_lines := {
 }
 
 func _ready():
+	MusicManager.stop_music()
+	$BGMPlayer.play()
 	call_deferred("_get_hud")
 	MusicManager.stop_music()
 	Global.pause_menu = $PauseMenu

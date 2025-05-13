@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://cf5sysg7mbfk3"]
+[gd_scene load_steps=65 format=4 uid="uid://cf5sysg7mbfk3"]
 
 [ext_resource type="Script" uid="uid://bwa822ia6q42k" path="res://scripts/desert_level_2.gd" id="1_f1eru"]
 [ext_resource type="Texture2D" uid="uid://cx2ux74lj3vnn" path="res://assets/image/tilemap_block/desert assets/tile sand ground v2.png" id="2_y21nk"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bvktcqkoukm4e" path="res://scripts/monsters_alert_Lvl2.gd" id="25_3rpe7"]
 [ext_resource type="Script" uid="uid://r2wd5sgoqqkf" path="res://scripts/reveal _secret_leve2l.gd" id="26_f1eru"]
 [ext_resource type="Script" uid="uid://c3wbtl81bge1b" path="res://scripts/secret_path_trigger_Lv2.gd" id="27_f1eru"]
+[ext_resource type="AudioStream" uid="uid://dscji6v0ij3j4" path="res://assets/sound/StockTune-Desert Winds Ascend_1747029884.mp3" id="28_qx2ae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_520sf"]
 texture = ExtResource("2_y21nk")
@@ -2847,3 +2848,8 @@ script = ExtResource("27_f1eru")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretPath_Trigger"]
 position = Vector2(-2525, 287)
 shape = SubResource("CircleShape2D_qx2ae")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_qx2ae")
+bus = &"MUSIC"
+parameters/looping = true

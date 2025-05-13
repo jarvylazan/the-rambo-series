@@ -31,8 +31,10 @@ var boss_goal_dialogue_lines := {
 var player
 
 func _ready():
+	
 	Global.pause_menu = $PauseMenu
-
+	MusicManager.stop_music()
+	$BGMPlayer.play()
 	player = $Player
 	player.can_move = false  # ❄️ Freeze only for first dialogue
 

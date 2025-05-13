@@ -24,9 +24,9 @@ func _ready():
 	call_deferred("_get_hud")
 	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
-	
+	$BGMPlayer.play()
 	Global.level_tracker = 1
-
+	
 	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
 	
 	var language = TranslationServer.get_locale()
