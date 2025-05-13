@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs462planrfo1" path="res://assets/characters/Health/fullhealthnew.png" id="1_la8mi"]
 
 [node name="TextureProgressBar" type="TextureProgressBar"]
+z_index = 99
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.0550737, 0.0550737)

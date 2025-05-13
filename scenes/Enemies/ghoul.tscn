@@ -314,7 +314,7 @@ height = 82.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0rs5k"]
 radius = 31.0161
 
-[node name="Ghoul" type="CharacterBody2D" groups=["enemy"]]
+[node name="Ghoul" type="CharacterBody2D" groups=["boss", "enemy", "ghoul"]]
 z_index = 2
 scale = Vector2(1.5, 1.5)
 collision_layer = 8

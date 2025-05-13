@@ -18,8 +18,10 @@ var intro_dialogue_lines := {
 var dialogue_box
 var enemy_count := 0
 var enemy_count_label  # Will properly initialize this in _ready
+var hud
 
 func _ready():
+	call_deferred("_get_hud")
 	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
 	
@@ -49,9 +51,13 @@ func _ready():
 		dialogue_box.queue_text(line)
 	dialogue_box.show_dialogue_box()
 	await dialogue_box.display_text()
-	var hud = get_node("Hud")
+	
 	hud.update_ammo(Global.bullet_count)
 	hud.update_coins(Global.coin_count)
+
+
+func _get_hud():
+	hud = get_node("Hud")
 
 func _on_intro_finished():  # Fixed function name with underscores
 	print("Dialogue finished signal received!")

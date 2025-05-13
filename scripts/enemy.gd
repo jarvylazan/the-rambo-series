@@ -13,6 +13,10 @@ class_name Enemy
 #------BOSS--------
 @export var is_boss := false
 @onready var PortalScene := preload("res://scenes/portal.tscn")  # Update path as needed
+var minotaur_health_bar_offset = Vector2(-30, -118)
+var ghoul_health_bar_offset = Vector2(-30, -100)
+var dwarf_health_bar_offset = Vector2(-30, -80)
+
 #--------------------------
 var drop_dialogue_lines := {}
 var drop_dialogue_triggered := false
@@ -46,6 +50,13 @@ var DroppedItemScene := preload("res://scenes/dropped_item.tscn")
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	patrol_origin = global_position
+	
+	if is_in_group("minotaur"):
+		health_bar_offset = minotaur_health_bar_offset
+	elif is_in_group("dwarf"):
+		health_bar_offset = dwarf_health_bar_offset
+	elif is_in_group("ghoul"):
+		health_bar_offset = ghoul_health_bar_offset
 
 func _physics_process(delta: float) -> void:
 	if is_dead:

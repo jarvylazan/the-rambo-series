@@ -32,6 +32,10 @@ window/stretch/mode="canvas_items"
 
 enemy="Group containing enemies."
 enemy_count=""
+boss=""
+minotaur=""
+dwarf=""
+ghoul=""
 
 [input]
 
