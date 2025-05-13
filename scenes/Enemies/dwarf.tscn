@@ -273,7 +273,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 16)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_e7gd3"]
@@ -365,7 +365,6 @@ disable_mode = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_44i76")
 disabled = true
 

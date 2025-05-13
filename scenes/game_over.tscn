@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bojjckatnspuv"]
+[gd_scene load_steps=9 format=3 uid="uid://bojjckatnspuv"]
 
 [ext_resource type="Script" uid="uid://dq8fjdoiiyhc6" path="res://scripts/game_over.gd" id="1_7m3ot"]
 [ext_resource type="Texture2D" uid="uid://bjbns37w4hpd6" path="res://assets/image/gameover/Space002 (2).png" id="1_xeevv"]
@@ -11,9 +11,6 @@
 default_font = ExtResource("3_tbwuq")
 
 [sub_resource type="Theme" id="Theme_7m3ot"]
-
-[sub_resource type="Theme" id="Theme_v3hpu"]
-default_font = ExtResource("3_tbwuq")
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -101,29 +98,6 @@ theme_override_font_sizes/font_size = 50
 text = "COINS_LABEL"
 
 [node name="NumberOfCoinsLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("5_v3hpu")
-theme_override_font_sizes/font_size = 50
-text = "0"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 207.0
-offset_top = 363.0
-offset_right = -327.0
-offset_bottom = -216.0
-theme = SubResource("Theme_v3hpu")
-theme_override_constants/separation = 10
-
-[node name="HighestScoreLabel" type="Label" parent="CanvasLayer/HBoxContainer3"]
-layout_mode = 2
-theme = ExtResource("5_v3hpu")
-theme_override_font_sizes/font_size = 50
-text = "GAME_OBJECTIVE_HIGH_SCORE"
-
-[node name="HighestScoreNumberLabel" type="Label" parent="CanvasLayer/HBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("5_v3hpu")
 theme_override_font_sizes/font_size = 50
