@@ -351,6 +351,8 @@ collision_layer = 8
 script = ExtResource("1_umvy0")
 next_level_scene = "res://scenes/dungeon_Level_4.tscn"
 is_boss = true
+max_drops = 1
+drop_chance = 1.0
 possible_drops = Array[ExtResource("2_clcct")]([ExtResource("3_lmi5t")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 

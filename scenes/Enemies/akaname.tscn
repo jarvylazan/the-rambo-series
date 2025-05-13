@@ -358,7 +358,6 @@ radius = 10.4403
 z_index = 1
 scale = Vector2(1.5, 1.5)
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_it3sk")
 max_drops = 3
 drop_chance = 0.8

@@ -35,9 +35,9 @@
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="32_mmini"]
 [ext_resource type="PackedScene" uid="uid://bi82s2sbh1dgg" path="res://scenes/poison_gpu_particles_2d.tscn" id="32_semk5"]
 [ext_resource type="PackedScene" uid="uid://b2h1bch4v7cny" path="res://scenes/Enemies/shardsoul_slayer.tscn" id="33_rqmde"]
-[ext_resource type="Script" path="res://scripts/big_poison_area.gd" id="37_tn2q5"]
+[ext_resource type="Script" uid="uid://8ib6g63g2alk" path="res://scripts/big_poison_area.gd" id="37_tn2q5"]
 [ext_resource type="AudioStream" uid="uid://dg3mm8d8pvwvn" path="res://assets/sound/monster-roar-ps-o27-333060.mp3" id="38_41ftv"]
-[ext_resource type="Script" path="res://scripts/hole_area.gd" id="38_lqk0v"]
+[ext_resource type="Script" uid="uid://bpvaoku3qkqsy" path="res://scripts/hole_area.gd" id="38_lqk0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")

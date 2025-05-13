@@ -605,7 +605,6 @@ radius = 10.4403
 z_index = 1
 scale = Vector2(1.5, 1.5)
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_8q2i4")
 drop_chance = 1.0
 possible_drops = Array[ExtResource("2_glboj")]([ExtResource("3_1lxq6"), ExtResource("4_5co08"), ExtResource("3_1lxq6"), ExtResource("3_1lxq6"), ExtResource("3_1lxq6"), ExtResource("5_dkf11"), ExtResource("6_1lxq6"), ExtResource("6_1lxq6")])

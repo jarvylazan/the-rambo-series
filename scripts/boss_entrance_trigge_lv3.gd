@@ -3,8 +3,8 @@ extends Area2D
 @export var boss_scene: PackedScene
 @export var boss_spawn_point: Node2D
 @export var trigger_once := true
-@export var zoom_duration := 1.5
-@export var zoom_amount := 0.65
+@export var zoom_duration := 3
+@export var zoom_amount := 0.75
 
 var already_triggered := false
 
