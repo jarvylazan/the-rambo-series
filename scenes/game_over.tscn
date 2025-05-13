@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bojjckatnspuv"]
+[gd_scene load_steps=10 format=3 uid="uid://bojjckatnspuv"]
 
 [ext_resource type="Script" uid="uid://dq8fjdoiiyhc6" path="res://scripts/game_over.gd" id="1_7m3ot"]
 [ext_resource type="Texture2D" uid="uid://bjbns37w4hpd6" path="res://assets/image/gameover/Space002 (2).png" id="1_xeevv"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cxru26l8hinl4" path="res://assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf" id="3_tbwuq"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="4_racf3"]
 [ext_resource type="Theme" uid="uid://cqhhm5ikvjql1" path="res://assets/fonts/options_theme.tres" id="5_v3hpu"]
+[ext_resource type="AudioStream" uid="uid://bogmpv1xkplml" path="res://assets/Audio/GameMusic.mp3" id="7_irg28"]
 
 [sub_resource type="Theme" id="Theme_racf3"]
 default_font = ExtResource("3_tbwuq")
@@ -125,6 +126,12 @@ text = "GAME_RESTART"
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "MENU_LABEL_MAINMENU"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_irg28")
+volume_db = -7.189
+bus = &"MUSIC"
+parameters/looping = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer2/MenuButton" to="." method="_on_menu_button_pressed"]

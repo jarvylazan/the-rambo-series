@@ -52,10 +52,10 @@ func modify_shoot_state(state):
 # === DAMAGE SYSTEM FOR WEAPONS ===
 
 func get_spear_damage() -> int:
-	return base_spear_damage * (100 if boosted else 1)
+	return base_spear_damage * (10 if boosted else 1)
 
 func get_gun_damage() -> int:
-	return base_gun_damage * (100 if boosted else 1)
+	return base_gun_damage * (10 if boosted else 1)
 	
 func apply_power_boost():
 	if boosted:

@@ -4,6 +4,8 @@ extends Control
 @onready var coin_collected: Label = $CanvasLayer/VBoxContainer/HBoxContainer2/NumberOfCoinsLabel
 
 func _ready() -> void:
+	MusicManager.stop_music()
+	$BGMPlayer.play()
 	Global.heal(100)
 	
 	level_died.text = str(Global.level_tracker)

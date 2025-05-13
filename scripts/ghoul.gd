@@ -2,11 +2,11 @@ extends Enemy
 #BOSS LEVEL 4
 func _ready():
 	speed = 150
-	max_health = 900
+	max_health = 15000
 	health = max_health
-	damage = 75
+	damage = 95
 	detection_range = 450.0
-	attack_range = 60.0
+	attack_range = 100.0
 	super()
 
 func take_spear_damage():

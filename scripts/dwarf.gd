@@ -2,7 +2,7 @@ extends Enemy
 
 func _ready():
 	speed = 150
-	max_health = 1500
+	max_health = 7050
 	health = max_health
 	damage = 55
 	detection_range = 400
