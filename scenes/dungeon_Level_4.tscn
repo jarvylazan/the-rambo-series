@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cuy0eiyw2mbcb" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
 [ext_resource type="Texture2D" uid="uid://4bh2hk8i0g5v" path="res://assets/image/tilemap_block/dungeon.png" id="1_yew4o"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="2_l2b46"]
-[ext_resource type="PackedScene" uid="uid://cvg1fjw36k3xn" path="res://scenes/Enemies/minotaur.tscn" id="2_lqk0v"]
+[ext_resource type="PackedScene" uid="uid://gx3awikxvqxe" path="res://scenes/Enemies/ghoul.tscn" id="2_lqk0v"]
 [ext_resource type="Texture2D" uid="uid://cm7rx3xjj2e6i" path="res://assets/image/tilemap_block/dungeon level/Tiled_files/Ground_rocks.png" id="3_7sx4x"]
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="3_u74wp"]
 [ext_resource type="Texture2D" uid="uid://58onwijv5i7n" path="res://assets/image/tilemap_block/dungeon level/object/Crystal_shadow2_1.png" id="4_mmini"]
@@ -35,9 +35,9 @@
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="32_mmini"]
 [ext_resource type="PackedScene" uid="uid://bi82s2sbh1dgg" path="res://scenes/poison_gpu_particles_2d.tscn" id="32_semk5"]
 [ext_resource type="PackedScene" uid="uid://b2h1bch4v7cny" path="res://scenes/Enemies/shardsoul_slayer.tscn" id="33_rqmde"]
-[ext_resource type="Script" uid="uid://8ib6g63g2alk" path="res://scripts/big_poison_area.gd" id="37_tn2q5"]
+[ext_resource type="Script" path="res://scripts/big_poison_area.gd" id="37_tn2q5"]
 [ext_resource type="AudioStream" uid="uid://dg3mm8d8pvwvn" path="res://assets/sound/monster-roar-ps-o27-333060.mp3" id="38_41ftv"]
-[ext_resource type="Script" uid="uid://bpvaoku3qkqsy" path="res://scripts/hole_area.gd" id="38_lqk0v"]
+[ext_resource type="Script" path="res://scripts/hole_area.gd" id="38_lqk0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")

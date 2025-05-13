@@ -498,7 +498,7 @@ height = 116.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm7d6"]
 size = Vector2(671, 115)
 
-[node name="Cyclops" type="CharacterBody2D" groups=["enemy"]]
+[node name="Cyclops" type="CharacterBody2D" groups=["boss", "enemy"]]
 z_index = 1
 collision_layer = 8
 script = ExtResource("1_o6gxg")

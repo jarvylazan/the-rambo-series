@@ -38,7 +38,9 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
-
+		
+	var movement_this_frame = velocity
+	
 	var to_player = player.global_position - global_position
 	var dist_to_player = to_player.length()
 	var is_same_y_band = abs(to_player.y) < 100
@@ -61,6 +63,8 @@ func _physics_process(delta: float) -> void:
 
 	update_animation(velocity)
 
+	if health_bar_instance:
+		health_bar_instance.global_position = global_position + health_bar_offset
 
 func attack(flip_left: bool) -> void:
 	# Only attack if player is roughly in the same Y-level (± threshold)
