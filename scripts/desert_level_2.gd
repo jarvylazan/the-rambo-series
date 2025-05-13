@@ -88,7 +88,7 @@ func _ready():
 		dialogue_box.queue_text(line)
 
 	dialogue_box.show_dialogue_box()
-	await dialogue_box.display_text(
+	await dialogue_box.display_text()
 
 
 func _get_hud():
