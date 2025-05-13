@@ -24,7 +24,7 @@ func _ready():
 	MusicManager.stop_music()
 	
 	Global.level_tracker = 1
-	
+
 	# Get the EnemyCountLabel from the group
 	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
 	
@@ -49,6 +49,9 @@ func _ready():
 		dialogue_box.queue_text(line)
 	dialogue_box.show_dialogue_box()
 	await dialogue_box.display_text()
+	var hud = get_node("Hud")
+	hud.update_ammo(Global.bullet_count)
+	hud.update_coins(Global.coin_count)
 
 func _on_intro_finished():  # Fixed function name with underscores
 	print("Dialogue finished signal received!")
@@ -61,7 +64,7 @@ func _physics_process(delta):
 	
 	# Set text instead of appending with +=
 	if enemy_count_label and previous_enemy_count != enemy_count:
-		enemy_count_label.text = "ENEMIES_REMAINING: " + str(enemy_count)
+		enemy_count_label.text = tr("ENEMIES_REMAINING") + ": " + str(enemy_count)
 	
 	print("Current enemy count: " + str(enemy_count))
 	

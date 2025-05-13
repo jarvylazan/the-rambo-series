@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6tb7w52xcpj4" path="res://assets/fonts/panel_theme.png" id="2_7l7mv"]
 [ext_resource type="Theme" uid="uid://phtncaa76ox1" path="res://assets/fonts/theme for buttons.tres" id="3_5d2l8"]
 [ext_resource type="PackedScene" uid="uid://dnkyfgeg0tpeb" path="res://scenes/options_pane.tscn" id="3_kukqi"]
-[ext_resource type="Theme" uid="uid://cqhhm5ikvjql1" path="res://assets/fonts/options_theme.tres" id="3_v4r4p"]
+[ext_resource type="Theme" path="res://assets/fonts/options_theme.tres" id="3_v4r4p"]
 [ext_resource type="PackedScene" uid="uid://dws4kv7viyjlv" path="res://scenes/controls_layout.tscn" id="6_v4r4p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1s2dm"]

@@ -17,6 +17,9 @@ func _ready() -> void:
 	
 	# Get the EnemyCountLabel from the group
 	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
+	var hud = get_node("Hud")
+	hud.update_ammo(Global.bullet_count)
+	hud.update_coins(Global.coin_count)
 
 func _physics_process(delta): # Fixed function name with underscores
 	var previous_enemy_count = enemy_count
@@ -30,7 +33,7 @@ func _physics_process(delta): # Fixed function name with underscores
 	
 	# Set text instead of appending with +=
 	if enemy_count_label and previous_enemy_count != enemy_count:
-		enemy_count_label.text = "ENEMIES_REMAINING: " + str(enemy_count)
+		enemy_count_label.text = tr("ENEMIES_REMAINING") + ": " + str(enemy_count)
 	
 	print("Current enemy count: " + str(enemy_count))
 	

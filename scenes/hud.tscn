@@ -76,7 +76,6 @@ offset_left = 45.0
 offset_top = 42.0
 offset_right = 216.0
 offset_bottom = 65.0
-text = "ENEMIES_REMAINING: "
 
 [node name="Coins_Container" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 240.0
