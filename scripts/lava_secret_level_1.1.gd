@@ -28,11 +28,15 @@ var boss_goal_dialogue_lines := {
 	"fr": ["Élimine le boss pour réussir ce défi secret."]
 }
 
+var player
+
 func _ready():
 	Global.pause_menu = $PauseMenu
 
+	player = $Player
+	player.can_move = false  # ❄️ Freeze only for first dialogue
+
 	# Setup camera
-	var player = $Player
 	var camera = player.get_node("Camera2D")
 	camera.zoom = Vector2(0.9, 0.9)
 	camera.limit_left = 0
@@ -41,7 +45,6 @@ func _ready():
 	camera.limit_bottom = 665
 	camera.make_current()
 
-	# Start intro after short delay
 	await get_tree().create_timer(0.5).timeout
 	_show_intro_dialogue()
 
@@ -59,12 +62,8 @@ func _show_intro_dialogue():
 	dialogue_box.display_text()
 
 func _on_intro_finished():
-	# Disconnect and free the first dialogue box
-	var db = get_tree().root.get_children().filter(func(c): return c.scene_file_path == "res://scenes/tutorial_dialogue_box_ui.tscn").front()
-	if db:
-		db.queue_free()
+	player.can_move = true  # ✅ Unfreeze after first dialogue
 
-	# Wait briefly then show the second dialogue
 	await get_tree().create_timer(1.0).timeout
 	_show_boss_goal_dialogue()
 

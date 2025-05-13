@@ -3,7 +3,7 @@ extends Area2D
 @export var trigger_once: bool = true
 var already_triggered := false
 
-# Localized messages for boss entrance clue (mysterious tone)
+# First mysterious lore message (tutorial-style)
 var messages := {
 	"en": [
 		"Haha... So you managed to find the trace I left behind.",
@@ -23,6 +23,12 @@ var messages := {
 		"Une fissure oubliée, tapie sous les racines de la montagne.",
 		"Pénètre dans les ténèbres... si tu l’oses... et relève l’épreuve."
 	]
+}
+
+# Second follow-up QUEST message (main-game dialogue style)
+var quest_dialogue := {
+	"en": ["QUEST: Find the place where the boss remains hidden in the dark."],
+	"fr": ["QUÊTE : Trouve l’endroit où le boss demeure caché dans l’ombre."]
 }
 
 func _ready():
@@ -47,5 +53,23 @@ func _show_dialogue():
 	for msg in lines:
 		dialogue_box.queue_text(msg)
 
+	dialogue_box.dialogue_finished.connect(_on_lore_dialogue_finished)
 	dialogue_box.show_dialogue_box()
 	dialogue_box.display_text()
+
+func _on_lore_dialogue_finished():
+	await get_tree().create_timer(0.8).timeout
+	_show_quest_dialogue()
+
+func _show_quest_dialogue():
+	var quest_box = preload("res://scenes/dialogue_main_game.tscn").instantiate()
+	get_tree().root.add_child(quest_box)
+
+	var lang = TranslationServer.get_locale()
+	var lines = quest_dialogue.get(lang, quest_dialogue["en"])
+
+	for msg in lines:
+		quest_box.queue_text(msg)
+
+	quest_box.show_dialogue_box()
+	quest_box.display_text()

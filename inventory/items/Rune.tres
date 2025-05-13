@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bspk5j62ybn2d"]
+
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="1_nxaa3"]
+[ext_resource type="Texture2D" uid="uid://tbfhnd454sxc" path="res://assets/Items/full packages items/Separated Files/64x64/fc335.png" id="2_nxaa3"]
+
+[resource]
+script = ExtResource("1_nxaa3")
+name = "Rune"
+texture = ExtResource("2_nxaa3")
+description = ""
+stackable = true
+rarity = "unique"
+key_id = ""
+metadata/_custom_type_script = "uid://cho0oo0tgufqt"

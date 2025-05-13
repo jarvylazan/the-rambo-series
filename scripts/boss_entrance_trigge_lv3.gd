@@ -32,7 +32,7 @@ func spawn_boss():
 	zoom_camera_on(boss.global_position)
 
 func play_roar_sound():
-	var roar_player := $"../roar_sound"  # Use the node already in your scene
+	var roar_player :=$"../roar_sound"   # Use the node already in your scene
 	if roar_player and roar_player is AudioStreamPlayer:
 		roar_player.play()
 
