@@ -88,16 +88,11 @@ func _ready():
 		dialogue_box.queue_text(line)
 
 	dialogue_box.show_dialogue_box()
-	await dialogue_box.display_text()
-	
-	var hud = get_node("Hud")
-	
-	hud.update_ammo(Global.bullet_count)
-	hud.update_coins(Global.coin_count)
+	await dialogue_box.display_text(
 
 
 func _get_hud():
-	hud = get_node("Hud")
+	Global.update_hud()
 func _on_intro_finished():
 	print("Tutorial dialogue finished.")
 
