@@ -32,8 +32,6 @@ func _physics_process(delta): # Fixed function name with underscores
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	enemy_count = enemies.size()
 	
-	
-	# Set text instead of appending with +=
 	if enemy_count_label and previous_enemy_count != enemy_count:
 		enemy_count_label.text = tr("ENEMIES_REMAINING") + ": " + str(enemy_count)
 	
@@ -44,6 +42,9 @@ func _physics_process(delta): # Fixed function name with underscores
 		
 		boss_spawned = true
 		await spawn_boss_cinematic()
+		enemy_count_label.text = ""
+
+
 
 func spawn_boss_cinematic():
 	# 1. Switch to boss camera

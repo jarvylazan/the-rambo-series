@@ -27,7 +27,6 @@ func _ready():
 	
 	Global.level_tracker = 1
 
-	# Get the EnemyCountLabel from the group
 	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
 	
 	var language = TranslationServer.get_locale()
@@ -51,13 +50,9 @@ func _ready():
 		dialogue_box.queue_text(line)
 	dialogue_box.show_dialogue_box()
 	await dialogue_box.display_text()
-	
-	hud.update_ammo(Global.bullet_count)
-	hud.update_coins(Global.coin_count)
-
 
 func _get_hud():
-	hud = get_node("Hud")
+	Global.update_hud()
 
 func _on_intro_finished():  # Fixed function name with underscores
 	print("Dialogue finished signal received!")

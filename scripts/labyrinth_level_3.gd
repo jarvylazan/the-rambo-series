@@ -1,10 +1,13 @@
 extends Node2D
+
+var enemy_count := 0
+var enemy_count_label  # Will properly initialize this in _ready
 var intro_dialogue_done := false
 
 # Level 3 Intro Dialogue Lines (Narrative tone)
 var level3_intro_lines := {
 	"en": [
-		"Youâ€™ve entered the third world... the heart of the labyrinth.",
+		"You’ve entered the third world... the heart of the labyrinth.",
 		"This place was not built to welcome you, adventurer... it was carved to confuse, to test, to trap.",
 		"Here, strength alone will not guide you forward.",
 		"A true adventurer must be strategic, must adapt to shifting paths and unseen threats.",
@@ -14,32 +17,32 @@ var level3_intro_lines := {
 		"Forge your path, discover the secrets buried in the maze... and face the force that rules from within."
 	],
 	"fr": [
-		"Tu es entrÃ© dans le troisiÃ¨me monde... le cÅ“ur du labyrinthe.",
-		"Cet endroit nâ€™a pas Ã©tÃ© construit pour tâ€™accueillir, aventurier â€“ il a Ã©tÃ© faÃ§onnÃ© pour te perdre.",
+		"Tu es entré dans le troisième monde... le cœur du labyrinthe.",
+		"Cet endroit n’a pas été construit pour t’accueillir, aventurier – il a été façonné pour te perdre.",
 		"Ici, la force seule ne suffit pas.",
-		"Un vÃ©ritable aventurier doit Ãªtre stratÃ©gique, capable de sâ€™adapter aux chemins changeants et aux menaces invisibles.",
-		"Chaque couloir, chaque dÃ©tour, a Ã©tÃ© placÃ© avec soin... pour dÃ©fier ton instinct.",
-		"De nombreux chemins sâ€™offrent Ã  toi, certains tordus par les tÃ©nÃ¨bres, dâ€™autres gardÃ©s par des forces invisibles.",
-		"Aucune carte ne pourra tâ€™aider. Seuls ton intelligence, ta volontÃ© et ton courage dÃ©voileront la voie.",
-		"Trace ta route, dÃ©couvre les secrets enfouis dans ce labyrinthe... et affronte la puissance tapie au fond."
+		"Un véritable aventurier doit être stratégique, capable de s’adapter aux chemins changeants et aux menaces invisibles.",
+		"Chaque couloir, chaque détour, a été placé avec soin... pour défier ton instinct.",
+		"De nombreux chemins s’offrent à toi, certains tordus par les ténèbres, d’autres gardés par des forces invisibles.",
+		"Aucune carte ne pourra t’aider. Seuls ton intelligence, ta volonté et ton courage dévoileront la voie.",
+		"Trace ta route, découvre les secrets enfouis dans ce labyrinthe... et affronte la puissance tapie au fond."
 	]
 }
 
 # Follow-up quest message
 var quest_dialogue_lines := {
 	"en": ["QUEST: Find your path through the labyrinth and defeat the one who waits."],
-	"fr": ["QUÃŠTE : Trouve ton chemin dans le labyrinthe et vaincs celui qui tâ€™attend."]
+	"fr": ["QUÊTE : Trouve ton chemin dans le labyrinthe et vaincs celui qui t’attend."]
 }
 
 # Status messages for section entry
 var section_status_lines := {
 	"en": {
 		"Section_1": "You're just beginning... remain cautious. The dungeon watches every move.",
-		"Section_2": "Youâ€™ve made progress, adventurer. But dangers grow deeper with each step."
+		"Section_2": "You’ve made progress, adventurer. But dangers grow deeper with each step."
 	},
 	"fr": {
 		"Section_1": "Tu viens de commencer... sois prudent. Le donjon observe chacun de tes gestes.",
-		"Section_2": "Tu as progressÃ©, aventurier. Mais les dangers s'intensifient Ã  chaque pas."
+		"Section_2": "Tu as progressé, aventurier. Mais les dangers s'intensifient à chaque pas."
 	}
 }
 
@@ -48,11 +51,11 @@ func _ready():
 	MusicManager.stop_music()
 	Global.pause_menu = $PauseMenu
 	Global.level_tracker = 3
-
+	
 	lock_camera_to_section("Section_1")  # Start in section 1
 	MusicManager.stop_music()
-
-	await get_tree().create_timer(0.8).timeout
+	
+await get_tree().create_timer(0.8).timeout
 	_show_level3_intro()
 
 func _get_hud():
@@ -91,7 +94,6 @@ func _show_quest_dialogue():
 
 func _on_quest_finished():
 	intro_dialogue_done = true
-
 
 func _on_section_1_trigger_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -156,3 +158,18 @@ func lock_camera_to_section(section_name: String):
 
 		_:
 			push_error("Unknown section: " + section_name)
+
+
+func _physics_process(delta):
+	var previous_enemy_count = enemy_count
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	enemy_count = enemies.size()
+	
+	# Set text instead of appending with +=
+	if enemy_count_label and previous_enemy_count != enemy_count:
+		enemy_count_label.text = tr("ENEMIES_REMAINING") + ": " + str(enemy_count)
+	
+	print("Current enemy count: " + str(enemy_count))
+	
+	if enemy_count == 0:
+		print("All enemies defeated!")
