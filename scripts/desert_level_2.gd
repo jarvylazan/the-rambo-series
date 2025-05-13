@@ -88,6 +88,10 @@ func _ready():
 
 	dialogue_box.show_dialogue_box()
 	await dialogue_box.display_text()
+	
+	var hud = get_node("Hud")
+	hud.update_ammo(Global.bullet_count)
+	hud.update_coins(Global.coin_count)
 
 func _on_intro_finished():
 	print("Tutorial dialogue finished.")
@@ -125,7 +129,7 @@ func _physics_process(delta):
 	
 	# Set text instead of appending with +=
 	if enemy_count_label and previous_enemy_count != enemy_count:
-		enemy_count_label.text = "ENEMIES_REMAINING: " + str(enemy_count)
+		enemy_count_label.text = tr("ENEMIES_REMAINING") + ": " + str(enemy_count)
 	
 	print("Current enemy count: " + str(enemy_count))
 	

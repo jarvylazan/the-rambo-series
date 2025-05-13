@@ -12,23 +12,23 @@ data = PackedByteArray("SUQzAwAAAAAAI1RTU0UAAAAPAAAATGF2ZjU4LjIwLjEwMAAAAAAAAAAA
 [node name="MusicManager" type="Node2D"]
 script = ExtResource("1_mvbrv")
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ppk7c")
 autoplay = true
 bus = &"MUSIC"
 
-[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("3_ppk7c")
 bus = &"SFX"
 
-[node name="SpearSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="SpearSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_i3r22")
 bus = &"SFX"
 
-[node name="GunSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="GunSFX" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_i3r22")
 bus = &"SFX"
 
-[node name="EnemyDeathSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="EnemyDeathSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1gjyk")

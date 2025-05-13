@@ -46,11 +46,8 @@ func _on_menu_button_pressed() -> void:
 		"speed": 5,
 		"pattern": "scribbles",
 	})
-
-
-
-	
-
+	Global.bullet_count = 0
+	Global.coin_count = 0
 
 func _on_options_button_pressed() -> void:
 	MusicManager.play_sfx()
