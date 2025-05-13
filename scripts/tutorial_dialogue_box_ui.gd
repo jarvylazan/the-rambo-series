@@ -120,3 +120,7 @@ func hide_dialogue_box():
 		dialogue_text.text = ""
 	if type_sound:
 		type_sound.stop()
+		
+func display_text_all() -> void:
+	while not text_queue.is_empty():
+		await display_text()

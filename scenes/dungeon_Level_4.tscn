@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://cqb3rkkw1c4ei"]
+[gd_scene load_steps=108 format=4 uid="uid://cqb3rkkw1c4ei"]
 
 [ext_resource type="Script" uid="uid://cuy0eiyw2mbcb" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
 [ext_resource type="Texture2D" uid="uid://4bh2hk8i0g5v" path="res://assets/image/tilemap_block/dungeon.png" id="1_yew4o"]
@@ -37,7 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://bi82s2sbh1dgg" path="res://scenes/poison_gpu_particles_2d.tscn" id="32_semk5"]
 [ext_resource type="PackedScene" uid="uid://b2h1bch4v7cny" path="res://scenes/Enemies/shardsoul_slayer.tscn" id="33_rqmde"]
 [ext_resource type="Texture2D" uid="uid://blh5ls3qek016" path="res://assets/image/tilemap_block/Cercle magique lumineux et mystique.png" id="35_7wif5"]
+[ext_resource type="PackedScene" uid="uid://bacdxvteo0aav" path="res://scenes/Enemies/ratfolk_axe.tscn" id="37_sr64y"]
 [ext_resource type="Script" uid="uid://8ib6g63g2alk" path="res://scripts/big_poison_area.gd" id="37_tn2q5"]
+[ext_resource type="PackedScene" uid="uid://b6ht1ls6wyr1a" path="res://scenes/Enemies/brain_mole_monarch.tscn" id="38_42ujw"]
 [ext_resource type="Script" uid="uid://bpvaoku3qkqsy" path="res://scripts/hole_area.gd" id="38_lqk0v"]
 [ext_resource type="AudioStream" uid="uid://2hog8q2nh0jk" path="res://assets/sound/creepy-haunting-sound-322993.mp3" id="42_7wif5"]
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="42_ftsq3"]
@@ -9080,7 +9082,7 @@ tile_set = SubResource("TileSet_f1vt2")
 z_index = 1
 position = Vector2(-4383.33, -461.111)
 scale = Vector2(5.55556, 5.55556)
-tile_map_data = PackedByteArray("AAAUADkABwAAAAAAAAAOADoABwAAAAAAAABlAC4ABgAAAAAAAADV/2YABwAAAAAAAADs/3IABwAAAAAAAADq/3AABwAAAAAAAADq/3QABwAAAAAAAADz/3QABQAAAAAAAADy/3cABwAAAAAAAADr/3cABQAAAAAAAAD4/xoABQAAAAAAAADR/1kACAAAAAAAAADg/0oACAAAAAAAAAAFAGkACAAAAAAAAABiACoACAAAAAAAAAAmABUACAAAAAAAAABoAAgACAAAAAAAAABjAAgACAAAAAAAAAA3AAYAAgAAAAAAAAA2ACMABAAAAAAAAABuABIABAAAAAAAAABtABIABAAAAAAAAAA+AA4ABAAAAAAAAAA+AA8ABAAAAAAAAAA2ACEABAAAAAAAAABtAPn/BAAAAAAAAAB2AP3/BAAAAAAAAABtAPz/BAAAAAAAAABqAPX/BAAAAAAAAABlAPH/BAAAAAAAAABaAPn/BAAAAAAAAABOAPD/BAAAAAAAAADy//n/BAAAAAAAAADV/yEABAAAAAAAAADO/ygABAAAAAAAAADO/zEABAAAAAAAAADe/z0ABAAAAAAAAAD9/zUABAAAAAAAAAD+/zUABAAAAAAAAAD9/00ABAAAAAAAAAD2/00ABAAAAAAAAADR/2kABAAAAAAAAADl/2EABAAAAAAAAAARAGkABAAAAAAAAAASAGkABAAAAAAAAAApAHgABAAAAAAAAAAqAHkABAAAAAAAAABFAG0ABAAAAAAAAABJAHgABAAAAAAAAAB2AGoABAAAAAAAAAB2AHUABAAAAAAAAABgAFMABwAAAAAAAABiAFUABwAAAAAAAABuAFcABwAAAAAAAABxAFkABwAAAAAAAAB0AFgABwAAAAAAAAB2AFgABwAAAAAAAABmAEwABwAAAAAAAAB0AEsABwAAAAAAAABuAEoABwAAAAAAAABvAEwABwAAAAAAAABkAEwABwAAAAAAAABiAE8ABwAAAAAAAABfAFEABwAAAAAAAAARADsABwAAAAAAAADf//j/BwAAAAAAAADa/+7/BwAAAAAAAADP//b/BwAAAAAAAADN//v/BwAAAAAAAADN//j/BwAAAAAAAADV/+//BgAAAAAAAADO//D/BgAAAAAAAADO//L/BgAAAAAAAADe/+//CAAAAAAAAABCAPr/BwAAAAAAAABJAPz/BwAAAAAAAAA9AAAABwAAAAAAAABLAAEABgAAAAAAAABGAHAAAQAAAAAAAABDAG0AAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAUADkABwAAAAAAAAAOADoABwAAAAAAAABlAC4ABgAAAAAAAADV/2YABwAAAAAAAADs/3IABwAAAAAAAADq/3AABwAAAAAAAADq/3QABwAAAAAAAADz/3QABQAAAAAAAADy/3cABwAAAAAAAADr/3cABQAAAAAAAAD4/xoABQAAAAAAAADR/1kACAAAAAAAAADg/0oACAAAAAAAAAAFAGkACAAAAAAAAABiACoACAAAAAAAAABoAAgACAAAAAAAAABjAAgACAAAAAAAAAA3AAYAAgAAAAAAAAA2ACMABAAAAAAAAABuABIABAAAAAAAAABtABIABAAAAAAAAAA+AA4ABAAAAAAAAAA+AA8ABAAAAAAAAAA2ACEABAAAAAAAAABtAPn/BAAAAAAAAAB2AP3/BAAAAAAAAABtAPz/BAAAAAAAAABqAPX/BAAAAAAAAABlAPH/BAAAAAAAAABaAPn/BAAAAAAAAABOAPD/BAAAAAAAAADy//n/BAAAAAAAAADV/yEABAAAAAAAAADO/ygABAAAAAAAAADO/zEABAAAAAAAAADe/z0ABAAAAAAAAAD9/zUABAAAAAAAAAD+/zUABAAAAAAAAAD9/00ABAAAAAAAAAD2/00ABAAAAAAAAADR/2kABAAAAAAAAADl/2EABAAAAAAAAAARAGkABAAAAAAAAAASAGkABAAAAAAAAAApAHgABAAAAAAAAAAqAHkABAAAAAAAAABFAG0ABAAAAAAAAABJAHgABAAAAAAAAAB2AGoABAAAAAAAAAB2AHUABAAAAAAAAABgAFMABwAAAAAAAABiAFUABwAAAAAAAABuAFcABwAAAAAAAABxAFkABwAAAAAAAAB0AFgABwAAAAAAAAB2AFgABwAAAAAAAABmAEwABwAAAAAAAAB0AEsABwAAAAAAAABuAEoABwAAAAAAAABvAEwABwAAAAAAAABkAEwABwAAAAAAAABiAE8ABwAAAAAAAABfAFEABwAAAAAAAAARADsABwAAAAAAAADf//j/BwAAAAAAAADa/+7/BwAAAAAAAADP//b/BwAAAAAAAADN//v/BwAAAAAAAADN//j/BwAAAAAAAADV/+//BgAAAAAAAADO//D/BgAAAAAAAADO//L/BgAAAAAAAADe/+//CAAAAAAAAABCAPr/BwAAAAAAAABJAPz/BwAAAAAAAAA9AAAABwAAAAAAAABLAAEABgAAAAAAAABGAHAAAQAAAAAAAABDAG0AAQAAAAAAAAAqAAwACAAAAAAAAAA=")
 tile_set = SubResource("TileSet_f7rnr")
 
 [node name="TileMap_Big_Skull" type="TileMapLayer" parent="World/Y-sorting2"]
@@ -9255,6 +9257,55 @@ visible = false
 
 [node name="ShardsoulSlayer" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
 position = Vector2(-412, 835)
+
+[node name="ShardsoulSlayer2" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(-476, 263)
+
+[node name="ShardsoulSlayer3" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(498, 240)
+
+[node name="ShardsoulSlayer4" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(1248, 283)
+
+[node name="ShardsoulSlayer5" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(1555, 825)
+
+[node name="ShardsoulSlayer6" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(1555, 1606)
+
+[node name="ShardsoulSlayer7" parent="Enemies/Node2D" instance=ExtResource("33_rqmde")]
+position = Vector2(-108, 1637)
+
+[node name="Node2D2" type="Node2D" parent="Enemies"]
+
+[node name="RatfolkAxe" parent="Enemies/Node2D2" instance=ExtResource("37_sr64y")]
+position = Vector2(1076, 323)
+
+[node name="RatfolkAxe2" parent="Enemies/Node2D2" instance=ExtResource("37_sr64y")]
+position = Vector2(148, 339)
+
+[node name="RatfolkAxe3" parent="Enemies/Node2D2" instance=ExtResource("37_sr64y")]
+position = Vector2(1416, 1153)
+
+[node name="RatfolkAxe4" parent="Enemies/Node2D2" instance=ExtResource("37_sr64y")]
+position = Vector2(717, 1167)
+
+[node name="Node2D3" type="Node2D" parent="Enemies"]
+
+[node name="BrainMoleMonarch" parent="Enemies/Node2D3" instance=ExtResource("38_42ujw")]
+position = Vector2(-377, 1338)
+
+[node name="BrainMoleMonarch2" parent="Enemies/Node2D3" instance=ExtResource("38_42ujw")]
+position = Vector2(165, 180)
+
+[node name="BrainMoleMonarch3" parent="Enemies/Node2D3" instance=ExtResource("38_42ujw")]
+position = Vector2(1549, 523)
+
+[node name="BrainMoleMonarch4" parent="Enemies/Node2D3" instance=ExtResource("38_42ujw")]
+position = Vector2(-34, 279)
+
+[node name="BrainMoleMonarch5" parent="Enemies/Node2D3" instance=ExtResource("38_42ujw")]
+position = Vector2(672, 815)
 
 [node name="Poison_Zone" type="Node2D" parent="."]
 
