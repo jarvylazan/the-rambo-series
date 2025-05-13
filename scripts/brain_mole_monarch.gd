@@ -1,10 +1,10 @@
 extends Enemy
 
 func _ready():
-	speed = 150
-	max_health = 30
+	speed = 200
+	max_health = 60
 	health = max_health
-	damage = 8
+	damage = 45
 	detection_range = 450.0
 	attack_range = 100.0
 	super()

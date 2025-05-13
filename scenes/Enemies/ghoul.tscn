@@ -1,7 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://gx3awikxvqxe"]
+[gd_scene load_steps=40 format=3 uid="uid://gx3awikxvqxe"]
 
 [ext_resource type="Script" uid="uid://cv6awxvh713ln" path="res://scripts/ghoul.gd" id="1_jdvld"]
+[ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="2_e84om"]
 [ext_resource type="Texture2D" uid="uid://bwwtkb77g3j6u" path="res://assets/characters/enemies/Ghoul Sprite Sheet.png" id="2_v81jn"]
+[ext_resource type="Resource" uid="uid://pluo8cbouvee" path="res://inventory/items/key_portal.tres" id="3_fcs20"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ei4jr"]
 atlas = ExtResource("2_v81jn")
@@ -315,10 +317,15 @@ height = 82.0
 radius = 31.0161
 
 [node name="Ghoul" type="CharacterBody2D" groups=["boss", "enemy", "ghoul"]]
-z_index = 2
-scale = Vector2(1.5, 1.5)
+z_index = 10
+scale = Vector2(2, 2)
 collision_layer = 8
 script = ExtResource("1_jdvld")
+next_level_scene = "res://scenes/win_scene.tscn"
+is_boss = true
+max_drops = 1
+drop_chance = 1.0
+possible_drops = Array[ExtResource("2_e84om")]([ExtResource("3_fcs20")])
 metadata/_custom_type_script = "uid://x3mqiya4w08u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

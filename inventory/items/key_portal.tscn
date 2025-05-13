@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dax2s28oky3tt" path="res://assets/Items/full packages items/Separated Files/64x64/fc179.png" id="3_dgvxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pi7aa"]
-radius = 30.5287
+radius = 58.6667
 
 [node name="Key_Portal" type="Area2D"]
 z_index = 7

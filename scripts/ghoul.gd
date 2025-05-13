@@ -4,7 +4,7 @@ func _ready():
 	speed = 150
 	max_health = 900
 	health = max_health
-	damage = 8
+	damage = 75
 	detection_range = 450.0
 	attack_range = 60.0
 	super()
