@@ -31,6 +31,9 @@ func _ready():
 
 	if not text_queue.is_empty():
 		display_text()
+	
+	$ContinueButton.text = tr("MENU_LABEL_NEXT")
+	$SkipButton.text = tr("MENU_LABEL_SKIP")
 
 
 func queue_text(text: String):
