@@ -9236,11 +9236,75 @@ position = Vector2(-412, 835)
 
 [node name="BigPoisonArea" type="Area2D" parent="Poison_Zone"]
 z_index = 1
+position = Vector2(-4, 14)
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("37_tn2q5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Zone/BigPoisonArea"]
+position = Vector2(-277, 197)
+shape = SubResource("CircleShape2D_lqk0v")
+debug_color = Color(0.494174, 0.448643, 0.956573, 0.42)
+
+[node name="BigPoisonArea2" type="Area2D" parent="Poison_Zone"]
+z_index = 1
+position = Vector2(1595, 414)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("37_tn2q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Zone/BigPoisonArea2"]
+position = Vector2(-277, 197)
+shape = SubResource("CircleShape2D_lqk0v")
+debug_color = Color(0.494174, 0.448643, 0.956573, 0.42)
+
+[node name="BigPoisonArea3" type="Area2D" parent="Poison_Zone"]
+z_index = 1
+position = Vector2(1599, -148)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("37_tn2q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Zone/BigPoisonArea3"]
+position = Vector2(-277, 197)
+shape = SubResource("CircleShape2D_lqk0v")
+debug_color = Color(0.494174, 0.448643, 0.956573, 0.42)
+
+[node name="SmallPoisonArea4" type="Area2D" parent="Poison_Zone"]
+z_index = 1
+position = Vector2(82, 1493)
+scale = Vector2(-0.3432, -0.3432)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("37_tn2q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Zone/SmallPoisonArea4"]
+position = Vector2(-277, 197)
+shape = SubResource("CircleShape2D_lqk0v")
+debug_color = Color(0.494174, 0.448643, 0.956573, 0.42)
+
+[node name="SmallPoisonArea5" type="Area2D" parent="Poison_Zone"]
+z_index = 1
+position = Vector2(-430, 817)
+scale = Vector2(-0.3432, -0.3432)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("37_tn2q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Zone/SmallPoisonArea5"]
+position = Vector2(-277, 197)
+shape = SubResource("CircleShape2D_lqk0v")
+debug_color = Color(0.494174, 0.448643, 0.956573, 0.42)
+
+[node name="SmallPoisonArea6" type="Area2D" parent="Poison_Zone"]
+z_index = 1
+position = Vector2(1201, 921)
+scale = Vector2(-0.3432, -0.3432)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("37_tn2q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Zone/SmallPoisonArea6"]
 position = Vector2(-277, 197)
 shape = SubResource("CircleShape2D_lqk0v")
 debug_color = Color(0.494174, 0.448643, 0.956573, 0.42)
@@ -9254,6 +9318,78 @@ collision_mask = 2
 script = ExtResource("38_lqk0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea"]
+position = Vector2(165, -75)
+shape = SubResource("CircleShape2D_41ftv")
+debug_color = Color(0.839216, 0.215686, 0, 0.6)
+
+[node name="HoleArea2" type="Area2D" parent="Hole_zone" groups=["FadeManager"]]
+z_index = 1
+position = Vector2(188, 534)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("38_lqk0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea2"]
+position = Vector2(165, -75)
+shape = SubResource("CircleShape2D_41ftv")
+debug_color = Color(0.839216, 0.215686, 0, 0.6)
+
+[node name="HoleArea3" type="Area2D" parent="Hole_zone" groups=["FadeManager"]]
+z_index = 1
+position = Vector2(1579, 482)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("38_lqk0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea3"]
+position = Vector2(165, -75)
+shape = SubResource("CircleShape2D_41ftv")
+debug_color = Color(0.839216, 0.215686, 0, 0.6)
+
+[node name="HoleArea4" type="Area2D" parent="Hole_zone" groups=["FadeManager"]]
+z_index = 1
+position = Vector2(427, 1734)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("38_lqk0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea4"]
+position = Vector2(165, -75)
+shape = SubResource("CircleShape2D_41ftv")
+debug_color = Color(0.839216, 0.215686, 0, 0.6)
+
+[node name="HoleArea5" type="Area2D" parent="Hole_zone" groups=["FadeManager"]]
+z_index = 1
+position = Vector2(1581, 1830)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("38_lqk0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea5"]
+position = Vector2(165, -75)
+shape = SubResource("CircleShape2D_41ftv")
+debug_color = Color(0.839216, 0.215686, 0, 0.6)
+
+[node name="HoleArea6" type="Area2D" parent="Hole_zone" groups=["FadeManager"]]
+z_index = 1
+position = Vector2(-767, 1586)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("38_lqk0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea6"]
+position = Vector2(165, -75)
+shape = SubResource("CircleShape2D_41ftv")
+debug_color = Color(0.839216, 0.215686, 0, 0.6)
+
+[node name="HoleArea7" type="Area2D" parent="Hole_zone" groups=["FadeManager"]]
+z_index = 1
+position = Vector2(623, 911)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("38_lqk0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_zone/HoleArea7"]
 position = Vector2(165, -75)
 shape = SubResource("CircleShape2D_41ftv")
 debug_color = Color(0.839216, 0.215686, 0, 0.6)
