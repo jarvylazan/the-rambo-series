@@ -3,7 +3,10 @@ extends Node2D
 func _ready():
 	MusicManager.stop_music()
 	Global.pause_menu = $PauseMenu
+	Global.level_tracker = 3
+	
 	lock_camera_to_section("Section_1")  # Start in section 1
+	MusicManager.stop_music()
 
 func _on_section_1_trigger_body_entered(body: Node2D) -> void:
 	print("Entered by: ", body.name)

@@ -10,12 +10,14 @@ var counter := 0
 var can_shoot = false
 var bullet_count := 0
 var coin_count := 0
+var level_tracker := 0
 var pause_menu: Node = null
 var boosted := false
 var boost_timer: Timer = null
 var base_spear_damage := 30
 var base_gun_damage := 10
 @onready var inv: Inv = preload("res://inventory/player_inv.tres") 
+
 
 
 func _ready():
@@ -80,8 +82,8 @@ func _on_boost_timeout():
 	
 	
 func _input(event):
-	if  event.is_action_pressed("ui_cancel") and pause_menu:
-		if  pause_menu.visible:
+	if event.is_action_pressed("pause_toggle") and pause_menu:
+		if pause_menu.visible:
 			pause_menu.hide_pause_menu()
 		else:
 			pause_menu.show_pause_menu()

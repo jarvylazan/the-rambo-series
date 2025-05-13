@@ -59,16 +59,24 @@ stretch_mode = 5
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 61.0
-offset_top = -20.0
-offset_right = 1261.0
-offset_bottom = 880.0
+offset_left = 36.0
+offset_top = -36.0
+offset_right = 1236.0
+offset_bottom = 864.0
 scale = Vector2(0.147333, 0.147333)
 value = 79.0
 texture_under = ExtResource("5_0i1j5")
 texture_over = ExtResource("5_0i1j5")
 texture_progress = ExtResource("5_apjy4")
 texture_progress_offset = Vector2(132, 0)
+
+[node name="EnemyCountLabel" type="Label" parent="CanvasLayer" groups=["enemy_count"]]
+unique_name_in_owner = true
+offset_left = 45.0
+offset_top = 42.0
+offset_right = 216.0
+offset_bottom = 65.0
+text = "ENEMIES_REMAINING: "
 
 [node name="Coins_Container" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 240.0

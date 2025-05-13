@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ctfajrfwf0hp4"]
+
+[ext_resource type="Texture2D" uid="uid://c8dulcqifn7s0" path="res://assets/fonts/grabber_theme.png" id="1_r0s1x"]
+[ext_resource type="Texture2D" uid="uid://bgmox88jcht1d" path="res://assets/fonts/slider.png" id="2_l1eau"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fy3x"]
+texture = ExtResource("2_l1eau")
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_r0s1x")
+HSlider/icons/grabber_highlight = ExtResource("1_r0s1x")
+HSlider/styles/grabber_area = null
+HSlider/styles/slider = SubResource("StyleBoxTexture_6fy3x")

@@ -88,6 +88,7 @@ func _on_bullet_timer_timeout():
 
 
 func spawn_bullet():
+	MusicManager.play_gun()
 	
 	if is_dead:
 		return
@@ -388,6 +389,8 @@ func play_idle_animation():
 	%RamboAnimatedSprite2D.scale = Vector2(15, 15)
 
 func play_attack_animation() -> String:
+		MusicManager.play_spear()
+
 	# Variable to store animation name
 	var anim_name = ""
 	

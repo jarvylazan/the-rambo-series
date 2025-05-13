@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bwir50i2hkrio" path="res://scenes/adventurer.tscn" id="6_m77fg"]
 [ext_resource type="PackedScene" uid="uid://b4esrikri3onx" path="res://scenes/Enemies/swampling.tscn" id="9_hqnkb"]
 [ext_resource type="Script" uid="uid://cho0oo0tgufqt" path="res://inventory/inventory_item.gd" id="10_lwd2k"]
-[ext_resource type="Script" uid="uid://bly6tqiso7ar3" path="res://scripts/enemy_intro_trigger.gd" id="10_m77fg"]
+[ext_resource type="Script" path="res://scripts/enemy_intro_trigger.gd" id="10_m77fg"]
 [ext_resource type="Resource" uid="uid://461kxmeymkjv" path="res://inventory/items/coins.tres" id="11_6n1ip"]
 [ext_resource type="Texture2D" uid="uid://tkn2rmgh12iy" path="res://assets/image/tilemap_block/level 1/wall door.png" id="11_qhc4u"]
 [ext_resource type="Resource" uid="uid://cxmuss48sm4qr" path="res://inventory/items/red_potion.tres" id="12_mgijy"]
 [ext_resource type="Resource" uid="uid://djt6vupnhse1o" path="res://inventory/items/ammo.tres" id="13_aseo8"]
 [ext_resource type="Texture2D" uid="uid://xisi11g1gxe2" path="res://assets/image/tilemap_block/TileFulPack.png" id="13_plxmq"]
-[ext_resource type="Script" uid="uid://bxwevc5kmbt8y" path="res://scripts/secret_path_trigger.gd" id="15_6n1ip"]
+[ext_resource type="Script" path="res://scripts/secret_path_trigger.gd" id="15_6n1ip"]
 [ext_resource type="PackedScene" uid="uid://cm2ef7b0cw2my" path="res://scenes/pause_menu.tscn" id="23_4nlgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsqm8"]
@@ -8985,38 +8985,6 @@ polygon = PackedVector2Array(-809, -208, -850, 45, -920, 161, -902, 282, -913, 7
 
 [node name="Swampling" parent="Enemies" instance=ExtResource("9_hqnkb")]
 position = Vector2(1028, 657)
-damage = 15
-detection_range = 60.0
-max_drops = 9
-drop_chance = 1.0
-possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
-
-[node name="Swampling7" parent="Enemies" instance=ExtResource("9_hqnkb")]
-position = Vector2(-741, 622)
-damage = 15
-detection_range = 60.0
-max_drops = 9
-drop_chance = 1.0
-possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
-
-[node name="Swampling4" parent="Enemies" instance=ExtResource("9_hqnkb")]
-position = Vector2(-479, 1143)
-damage = 15
-detection_range = 60.0
-max_drops = 9
-drop_chance = 1.0
-possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
-
-[node name="Swampling5" parent="Enemies" instance=ExtResource("9_hqnkb")]
-position = Vector2(711, 1156)
-damage = 15
-detection_range = 60.0
-max_drops = 9
-drop_chance = 1.0
-possible_drops = Array[ExtResource("10_lwd2k")]([ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("11_6n1ip"), ExtResource("12_mgijy"), ExtResource("12_mgijy"), ExtResource("13_aseo8"), ExtResource("13_aseo8")])
-
-[node name="Swampling6" parent="Enemies" instance=ExtResource("9_hqnkb")]
-position = Vector2(-765, 201)
 damage = 15
 detection_range = 60.0
 max_drops = 9

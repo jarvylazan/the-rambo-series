@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpcdqj6kh5vbf"
+path="res://.godot/imported/Aggressive Boss Battle Music_ MONSTROSITY by Robert Slump.mp3-6d67d0b101f196044d15ca4b5847a055.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Aggressive Boss Battle Music_ MONSTROSITY by Robert Slump.mp3"
+dest_files=["res://.godot/imported/Aggressive Boss Battle Music_ MONSTROSITY by Robert Slump.mp3-6d67d0b101f196044d15ca4b5847a055.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

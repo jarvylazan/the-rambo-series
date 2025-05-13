@@ -43,15 +43,25 @@ var win_condition_dialogue_lines := {
 	]
 }
 
-var dialogue_box  # Tutorial-style dialogue box reference
+var dialogue_box  # Dialogue box instance
+
 var enemy_count := 0
+var enemy_count_label  # Will properly initialize this in _ready
 
 func _ready():
+	Global.pause_menu = $PauseMenu
 	MusicManager.stop_music()
-
-	# Create and display the first dialogue
+	
+	Global.level_tracker = 2
+	
+	# Get the EnemyCountLabel from the Player's Hud
+	enemy_count_label = get_tree().get_first_node_in_group("enemy_count")
+		# Instantiate and add dialogue box
 	dialogue_box = DialogueBoxScene.instantiate()
 	get_tree().root.add_child(dialogue_box)
+	
+
+	# Connect signal
 	dialogue_box.dialogue_finished.connect(_on_intro_finished)
 
 	# Set up camera
@@ -65,7 +75,7 @@ func _ready():
 	camera.limit_top = 227
 	camera.limit_right = 6683
 	camera.limit_bottom = 3750
-
+	
 	# Lock player movement
 	player.can_move = false
 
@@ -108,11 +118,20 @@ func _on_intro_finished():
 # Portal logic
 @onready var portal_scene := preload("res://scenes/portal.tscn")
 var portal_spawned := false
-
 func _physics_process(delta):
+	var previous_enemy_count = enemy_count
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	enemy_count = enemies.size()
-
+	
+	# Set text instead of appending with +=
+	if enemy_count_label and previous_enemy_count != enemy_count:
+		enemy_count_label.text = "ENEMIES_REMAINING: " + str(enemy_count)
+	
+	print("Current enemy count: " + str(enemy_count))
+	
+	if enemy_count == 0:
+		print("All enemies defeated!")
+		
 	if not portal_spawned and enemies.all(func(e): not e.is_boss):
 		_spawn_portal_near_player()
 		portal_spawned = true

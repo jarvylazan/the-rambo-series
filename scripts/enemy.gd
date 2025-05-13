@@ -135,6 +135,7 @@ func die() -> void:
 	anim.play("die")
 	velocity = Vector2.ZERO
 	
+	
 	if health_bar_instance:
 		health_bar_instance.queue_free()
 		health_bar_instance = null
