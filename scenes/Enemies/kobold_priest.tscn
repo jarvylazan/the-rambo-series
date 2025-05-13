@@ -358,7 +358,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -617,6 +617,7 @@ animation = &"attack"
 frame = 1
 
 [node name="PuffFX" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(107, 4)
 scale = Vector2(4.245, 4.245)
 sprite_frames = SubResource("SpriteFrames_414fk")
