@@ -2613,7 +2613,6 @@ position = Vector2(140, -180)
 zoom = Vector2(0.9, 0.9)
 
 [node name="CollisionMap" type="Node2D" parent="."]
-visible = false
 
 [node name="TopBoarder" type="StaticBody2D" parent="CollisionMap"]
 
@@ -2851,5 +2850,7 @@ shape = SubResource("CircleShape2D_qx2ae")
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_qx2ae")
+volume_db = -10.0
+autoplay = true
 bus = &"MUSIC"
 parameters/looping = true

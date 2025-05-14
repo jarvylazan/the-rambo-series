@@ -53,15 +53,15 @@ layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 548.0
 
-[node name="Narration_Audio" type="AudioStreamPlayer2D" parent="."]
+[node name="Narration_Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_pjbkm")
-volume_db = 6.559
+volume_db = -0.009
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
 
-[node name="StoryBGM" type="AudioStreamPlayer2D" parent="."]
+[node name="StoryBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ucjqe")
 volume_db = -15.0
 autoplay = true

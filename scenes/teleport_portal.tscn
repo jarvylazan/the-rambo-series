@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://bajtcvja37o0r"]
+[gd_scene load_steps=14 format=3 uid="uid://bajtcvja37o0r"]
 
 [ext_resource type="Texture2D" uid="uid://888w4gjln70j" path="res://assets/image/portals/Green Portal Sprite Sheet.png" id="1_h3bgq"]
+[ext_resource type="AudioStream" uid="uid://c1l7xp568g0n6" path="res://assets/sound/transition-futuristic-teleport-121420.mp3" id="2_ug7p4"]
 
 [sub_resource type="GDScript" id="GDScript_h3bgq"]
 script/source = "extends Area2D
 
 @export var target_position: Vector2
 var can_teleport: bool = true
+@onready var teleport_sound := $TeleportSound
+
 
 func _ready():
 	# Play the idle animation (assumes it exists)
@@ -20,6 +23,8 @@ func _on_body_entered(body: Node2D):
 	if body.name == \"Player\" and can_teleport:
 		can_teleport = false
 		print(\"Teleporting player to:\", target_position)
+
+		teleport_sound.play()  
 		body.global_position = target_position
 
 		await get_tree().create_timer(1.0).timeout
@@ -109,5 +114,9 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_j5grf")
 animation = &"idle"
 frame_progress = 0.127845
+
+[node name="TeleportSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ug7p4")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

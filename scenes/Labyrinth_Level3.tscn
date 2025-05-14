@@ -3667,6 +3667,9 @@ position = Vector2(2576, 791)
 [node name="Yellow_Potion2" parent="Items/Section_1/Potion" instance=ExtResource("16_vbvca")]
 position = Vector2(1055, 1036)
 
+[node name="Yellow_Potion3" parent="Items/Section_1/Potion" instance=ExtResource("16_vbvca")]
+position = Vector2(1776, 313)
+
 [node name="Ammo" type="Node2D" parent="Items/Section_1"]
 
 [node name="Ammo" parent="Items/Section_1/Ammo" instance=ExtResource("16_1dadl")]
@@ -3683,6 +3686,15 @@ position = Vector2(477, 1033)
 
 [node name="Ammo3" parent="Items/Section_1/Ammo" instance=ExtResource("16_1dadl")]
 position = Vector2(724, 997)
+
+[node name="Ammo6" parent="Items/Section_1/Ammo" instance=ExtResource("16_1dadl")]
+position = Vector2(2316, 1161)
+
+[node name="Ammo7" parent="Items/Section_1/Ammo" instance=ExtResource("16_1dadl")]
+position = Vector2(2016, 1161)
+
+[node name="Ammo8" parent="Items/Section_1/Ammo" instance=ExtResource("16_1dadl")]
+position = Vector2(2581, 812)
 
 [node name="Runes" type="Node2D" parent="Items/Section_1"]
 
@@ -3708,6 +3720,7 @@ is_entry_portal = true
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_f2ch1")
 volume_db = -15.0
+autoplay = true
 bus = &"MUSIC"
 parameters/looping = true
 

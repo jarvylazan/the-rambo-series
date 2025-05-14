@@ -350,7 +350,8 @@ height = 82.0
 radius = 49.0408
 
 [node name="RatfolkAxe" type="CharacterBody2D" groups=["enemy"]]
-z_index = 9
+z_index = 1
+y_sort_enabled = true
 collision_layer = 8
 script = ExtResource("1_qlmjx")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

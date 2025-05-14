@@ -62,7 +62,7 @@ func display_text():
 		auto_advance_timer.stop()
 
 	if type_sound:
-		type_sound.play()  # 🔊 Start typewriter sound
+		type_sound.play()  # Start typewriter sound
 
 	tween = create_tween()
 	if dialogue_text:

@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var friction = 1500.0  # How fast the character slows down
 @export_file("*.tscn") var bullet_scene_path = "res://scenes/bullet.tscn"  # Exported path for easier editing
 @export var inv: Inv
+@onready var coin_sound := $CoinSound
+@onready var pickup_sound := $PickupSound
+
 
 var hud
 
@@ -36,6 +39,7 @@ func get_animation_duration(animation_name: String) -> float:
 
 func _ready():
 	call_deferred("_get_hud")
+	
 	# Load the bullet scene at runtime instead of preloading
 	bullet_scene = load(bullet_scene_path)
 	if not bullet_scene:
@@ -53,7 +57,12 @@ func _ready():
 	bullet_timer.one_shot = false
 	add_child(bullet_timer)
 	bullet_timer.timeout.connect(_on_bullet_timer_timeout)
+
 	Global.die.connect(_on_player_die)
+
+	#  Needed for blue potion blink
+	add_to_group("player")
+
 	
 func _get_hud():
 	hud = get_node("Hud")
@@ -468,6 +477,8 @@ func play_shoot_animation() -> String:
 
 func collect(item):
 	inv.insert(item)
+	pickup_sound.play()  # Play pickup sound for any item
+
 
 	# Register keys using item.key_id (if present)
 	if item.key_id != "" and not collected_keys.has(item.key_id):
@@ -478,13 +489,23 @@ func collect(item):
 		"coins":
 			Global.coin_count += 10
 			hud.update_coins(Global.coin_count)
+			coin_sound.play()  
+
 		"ammo":
 			Global.bullet_count += 20
 			hud.update_ammo(Global.bullet_count)
 		"red_potion":
-			Global.heal(30)
+			if Global.health < Global.MAX_HEALTH:
+				Global.heal(30)
+			else:
+				inv.insert(item)
 		"yellow_potion":
-			Global.heal(100)
+			if Global.health < Global.MAX_HEALTH:
+				Global.heal(100)
+			else:
+				inv.insert(item)
+		"blue_potion":
+			pass  # Always stored for manual use
 
 		
 
@@ -567,3 +588,22 @@ func start_poison_blink(duration: float):
 	is_blinking_poison = false
 	
 	
+var is_blinking_boost := false
+
+func start_blue_blink(duration: float = 10.0):
+	if is_blinking_boost:
+		return
+
+	is_blinking_boost = true
+	var sprite = %RamboAnimatedSprite2D
+	var blink_time := 0.15
+	var elapsed := 0.0
+
+	while elapsed < duration:
+		sprite.modulate = Color(0.6, 0.8, 1.0, 1.0)  # lighter blue
+		await get_tree().create_timer(blink_time).timeout
+		sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)  # reset
+		await get_tree().create_timer(blink_time).timeout
+		elapsed += blink_time * 2
+
+	is_blinking_boost = false

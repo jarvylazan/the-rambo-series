@@ -15,7 +15,9 @@ func update_slot():
 		amount_text.visible = false
 		slot_sprite.frame = 0
 		slot_sprite.modulate = Color(1, 1, 1)  # default white
+		selection_overlay.visible = false     # hide overlay when empty
 		return
+
 
 	# Item is present
 	item_visual.visible = true

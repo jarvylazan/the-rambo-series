@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://cqb3rkkw1c4ei"]
+[gd_scene load_steps=112 format=4 uid="uid://cqb3rkkw1c4ei"]
 
 [ext_resource type="Script" uid="uid://cuy0eiyw2mbcb" path="res://scripts/dungeon_level_4.gd" id="1_mgdn0"]
 [ext_resource type="Texture2D" uid="uid://4bh2hk8i0g5v" path="res://assets/image/tilemap_block/dungeon.png" id="1_yew4o"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ht1ls6wyr1a" path="res://scenes/Enemies/brain_mole_monarch.tscn" id="38_42ujw"]
 [ext_resource type="Script" uid="uid://bpvaoku3qkqsy" path="res://scripts/hole_area.gd" id="38_lqk0v"]
 [ext_resource type="AudioStream" uid="uid://2hog8q2nh0jk" path="res://assets/sound/creepy-haunting-sound-322993.mp3" id="42_7wif5"]
+[ext_resource type="AudioStream" uid="uid://bndp2ix76g35q" path="res://assets/sound/man-scream-7-276686.mp3" id="42_7yt1g"]
 [ext_resource type="PackedScene" uid="uid://bn2kk0mrdn81h" path="res://inventory/items/coins.tscn" id="42_ftsq3"]
 [ext_resource type="PackedScene" uid="uid://bk6xd1hoam6xj" path="res://inventory/items/red_potion.tscn" id="43_brp53"]
 [ext_resource type="PackedScene" uid="uid://cnkljqwwdtfun" path="res://inventory/items/yellow_potion.tscn" id="44_2oafn"]
@@ -50,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://dyyrj3rg0myt" path="res://inventory/items/Rune.tscn" id="47_30xwh"]
 [ext_resource type="PackedScene" uid="uid://u51ees0mv8d5" path="res://scenes/portal.tscn" id="49_xnwi0"]
 [ext_resource type="AudioStream" uid="uid://vpx5g2wsm76g" path="res://assets/Audio/the-chase-main-theme-338295.mp3" id="50_xnwi0"]
+[ext_resource type="Script" uid="uid://dv8hhm5okbao" path="res://scripts/alert_trap_lv4.gd" id="52_u0rwv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yew4o"]
 texture = ExtResource("2_l2b46")
@@ -9040,6 +9042,9 @@ radius = 91.1373
 [sub_resource type="CircleShape2D" id="CircleShape2D_41ftv"]
 radius = 39.4588
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yig3i"]
+radius = 38.0526
+
 [node name="Dungeon_Level_4" type="Node2D"]
 script = ExtResource("1_mgdn0")
 boss_scene = ExtResource("2_lqk0v")
@@ -9470,6 +9475,10 @@ position = Vector2(165, -75)
 shape = SubResource("CircleShape2D_41ftv")
 debug_color = Color(0.839216, 0.215686, 0, 0.6)
 
+[node name="ScreamSound" type="AudioStreamPlayer" parent="Hole_zone"]
+stream = ExtResource("42_7yt1g")
+volume_db = -5.0
+
 [node name="BossSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(392, 292)
 
@@ -9735,3 +9744,16 @@ is_entry_portal = true
 stream = ExtResource("50_xnwi0")
 bus = &"MUSIC"
 parameters/looping = true
+
+[node name="Alert" type="Node2D" parent="."]
+
+[node name="alert_trap_lv4" type="Area2D" parent="Alert"]
+z_index = 2
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("52_u0rwv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alert/alert_trap_lv4"]
+position = Vector2(41, 1010)
+shape = SubResource("CircleShape2D_yig3i")
+debug_color = Color(0.230687, 0.539064, 0.901799, 0.42)

@@ -336,7 +336,8 @@ height = 104.0
 radius = 71.1758
 
 [node name="ShardsoulSlayer" type="CharacterBody2D" groups=["enemy"]]
-z_index = 9
+z_index = 1
+y_sort_enabled = true
 collision_layer = 8
 script = ExtResource("1_ea3r4")
 metadata/_custom_type_script = "uid://x3mqiya4w08u"

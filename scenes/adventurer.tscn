@@ -1,4 +1,4 @@
-[gd_scene load_steps=337 format=3 uid="uid://bwir50i2hkrio"]
+[gd_scene load_steps=339 format=3 uid="uid://bwir50i2hkrio"]
 
 [ext_resource type="Script" uid="uid://c6ws4k6d1mg7i" path="res://scripts/adventurer.gd" id="1_ij0mf"]
 [ext_resource type="Texture2D" uid="uid://rcr2p0ym8v04" path="res://assets/characters/The Male adventurer/Idle/Normal/idle.png" id="2_46jak"]
@@ -40,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://xyytqyptbwiu" path="res://assets/characters/The Male adventurer/Attack/Spear/attack_spear_right_up.png" id="16_aipbf"]
 [ext_resource type="PackedScene" uid="uid://cf0406t5dpcrt" path="res://inventory/inventory_ui.tscn" id="30_j353b"]
 [ext_resource type="PackedScene" uid="uid://dwypel6cyarr8" path="res://scenes/hud.tscn" id="40_5yu0q"]
+[ext_resource type="AudioStream" uid="uid://dtndsnlou5o7w" path="res://assets/sound/coin-donation-2-180438.mp3" id="41_gb0ai"]
+[ext_resource type="AudioStream" uid="uid://d1iq8daqlgue4" path="res://assets/sound/item-pick-up-38258.mp3" id="41_mwiid"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc5b8"]
 atlas = ExtResource("2_jrfnu")
@@ -2700,6 +2702,7 @@ shape = SubResource("CapsuleShape2D_5i8mc")
 
 [node name="InventoryUI" parent="." instance=ExtResource("30_j353b")]
 visible = false
+z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2725,5 +2728,13 @@ disabled = true
 
 [node name="DropSpawnPoint" type="Node2D" parent="."]
 position = Vector2(222, 188)
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_mwiid")
+volume_db = -25.0
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_gb0ai")
+volume_db = -15.0
 
 [connection signal="body_entered" from="SpearArea" to="." method="_on_spear_area_body_entered"]

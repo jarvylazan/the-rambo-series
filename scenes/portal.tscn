@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://u51ees0mv8d5"]
+[gd_scene load_steps=30 format=3 uid="uid://u51ees0mv8d5"]
 
 [ext_resource type="Script" uid="uid://dqto734tenlrl" path="res://scripts/portal.gd" id="1_1ffj6"]
 [ext_resource type="Texture2D" uid="uid://bdqncheblxfmx" path="res://assets/image/portals/Purple Portal Sprite Sheet.png" id="2_jr6l0"]
+[ext_resource type="AudioStream" uid="uid://c1l7xp568g0n6" path="res://assets/sound/transition-futuristic-teleport-121420.mp3" id="3_jr6l0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4jfq"]
 atlas = ExtResource("2_jr6l0")
@@ -209,5 +210,9 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_x3sas")
+
+[node name="TeleportSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jr6l0")
+volume_db = -5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -36,6 +36,7 @@ layout_mode = 2
 position = Vector2(-0.500003, -4.76837e-07)
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
+z_index = 1
 custom_minimum_size = Vector2(70, 47)
 layout_mode = 0
 offset_left = -18.0
@@ -52,4 +53,5 @@ offset_left = 1.0
 offset_top = 2.0
 offset_right = 33.0
 offset_bottom = 38.0
+mouse_filter = 2
 color = Color(0.345098, 0.345098, 0.345098, 0.647059)

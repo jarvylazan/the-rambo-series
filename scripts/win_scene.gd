@@ -35,12 +35,12 @@ func _ready():
 	MusicManager.stop_music()
 	$BGMPlayer.play()
 	Global.pause_menu = $PauseMenu
-
+	
 	await get_tree().create_timer(0.5).timeout
 	await show_ending_dialogue()
 
 	# Optional pause before transitioning to main menu
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(5.0).timeout
 
 	await SceneManager.change_scene("res://scenes/main_menu.tscn", {
 		"pattern": "fade",

@@ -3,7 +3,6 @@ extends Node2D
 
 @onready var music_player := $MusicPlayer
 @onready var sfx_player := $SFXPlayer
-@onready var step_sfx := $StepSFX
 @onready var spear_sfx := $SpearSFX
 @onready var gun_sfx := $GunSFX
 @onready var enemy_death_sfx := $EnemyDeathSFX
@@ -21,12 +20,6 @@ func play_sfx():
 	if sfx_player.playing:
 		sfx_player.stop()
 	sfx_player.play()
-
-func play_step():
-	if step_sfx and step_sfx.stream:
-		if step_sfx.playing:
-			step_sfx.stop()
-		step_sfx.play()
 
 
 func play_spear():

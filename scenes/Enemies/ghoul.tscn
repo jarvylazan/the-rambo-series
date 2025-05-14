@@ -317,7 +317,8 @@ height = 82.0
 radius = 31.0161
 
 [node name="Ghoul" type="CharacterBody2D" groups=["boss", "enemy", "ghoul"]]
-z_index = 10
+z_index = 1
+y_sort_enabled = true
 scale = Vector2(2, 2)
 collision_layer = 8
 script = ExtResource("1_jdvld")

@@ -5,6 +5,8 @@ extends Area2D
 @export var required_key_id: String = "main_boss_key"
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var collision := $CollisionShape2D
+@onready var teleport_sound := $TeleportSound
+
 
 
 var activated := false
@@ -37,6 +39,7 @@ func activate_portal():
 	activated = true
 
 func _on_body_entered(body):
+	
 	if not activated:
 		return
 
@@ -67,6 +70,9 @@ func _on_body_entered(body):
 	body.visible = false
 	activated = false
 	collision.disabled = true
+
+	teleport_sound.play()  
+
 	sprite.play("Disappear")
 	await sprite.animation_finished
 	get_tree().change_scene_to_file(next_level_scene)

@@ -185,7 +185,7 @@ func _on_Death():
 		var portal = PortalScene.instantiate()
 		portal.global_position = global_position + Vector2(96, 0)
 
-		portal.set("next_level_scene", next_level_scene)  # ✅ FIXED!
+		portal.set("next_level_scene", next_level_scene)  # FIXED!
 		get_tree().current_scene.add_child(portal)
 
 		if portal.has_method("activate_portal"):

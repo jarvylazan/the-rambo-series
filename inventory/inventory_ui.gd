@@ -44,11 +44,7 @@ func open():
 func slot_clicked(slot_gui):
 	var clicked_index = slots.find(slot_gui)
 
-	# Deselect previously selected slot visually
-	if selected_slot_gui:
-		selected_slot_gui.set_selected(false)
-
-	# Selection just started
+	# 🧠 CASE 1: No item is currently selected → begin selection
 	if selected_slot_gui == null:
 		if slot_gui.inventory_slot and slot_gui.inventory_slot.item:
 			selected_slot_gui = slot_gui
@@ -58,11 +54,9 @@ func slot_clicked(slot_gui):
 				inv.slots[clicked_index] = InvSlot.new()
 			slot_gui.inventory_slot = null
 			slot_gui.update_slot()
+			slot_gui.set_selected(true)  # ✅ Show overlay
 
-			# Show selection overlay
-			slot_gui.set_selected(true)
-
-	# Second click to drop or swap
+	# 🧠 CASE 2: An item is already selected → place or swap
 	else:
 		var selected_index = slots.find(selected_slot_gui)
 
@@ -72,21 +66,27 @@ func slot_clicked(slot_gui):
 			if selected_index != -1:
 				inv.slots[selected_index] = selected_slot_data
 			selected_slot_gui.update_slot()
+			selected_slot_gui.set_selected(true)  # ✅ Keep selected if put back
 		elif clicked_index != -1 and selected_index != -1:
-			# Swap items
+			# Swap between selected and target
 			var target_data: InvSlot = slot_gui.inventory_slot
 			slot_gui.inventory_slot = selected_slot_data
 			selected_slot_gui.inventory_slot = target_data
+
 			inv.slots[clicked_index] = selected_slot_data
 			inv.slots[selected_index] = target_data
+
 			slot_gui.update_slot()
 			selected_slot_gui.update_slot()
+			slot_gui.set_selected(false)  # ✅ Both slots unselected after swap
+			selected_slot_gui.set_selected(false)
 
-		# Clear selection after drop or swap
+		# 🧹 Clear selection in all cases
 		selected_slot_gui = null
 		selected_slot_data = null
 
 	inv.update.emit()
+
 
 
 # RIGHT CLICK TO DROP (supports shift-drop-all)
@@ -229,11 +229,15 @@ func _use_selected_item():
 				Global.heal(100)
 			"blue_potion":
 				Global.apply_power_boost()
+
+				var player := get_tree().get_first_node_in_group("player")
+				if player:
+					player.start_blue_blink(10.0)  # Blink for 10 seconds
 			_:
 				print("Item can't be used directly.")
 				return
 
-		# Remove used item
+		#  Remove used item once
 		selected_slot_data.amount -= 1
 		if selected_slot_data.amount <= 0:
 			var i = slots.find(selected_slot_gui)
